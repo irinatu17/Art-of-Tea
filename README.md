@@ -44,9 +44,21 @@
 ## UX
 
 ### Project Goals
+#### Target Audience
+- People who love tea
+- People who want to get acquainted with tea culture
+- People who want to organise a party in Chineese or Japaneese style, search for tea ceremony service
+- People who want to get a new experiance, who curious about new things and want to get more knowldge about tea practise
+- People who is interedted in Eastern culture in general
+- People who want to buy tea and teaware, cary about good quality
+#### Visitor/user goals:
+- 
+#### Business goals:
+-
 
 ### User Stories
-:white_check_mark: *implemented* 
+:white_check_mark: *implemented*    
+
 **As a user, I want/expect:**
 - to access the website from any device (laptop, tablet, mobile)
 - to easily navigate the website
@@ -80,16 +92,45 @@
 - to be able to add, edit and remove products/services
 - to be able to be contacted by users through email if they have any special queries
 ### Design
+
+#### Framework
+#### Colour Scheme
+#### Typography
+#### Icons
+#### Further styling decisions
 ### Wireframes
 
 ---
 
 ## Features
-
 ### Existing Features
+:white_check_mark: *implemented*     
+
+#### Home page
+#### Navbar
+#### Contact
+#### Footer
+#### Register account
+#### Login
+#### Logout
+#### About Page
+#### Services
+#### Products
+#### Single product details
+#### Search
+#### Cart
+#### Checkout
+#### Profile
+#### Order history
+#### Review
+#### Admin Status
 ### Features Left to Implement
 
 ---
+## Information Architecture
+
+---
+
 ## Technologies Used
 
 ### Languages
