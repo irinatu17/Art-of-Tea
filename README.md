@@ -1,6 +1,7 @@
 # Art of Tea
 
 "Art of Tea" - Full Stack Frameworks with Django Milestone Project
+
 ---
 
 
@@ -42,10 +43,42 @@
 
 ## UX
 
+### Project Goals
+
 ### User Stories
-* 
-* 
-* 
+:white_check_mark: *implemented* 
+**As a user, I want/expect:**
+- to access the website from any device (laptop, tablet, mobile)
+- to easily navigate the website
+- to read information about the business, its ideas and offers
+- to learn more about different types of tea ceremonies, tea culture in general
+- to view all the services and products information
+- to view individual service/product details(e.g. image, price, quantity, description)
+- being a new user, to create my own account
+- being a returning user, to easily login/logout
+- to reset my password if I forgot it 
+- to have my personal profile with my personal information, needed for making payments
+- to view my order history
+- to be able to update my personal information, upload profile picture and delete it anytime
+- to delete my account at any time
+- to read reviews on the services/products
+- to write my own review and to be able to edit/delete it
+- to search and filter the products/services easily in order to buy a specific product I am looking for
+- to sort all products/services by specific category
+- to buy services/products: to be able to add them to my cart and to view my cart at any time
+- to edit my cart and remove products/services from the cart 
+- to view a total price of my purchases 
+- to view delivery coast and to see how much more I need to spend to reach free delivery
+- to make payments for the products/services by card in a safe and secure way
+- to receive an email confirmation after checkout to make sure that payment was successfull
+- to be able to read the company's private policy and delivery information
+- to easily access social media links 
+- to see the location of the company as well as its contact details
+- to be able easily contact the owner/manager of the company if I have an additional query
+
+**As a website owner, I want/expect:**
+- to be able to add, edit and remove products/services
+- to be able to be contacted by users through email if they have any special queries
 ### Design
 ### Wireframes
 
@@ -64,7 +97,6 @@
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 - [JavaScript](https://www.javascript.com/)
 - [Python](https://www.python.org/) 
-- 
 ### Libraries and Frameworks
 - [Django](https://www.djangoproject.com/) - Python framework for building the project.
 - [Bootstrap](https://www.bootstrapcdn.com/) - as the front-end framework for layout and design.
