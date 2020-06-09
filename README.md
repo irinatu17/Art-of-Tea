@@ -51,11 +51,18 @@
 - People who want to get a new experiance, who curious about new things and want to get more knowldge about tea practise
 - People who is interedted in Eastern culture in general
 - People who want to buy tea and teaware, cary about good quality
-#### Visitor/user goals:
-- 
-#### Business goals:
--
+- People who are into meditation, youga and similar practices   
 
+#### Visitor/user goals:
+- Purchase products/services shown on the website in a safe and secure way
+- Read more about tea ceremonies and different aspects of drinking tea
+- Organise the own custom tea event with special preferences
+
+#### Business goals(site owner's goals):
+- Provide users a secure professional e-commerce online shop
+- Make profit from selling teas and tea ceremony services
+- Promote tea culture in Ireland
+- Make a brand more recognisable and expand the buisiness
 ### User Stories
 :white_check_mark: *implemented*    
 
@@ -92,11 +99,11 @@
 - to be able to add, edit and remove products/services
 - to be able to be contacted by users through email if they have any special queries
 ### Design
-
 #### Framework
 #### Colour Scheme
 #### Typography
 #### Icons
+
 #### Further styling decisions
 ### Wireframes
 
