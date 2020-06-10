@@ -16,6 +16,8 @@
     - [**Existing Features**](#existing-features)
     - [**Features Left to Implement**](#features-left-to-implement)
 3. [**Information Architecture**](#information-architecture)
+    - [**Database Choice**](#database-choice)
+    - [**Data Modelling**](#data-modelling)
 
 4. [**Technologies Used**](#technologies-used)
     - [**Languages**](#languages)
@@ -135,6 +137,35 @@
 
 ---
 ## Information Architecture
+### Database choice
+During the development phase I worked with **sqlite3** database which is installed with Django.   
+For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
+
+### Data Modelling
+#### User
+The User model used in this project is provided by Django as a part of defaults "django.contrib.auth.models". More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
+#### Profile
+#### Service/Ceremony
+#### Product
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Sku | sku | CharField | max_length=254
+ Name | name | CharField | max_length=254 
+ Description | description | TextField | max_length=500 
+ Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+ Price | price | DecimalField |max_digits=6, decimal_places=2 
+ Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+ Weight | weight | IntegerField | null=True, blank=True
+ Image1 | image1| ImageField | null=True, blank=True
+ Image2 | image2| ImageField | null=True, blank=True
+ Image3 | image3| ImageField | null=True, blank=True
+ Availability | in_stock | Boolean | default=False
+ 
+#### Category
+#### Order
+#### Review
+#### 
+
 
 ---
 
