@@ -16,6 +16,8 @@
     - [**Existing Features**](#existing-features)
     - [**Features Left to Implement**](#features-left-to-implement)
 3. [**Information Architecture**](#information-architecture)
+    - [**Database Choice**](#database-choice)
+    - [**Data Modelling**](#data-modelling)
 
 4. [**Technologies Used**](#technologies-used)
     - [**Languages**](#languages)
@@ -44,9 +46,28 @@
 ## UX
 
 ### Project Goals
+#### Target Audience
+- People who love tea
+- People who want to get acquainted with tea culture
+- People who want to organise a party in Chineese or Japaneese style, search for tea ceremony service
+- People who want to get a new experiance, who curious about new things and want to get more knowldge about tea practise
+- People who is interedted in Eastern culture in general
+- People who want to buy tea and teaware, cary about good quality
+- People who are into meditation, youga and similar practices   
 
+#### Visitor/user goals:
+- Purchase products/services shown on the website in a safe and secure way
+- Read more about tea ceremonies and different aspects of drinking tea
+- Organise the own custom tea event with special preferences
+
+#### Business goals(site owner's goals):
+- Provide users a secure professional e-commerce online shop
+- Make profit from selling teas and tea ceremony services
+- Promote tea culture in Ireland
+- Make a brand more recognisable and expand the buisiness
 ### User Stories
-:white_check_mark: *implemented* 
+:white_check_mark: *implemented*    
+
 **As a user, I want/expect:**
 - to access the website from any device (laptop, tablet, mobile)
 - to easily navigate the website
@@ -80,16 +101,96 @@
 - to be able to add, edit and remove products/services
 - to be able to be contacted by users through email if they have any special queries
 ### Design
+#### Framework
+#### Colour Scheme
+#### Typography
+#### Icons
+
+#### Further styling decisions
 ### Wireframes
 
 ---
 
 ## Features
-
 ### Existing Features
+:white_check_mark: *implemented*     
+
+#### Home page
+#### Navbar
+#### Contact
+#### Footer
+#### Register account
+#### Login
+#### Logout
+#### About Page
+#### Services
+#### Products
+#### Single product details
+#### Search
+#### Cart
+#### Checkout
+#### Profile
+#### Order history
+#### Review
+#### Admin Status
+
 ### Features Left to Implement
 
 ---
+## Information Architecture
+### Database choice
+During the development phase I worked with **sqlite3** database which is installed with Django.   
+For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
+
+### Data Modelling
+#### User
+The User model used in this project is provided by Django as a part of defaults "django.contrib.auth.models". More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
+#### Profile
+#### Service/Ceremony
+#### Product
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Sku | sku | CharField | max_length=254
+ Name | name | CharField | max_length=254 
+ Description | description | TextField | max_length=500 
+ Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+ Price | price | DecimalField |max_digits=6, decimal_places=2 
+ Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+ Weight | weight | IntegerField | null=True, blank=True
+ Image1 | image1| ImageField | null=True, blank=True
+ Image2 | image2| ImageField | null=True, blank=True
+ Image3 | image3| ImageField | null=True, blank=True
+ Availability | in_stock | Boolean | default=False
+ 
+#### Category
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Programmatic Name | name | CharField | max_length=254
+Friendly Name | friendly_name | CharField | max_length=254, null=True, blank=True
+#### Order
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Order Number | order_number | CharField | max_length=32, null=False, editable=False
+User Profile | user_profile | ForeignKey 'UserProfile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+Full Name | full_name | CharField | max_length=50, null=False, blank=False
+Email | email | EmailField | max_length=254, null=False, blank=False
+Phone number | phone_number | CharField | max_length=20, null=False, blank=False
+Street address Line1 | street_address1 | CharField | max_length=80, null=False, blank=False
+Street address Line2 | street_address2 | CharField | max_length=80, null=True, blank=True
+Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
+County | county | CharField | max_length=80, null=True, blank=True
+Country | country | CountryField | null=False, blank=False
+Postcode | postcode | CharField | max_length=20, null=True, blank=True
+Date | date | DateTimeField | auto_now_add=True
+Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
+Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+#### Review
+#### 
+
+
+---
+
 ## Technologies Used
 
 ### Languages
