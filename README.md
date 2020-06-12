@@ -9,8 +9,6 @@ In "Art of Tea" you can visit one of our tea ceremonies, book an event for your 
 
 Explore the misterious and amazing world of tea with us!
 
-
-
 ---
 
 
@@ -129,7 +127,7 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 - I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
 - Apart from that, I used some icons, specific to the tea world and East topic that were found in a free icons library [Flaticon](https://www.flaticon.com/). 
 #### Further styling decisions
-*will be added during development phase"
+*will be added during development phase*
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
 
@@ -179,7 +177,7 @@ The User model used in this project is provided by Django as a part of defaults 
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
  User | user | OneToOneField 'User' |  on_delete=models.CASCADE
- User Avatar | user_avatart | ImageField | null=True, blank=True
+ Avatar | avatart | ImageField | null=True, blank=True
  Username | username | CharField | max_length=254, null=False, blank=False
  Email | email | EmailField | max_length=254, null=False, blank=False
  Phone number | phone_number | CharField | max_length=20, null=False, blank=False
@@ -246,7 +244,17 @@ Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, n
 Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 #### Review
-
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Author | author | OneToOneField 'User' |  on_delete=models.CASCADE
+ Published Date | published_date | DateTimeField | blank=True, null=True, default=timezone.now
+ Created Date | created_date | DateTimeField | auto_now_add=True
+ Content | content | TextField |
+ Rating | rating | DecimalField | max_digits=6, decimal_places=2
+ Product |
+ Service |
+ 
+ 
 #### 
 
 
