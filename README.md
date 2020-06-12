@@ -106,9 +106,10 @@
 - [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for its layout.
 - [JQuery](https://jquery.com/) is used for initializing some Bootstrap, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
-One of the main goals in UI was to focus user's attention on the products/services images. Therefore calm colors and different shades of one colour were mostly used accross the website's design.   
- Green, brown and black are the colours associated with tea help us to immerse users to the tea world. While different shades of grey colour allow us to create clean and neat backgrounds and volume effect accross the website.
-![Color Palette](wireframes/colour-palette.png)
+One of the main goals in UI was to focus user's attention on the products/services images. Therefore **calm** colors and **different shades** of one colour were mostly used accross the website's design.   
+ Green, brown and black are the colours associated with tea help us to immerse users to the **tea world**. While different shades of grey colour allow us to create clean and neat backgrounds and volume effect accross the website.   
+ 
+![Color Palette](wireframes/palette.png)
 #### Typography
 There are three fonts used across the project that I find a good combination: 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans) used as the main body font, popular modern sans-serif typeface providing good readability.
@@ -120,6 +121,9 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 - Apart from that, I used some icons, specific to the tea world and East topic that were found in a free icons library [Flaticon](https://www.flaticon.com/). 
 #### Further styling decisions
 ### Wireframes
+[Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
+
+Initial wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
 
 ---
 
