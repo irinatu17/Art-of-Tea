@@ -1,11 +1,11 @@
 # Art of Tea
 
-Tea... Is it  just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilization.  
-TEA connects people, calms the mind, brings harmony and balance.    
-"Art of Tea" is a refuge for a soul in the bustle of the city, an island of calm in the very heart of Dublin!   
+Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilization.  
+Tea connects people, calms the mind, brings harmony and balance.    
+**Art of Tea** is a refuge for a soul in the bustle of the city, an island of calm in the very heart of Dublin!   
 Tea ceremonies in our tea club proceed in the atmosphere of solitude and relaxation. This is an immersion into the secrets of the tea consuming traditions of the nations of the world, as well as a place for romantic dates and meetings with friends.
 
-In "Art of Tea" you can visit one of our tea ceremonies, book an event for your company and buy nice fresh tea and teaware delivered straight to your doors!
+In **Art of Tea** you can visit one of our tea ceremonies, book an event for your company and buy nice fresh tea and teaware delivered straight to your doors!
 
 Explore the misterious and amazing world of tea with us!
 
@@ -282,27 +282,31 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 - [JavaScript](https://www.javascript.com/)
 - [Python](https://www.python.org/) 
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/) - templating language for Python, to display back-end data in HTML.
+
 ### Libraries and Frameworks
 - [Django](https://www.djangoproject.com/) - Python framework for building the project.
 - [Bootstrap](https://www.bootstrapcdn.com/) - as the front-end framework for layout and design.
 - [Google Fonts](https://fonts.google.com/) - to import fonts.
 - [FontAwesome](https://fontawesome.com/) - to provide icons used across the project. 
-- [JQuery 3.5.0](https://jquery.com/) - to simplify DOM manipulation and to initialize Bootstrap functions.
+- [JQuery](https://jquery.com/) - to simplify DOM manipulation and to initialize Bootstrap functions.
+- [Gunicorn](https://pypi.org/project/gunicorn/) - a Python WSGI HTTP Server to enable deployment to Heroku.
+- [Psycopg2](https://pypi.org/project/psycopg2/) - to enable the PostgreSQL database to function with Django.
+- [Stripe](https://stripe.com/ie) - to handle financial transactions.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to style Django forms.
+- [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) - to see the percentage of the automated testsing.
+
+
 
 ### Tools
 - [GitPod](https://www.gitpod.io/) - an online IDE for developing this project.
 - [Git](https://git-scm.com/) - for version control.
 - [GitHub](https://git-scm.com/) - for remotely storing project's code.
 - [PIP](https://pip.pypa.io/en/stable/installing/) - for installation of necessary tools.
-- [Jinja 2.10.1](https://jinja.palletsprojects.com/en/2.10.x/) - templating language for Python, to display back-end data in HTML.
 - [Heroku](https://heroku.com/) - to host the project.
-- [Stripe](https://stripe.com/ie) - to handle financial transactions.
-- [AWS S3 Bucket](https://aws.amazon.com/) -  to store static files required on the site.
-- [Gunicorn](https://pypi.org/project/gunicorn/) - a Python WSGI HTTP Server to enable deployment to Heroku.
-- [Psycopg2](https://pypi.org/project/psycopg2/) - to enable the PostgreSQL database to function with Django.
+- [AWS S3 Bucket](https://aws.amazon.com/) -  to store static files.
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
 - [Travis](https://travis-ci.org/) - for integration testing.
-- [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) - 
-- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to custom-style Django forms.
 - [TinyPng](https://tinypng.com/) - for compressing images.
 - [ImgBB](https://imgbb.com/) - to host images.
 - [GIMP2](https://www.gimp.org/) - for editing and resizing images.
