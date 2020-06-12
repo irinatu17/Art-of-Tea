@@ -120,6 +120,7 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 - I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
 - Apart from that, I used some icons, specific to the tea world and East topic that were found in a free icons library [Flaticon](https://www.flaticon.com/). 
 #### Further styling decisions
+*will be added during development phase"
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
 
@@ -137,9 +138,11 @@ Initial wireframes for desktop, tablet and mobile can be found [here](https://gi
 #### Footer
 #### Register account
 #### Login
+#### Google and facebook login
 #### Logout
 #### About Page
 #### Services
+#### Single service details
 #### Products
 #### Single product details
 #### Search
@@ -148,7 +151,9 @@ Initial wireframes for desktop, tablet and mobile can be found [here](https://gi
 #### Profile
 #### Order history
 #### Review
-#### Admin Status
+#### Admin product managment
+#### Back to the top button
+#### 404 and 500 error pages
 
 ### Features Left to Implement
 
@@ -162,6 +167,20 @@ For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
 #### User
 The User model used in this project is provided by Django as a part of defaults "django.contrib.auth.models". More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
 #### Profile
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ User | user | OneToOneField 'User' |  on_delete=models.CASCADE
+ User Avatar | user_avatart | ImageField | null=True, blank=True
+ Username | username | CharField | max_length=254, null=False, blank=False
+ Email | email | EmailField | max_length=254, null=False, blank=False
+ Phone number | phone_number | CharField | max_length=20, null=False, blank=False
+ Street address Line1 | street_address1 | CharField | max_length=80, null=False, blank=False
+ Street address Line2 | street_address2 | CharField | max_length=80, null=True, blank=True
+ Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
+ County | county | CharField | max_length=80, null=True, blank=True
+ Country | country | CountryField | null=False, blank=False
+ Postcode | postcode | CharField | max_length=20, null=True, blank=True
+
 #### Service/Ceremony
 #### Product
 | **Name** | **Database Key** | **Field Type** | **Validation** |
