@@ -141,12 +141,23 @@ Initial wireframes for desktop, tablet and mobile can be found [here](https://gi
 
 #### Home page
 #### Navbar
+The navbar is fixed at the top of the page, this allows a user to easily navigate throughout the website. The logo is located in the top right corner on a desktop and in the center on smaller devices. It redirects the user to the home page when clicked. On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.   
+The difference in navbar for logged in, non-logged in users and admin:   
+- For **non-logged in** users or guests navbar contains the following links: Login, Register.   
+- For **logged in** users it contains the following links: Logout, Profile.   
+- For **admin** there is also link to Product Managment, where admin can add new products.
+
+
 #### Contact
 #### Footer
-#### Register account
+#### Create account
+The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirenments to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
+The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
 #### Google and facebook login
+Allows users to login using social networks accounts.
 #### Logout
+Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
 #### About Page
 #### Services
 #### Single service details
@@ -243,6 +254,7 @@ Date | date | DateTimeField | auto_now_add=True
 Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
 Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+
 #### Review
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
@@ -254,6 +266,7 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
  Product |
  Service |
  
+ This model will be replaced with built-in reusable Django app that lets users write reviews for any model. **django-review 1.10.0**
  
 #### 
 
