@@ -182,6 +182,22 @@ The User model used in this project is provided by Django as a part of defaults 
  Postcode | postcode | CharField | max_length=20, null=True, blank=True
 
 #### Service/Ceremony
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Sku | sku | CharField | max_length=254
+ Name | name | CharField | max_length=254 
+ Description | description | TextField | max_length=500 
+ Price | price | DecimalField |max_digits=6, decimal_places=2 
+ Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+ Image1 | image1 | ImageField | null=True, blank=True
+ Image2 | image2 | ImageField | null=True, blank=True
+ Image3 | image3 | ImageField | null=True, blank=True
+ Image4 | image4 | ImageField | null=True, blank=True
+ Image5 | image5 | ImageField | null=True, blank=True
+ Date and Time | date_and_time | DateTimeField | 
+ Duration | duration | 
+ Number of participants  | number_of_participants | ...
+ Place | place | 
 #### Product
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
@@ -197,7 +213,7 @@ The User model used in this project is provided by Django as a part of defaults 
  Image3 | image3| ImageField | null=True, blank=True
  Availability | in_stock | Boolean | default=False
  
-#### Category
+#### Tea Category
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
 Programmatic Name | name | CharField | max_length=254
@@ -221,6 +237,7 @@ Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, n
 Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 #### Review
+
 #### 
 
 
