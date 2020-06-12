@@ -1,6 +1,15 @@
 # Art of Tea
 
-"Art of Tea" - Full Stack Frameworks with Django Milestone Project
+Tea... Is it  just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilization.  
+TEA connects people, calms the mind, brings harmony and balance.    
+"Art of Tea" is a refuge for a soul in the bustle of the city, an island of calm in the very heart of Dublin!   
+Tea ceremonies in our tea club proceed in the atmosphere of solitude and relaxation. This is an immersion into the secrets of the tea consuming traditions of the nations of the world, as well as a place for romantic dates and meetings with friends.
+
+In "Art of Tea" you can visit one of our tea ceremonies, book an event for your company and buy nice fresh tea and teaware delivered straight to your doors!
+
+Explore the misterious and amazing world of tea with us!
+
+
 
 ---
 
