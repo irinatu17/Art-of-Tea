@@ -170,8 +170,10 @@ Hitting "logout" button by the logged in users ends their session and redirects 
 #### Order history
 #### Review
 #### Admin product managment
+Product managment page allows admin of the website edit and add new products/services. Only admin of the page(superuser) has access to that feature.
 #### Back to the top button
 #### 404 and 500 error pages
+Customized 404 and 500 pages contain short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
 
 ### Features Left to Implement
 
