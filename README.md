@@ -106,7 +106,8 @@
 - [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for its layout.
 - [JQuery](https://jquery.com/) is used for initializing some Bootstrap, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
-One of the main goals in UI was to focus user's attention on the products/services images. Therefore calm colors and different shades of one colour were mostly used accross the website's design. Green, brown and black are the colours associated with tea help us to immerse users to the tea world. While different shades of grey colour allow us to create clean and neat backgrounds and volume effect accross the website.
+One of the main goals in UI was to focus user's attention on the products/services images. Therefore calm colors and different shades of one colour were mostly used accross the website's design.   
+ Green, brown and black are the colours associated with tea help us to immerse users to the tea world. While different shades of grey colour allow us to create clean and neat backgrounds and volume effect accross the website.
 ![Color Palette](wireframes/colour-palette.png)
 #### Typography
 There are three fonts used across the project that I find a good combination: 
