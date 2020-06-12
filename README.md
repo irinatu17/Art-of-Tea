@@ -93,6 +93,7 @@
 - to make payments for the products/services by card in a safe and secure way
 - to receive an email confirmation after checkout to make sure that payment was successfull
 - to be able to read the company's private policy and delivery information
+- to view events that happen in the tea club this week so that I can come and join any event
 - to easily access social media links 
 - to see the location of the company as well as its contact details
 - to be able easily contact the owner/manager of the company if I have an additional query
@@ -102,10 +103,18 @@
 - to be able to be contacted by users through email if they have any special queries
 ### Design
 #### Framework
+- [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for its layout.
+- [JQuery](https://jquery.com/) is used for initializing some Bootstrap, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
 #### Typography
+There are three fonts used across the project that I find a good combination: 
+- [Open Sans](https://fonts.google.com/specimen/Open+Sans) used as the main body font, popular modern sans-serif typeface providing good readability.
+- [Marko One](https://fonts.google.com/specimen/Marko+One) - elegant, decarative and eye-catching font, used mostly for headings.  
+- [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme.
 #### Icons
-
+Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
+- I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
+- Apart from that, I used some icons, specific to the tea world and East topic that were found in a free icons library [Flaticon](https://www.flaticon.com/). 
 #### Further styling decisions
 ### Wireframes
 
