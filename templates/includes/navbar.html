@@ -1,22 +1,22 @@
 <!--Top navbar-->
-<nav class="navbar bg-dark  fixed-top d-flex justify-content-end pb-0 w-100">
-    <ul class="nav">
-        <li class="nav-item d-none d-md-block">
-            <a class="nav-link py-0 text-light" href="#">Login</a>
-        </li>
-        <li class="nav-item d-none d-md-block">
-        <a class="nav-link border-left border-light py-0 text-light" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link  py-0 text-light" href="#"><i class="fas fa-user"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link py-0 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
-        </li>
-    </ul>
-
-</nav>
-
+<div class="d-none d-md-block">
+    <nav class="navbar bg-dark  fixed-top d-flex justify-content-end pb-0 w-100">
+        <ul class="nav">
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link py-0 text-light" href="#">Login</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+            <a class="nav-link border-left border-light py-0 text-light" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  py-0 text-light" href="#"><i class="fas fa-user"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link py-0 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <!--Main navbar-->
 <div class="main-nav-sticky">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-block d-lg-flex">
@@ -28,10 +28,14 @@
             <a class="navbar-brand" href="#">
                 <img src="/media/logo-white.png" alt="logo" class="logo-navbar">
             </a>
-            
-        <button class="btn btn-large btn-outline-dark d-block d-lg-none">
+        <div class="row">  
+        <button class="btn btn-large btn-outline-dark d-block d-lg-none mr-md-3">
             <i class="fas fa-search text-light"></i>
         </button>
+        <button class="btn btn-large btn-outline-dark d-block d-md-none">
+            <i class="fas fa-shopping-cart text-light"></i>
+        </button> 
+        </div>
             
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
