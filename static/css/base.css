@@ -1,4 +1,6 @@
-/* Colour Variables */
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&family=Open+Sans&family=Sawarabi+Mincho&display=swap');
+
+/* Colour and Font Variables */
 :root {
 --darkgreen: #0A5C15;
 --lighgreen: #3E9D47;
@@ -13,10 +15,14 @@
 
 --lightblack: #2e2e2e;
 --darkgrey: #515151;
+
+--marko-one: 'Marko One', serif;
+--open-sans: 'Open Sans', sans-serif;
+--sawarabi-mincho: 'Sawarabi Mincho', sans-serif;
 }
 
 .uppercase{
-    text-transform: uppercase;
+text-transform: uppercase;
 }
 
 .main-nav-sticky {
