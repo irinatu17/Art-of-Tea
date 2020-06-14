@@ -27,11 +27,39 @@ text-transform: uppercase;
 }
 
 html {
-    height: 100%;
+height: 100%;
 }
 body{
-background: url('/media/landing-background.jpg') no-repeat right bottom fixed;
+background: url('/media/landing-background.jpg') no-repeat right center fixed;
 background-size: cover;
+height: 100%;
+
+}
+
+.landing-text{
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: var(--marko-one);
+}
+
+.landing-main-heading{
+text-shadow: 3px 3px 3px black;
+}
+
+.landing-button{
+background-color: transparent;
+color: var(--white);
+min-width: 10rem;
+border: 1px solid var(--white);
+font-family: var(--sawarabi-mincho);
+height: 3.5rem;
+}
+.landing-button:hover{
+background-color: var(--darkgreen);
+color: var(--white);
 }
 
 /* Navbar */
@@ -69,7 +97,13 @@ padding-top: 32px;
 .logo-navbar{
 height: 3.1rem;
 }
+
 .navbar-brand{
 margin-right: 1rem;
+}
+
+.landing-text{
+text-align: left;
+left: 25%;
 }
 }
