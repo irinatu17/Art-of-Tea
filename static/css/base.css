@@ -37,5 +37,15 @@ letter-spacing: 0.1rem;
 }
 
 .logo-navbar{
-height: 50px;
+height: 3.1rem;
+}
+/*Media query for small devices*/
+@media (max-width: 991px){
+.navbar-toggler {
+font-size: 1rem;
+}
+
+.logo-navbar{
+height: 2.6rem;
+}
 }

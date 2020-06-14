@@ -1,11 +1,10 @@
 <!--Top navbar-->
-<div>
 <nav class="navbar bg-dark  fixed-top d-flex justify-content-end pb-0 w-100">
     <ul class="nav">
-        <li class="nav-item">
+        <li class="nav-item d-none d-md-block">
             <a class="nav-link py-0 text-light" href="#">Login</a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item d-none d-md-block">
         <a class="nav-link border-left border-light py-0 text-light" href="#">Register</a>
         </li>
         <li class="nav-item">
@@ -15,10 +14,11 @@
             <a class="nav-link py-0 text-light" href="#"><i class="fas fa-shopping-cart"></i></a>
         </li>
     </ul>
+
 </nav>
+
 <!--Main navbar-->
 <div class="main-nav-sticky">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
@@ -57,18 +57,24 @@
         <li class="nav-item mr-5">
             <a class="nav-link uppercase text-light" href="#">Contuct</a>
         </li>
+        <div class="dropdown-divider"></div>
+        <li class="nav-item d-lg-none d-block">
+            <a class="nav-link uppercase text-light" href="#">Login</a>
+        </li>
+        <li class="nav-item d-lg-none d-block">
+        <a class="nav-link uppercase text-light" href="#">Register</a>
+        </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-        <div class="input-group">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-        <button class="btn btn-outline-dark my-2 my-sm-0 border-light rounded-right" type="submit">
-            <i class="fas fa-search text-light"></i>
-        </button>
-        </div>
-        </div>
+        <form class="form-inline my-2 my-lg-0 d-none d-lg-block">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-dark my-2 my-sm-0 border-light rounded-right" type="submit">
+                        <i class="fas fa-search text-light"></i>
+                    </button>
+                </div>
+            </div>
         </form>
         </div>
     </nav>
-</div>
 </div>
