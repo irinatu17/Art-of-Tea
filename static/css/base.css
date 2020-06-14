@@ -26,9 +26,20 @@
 text-transform: uppercase;
 }
 
+html {
+    height: 100%;
+}
+body{
+background: url('/media/landing-background.jpg') no-repeat right bottom fixed;
+background-size: cover;
+}
+
 /* Navbar */
 .navbar{
 font-family: var(--sawarabi-mincho);
+background: var(--black);
+padding-bottom: 3px;
+opacity: 0.9;
 }
 .navbar-brand{
 margin-right: 0;
