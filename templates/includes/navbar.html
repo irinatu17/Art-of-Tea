@@ -1,5 +1,7 @@
-<nav class="navbar bg-dark  fixed-top d-flex justify-content-end pb-0 ">
-    <ul class="nav ">
+<!--Top navbar-->
+<div>
+<nav class="navbar bg-dark  fixed-top d-flex justify-content-end pb-0 w-100">
+    <ul class="nav">
         <li class="nav-item">
             <a class="nav-link py-0 text-light" href="#">Login</a>
         </li>
@@ -14,18 +16,27 @@
         </li>
     </ul>
 </nav>
+<!--Main navbar-->
 <div class="main-nav-sticky">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="/media/logo-white.png" alt="logo" class="logo-navbar">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-block d-lg-flex">
+        <div class="d-flex justify-content-between">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="/media/logo-white.png" alt="logo" class="logo-navbar">
+            </a>
+            
+        <button class="btn btn-large btn-outline-dark d-block d-lg-none">
+            <i class="fas fa-search text-light"></i>
+        </button>
+            
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item ml-5 mr-5 ">
+        <li class="nav-item ml-lg-5 mr-5">
             <a class="nav-link uppercase text-light" href="#">About</a>
         </li>
         <li class="nav-item mr-5">
@@ -44,7 +55,7 @@
             <a class="nav-link uppercase text-light" href="#">Events</a>
         </li>
         <li class="nav-item mr-5">
-            <a class="nav-link uppercase text-light" href="#">Contuct us</a>
+            <a class="nav-link uppercase text-light" href="#">Contuct</a>
         </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -57,6 +68,7 @@
         </div>
         </div>
         </form>
-    </div>
+        </div>
     </nav>
+</div>
 </div>

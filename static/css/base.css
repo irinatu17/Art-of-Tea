@@ -21,14 +21,21 @@
 --sawarabi-mincho: 'Sawarabi Mincho', sans-serif;
 }
 
+/* Global style settings*/
 .uppercase{
 text-transform: uppercase;
 }
 
+/* Navbar */
+.navbar{
+font-family: var(--sawarabi-mincho);
+}
+
 .main-nav-sticky {
-    padding-top: 32px;
+padding-top: 32px;
+letter-spacing: 0.1rem;
 }
 
 .logo-navbar{
-    height: 50px;
+height: 50px;
 }
