@@ -33,7 +33,6 @@ body{
 background: url('/media/landing-background.jpg') no-repeat right center fixed;
 background-size: cover;
 height: 100%;
-
 }
 
 .landing-text{
@@ -47,6 +46,7 @@ font-family: var(--marko-one);
 
 .landing-main-heading{
 text-shadow: 3px 3px 3px black;
+font-size: 3rem;
 }
 
 .landing-button{
@@ -67,8 +67,9 @@ color: var(--white);
 font-family: var(--sawarabi-mincho);
 background: var(--black);
 padding-bottom: 3px;
-opacity: 0.9;
+z-index:1;
 }
+
 .navbar-brand{
 margin-right: 0;
 }
@@ -106,4 +107,13 @@ margin-right: 1rem;
 text-align: left;
 left: 25%;
 }
+
+.landing-main-heading{
+font-size: 5.5rem;
+}
+
+.navbar{
+opacity: 0.9;
+}
+
 }
