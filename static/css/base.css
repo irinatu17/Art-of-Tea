@@ -117,7 +117,7 @@ font-family: var(--marko-one);
 /* Landing page - quote about section*/
 .quote-section{
 min-height:60vh;
-background: url('/media/quote-backgr.jpg') no-repeat center center fixed;
+background: url('/media/quote-bg-landing.jpg') no-repeat center center fixed;
 background-size: cover;
 position: relative;
 opacity: 0.9;
