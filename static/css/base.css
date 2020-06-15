@@ -26,13 +26,14 @@
 text-transform: uppercase;
 }
 
-html {
-height: 100%;
+body, html {
+  height: 100%;
 }
-body{
+
+.hero-image{
+height: 100%;
 background: url('/media/landing-background.jpg') no-repeat right center fixed;
 background-size: cover;
-height: 100%;
 }
 
 .landing-text{
@@ -58,6 +59,7 @@ font-family: var(--sawarabi-mincho);
 height: 3.5rem;
 width: 15rem;
 }
+
 .landing-button:hover{
 background-color: var(--darkgreen);
 color: var(--white);
@@ -115,6 +117,7 @@ margin-right: 1rem;
 .landing-text{
 text-align: left;
 left: 25%;
+top: 50%;
 transform: translate(-50%, -50%);
 }
 
