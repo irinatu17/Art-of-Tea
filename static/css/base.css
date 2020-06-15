@@ -153,7 +153,7 @@ margin-top: -2rem;
 background-color: var(--black);
 }
 
-.landing-button-green{
+.landing-button-green-transparent{
 background-color: transparent;
 color: var(--white);
 border: 1px solid var(--darkgreen);
@@ -161,9 +161,27 @@ font-family: var(--sawarabi-mincho);
 font-weight: 500;
 }
 
-.landing-button-green:hover{
+.landing-button-green-transparent:hover{
 color: var(--white);
 background-color: var(--darkgreen);
+}
+
+/*Landing page - Tea and teaware section*/
+.tea-and-teaware-landing-container{
+background-color: var(--white);
+}
+
+.landing-button-green{
+background-color: var(--darkgreen);
+color: var(--white);
+font-family: var(--sawarabi-mincho);
+font-weight: 500;
+}
+
+.landing-button-green:hover{
+color: var(--black);
+border: 1px solid var(--darkgreen);
+background-color: transparent;
 }
 
 /* Media query for medium devices (tablets, 768px and up)*/
