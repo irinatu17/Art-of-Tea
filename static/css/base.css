@@ -31,6 +31,9 @@ height: 100%;
 font-family: var(--open-sans);
 }
 
+.text-white{
+color: var(--white);
+}
 /* Navbar */
 .navbar{
 font-family: var(--sawarabi-mincho);
@@ -57,7 +60,7 @@ font-size: 1rem;
 
 /* Landing page - hero image section*/
 .hero-image{
-height: 100%;
+height: 100vh;
 background: url('/media/landing-background.jpg') no-repeat right center fixed;
 background-size: cover;
 }
@@ -111,6 +114,17 @@ font-size: 1.2rem;
 font-family: var(--marko-one);
 }
 
+/* Landing page - quote about section*/
+.quote-section{
+min-height:60vh;
+background: url('/media/quote-backgr.jpg') no-repeat center center fixed;
+background-size: cover;
+position: relative;
+opacity: 0.9;
+}
+
+
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
@@ -125,6 +139,11 @@ left: 20%;
 font-size: 4rem;
 }
 
+.blockquote{
+position: absolute;
+bottom: 0.5rem;
+right: 1rem;
+}
 }
 /*Media query for large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
