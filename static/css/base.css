@@ -3,7 +3,7 @@
 /* Colour and Font Variables */
 :root {
 --darkgreen: #0A5C15;
---lighgreen: #3E9D47;
+--lightgreen: #3E9D47;
 --black: #070605;
 --brown: #876A1D;
 --brown-grey: #8E7A67;
@@ -37,6 +37,12 @@ overflow-x: hidden;
 
 .text-white{
 color: var(--white);
+}
+
+.divider-green{
+background-color: var(--darkgreen);
+height: 3px;
+border-radius: 70%;
 }
 
 /* Navbar */
@@ -141,6 +147,25 @@ border: 2px solid var(--black);
 margin-top: -2rem;
 
 }
+
+/*Landing page - Tea ceremony section*/
+.tea-ceremony-landing-container{
+background-color: var(--black);
+}
+
+.landing-button-green{
+background-color: transparent;
+color: var(--white);
+border: 1px solid var(--darkgreen);
+font-family: var(--sawarabi-mincho);
+font-weight: 500;
+}
+
+.landing-button-green:hover{
+color: var(--white);
+background-color: var(--darkgreen);
+}
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
