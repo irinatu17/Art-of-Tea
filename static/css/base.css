@@ -184,6 +184,14 @@ border: 1px solid var(--darkgreen);
 background-color: transparent;
 }
 
+/*Landing page - Events section*/
+.events-container{
+min-height:60vh;
+background: url('/media/events-background-landing.jpg') no-repeat center center fixed;
+background-size: cover;
+position: relative;
+opacity: 0.9;
+}
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
