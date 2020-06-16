@@ -76,14 +76,14 @@ font-size: 1rem;
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
-background: url('/media/landing-background.jpg') no-repeat right center fixed;
+background: url('/media/landing-background.jpg') no-repeat center top fixed;
 background-size: cover;
 }
 
 .landing-text{
 text-align: center;
 position: absolute;
-top: 45%;
+top: 70%;
 transform: translateY(-50%);
 font-family: var(--marko-one);
 }
@@ -112,6 +112,10 @@ background-color: var(--black);
 color: var(--white);
 border: 1px solid var(--black);
 font-family: var(--sawarabi-mincho);
+}
+
+.sub-heading{
+font-size: 1rem;
 }
 
 .landing-button-black:hover{
@@ -269,6 +273,10 @@ left: 20%;
 font-size: 4rem;
 }
 
+.sub-heading{
+font-size: 1.25rem;
+}
+
 .blockquote{
 position: absolute;
 bottom: 0.5rem;
@@ -308,6 +316,7 @@ transform: translate(-50%, -50%);
 .landing-main-heading{
 font-size: 5.5rem;
 }
+
 
 .navbar{
 opacity: 0.9;
