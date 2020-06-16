@@ -1,0 +1,1 @@
+web: gunicorn art_of_tea.wsgi:application
