@@ -215,9 +215,42 @@ color: var(--lightblack);
 }
 
 .carousel-item-review{
-    padding: 0 10%;
+padding: 0 10%;
 }
 
+
+
+/*Footer*/
+footer{
+background-color: var(--black);
+color: var(--white);
+}
+
+/*Smooth transition on hover makes icons */
+.media-icons{
+font-size: 1.5rem;
+color: var(--white);
+margin-bottom: 5px;
+padding: 3px;
+transition-duration: 0.5s;
+-webkit-transition-duration: 0.5s;
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+}
+
+.media-icons:hover {
+transform: scale(1.3);
+-webkit-transform: scale(1.3);
+-moz-transform: scale(1.3);
+-o-transform: scale(1.3);
+}
+
+.icon-footer-container,
+.icon-footer-container:hover{
+color: var(--white);
+text-decoration: none;
+}
 
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
