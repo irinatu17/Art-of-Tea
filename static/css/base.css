@@ -185,12 +185,6 @@ background-color: transparent;
 }
 
 /*Landing page - Events section*/
-.events-container{
-min-height:50vh;
-background: url('/media/events-background-landing.jpg') no-repeat right center fixed;
-background-size: cover;
-}
-
 
 
 /* Media query for medium devices (tablets, 768px and up)*/
@@ -216,6 +210,14 @@ right: 1rem;
 .span-benifits-container{
 margin-top: -1rem;
 }
+
+.events-container{
+min-height:50vh;
+background: url('/media/events-background-landing.jpg') no-repeat right center fixed;
+background-size: cover;
+}
+
+
 }
 /*Media query for large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
