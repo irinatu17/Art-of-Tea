@@ -197,6 +197,24 @@ vertical-align: middle;
   height: 100px;
 
 }
+
+#reviews-carousel ol.carousel-indicators li{
+background-color: var(--black);
+}
+
+.chevron-black{
+color: var(--black);
+}
+
+.chevron-black:hover{
+color: var(--lightblack);
+}
+
+.carousel-item-review{
+    padding: 0 10%;
+}
+
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
@@ -228,8 +246,8 @@ background: url('/media/events-background-landing.jpg') no-repeat right center f
 background-size: cover;
 }
 
-
 }
+
 /*Media query for large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
 .logo-navbar{
