@@ -190,7 +190,13 @@ background-color: transparent;
 
 /*Landing page - Events section*/
 
+/*Landing page - reviews section*/
+.review-user-avatar{
+vertical-align: middle;
+  width: 100px;
+  height: 100px;
 
+}
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
