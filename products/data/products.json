@@ -1,0 +1,34 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123456",
+      "name": "Ceylon Op Nuwara Eliya",
+      "description": "A high grown Orange Pekoe (OP, means full leaf tea, for more info please see here) from Nuwara Eliya (up to 1900m high) in the centre of Sri Lanka. Brisk, highly aromatic with a hint of citrus which is characteristic for an excellent Ceylon tea. Ideal for the morning or as an afternoon tea.",
+      "price": 3.90,
+      "category": 2,
+      "rating": 4.9,
+      "imgage_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg",
+      "image1": "ceylon_op_nuwara_eliya.jpg",
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123457",
+      "name": "Oolong Rose Tea",
+      "description": "A light, floral oolong tea blend that has been beautifully accented with fragrant rose petals. This rose oolong tea imparts a subtle melange of sweet, floral flavors grounded by smooth, savory notes and a long finish.",
+      "price": 5.50,
+      "category": 10,
+      "rating": 4.6,
+      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg",
+      "image": "oolong_rose.jpg",
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  }
+]
