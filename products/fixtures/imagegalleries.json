@@ -1,0 +1,22 @@
+[
+  {
+    "pk": 1,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "oolong_rose",
+      "friendly_name": "Oolong Rose Tea",
+      "image": "oolong_rose.jpg",
+      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "ceylon_op_nuwara_eliya",
+      "friendly_name": "Ceylon Op Nuwara Eliya",
+      "image": "ceylon_op_nuwara_eliya.jpg",
+      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
+    }
+  }
+]
