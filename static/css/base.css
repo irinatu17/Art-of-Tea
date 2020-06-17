@@ -33,6 +33,13 @@ font-family: var(--open-sans);
 
 body{
 overflow-x: hidden;
+display: flex;
+flex-direction: column;
+}
+
+main{
+flex: 1 0 auto;
+margin-top:62.5px;
 }
 
 .text-white{
@@ -232,6 +239,7 @@ padding: 0 10%;
 footer{
 background-color: var(--black);
 color: var(--white);
+
 }
 
 /*Smooth transition on hover makes icons */
@@ -298,6 +306,10 @@ background: url('/media/landing/events-background-landing.jpg') no-repeat right 
 background-size: cover;
 }
 
+main{
+margin-top:94px;
+}
+
 }
 
 /*Media query for large devices (desktops, 992px and up)*/
@@ -320,7 +332,6 @@ transform: translate(-50%, -50%);
 .landing-main-heading{
 font-size: 5.5rem;
 }
-
 
 .navbar{
 opacity: 0.9;
