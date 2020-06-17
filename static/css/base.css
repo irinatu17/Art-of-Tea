@@ -73,6 +73,10 @@ height: 2.6rem;
 font-size: 1rem;
 }
 
+.nav-top{
+z-index: 1070;
+}
+
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
