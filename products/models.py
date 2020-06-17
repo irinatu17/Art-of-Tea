@@ -29,7 +29,9 @@ class Product(models.Model):
     image1 = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image_url1 = models.URLField(max_length=1024, null=True, blank=True)
+    image_url2 = models.URLField(max_length=1024, null=True, blank=True)
+    image_url3 = models.URLField(max_length=1024, null=True, blank=True)
     in_stock = models.BooleanField(default=False)
 
     def __str__(self):

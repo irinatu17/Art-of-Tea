@@ -9,7 +9,7 @@
       "price": 3.90,
       "category": 2,
       "rating": 4.9,
-      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg",
+      "image_url1": "https://i.ibb.co/zrWYMYd/black-tea.jpg",
       "image1": "ceylon_op_nuwara_eliya.jpg",
       "in_stock": "True",
       "has_weight": "True"
@@ -25,7 +25,7 @@
       "price": 5.50,
       "category": 10,
       "rating": 4.6,
-      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg",
+      "image_url1": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg",
       "image1": "oolong_rose.jpg",
       "in_stock": "True",
       "has_weight": "True"
