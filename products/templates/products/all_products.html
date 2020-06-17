@@ -4,11 +4,44 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-12">
-                {{ products }}
+            <div class="col-12 text-center">
+                <h1 class="uppercase landing-about-heading">Products</h1>
+                <hr class="divider-green w-25 mt-3">
             </div>
+            <div class="col-12">
+                <ul class="nav justify-content-center uppercase">
+                    <li class="nav-item dropdown border border-dark mr-3">
+                        <a class="nav-link dropdown-toggle text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-leaf mr-3 icon-green"></i>Tea
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">one category</a>
+                            <a class="dropdown-item" href="#">Another category</a>
+                        </div>
+                    </li>
+                    <li class="nav-item border border-dark">
+                        <a class="nav-link text-black" href="#"> <i class="fas fa-coffee mr-3 icon-green"></i> Teaware</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row ">
+            {% for product in products %}
+            <div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4">
+                <a href="#">
+                    <img class="card-img-top img-fluid" src="{{ product.image_gallery.image_url }}" alt="{{ product.name }}">
+                </a>
+                <p class="text-center">{{ product.name }}</p>
+                <p class="text-center">{{ product.category.friendly_name }}</p>
+                <p class="text-center"><i class="fas fa-euro-sign mr-3"></i>{{ product.price }}</p>
+                <div class="mb-4">
+                    <button type="button" class="btn landing-button-green px-3">Add to Cart</button>
+                    <button type="button" class="btn landing-button-black px-3">View Details</button>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
