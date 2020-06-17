@@ -17,14 +17,15 @@ class Product(models.Model):
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
-    description = models.TextField(max_length=500)
+    description = models.TextField(max_length=800)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2,
                                  null=True, blank=True)
-    weight = models.IntegerField(null=True, blank=True)
+    has_weight = models.BooleanField(default=False, null=True, blank=True)
     image1 = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     in_stock = models.BooleanField(default=False)
 
     def __str__(self):

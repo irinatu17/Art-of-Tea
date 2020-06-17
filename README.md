@@ -223,14 +223,15 @@ The User model used in this project is provided by Django as a part of defaults 
 --- | --- | --- | --- 
  Sku | sku | CharField | max_length=254
  Name | name | CharField | max_length=254 
- Description | description | TextField | max_length=500 
+ Description | description | TextField | max_length=800 
  Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
  Price | price | DecimalField |max_digits=6, decimal_places=2 
  Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
- Weight | weight | IntegerField | null=True, blank=True
+ Weight | has_weight | BooleanField | null=True, blank=True, default=False
  Image1 | image1| ImageField | null=True, blank=True
  Image2 | image2| ImageField | null=True, blank=True
  Image3 | image3| ImageField | null=True, blank=True
+ Image Url | image_url | URLField | max_length=1024, null=True, blank=True
  Availability | in_stock | Boolean | default=False
  
 #### Tea Category
