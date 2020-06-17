@@ -80,7 +80,7 @@ z-index: 1070;
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
-background: url('/media/landing-background.jpg') no-repeat center top fixed;
+background: url('/media/landing/landing-background.jpg') no-repeat center top fixed;
 background-size: cover;
 }
 
@@ -140,7 +140,7 @@ font-family: var(--marko-one);
 /* Landing page - quote section*/
 .quote-section{
 min-height:60vh;
-background: url('/media/quote-bg-landing.jpg') no-repeat center center fixed;
+background: url('/media/landing/quote-bg-landing.jpg') no-repeat center center fixed;
 background-size: cover;
 position: relative;
 opacity: 0.9;
@@ -294,7 +294,7 @@ margin-top: -1rem;
 
 .events-container{
 min-height:50vh;
-background: url('/media/events-background-landing.jpg') no-repeat right center fixed;
+background: url('/media/landing/events-background-landing.jpg') no-repeat right center fixed;
 background-size: cover;
 }
 
