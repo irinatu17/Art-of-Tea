@@ -44,9 +44,9 @@ color: var(--black);
 }
 
 .divider-green{
-background-color: var(--darkgreen);
-height: 3px;
-border-radius: 70%;
+background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
+height: 4px;
+border-radius: 100%;
 }
 
 /* Navbar */
@@ -266,7 +266,7 @@ padding-top: 32px;
 }
 
 .landing-text{
-left: 20%;
+left: 15%;
 }
 
 .landing-main-heading{
