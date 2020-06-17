@@ -67,8 +67,16 @@
     "pk": 9,
     "model": "products.category",
     "fields": {
-      "name": "shirts",
+      "name": "wellness_tea",
       "friendly_name": "Wellness Tea"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.category",
+    "fields": {
+      "name": "oolong_tea",
+      "friendly_name": "Oolong Tea"
     }
   }
 ]
