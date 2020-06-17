@@ -271,6 +271,10 @@ text-decoration: none;
 .icon-green{
 color: var(--lightgreen);
 }
+
+.icon-large{
+font-size: 2.5rem;
+}
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {

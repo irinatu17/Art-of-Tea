@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="uppercase landing-about-heading">{{ product.name }}</h1>
+                <i class="fab fa-pagelines icon-green icon-large"></i>
+            </div>
+        </div>
+        <div class="row mb-4 mt-4">
+            <div class="col-sm-12 col-md-6">
+                <a href="#">
+                    <img class="card-img-top img-fluid" src="{{ product.image_gallery.image_url }}" alt="{{ product.name }}">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <p><i class="fas fa-tag"></i>{{ product.category.friendly_name }}</p>
+                <p>{{ product.description }}</p>
+                <p>{{ product.rating }}</p>
+                <p><i class="fas fa-euro-sign mr-3"></i>{{ product.price }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
