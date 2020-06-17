@@ -25,7 +25,7 @@
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'landing' %}">
                 <img src="/media/logo-white.png" alt="logo" class="logo">
             </a>
         <div class="row">  
@@ -51,7 +51,7 @@
             Products
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item uppercase" href="#">Tea</a>
+            <a class="dropdown-item uppercase" href="{% url 'products' %}">Tea</a>
             <a class="dropdown-item uppercase" href="#">Teaware</a>
             </div>
         </li>
