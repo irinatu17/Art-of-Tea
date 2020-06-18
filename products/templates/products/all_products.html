@@ -11,6 +11,11 @@
                 <hr class="divider-green w-25 mt-3">
             </div>
             <div class="col-12">
+                <p class="text-center">
+                   Your search for {% if search_word %}  <strong>"{{ search_word }}"</strong>{% endif %} produced {{ products|length }} search result(s) 
+                </p>
+            </div>
+            <div class="col-12">
                 <ul class="nav justify-content-center uppercase">
                     <li class="nav-item dropdown border border-dark mr-3">
                         <a class="nav-link dropdown-toggle text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
