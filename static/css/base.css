@@ -275,6 +275,19 @@ color: var(--lightgreen);
 .icon-large{
 font-size: 2.5rem;
 }
+
+
+/*Products app*/
+.category-main-nav{
+color: var(--brown-grey);
+font-weight: 500;
+}
+.category-main-nav:hover,
+.category-main-nav:active,
+.category-main-nav:focus{
+color: var(--black);
+}
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
