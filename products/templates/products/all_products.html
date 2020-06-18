@@ -18,10 +18,14 @@
             <div class="col-12">
                 <ul class="nav justify-content-center uppercase">
                     <li class="nav-item border border-dark mr-3">
-                        <a class="nav-link category-main-nav" href="#"> <i class="fas fa-leaf mr-3 icon-green"></i> Tea</a>
+                        <a class="nav-link category-main-nav" href="{% url 'products' %}?category=black_tea,green_tea,white_tea,herbal_tea,matcha,pu_erh_tea,rooibos_tea,wellness_tea,oolong_tea"> 
+                            <i class="fas fa-leaf mr-3 icon-green"></i> Tea
+                        </a>
                     </li>
                     <li class="nav-item border border-dark">
-                        <a class="nav-link category-main-nav" href="#"> <i class="fas fa-coffee mr-3 icon-green"></i> Teaware</a>
+                        <a class="nav-link category-main-nav" href="{% url 'products' %}?category=teaware"> 
+                            <i class="fas fa-coffee mr-3 icon-green"></i> Teaware
+                        </a>
                     </li>
                 </ul>
             </div>

@@ -9,10 +9,20 @@ def all_products(request):
 
     products = Product.objects.all()
 
-    # empty query when tha page is loaded
+    # empty query and categories when tha page is loaded
     query = None
+    categories = None
 
     if request.GET:
+        # allow to show thr specific categories of products
+        if 'category' in request.GET:
+            # to split categories into list ar the commas
+            categories = request.GET['category'].split(',')
+            # the __in syntax allow to search for the name field
+            # in categories model
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         if 'serach_term_input' in request.GET:
             query = request.GET['serach_term_input']
             # if the query is blank, the error message will be displayed
@@ -28,6 +38,7 @@ def all_products(request):
 
     context = {
         'products': products,
+        'selected_categories': categories,
         'search_word': query,
     }
     return render(request, 'products/all_products.html', context)
