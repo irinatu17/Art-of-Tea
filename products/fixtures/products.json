@@ -28,5 +28,126 @@
       "in_stock": "True",
       "has_weight": "True"
     }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123459",
+      "name": "White Peach Tea",
+      "description": "The essence of fresh-picked peaches infuses the senses in this organic white tea infusion. Steeps a light and refreshing cup perfect for a mid-afternoon lift.",
+      "price": 4.00,
+      "category": 4,
+      "rating": 4.1,
+      "image_gallery": 4,
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123460",
+      "name": "Naked Pu-erh Tea",
+      "description": "Naked Pu-erh stems from Yunnan, China and delivers a deep red infusion with a sweet woodsy aroma and mild earthy finish. This organic Pu-erh tea has slight floral notes and a lingering hint of honeysuckle with each sip. This Yunnan Pu-erh tea is cooked and has been aged for approximately 4-6 years.",
+      "price": 2.20,
+      "category": 7,
+      "rating": 5.0,
+      "image_gallery": 5,
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123461",
+      "name": "Fresh Green Tea",
+      "description": "A bright blend of premium green tea leaves and lemongrass, Fresh Green is a stunning organic tea blend. This citrus tea also has a delicate balance of grassy flavors in this loose leaf green tea blend.",
+      "price": 3.10,
+      "category": 3,
+      "rating": 4.8,
+      "image_gallery": 6,
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123462",
+      "name": "Sleep Tea",
+      "description": "A calming sleepytime tea with smooth and minty flavor notes. Steep this tea for sleep either to accentuate a midday nap or head to your evening slumber.",
+      "price": 3.10,
+      "category": 9,
+      "rating": 4.5,
+      "image_gallery": 7,
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123463",
+      "name": "Classic Rooibos Tea",
+      "description": "Pure high quality 'long cut' Rooibos from West South Africa. Mild-earthy, soft-fruity character.No caffeine which makes it suitable for children, expecting mothers and/or as an evening/night drink.",
+      "price": 2.00,
+      "category": 8,
+      "rating": 4.5,
+      "image_gallery": 8,
+      "in_stock": "True",
+      "has_weight": "True"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123464",
+      "name": "Matcha Tea",
+      "description": "Organic grade A matcha that provides a rich, complex taste and a boost of calm energy for the day. This Chinese matcha is made from fresh leaves and stone-ground into a powder for a frothy, creamy, and smooth finish when prepared. Delicious any time of day!",
+      "price": 3.90,
+      "category": 6,
+      "rating": 4.2,
+      "image_gallery": 9,
+      "in_stock": "True",
+      "has_weight": "True"
+    }   
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123465",
+      "name": "Chamomile Tea",
+      "description": "Our Chamomile elicits sweet, calming flavor notes. This tisane is round and soothing with each and every sip, perfect for any time of day.",
+      "price": 2.90,
+      "category": 5,
+      "rating": 4.8,
+      "image_gallery": 10,
+      "in_stock": "True",
+      "has_weight": "True"
+    }   
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123466",
+      "name": "Iron Tea Pot",
+      "description": "This hand-carved original cast iron teapot in the Northern Japan-style combines timeless craftsmanship with modern technology to ensure a long-lasting quality teapot. A beautiful insignia on the lower part of the teapot distinguishes the teapot's authenticity and superior quality.",
+      "price": 25.00,
+      "category": 1,
+      "rating": 4.8,
+      "image_gallery": 11,
+      "in_stock": "True",
+      "has_weight": "False"
+    }   
   }
+
 ]

@@ -18,5 +18,85 @@
       "image": "ceylon_op_nuwara_eliya.jpg",
       "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
     }
+  },
+  {
+    "pk": 4,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "white_peach_tea",
+      "friendly_name": "White Peach Tea",
+      "image": "white_peach.jpg",
+      "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "naked_pu-erh_tea",
+      "friendly_name": "Naked Pu-erh Tea",
+      "image": "naked_pu-erh_tea.jpg",
+      "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "fresh_green_tea",
+      "friendly_name": "Fresh Green Tea",
+      "image": "fresh_green_tea.jpg",
+      "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "sleep_tea",
+      "friendly_name": "Sleep Tea",
+      "image": "sleep_tea.jpg",
+      "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "classic-rooibos-tea",
+      "friendly_name": "Classic Rooibos Tea",
+      "image": "classic-rooibos-tea.jpg",
+      "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "matcha",
+      "friendly_name": "Matcha Tea",
+      "image": "matcha.jpg",
+      "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "chamomile_tea",
+      "friendly_name": "Chamomile Tea",
+      "image": "chamomile.jpg",
+      "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "iron_tea_pot",
+      "friendly_name": "Iron Tea Pot",
+      "image": "iron_tea_pot.jpg",
+      "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
+    }
   }
 ]

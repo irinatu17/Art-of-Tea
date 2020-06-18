@@ -43,8 +43,8 @@
     "pk": 6,
     "model": "products.category",
     "fields": {
-      "name": "mate",
-      "friendly_name": "Mate"
+      "name": "matcha",
+      "friendly_name": "Matcha"
     }
   },
   {
