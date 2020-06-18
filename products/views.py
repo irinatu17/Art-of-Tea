@@ -1,14 +1,34 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Product
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
+from .models import Product, Category
 
 
 def all_products(request):
-    """ A view to display all of the products"""
+    """ A view to display all of the products with search queries"""
 
     products = Product.objects.all()
 
+    # empty query when tha page is loaded
+    query = None
+
+    if request.GET:
+        if 'serach_term_input' in request.GET:
+            query = request.GET['serach_term_input']
+            # if the query is blank, the error message will be displayed
+            if not query:
+                messages.error(request,
+                               "You didn't enter any search key words!\
+                                    Please, try again.")
+                return redirect(reverse('products'))
+            # if query is not blank -> ability to search by name OR description
+            search_queries = Q(name__icontains=query) | Q(description__icontains=query)
+            # pass quieries to the filter method to actually filter products
+            products = products.filter(search_queries)
+
     context = {
         'products': products,
+        'search_word': query,
     }
     return render(request, 'products/all_products.html', context)
 
