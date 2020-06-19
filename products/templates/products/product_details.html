@@ -4,6 +4,25 @@
 {% endblock %}
 
 {% block content %}
+    <!--Delivery info-->
+    <div class="container-fluid delivery-info">
+        <div class="row">
+            <div class="col-12 text-center">
+            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€ 70!</strong></p>
+            </div>
+        </div>
+    </div>
+    <!--Breadcrumbs-->    
+    <div class="container-fluid breadcrumbs-container">
+        <div class="row">
+            <div class="col-12 pt-3">
+                <a href="{% url 'landing' %}" class="breadcrumbs-text pl-4">Home</a> >
+                <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a> >
+                <a href="{% url 'product_details' product.id %}" class="breadcrumbs-text">{{ product.name }}</a>
+            </div>
+        </div>
+    </div>
+    <!--Main content-->
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">

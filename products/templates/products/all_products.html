@@ -4,14 +4,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid delivery-info">
-    <div class="row">
-        <div class="col-12 text-center">
-        <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€ 70!</strong></p>
+    <!--Delivery info-->
+    <div class="container-fluid delivery-info">
+        <div class="row">
+            <div class="col-12 text-center">
+            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€ 70!</strong></p>
+            </div>
         </div>
     </div>
-</div>
-    <div class="container mt-5">
+    <!--Breadcrumbs-->    
+    <div class="container-fluid breadcrumbs-container">
+        <div class="row">
+            <div class="col-12 pt-3">
+                <a href="{% url 'landing' %}" class="breadcrumbs-text pl-4">Home</a> >
+                <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a>
+            </div>
+        </div>
+    </div>
+    <!--Main content-->
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="uppercase landing-about-heading">Products</h1>

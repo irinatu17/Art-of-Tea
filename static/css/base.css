@@ -35,6 +35,7 @@ body{
 overflow-x: hidden;
 display: flex;
 flex-direction: column;
+color: var(--black);
 }
 
 main{
@@ -171,7 +172,6 @@ font-size: 1rem;
 .span-benifits{
 letter-spacing: 0.3rem;
 background: var(--white);
-color: var(--black);
 font-family: var(--sawarabi-mincho);
 border: 2px solid var(--black);
 }
@@ -222,8 +222,8 @@ background-color: transparent;
 /*Landing page - reviews section*/
 .review-user-avatar{
 vertical-align: middle;
-  width: 100px;
-  height: 100px;
+width: 100px;
+height: 100px;
 
 }
 
@@ -300,10 +300,16 @@ color: var(--black);
 
 .delivery-info{
 background-color: var(--lightgreen);
-color: var(--black);
-
 }
 
+.breadcrumbs-text{
+color: var(--lightblack);
+}
+
+.breadcrumbs-text:hover,
+.breadcrumbs-text:active{
+color: var(--black);
+}
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
