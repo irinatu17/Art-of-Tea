@@ -346,6 +346,9 @@ background: url('/media/landing/events-background-landing.jpg') no-repeat right 
 background-size: cover;
 }
 
+.dropdown-tea-columns{
+column-count: 2;
+}
 main{
 margin-top:94px;
 }

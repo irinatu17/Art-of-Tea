@@ -13,14 +13,18 @@
         </div>
     </div>
     <!--Breadcrumbs-->    
-    <div class="container-fluid breadcrumbs-container">
+    <div class="container-fluid breadcrumbs-container pl-3">
         <div class="row">
             <div class="col-12 pt-3">
-                <a href="{% url 'landing' %}" class="breadcrumbs-text pl-4">Home</a> >
-                <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a>
+                <a href="{% url 'landing' %}" class="breadcrumbs-text pl-3">Home</a> >
+                <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a> 
+                {% for category in selected_categories %}
+                    > <a href="{% url 'products' %}?category={{ category.name }}" class="breadcrumbs-text">{{ category.friendly_name }}</a>
+                {% endfor %}
             </div>
         </div>
     </div>
+     <hr>
     <!--Main content-->
     <div class="container mt-4">
         <div class="row">
@@ -35,11 +39,25 @@
             </div>-->
             <div class="col-12">
                 <ul class="nav justify-content-center uppercase">
-                    <li class="nav-item border border-dark mr-3">
-                        <a class="nav-link category-main-nav" href="{% url 'products' %}?category=black_tea,green_tea,white_tea,herbal_tea,matcha,pu_erh_tea,rooibos_tea,wellness_tea,oolong_tea"> 
+
+                    <li class="nav-item border border-dark mr-3 dropdown">
+                        <a class="nav-link category-main-nav" id="dropdownMenuButton" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false" href="#"> 
                             <i class="fas fa-leaf mr-3 icon-green"></i> Tea
                         </a>
+                        <ul class="dropdown-menu dropdown-tea-columns" aria-labelledby="dropdownMenuButton">
+                            <li><a href="{% url 'products' %}?category=black_tea" class="dropdown-item">Black Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=green_tea" class="dropdown-item">Green Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=white_tea" class="dropdown-item">White Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=herbal_tea" class="dropdown-item">Herbal Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=wellness_tea" class="dropdown-item">Wellness Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=matcha" class="dropdown-item">Matcha</a></li>
+                            <li><a href="{% url 'products' %}?category=pu_erh_tea" class="dropdown-item">Pu Erh Tea</a></li>
+                            <li><a href="{% url 'products' %}?category=oolong_tea" class="dropdown-item">Oolong tea</a></li>
+                            <li><a href="{% url 'products' %}?category=rooibos_tea" class="dropdown-item">Rooibos Tea</a></li>
+                        </ul>
                     </li>
+                    
                     <li class="nav-item border border-dark">
                         <a class="nav-link category-main-nav" href="{% url 'products' %}?category=teaware"> 
                             <i class="fas fa-coffee mr-3 icon-green"></i> Teaware
