@@ -298,6 +298,12 @@ font-weight: 500;
 color: var(--black);
 }
 
+.delivery-info{
+background-color: var(--lightgreen);
+color: var(--black);
+
+}
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
