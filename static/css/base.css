@@ -84,6 +84,16 @@ font-size: 1rem;
 z-index: 1070;
 }
 
+#search-form-container{
+position: absolute;
+left: 0;
+width: 100vw;
+margin: 0.5rem;
+}
+
+.btn-black{
+background-color: var(--black);
+}
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;

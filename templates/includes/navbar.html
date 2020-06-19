@@ -25,58 +25,83 @@
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!--Logo-->
             <a class="navbar-brand" href="{% url 'landing' %}">
                 <img src="/media/logo-white.png" alt="logo" class="logo">
-            </a>
-        <div class="row">  
-        <button class="btn btn-large  d-block d-lg-none mr-md-3">
-            <i class="fas fa-search text-white"></i>
-        </button>
-        <button class="btn btn-large d-block d-md-none">
-            <i class="fas fa-shopping-cart text-white"></i>
-        </button> 
-        </div> 
+            </a> 
+            <!--Search button-->
+            <div class="d-flex">
+                <button class="btn btn-large  d-block d-lg-none mr-md-3" id="search-button">
+                    <i class="fas fa-search text-white"></i>
+                </button>
+                
+                <button class="btn btn-large d-block d-md-none">
+                    <i class="fas fa-shopping-cart text-white"></i>
+                </button> 
+            </div>
+                <!--<form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
+                                <i class="fas fa-search text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>-->
+        </div>
+        <div class="px-3" id="search-form-container">
+            <form  method="GET" action="{% url 'products' %}">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-black rounded-right" type="submit">
+                                <i class="fas fa-search text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item ml-lg-5 mr-5">
-                <a class="nav-link uppercase text-white" href="#">About</a>
-            </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-lg-5 mr-5">
+                    <a class="nav-link uppercase text-white" href="#">About</a>
+                </li>
 
-            <li class="nav-item mr-5">
-                <a class="nav-link uppercase text-white" href="#">Services</a>
-            </li>
-            
-            <li class="nav-item mr-5">
-                <a class="nav-link uppercase text-white" href="{% url 'products' %}">Products</a>
-            </li>
-            <li class="nav-item mr-5">
-                <a class="nav-link uppercase text-white" href="#">Events</a>
-            </li>
+                <li class="nav-item mr-5">
+                    <a class="nav-link uppercase text-white" href="#">Services</a>
+                </li>
+                
+                <li class="nav-item mr-5">
+                    <a class="nav-link uppercase text-white" href="{% url 'products' %}">Products</a>
+                </li>
+                <li class="nav-item mr-5">
+                    <a class="nav-link uppercase text-white" href="#">Events</a>
+                </li>
 
-            <li class="nav-item mr-5">
-                <a class="nav-link uppercase text-white" href="#">Contact</a>
-            </li>
-            <div class="dropdown-divider"></div>
+                <li class="nav-item mr-5">
+                    <a class="nav-link uppercase text-white" href="#">Contact</a>
+                </li>
+                <div class="dropdown-divider"></div>
 
-            <li class="nav-item d-lg-none d-block">
-                <a class="nav-link uppercase text-white" href="#">Login</a>
-            </li>
+                <li class="nav-item d-lg-none d-block">
+                    <a class="nav-link uppercase text-white" href="#">Login</a>
+                </li>
 
-            <li class="nav-item d-lg-none d-block">
-                <a class="nav-link uppercase text-white" href="#">Register</a>
-            </li>
-        </ul>
-        <form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
-            <div class="input-group">
-                <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
-                        <i class="fas fa-search text-white"></i>
-                    </button>
+                <li class="nav-item d-lg-none d-block">
+                    <a class="nav-link uppercase text-white" href="#">Register</a>
+                </li>
+            </ul>
+            <form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
+                            <i class="fas fa-search text-white"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         </div>
     </nav>
 </div>
