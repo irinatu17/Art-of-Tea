@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'landing',
     'products',
+    'about',
 ]
 
 MIDDLEWARE = [
