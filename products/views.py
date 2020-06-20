@@ -32,7 +32,8 @@ def all_products(request):
                                     Please, try again.")
                 return redirect(reverse('products'))
             # if query is not blank -> ability to search by name OR description
-            search_queries = Q(name__icontains=query) | Q(description__icontains=query)
+            search_queries = Q(name__icontains=query) | \
+                Q(description__icontains=query)
             # pass quieries to the filter method to actually filter products
             products = products.filter(search_queries)
 
