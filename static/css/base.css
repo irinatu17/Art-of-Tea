@@ -54,10 +54,15 @@ color: var(--black);
 .text-salmon{
 color: var(--red-salmon);
 }
+
 .divider-green{
 background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
 height: 4px;
 border-radius: 100%;
+}
+
+.asteriskField {
+    display: none;
 }
 
 /* Navbar */

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block content %}
 
 <div class="container mt-5 mb-5">
@@ -12,7 +13,11 @@
     </div>
     <div class="row mt-5">
         <div class="col-12 col-lg-6">
-            form here
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {{ contact_form|crispy }}
+                <button type="submit" class="btn btn-dark uppercase">Send</button>
+            </form>
         </div>
         <div class="col-12 col-lg-6 d-flex justify-content-center">
             <div class="text-left">
