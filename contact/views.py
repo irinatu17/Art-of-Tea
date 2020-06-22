@@ -1,8 +1,8 @@
 import os
 
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail
-from django.contrib import messages
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from .forms import ContactForm
 
 
@@ -18,12 +18,12 @@ def contact(request):
             full_name = contact_form.cleaned_data['full_name']
             user_email = contact_form.cleaned_data['email']
             message = contact_form.cleaned_data['message']
-            send_mail(full_name, message, user_email, [
+            try:
+                send_mail(full_name, message, user_email, [
                        os.environ.get("EMAIL_HOST_USER")], fail_silently=False)
-            messages.success(
-                request, "Thank you! Your message has been sent successfully,\
-                     we will get back to you soon.")
-            return redirect('landing')
+                return redirect('contact_thankyou')
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')        
     else:
         contact_form = ContactForm()
 
@@ -32,3 +32,11 @@ def contact(request):
     }
 
     return render(request, 'contact/contact.html', context)
+
+
+def contact_thankyou(request):
+    """
+    A view to return contact_thankyou page in order \
+        to inform user that the message was succseddfully sent
+    """
+    return render(request, 'contact/contact_thankyou.html')
