@@ -332,9 +332,9 @@ height: 30vh;
 
 /*Events page*/
 .events-container{
-background: url('/media/about/teapot-with-two-white-tea-cups.jpg') no-repeat center center fixed;
+background: url('/media/about/teapot-with-two-white-tea-cups.jpg') no-repeat center top fixed;
 background-size: cover;
-opacity: 0.9;
+
 }
 
 /* Media query for medium devices (tablets, 768px and up)*/
@@ -367,7 +367,7 @@ font-size: 1.25rem;
 margin-top: -1rem;
 }
 
-.events-container{
+.events-container-landing{
 min-height:50vh;
 background: url('/media/landing/events-background-landing.jpg') no-repeat right center fixed;
 background-size: cover;
