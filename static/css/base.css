@@ -55,6 +55,9 @@ color: var(--black);
 color: var(--red-salmon);
 }
 
+.btn-salmon{
+background-color: var(--red-salmon);
+}
 .divider-green{
 background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
 height: 4px;
@@ -62,7 +65,7 @@ border-radius: 100%;
 }
 
 .asteriskField {
-    display: none;
+display: none;
 }
 
 /* Navbar */
@@ -317,6 +320,13 @@ color: var(--lightblack);
 .breadcrumbs-text:hover,
 .breadcrumbs-text:active{
 color: var(--black);
+}
+
+/*Contact page*/
+
+#map{
+min-height:360px;
+height: 30vh;
 }
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
