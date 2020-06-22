@@ -325,9 +325,11 @@ color: var(--black);
 /*Contact page*/
 
 #map{
-min-height:360px;
+min-height:300px;
 height: 30vh;
 }
+
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {

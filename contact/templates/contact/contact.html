@@ -16,7 +16,7 @@
             <form method="POST" action="{% url 'contact' %}">
                 {% csrf_token %}
                 {{ contact_form|crispy }}
-                <div class="text-center mb-4">
+                <div class="text-center mb-4 mt-4">
                     <button type="submit" class="btn landing-button-green uppercase w-50">Send</button>
                 </div>
             </form>
