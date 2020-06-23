@@ -335,6 +335,7 @@ height: 30vh;
 }
 
 
+
 /*Events page*/
 .events-container{
 background: url('/media/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
@@ -356,6 +357,11 @@ background-color: var(--lightgrey);
 border-radius: 0.5rem;
 box-shadow: 1px 1px 3px;
 
+}
+
+#map2{
+min-height:300px;
+height: 30vh;
 }
 
 /*Media query for small devices (360px and up)*/
