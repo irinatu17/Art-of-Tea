@@ -358,6 +358,15 @@ box-shadow: 1px 1px 3px;
 
 }
 
+/*Media query for small devices (360px and up)*/
+@media (min-width: 360px) {
+.events-text-block{
+background-color: transparent;
+border-radius: 0;
+box-shadow: none;
+
+}
+}
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
