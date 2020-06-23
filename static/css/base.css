@@ -337,9 +337,10 @@ height: 30vh;
 
 /*Events page*/
 .events-container{
-background: url('/media/about/teapot-with-two-white-tea-cups.jpg') no-repeat center center fixed;
+background: url('/media/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
 background-size: cover;
-height: 75vh;
+height: 80vh;
+opacity: 0.9;
 }
 
 .heading-events{
@@ -347,12 +348,11 @@ font-size: 1.8rem;
 }
 
 .events-paragraph{
-font-size: 0.9rem;
+font-size: 1rem;
 }
 
 .events-text-block{
 background-color: var(--lightgrey);
-opacity: 0.9;
 border-radius: 0.5rem;
 box-shadow: 1px 1px 3px;
 
