@@ -342,6 +342,21 @@ background-size: cover;
 height: 75vh;
 }
 
+.heading-events{
+font-size: 1.8rem;
+}
+
+.events-paragraph{
+font-size: 0.9rem;
+}
+
+.events-text-block{
+background-color: var(--lightgrey);
+opacity: 0.9;
+border-radius: 0.5rem;
+box-shadow: 1px 1px 3px;
+
+}
 
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
@@ -387,12 +402,13 @@ main{
 margin-top:94px;
 }
 
-.events-text-block{
-background-color: var(--lightgrey);
-opacity: 0.9;
-border-radius: 0.5rem;
-box-shadow: 1px 1px 3px;
+.events-paragraph{
+font-size: 1.2rem;
+line-height: 1.7rem;
+}
 
+.heading-events{
+font-size: 2.3rem;
 }
 
 }
