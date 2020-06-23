@@ -23,7 +23,7 @@ def contact(request):
                        os.environ.get("EMAIL_HOST_USER")], fail_silently=False)
                 return redirect('contact_thankyou')
             except BadHeaderError:
-                return HttpResponse('Invalid header found.')        
+                return HttpResponse('Invalid header found.')
     else:
         contact_form = ContactForm()
 

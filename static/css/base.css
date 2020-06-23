@@ -68,6 +68,57 @@ border-radius: 100%;
 display: none;
 }
 
+/*Headings*/
+.main-heading{
+font-family: var(--marko-one);
+}
+
+
+.sub-heading{
+font-size: 1rem;
+}
+
+/*Buttons*/
+
+.button-black{
+background-color: var(--black);
+color: var(--white);
+border: 1px solid var(--black);
+font-family: var(--sawarabi-mincho);
+}
+
+.button-black:hover{
+background-color: var(--white);
+color: var(--black);
+}
+
+.button-green{
+background-color: var(--darkgreen);
+color: var(--white);
+font-family: var(--sawarabi-mincho);
+font-weight: 500;
+}
+
+.button-green:hover{
+color: var(--black);
+border: 1px solid var(--darkgreen);
+background-color: transparent;
+}
+
+.button-green-transparent{
+background-color: transparent;
+color: var(--white);
+border: 1px solid var(--darkgreen);
+font-family: var(--sawarabi-mincho);
+font-weight: 500;
+}
+
+.button-green-transparent:hover{
+color: var(--white);
+background-color: var(--darkgreen);
+}
+
+
 /* Navbar */
 .navbar{
 font-family: var(--sawarabi-mincho);
@@ -103,9 +154,6 @@ width: 100vw;
 margin: 0.5rem;
 }
 
-.btn-black{
-background-color: var(--black);
-}
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
@@ -140,21 +188,6 @@ background-color: var(--darkgreen);
 color: var(--white);
 }
 
-.landing-button-black{
-background-color: var(--black);
-color: var(--white);
-border: 1px solid var(--black);
-font-family: var(--sawarabi-mincho);
-}
-
-.sub-heading{
-font-size: 1rem;
-}
-
-.landing-button-black:hover{
-background-color: var(--white);
-color: var(--black);
-}
 
 /* Landing page - main about section*/
 .landing-paragraph{
@@ -162,9 +195,6 @@ font-family: var(--open-sans);
 font-size: 1.2rem;
 }
 
-.landing-about-heading{
-font-family: var(--marko-one);
-}
 
 /* Landing page - quote section*/
 .quote-section{
@@ -197,35 +227,10 @@ margin-top: -2rem;
 background-color: var(--black);
 }
 
-.landing-button-green-transparent{
-background-color: transparent;
-color: var(--white);
-border: 1px solid var(--darkgreen);
-font-family: var(--sawarabi-mincho);
-font-weight: 500;
-}
-
-.landing-button-green-transparent:hover{
-color: var(--white);
-background-color: var(--darkgreen);
-}
 
 /*Landing page - Tea and teaware section*/
 .tea-and-teaware-landing-container{
 background-color: var(--white);
-}
-
-.landing-button-green{
-background-color: var(--darkgreen);
-color: var(--white);
-font-family: var(--sawarabi-mincho);
-font-weight: 500;
-}
-
-.landing-button-green:hover{
-color: var(--black);
-border: 1px solid var(--darkgreen);
-background-color: transparent;
 }
 
 /*Landing page - Events section*/
