@@ -25,7 +25,7 @@ $(document).ready(function() {
         const marker = new google.maps.Marker({
             position: artOfTea,
             map: map,
-            title: 'Uluru (Ayers Rock)'
+            title: 'Art of Tea'
         });
 
         marker.addListener('click', function() {
