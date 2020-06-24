@@ -92,6 +92,18 @@ background-color: var(--white);
 color: var(--black);
 }
 
+.button-black-outline{
+background-color: var(--white);
+color: var(--black);
+border: 1px solid var(--black);
+font-family: var(--sawarabi-mincho);
+}
+
+.button-black-outline:hover{
+background-color: var(--black);
+color: var(--white);
+}
+
 .button-green{
 background-color: var(--darkgreen);
 color: var(--white);
