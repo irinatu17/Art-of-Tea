@@ -43,17 +43,17 @@
 <div class="main-nav-sticky fixed-top">
     <nav class="navbar p-1 navbar-expand-lg  navbar-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+            <button class="navbar-toggler px-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--Logo-->
-            <a class="navbar-brand" href="{% url 'landing' %}">
+            <a class="navbar-brand ml-3" href="{% url 'landing' %}">
                 <img src="/media/logo-white.png" alt="logo" class="logo">
             </a> 
             <!--Search button-->
             <div class="d-flex">
-                <button class="btn btn-large p-2 d-block d-lg-none mr-md-3" id="search-button">
+                <button class="btn btn-large px-1 d-block d-lg-none mr-md-3" id="search-button">
                 <div class="text-center text-white">
                         <div> <i class="fas fa-search"></i></div>
                         <small>Search</small>
@@ -105,9 +105,11 @@
                 </li>
                 <div class="dropdown-divider d-md-none d-block"></div>
                 {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="#">Admin Management</a>
                 </li>
+                {% endif %}
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="#">My profile</a>
                 </li>
