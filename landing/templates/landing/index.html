@@ -10,8 +10,8 @@
         </h1>
         <h5 class = "text-white mt-3 sub-heading mb-5">Explore the amazing world of tea with us</h5>
         <div class = "mt-5">
-            <button type="button" class="btn rounded-0 mr-lg-3 landing-button uppercase">Book tea ceremony</button>
-            <button type="button" class="btn  rounded-0 mt-2 mt-md-0 landing-button uppercase">Buy tea or teaware</button>
+            <a  href="#" class="btn rounded-0 pt-3  mr-lg-3 landing-button uppercase">Book tea ceremony</a>
+            <a href="{% url 'products' %}" class="btn  rounded-0 pt-3 mt-2 mt-md-0 landing-button uppercase">Buy tea or teaware</a>
         </div>
     </div>
 </section>
@@ -29,7 +29,7 @@
                 In the tea club <strong>Art of tea</strong> you can visit one of our tea ceremonies, book an event for your company and buy nice fresh tea and teaware.
             </p>
             <div class="text-lg-left mt-4 mb-3 mb-md-0">
-                <button type="button" class="btn button-black  uppercase px-3">Learn more</button>
+                <a href="{% url 'about' %}" class="btn button-black  uppercase px-3">Learn more</a>
             </div>
         </div>
 
@@ -127,7 +127,7 @@ The aroma, the taste, the colour and the aftertaste of tea are all representativ
             Experience tea ceremony at its best.
             </p>
             <div class="text-center mt-4 mb-3">
-                <button type="button" class="btn button-green-transparent  uppercase px-3">View our services</button>
+                <a href="" class="btn button-green-transparent  uppercase px-3">View our services</a>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 text-center mb-3 mt-3">
@@ -193,7 +193,7 @@ The aroma, the taste, the colour and the aftertaste of tea are all representativ
             This allows us to constantly monitor the quality of our products.
             </p>
             <div class="text-center mt-4 mb-3">
-                <button type="button" class="btn button-green  uppercase px-3">View our products</button>
+                <a href="{% url 'products' %}" class="btn button-green  uppercase px-3">View our products</a>
             </div>
         </div>
     </div>
@@ -215,9 +215,9 @@ The aroma, the taste, the colour and the aftertaste of tea are all representativ
                     <br/>Join our community, come and explore world of tea with us!
                 </p>
                 <div class="text-center mt-4">
-                <button type="button" class="btn button-black  uppercase px-3">
+                <a href="{% url 'events' %}" class="btn button-black  uppercase px-3">
                     View our events
-                </button>
+                </a>
                 </div>
             </div>
         </div>
