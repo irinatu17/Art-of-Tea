@@ -2,24 +2,46 @@
 <div class="d-none d-md-block">
     <nav class="navbar fixed-top d-flex justify-content-end pb-0 w-100 nav-top">
         <ul class="nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item mr-5 d-none d-md-block dropdown">
+                    <a class="nav-link py-0 text-white"  href="#" id="accountDropdown" 
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                        <div class="text-center">
+                               <div><i class="fas fa-user"></i></div>
+                                <small class="my-0">My Account</small>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                        {% if request.user.is_superuser %}
+                        <a href="#" class="dropdown-item">Admin Management</a>
+                        {% endif %}
+                        <a class="dropdown-item" href="#">My profile</a>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                    </div>
+           </li>
+            {% else %}
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link py-0 text-white" href="{% url 'account_login' %}">Login</a>
             </li>
             <li class="nav-item d-none d-md-block">
-            <a class="nav-link border-left border-white py-0 text-white" href="{% url 'account_signup' %}">Register</a>
+                <a class="nav-link border-left border-white py-0 text-white" href="{% url 'account_signup' %}">Register</a>
             </li>
+            {% endif %}
             <li class="nav-item">
-                <a class="nav-link  py-0 text-white" href="#"><i class="fas fa-user"></i></a>
+                <a class="nav-link py-0 text-white" href="#">
+                    <div class="text-center">
+                        <div><i class="fas fa-shopping-cart"></i></div>
+                        <small>€ 0.00 </small>
+                    </div>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link py-0 text-white" href="#"><i class="fas fa-shopping-cart"></i></a>
-            </li>
+            
         </ul>
     </nav>
 </div>
 <!--Main navbar-->
 <div class="main-nav-sticky fixed-top">
-    <nav class="navbar navbar-expand-lg  navbar-dark d-block d-lg-flex">
+    <nav class="navbar p-1 navbar-expand-lg  navbar-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,12 +53,19 @@
             </a> 
             <!--Search button-->
             <div class="d-flex">
-                <button class="btn btn-large  d-block d-lg-none mr-md-3" id="search-button">
-                    <i class="fas fa-search text-white"></i>
+                <button class="btn btn-large p-2 d-block d-lg-none mr-md-3" id="search-button">
+                <div class="text-center text-white">
+                        <div> <i class="fas fa-search"></i></div>
+                        <small>Search</small>
+                    </div>
+                    
                 </button>
                 
-                <button class="btn btn-large d-block d-md-none">
-                    <i class="fas fa-shopping-cart text-white"></i>
+                <button class="btn btn-large p-2 d-block d-md-none">
+                    <div class="text-center text-white">
+                        <div><i class="fas fa-shopping-cart"></i></div>
+                        <small>€ 0.00 </small>
+                    </div>
                 </button> 
             </div>
         </div>
@@ -46,13 +75,14 @@
                     <div class="input-group">
                         <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
-                            <button class="btn btn-black rounded-right" type="submit">
+                            <button class="btn button-black rounded-right" type="submit">
                                 <i class="fas fa-search text-white"></i>
                             </button>
                         </div>
                     </div>
                 </form>
         </div>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ml-lg-5 mr-5">
@@ -73,15 +103,27 @@
                 <li class="nav-item mr-5">
                     <a class="nav-link uppercase text-white" href="{% url 'contact' %}">Contact</a>
                 </li>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider d-md-none d-block"></div>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item d-md-none d-block">
+                    <a class="nav-link uppercase text-white" href="#">Admin Management</a>
+                </li>
+                <li class="nav-item d-md-none d-block">
+                    <a class="nav-link uppercase text-white" href="#">My profile</a>
+                </li>
+                <li class="nav-item d-md-none d-block">
+                    <a class="nav-link uppercase text-white" href="{% url 'account_logout' %}">Logout</a>
+                </li>
 
-                <li class="nav-item d-lg-none d-block">
+                {% else %}
+                <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'account_login' %}">Login</a>
                 </li>
 
-                <li class="nav-item d-lg-none d-block">
+                <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'account_signup' %}">Register</a>
                 </li>
+                 {% endif %}
             </ul>
             <form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
                 <div class="input-group">
