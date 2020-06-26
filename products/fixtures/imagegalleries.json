@@ -98,5 +98,14 @@
       "image": "iron_tea_pot.jpg",
       "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
     }
+  },
+  {
+    "pk": 12,
+    "model": "products.imagegallery",
+    "fields": {
+      "name": "japaneese_tea_ceremony",
+      "image": "tea-ceremony-japaneese.jpg",
+      "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg"
+    }
   }
 ]
