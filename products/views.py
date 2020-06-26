@@ -7,7 +7,7 @@ from .models import Product, Category
 def all_products(request):
     """ A view to display all of the products with search queries"""
 
-    products = Product.objects.all()
+    products = Product.objects.filter(is_a_service=False)
 
     # empty query and categories when tha page is loaded
     query = None
@@ -54,3 +54,14 @@ def product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+def services(request):
+    """ A view to display all of the services"""
+    services = Product.objects.filter(is_a_service=True)
+
+    context = {
+        'services': services,
+    }
+
+    return render(request, 'products/services.html', context)
