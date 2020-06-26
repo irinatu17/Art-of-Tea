@@ -34,6 +34,8 @@ class ImageGallery(models.Model):
 
 
 class Product(models.Model):
+
+
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     image_gallery = models.ForeignKey('ImageGallery', null=True, blank=True,
@@ -44,8 +46,15 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2,
                                  null=True, blank=True)
+    # Fields related to teas and teaware
     has_weight = models.BooleanField(default=False, null=True, blank=True)
-    in_stock = models.BooleanField(default=False)
+    in_stock = models.BooleanField(default=False, null=True)
+    is_a_service = models.BooleanField(default=False)
+    # Fields related to services/tea ceremonies
+    itinerary = models.TextField(null=True, blank=True)
+    duration = models.IntegerField(null=True)
+
 
     def __str__(self):
         return self.name
+
