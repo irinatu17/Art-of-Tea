@@ -4,18 +4,50 @@
 {% endblock %}
 
 {% block content %}
- <div class="container mt-4">
+<!--Breadcrumbs-->    
+<div class="container-fluid breadcrumbs-container pl-3">
     <div class="row">
-        <div class="col-12 col-md-10">
-                <h1>Services</h1>  
-                {% for service in services %}
-                <h3>{{ service.name }}</h3>
-                <div> <img class="w-50 img-fluid" src="{{ service.image_gallery.image_url }}" alt="{{ service.name }}"></div>
-                <p>{{ service.description }}</p>
-                <p>{{ service.duration }} hour(s)</p>
-                <p><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
-                {% endfor %}
+        <div class="col-12 pt-3">
+            <a href="{% url 'landing' %}" class="breadcrumbs-text pl-3">Home</a> >
+            <a href="{% url 'services' %}" class="breadcrumbs-text">Services</a> 
+        </div>
+    </div>
+</div>
+<hr>
+<!--Main content-->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="uppercase main-heading">Services</h1>
+            <hr class="divider-green w-25 mt-3">
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-10 mt-4">
+        {% for service in services %} 
+        
+
+        <div class="card mb-3" >
+            <div class="row no-gutters">
+                <div class="col-md-4 col-lg-5">
+                <img src="{{ service.image_gallery.image}}" class="card-img" alt="{{ service.name }}">
+                </div>
+                <div class="col-md-8 col-lg-7">
+                <div class="card-body">
+                    <h5 class="card-title uppercase">{{ service.name }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text"><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
+                        <a href="#" class="btn button-green">Learn More</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
         </div>
     </div>
 </div>
 {% endblock %}
+            
