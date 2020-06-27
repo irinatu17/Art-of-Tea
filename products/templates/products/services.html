@@ -26,9 +26,9 @@
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-lg-10 mt-4">
         {% for service in services %} 
-        
+        {% if service.pk|divisibleby:2 %}
 
-        <div class="card mb-3" >
+        <div class="card mb-4" >
             <div class="row no-gutters">
                 <div class="col-md-4 col-lg-5">
                 <img src="{{ service.image_gallery.image}}" class="card-img" alt="{{ service.name }}">
@@ -45,6 +45,27 @@
                 </div>
             </div>
         </div>
+        {% else %}
+
+        <div class="card mb-4" >
+            <div class="row no-gutters">
+                <div class="col-md-8 col-lg-7">
+                    <div class="card-body">
+                        <h5 class="card-title uppercase">{{ service.name }}</h5>
+                        <p class="card-text">{{ service.description }}</p>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text"><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
+                            <a href="#" class="btn button-green">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-5">
+                    <img src="{{ service.image_gallery.image}}" class="card-img" alt="{{ service.name }}">
+                </div>
+            </div>
+        </div>
+
+        {% endif %} 
         {% endfor %}
         </div>
     </div>
