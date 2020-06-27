@@ -6,17 +6,15 @@
 {% block content %}
  <div class="container mt-4">
     <div class="row">
-    <div class="col-12 col-md">
-            <h1>Services</h1>  
-            {% for service in services %}
-            <h3>{{ service.name }}</h3>
-            <div> <img class="w-50 img-fluid" src="{{ service.image_gallery.image_url }}" alt="{{ service.name }}"></div>
-            <p>{{ service.description }}</p>
-            <p>{{ service.duration }} hour(s)</p>
-            <p><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
-            <p>{{ service.rating }}</p>
-            <p>{{ service.description }}</p>
-            {% endfor %}
+        <div class="col-12 col-md-10">
+                <h1>Services</h1>  
+                {% for service in services %}
+                <h3>{{ service.name }}</h3>
+                <div> <img class="w-50 img-fluid" src="{{ service.image_gallery.image_url }}" alt="{{ service.name }}"></div>
+                <p>{{ service.description }}</p>
+                <p>{{ service.duration }} hour(s)</p>
+                <p><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
+                {% endfor %}
         </div>
     </div>
 </div>
