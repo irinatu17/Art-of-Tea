@@ -24,8 +24,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ImageGalleryAdmin(admin.ModelAdmin):
-   list_display = (
-        'friendly_name',
+    list_display = (
         'name',
         'image',
         'image_url',
