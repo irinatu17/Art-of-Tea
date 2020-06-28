@@ -184,7 +184,6 @@
       "price": 50.00,
       "rating": 5.0,
       "image_gallery": 12,
-      "duration" : 1,
       "is_a_service": "True"
     }   
   },
@@ -197,7 +196,6 @@
       "price": 75.00,
       "rating": 4.9,
       "image_gallery": 13,
-      "duration" : 2,
       "is_a_service": "True"
     }   
   },
@@ -210,7 +208,6 @@
       "price": 80.00,
       "rating": 5.0,
       "image_gallery": 14,
-      "duration" : 1,
       "is_a_service": "True"
     }   
   },
@@ -223,7 +220,6 @@
       "price": 100.00,
       "rating": 5.0,
       "image_gallery": 15,
-      "duration" : 2,
       "is_a_service": "True"
     }   
   }
