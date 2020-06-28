@@ -39,7 +39,7 @@
                     <p class="card-text">{{ service.description }}</p>
                     <div class="d-flex justify-content-between">
                         <p class="card-text"><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
-                        <a href="#" class="btn button-green">Learn More</a>
+                        <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn More</a>
                     </div>
                 </div>
                 </div>
@@ -55,7 +55,7 @@
                         <p class="card-text">{{ service.description }}</p>
                         <div class="d-flex justify-content-between">
                             <p class="card-text"><i class="fas fa-euro-sign mr-3"></i>{{ service.price}}</p>
-                            <a href="#" class="btn button-green">Learn More</a>
+                            <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -64,11 +64,9 @@
                 </div>
             </div>
         </div>
-
         {% endif %} 
         {% endfor %}
         </div>
     </div>
 </div>
 {% endblock %}
-            
