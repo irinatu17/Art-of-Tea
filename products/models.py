@@ -29,9 +29,30 @@ class ImageGallery(models.Model):
         return self.name
 
 
+class Itinerary(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'itineraries'
+
+    name = models.CharField(max_length=254)
+    service = models.ForeignKey('Product', null=True, blank=True,
+                                on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
+
+
+class ItineraryItem(models.Model):
+    itinerary = models.ForeignKey('Itinerary', null=True, blank=True,
+                                  on_delete=models.SET_NULL)
+    time = models.CharField(max_length=254)
+    text = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.text
+
+
 class Product(models.Model):
-
-
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     image_gallery = models.ForeignKey('ImageGallery', null=True, blank=True,
@@ -47,9 +68,7 @@ class Product(models.Model):
     in_stock = models.BooleanField(default=False, null=True)
     is_a_service = models.BooleanField(default=False)
     # Fields related to services/tea ceremonies
-    itinerary = models.TextField(null=True, blank=True)
-    duration = models.IntegerField(null=True)
+    duration = models.DurationField(null=True)
 
     def __str__(self):
         return self.name
-
