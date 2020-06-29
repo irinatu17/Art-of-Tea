@@ -40,7 +40,7 @@ color: var(--black);
 
 main{
 flex: 1 0 auto;
-margin-top:62.5px;
+margin-top:74px;
 }
 
 .text-white{
@@ -388,7 +388,7 @@ box-shadow: none;
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 .main-nav-sticky {
-padding-top: 57px;
+padding-top: 56px;
 }
 
 .landing-text{
@@ -426,7 +426,7 @@ column-count: 2;
 }
 
 main{
-margin-top:94px;
+margin-top:126px;
 }
 
 .events-paragraph{
@@ -448,6 +448,10 @@ height: 3.1rem;
 
 .navbar-brand{
 margin-right: 1rem;
+}
+
+main{
+margin-top:119px;
 }
 
 .landing-text{

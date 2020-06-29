@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, ItineraryItem, Itinerary
+import datetime
 
 
 def all_products(request):
     """ A view to display all of the products with search queries"""
 
-    products = Product.objects.all()
+    products = Product.objects.filter(is_a_service=False)
 
     # empty query and categories when tha page is loaded
     query = None
@@ -47,10 +48,35 @@ def all_products(request):
 
 def product_details(request, product_id):
     """ A view to display single product details page """
-
-    product = get_object_or_404(Product, pk=product_id)
+    all_products = Product.objects.filter(is_a_service=False)
+    product = get_object_or_404(all_products, pk=product_id)
     context = {
         'product': product,
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+def services(request):
+    """ A view to display all of the services"""
+    services = Product.objects.filter(is_a_service=True)
+    context = {
+        'services': services,
+    }
+
+    return render(request, 'products/services.html', context)
+
+
+def service_details(request, service_id):
+    """ A view to display single service details page """
+    all_services = Product.objects.filter(is_a_service=True)
+    service = get_object_or_404(all_services, pk=service_id)
+    itinerary = Itinerary.objects.get(service=service)
+    itinerary_items = ItineraryItem.objects.filter(itinerary=itinerary)
+
+    context = {
+        'service': service,
+        'itinerary': itinerary,
+        'itinerary_items':  itinerary_items,
+    }
+    return render(request, 'products/service_details.html', context)

@@ -11,7 +11,8 @@
       "rating": 4.9,
       "image_gallery": 2,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -26,7 +27,24 @@
       "rating": 4.6,
       "image_gallery": 1,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123458",
+      "name": "Home Matcha Kit",
+      "description": "The Art of Tea At Home Matcha Kit is our modern take on making matcha. Our newly designed kit combines everything you need for a contemporary matcha ceremony to help you master your ultimate brewing experience. The Matcha Kit includes: Handblown double-walled glass bowl, Signature chasen bamboo matcha whisk, Bamboo matcha measuring spoon, Matte black matcha whisk holder.",
+      "price": 45.00,
+      "category": 1,
+      "rating": 4.9,
+      "image_gallery": 3,
+      "in_stock": "True",
+      "has_weight": "False",
+      "is_a_service": "False"
     }
   },
   {
@@ -41,7 +59,8 @@
       "rating": 4.1,
       "image_gallery": 4,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -56,7 +75,8 @@
       "rating": 5.0,
       "image_gallery": 5,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -71,7 +91,8 @@
       "rating": 4.8,
       "image_gallery": 6,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -86,7 +107,8 @@
       "rating": 4.5,
       "image_gallery": 7,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -101,7 +123,8 @@
       "rating": 4.5,
       "image_gallery": 8,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }
   },
   {
@@ -116,7 +139,8 @@
       "rating": 4.2,
       "image_gallery": 9,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }   
   },
   {
@@ -131,7 +155,8 @@
       "rating": 4.8,
       "image_gallery": 10,
       "in_stock": "True",
-      "has_weight": "True"
+      "has_weight": "True",
+      "is_a_service": "False"
     }   
   },
   {
@@ -146,8 +171,56 @@
       "rating": 4.8,
       "image_gallery": 11,
       "in_stock": "True",
-      "has_weight": "False"
+      "has_weight": "False",
+      "is_a_service": "False"
+    }   
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "name": "Introduction to Japanese Tea",
+      "description": "Discover all aspects of Japanese tea culture during a brief, yet thorough outline of the various aspects of tea culture in Japan. What is matcha and how is it made? What is the tea ceremony and how is it done? And, is Japanese tea only green tea? These questions will be addressed during this one-hour session.",
+      "price": 50.00,
+      "rating": 5.0,
+      "image_gallery": 12,
+      "is_a_service": "True"
+    }   
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "name": "Traditional Chineese Tea Ceremony",
+      "description": "Chinese Tea Ceremony is not as elaborate and formal as the Japanese one. Instead, it more focused on the quality of the tea and the teaware. It takes about one hour.  We will give you an insight in the beauty and value this ritual has to offer.",
+      "price": 75.00,
+      "rating": 4.9,
+      "image_gallery": 13,
+      "is_a_service": "True"
+    }   
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "name": "Incense Tea Ceremony",
+      "description": "Our tea-masters will guide you through a traditional kodo incense ceremony. Savour and competitively distinguish the fragrances of different incense woods. In the format of a traditional incense-game, we will prepare 2 kinds of incense woods for you to listen to and distinguish. The incense ritual will be followed by a conclusive service of tea ceremony.",
+      "price": 80.00,
+      "rating": 5.0,
+      "image_gallery": 14,
+      "is_a_service": "True"
+    }   
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "name": "Exclusive Traditional Tea Ceremony",
+      "description": "To get immersed into a real atmosphere of a full traditional Japanese Ceremony, you will be offered to wear kimono.  You will enjoy a Buddhist vegetarian lunch before the main event: a service of thick tea. We will round off the event with a final more casual service, of thin tea. During this stage you may also try your hand at making a bowl of thin tea yourself.",
+      "price": 100.00,
+      "rating": 5.0,
+      "image_gallery": 15,
+      "is_a_service": "True"
     }   
   }
-
 ]
