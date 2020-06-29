@@ -185,7 +185,7 @@
       "rating": 5.0,
       "image_gallery": 12,
       "is_a_service": "True",
-      "duration": 1
+      "duration": "1 hour"
     }   
   },
   {
@@ -198,7 +198,7 @@
       "rating": 4.9,
       "image_gallery": 13,
       "is_a_service": "True",
-      "duration": 1
+      "duration": "1 hour"
     }   
   },
   {
@@ -211,7 +211,7 @@
       "rating": 5.0,
       "image_gallery": 14,
       "is_a_service": "True",
-      "duration": 1
+      "duration": "1,5 hours"
     }   
   },
   {
@@ -224,7 +224,7 @@
       "rating": 5.0,
       "image_gallery": 15,
       "is_a_service": "True",
-      "duration": 2
+      "duration": "2 hours"
     }   
   }
 ]
