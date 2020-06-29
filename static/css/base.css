@@ -339,6 +339,17 @@ color: var(--lightblack);
 color: var(--black);
 }
 
+.text-block{
+position: absolute;
+top: 15px;
+right: 20px;
+padding: 0 5px;
+opacity: 0.9;
+border-radius: 3px;
+background-color: var(--lavander);
+line-height: 5px;
+}
+
 /*Contact page*/
 
 #map{
