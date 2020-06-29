@@ -17,13 +17,31 @@
 <hr>
 <!--Main content-->
 <div class="container mt-4">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="uppercase main-heading">{{ service.name }}</h1>
-            <hr class="divider-green w-25 mt-3">
+    <div class="row ">
+        <div class="col-12">
+            <h1 class="uppercase main-heading display-6  text-center">{{ service.name }}</h1>
+            <hr class="divider-green w-25 my-4">
+            <div class="col-12 col-md-10 offset-md-1">
+                <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
+                    <img class="img-fluid" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
+                </a>
+                
+                <div class="row mt-4">
+                    <div class="col-12 col-md-6 ">
+                        <p class="landing-paragraph">{{ service.description }}</p>
+                        <div>
+                        <hr>
+                            <h3 class="main-heading text-salmon my-4">Itinerary:</h3>
+                                {% for item in  itinerary_items %} 
+                                <p >{{ item.time }}
+                                <span class="font-weight-bold ml-4">{{  item.text }}</span>
+                                </p> 
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-
 {% endblock %}
