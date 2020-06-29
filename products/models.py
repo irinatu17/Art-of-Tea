@@ -68,7 +68,7 @@ class Product(models.Model):
     in_stock = models.BooleanField(default=False, null=True)
     is_a_service = models.BooleanField(default=False)
     # Fields related to services/tea ceremonies
-    duration = models.DurationField(null=True)
+    duration = models.IntegerField(null=True)
 
     def __str__(self):
         return self.name

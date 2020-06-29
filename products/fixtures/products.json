@@ -184,7 +184,8 @@
       "price": 50.00,
       "rating": 5.0,
       "image_gallery": 12,
-      "is_a_service": "True"
+      "is_a_service": "True",
+      "duration": 1
     }   
   },
   {
@@ -196,7 +197,8 @@
       "price": 75.00,
       "rating": 4.9,
       "image_gallery": 13,
-      "is_a_service": "True"
+      "is_a_service": "True",
+      "duration": 1
     }   
   },
   {
@@ -208,7 +210,8 @@
       "price": 80.00,
       "rating": 5.0,
       "image_gallery": 14,
-      "is_a_service": "True"
+      "is_a_service": "True",
+      "duration": 1
     }   
   },
   {
@@ -220,7 +223,8 @@
       "price": 100.00,
       "rating": 5.0,
       "image_gallery": 15,
-      "is_a_service": "True"
+      "is_a_service": "True",
+      "duration": 2
     }   
   }
 ]
