@@ -77,7 +77,7 @@
                 <p class="text-center"><i class="fas fa-euro-sign mr-3"></i>{{ product.price }}</p>
                 <div class="mb-4">
                     <button type="button" class="btn button-green px-3">Add to Cart</button>
-                    <button type="button" class="btn button-black px-3">View Details</button>
+                    <a href="{% url 'product_details' product.id %}" class="btn button-black px-3">View Details</a>
                 </div>
             </div>
             {% endfor %}
