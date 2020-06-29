@@ -15,6 +15,7 @@
       "service": 13
     }
   },
+  
   {
     "pk": 3,
     "model": "products.itinerary",

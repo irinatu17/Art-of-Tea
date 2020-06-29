@@ -21,7 +21,7 @@ class ImageGallery(models.Model):
     class Meta:
         verbose_name_plural = 'Image Galleries'
 
-    name = models.CharField(max_length=254)
+    name = models.CharField(max_length=254, null=True)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
 
@@ -34,9 +34,9 @@ class Itinerary(models.Model):
     class Meta:
         verbose_name_plural = 'itineraries'
 
-    name = models.CharField(max_length=254)
-    service = models.ForeignKey('Product', null=True, blank=True,
-                                on_delete=models.SET_NULL)
+    name = models.CharField(max_length=254, null=True)
+    service = models.OneToOneField('Product', null=True, blank=True,
+                                   on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name

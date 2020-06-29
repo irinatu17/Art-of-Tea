@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, ItineraryItem
+from .models import Product, Category, ItineraryItem, Itinerary
+import datetime
 
 
 def all_products(request):
@@ -59,10 +60,8 @@ def product_details(request, product_id):
 def services(request):
     """ A view to display all of the services"""
     services = Product.objects.filter(is_a_service=True)
-    itinerary_items = ItineraryItem.objects.all()
     context = {
         'services': services,
-        'itinerary_items': itinerary_items,
     }
 
     return render(request, 'products/services.html', context)
@@ -71,10 +70,13 @@ def services(request):
 def service_details(request, service_id):
     """ A view to display single service details page """
     all_services = Product.objects.filter(is_a_service=True)
-
     service = get_object_or_404(all_services, pk=service_id)
+    itinerary = Itinerary.objects.get(service=service)
+    itinerary_items = ItineraryItem.objects.filter(itinerary=itinerary)
+
     context = {
         'service': service,
+        'itinerary': itinerary,
+        'itinerary_items':  itinerary_items,
     }
-
     return render(request, 'products/service_details.html', context)
