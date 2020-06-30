@@ -42,9 +42,10 @@
                 <p><i class="fas fa-tag mr-2"></i><a href="{% url 'products' %}?category={{ product.category.name }}"  class="text-dark">{{ product.category.friendly_name }}</a></p>
                 <p>{{ product.description }}</p>
                 <p><i class="fas fa-star mr-2"></i><span class="text-dark">{{ product.rating }} / 5 </span></p>
-                <form class="form" action="#" method="POST">
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                 {% csrf_token %}
                 <!--Weight-->
+                 {% if product.has_weight %}
                     <div>
                         <h6 class="font-weight-bold">Select weight:</h6>
                         <div class="form-check form-check-inline">
@@ -60,6 +61,7 @@
                             <label class="form-check-label" for="weight200">200g</label>
                         </div>
                     </div>
+                    {% endif %}
                     <!--Quantity-->
                     <h6 class="font-weight-bold mt-4">Quantity:</h6>
                     <div class="row d-flex justify-content-between">
@@ -75,8 +77,9 @@
                     <!--buttons-->
                     <div class="mt-4 mb-4">
                     <a href="{% url 'products' %}" class="btn button-black-outline px-3 mr-3"><i class="fas fa-angle-left"></i> Go back</a>
-                    <a href="#" class="btn button-green px-3"><i class="fas fa-cart-plus"></i> Add to Cart</a>
+                    <input type="submit" class="btn button-green px-3" value="Add to Cart">
                     </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
             </div>
         </div>
