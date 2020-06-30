@@ -25,24 +25,38 @@
     </div>
     <hr>
     <!--Main content-->
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="uppercase landing-about-heading">{{ product.name }}</h1>
+                <h1 class="uppercase main-heading products-heading">{{ product.name }}</h1>
                 <i class="fab fa-pagelines icon-green icon-large"></i>
             </div>
         </div>
         <div class="row mb-4 mt-4">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 col-lg-4">
                 <a href="{{ product.image_gallery.image_url }}" target="_blank" rel="noopener">
-                    <img class="card-img-top img-fluid" src="{{ product.image_gallery.image }}" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid rounded-lg" src="{{ product.image_gallery.image }}" alt="{{ product.name }}">
                 </a>
             </div>
-            <div class="col-sm-12 col-md-6">
-                <p><i class="fas fa-tag mr-3"></i>{{ product.category.friendly_name }}</p>
+            <div class="col-sm-12 col-md-6 col-lg-8">
+                <p><i class="fas fa-tag mr-2"></i><a href="{% url 'products' %}?category={{ product.category.name }}"  class="text-dark">{{ product.category.friendly_name }}</a></p>
                 <p>{{ product.description }}</p>
-                <p>{{ product.rating }}</p>
-                <p><i class="fas fa-euro-sign mr-3"></i>{{ product.price }}</p>
+                <p><i class="fas fa-star mr-2"></i><span class="text-dark">{{ product.rating }} / 5 </span></p>
+                <p><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</p>
+                <h6 class="font-weight-bold">Select weight:</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight50" value="weight50" checked>
+                    <label class="form-check-label" for="weight50">50 g</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight100" value="weight100">
+                    <label class="form-check-label" for="weight100">100 g</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight200" value="weight200">
+                    <label class="form-check-label" for="weight200">200g</label>
+                </div>
+                
             </div>
         </div>
     </div>

@@ -22,9 +22,6 @@
 }
 
 /* Global style settings*/
-.uppercase{
-text-transform: uppercase;
-}
 
 body, html {
 height: 100%;
@@ -41,6 +38,10 @@ color: var(--black);
 main{
 flex: 1 0 auto;
 margin-top:74px;
+}
+
+.uppercase{
+text-transform: uppercase;
 }
 
 .text-white{
@@ -71,8 +72,12 @@ display: none;
 /*Headings*/
 .main-heading{
 font-family: var(--marko-one);
+
 }
 
+.products-heading{
+font-size: 2rem;
+}
 
 .sub-heading{
 font-size: 1rem;
@@ -409,6 +414,10 @@ top: 65%;
 
 .landing-main-heading{
 font-size: 4rem;
+}
+
+.products-heading{
+font-size: 2.5rem;
 }
 
 .sub-heading{

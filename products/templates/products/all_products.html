@@ -75,8 +75,8 @@
                 <div class="text-block">
                 <p>{{ product.category.friendly_name }}</p>
                 </div>
-                <p class="text-center">{{ product.name }}</p>
-                <p class="text-center"><i class="fas fa-euro-sign mr-3"></i>{{ product.price }}</p>
+                <p class="text-center main-heading">{{ product.name }}</p>
+                <p class="text-center font-weight-bold"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</p>
                 <div class="mb-4">
                     <button type="button" class="btn button-green px-3">Add to Cart</button>
                     <a href="{% url 'product_details' product.id %}" class="btn button-black px-3">View Details</a>
