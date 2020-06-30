@@ -28,7 +28,7 @@
             </li>
             {% endif %}
             <li class="nav-item">
-                <a class="nav-link py-0 text-white" href="#">
+                <a class="nav-link py-0 text-white" href="{% url 'view_cart' %}">
                     <div class="text-center">
                         <div><i class="fas fa-shopping-cart"></i></div>
                         <small>€ 0.00 </small>
@@ -61,12 +61,12 @@
                     
                 </button>
                 
-                <button class="btn btn-large p-2 d-block d-md-none">
+                <a href="{% url 'view_cart' %}" class="btn btn-large p-2 d-block d-md-none">
                     <div class="text-center text-white">
                         <div><i class="fas fa-shopping-cart"></i></div>
                         <small>€ 0.00 </small>
                     </div>
-                </button> 
+                </a> 
             </div>
         </div>
         <!--Search form for mobile and tablet-->
