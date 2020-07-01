@@ -8,7 +8,7 @@
         <div class="col-12 text-center mb-3">
             <h1 class="uppercase main-heading">Shopping cart</h1>
         </div>
-        {% if bag_items %}
+{% if cart_items %}
         <div class="col-12">
             <a href="{% url 'products' %}" class="text-dark"><i class="fas fa-long-arrow-alt-left"></i> Continue shopping</a>
         </div>
@@ -16,7 +16,7 @@
     <!--cart content-->
     <div class="row mt-4 border border-dark rounded">
         <div class="col-12 m-4">
-        
+        {{ cart_items }}
         </div>
     </div>
 </div>
