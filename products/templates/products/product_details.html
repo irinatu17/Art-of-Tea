@@ -44,38 +44,25 @@
                 <p><i class="fas fa-star mr-2"></i><span class="text-dark">{{ product.rating }} / 5 </span></p>
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                 {% csrf_token %}
-                <!--Weight-->
-                 {% if product.has_weight %}
-                    <div>
-                        <h6 class="font-weight-bold">Select weight:</h6>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight50" value="weight50" checked>
-                            <label class="form-check-label" for="weight50">50 g</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight100" value="weight100">
-                            <label class="form-check-label" for="weight100">100 g</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="weight200" value="weight200">
-                            <label class="form-check-label" for="weight200">200g</label>
-                        </div>
-                    </div>
-                    {% endif %}
+               
                     <!--Quantity-->
                     <h6 class="font-weight-bold mt-4">Quantity:</h6>
                     <div class="row d-flex justify-content-between">
-                        <div class="col-6">
+                        <div class="col-7 col-md-6">
                             <div class="input-group">
                                 <input name="quantity" type="number" min="1" max="999" class="form-control " placeholder="Quantity" required>
                             </div>
+                            <!--Weight-->
+                            {% if product.has_weight %}
+                            <small class="text-muted">Each tea bag is 100g</small>
+                            {% endif %}
                         </div>
-                        <div class="col-6">
-                           <p class="text-center font-weight-bold"><span class="border p-3 rounded-pill border-success"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span></p>
+                        <div class="col-5 col-md-6 text-center">
+                           <p class="font-weight-bold"><span class="border p-3 rounded-pill border-success"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span></p>
                         </div>
                     </div>
                     <!--buttons-->
-                    <div class="mt-4 mb-4">
+                    <div class="mt-4 mb-4 text-center text-md-left">
                     <a href="{% url 'products' %}" class="btn button-black-outline px-3 mr-3"><i class="fas fa-angle-left"></i> Go back</a>
                     <input type="submit" class="btn button-green px-3" value="Add to Cart">
                     </div>
