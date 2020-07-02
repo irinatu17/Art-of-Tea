@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content%}
-
+<!--Main Heading-->
 <div class="container mt-5 ">
     <div class="row">
         <div class="col-12 text-center mb-3">
@@ -10,7 +10,7 @@
         </div>
     </div>
 </div>
-
+<!--continue shopping link-->
 {% if cart_items %}
 <div class="container">
     <div class="row">
@@ -24,29 +24,47 @@
 <div class="container border border-dark rounded mt-4  mb-5">
     
     {% for item in cart_items %}
-    <div class="row  p-3 border-bottom  border-dark">
+    <div class="row p-3 border-bottom  border-dark">
         <!--Image-->
-        <div class="col-4">
-            <img class="img-fluid rounded-lg w-50" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
+        <div class="col-6 col-md-2 mb-3">
+            <img class="img-fluid rounded-lg" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
         </div>
-
+        <!--price and subtotal for mobile-->
+        <div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="font-weight-bold ">Price:</h6>
+                    <p><i class="fas fa-euro-sign "></i> {{ item.product.price }}</p>
+                </div>
+                <div class="text-right">
+                    <a href="" title="Remove" ><i class="fas fa-trash-alt lead text-danger"></i></a>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-weight-bold mb-3">Subtotal:</h6>
+                <p class="font-weight-bold "><span class="border p-2 rounded-pill border-success">
+                    <i class="fas fa-euro-sign mr-1"></i>
+                    {{ item.product.price }}</span>
+                </p>
+            </div> 
+        </div>
         <!--Name and quantity-->
-        <div class="col-5 ">
-            <h4 class="font-weight-bold">  {{ item.product.name }}</h4>
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+            <h5 class="font-weight-bold">  {{ item.product.name }}</h5>
             <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
             <p class=" mt-3">Quantity:</p>
-                <div class="input-group w-50">
+                <div class="input-group w-75">
                     <input name="quantity" type="number" min="1" max="999" class="form-control " value="{{ item.quantity }}" required>
                 </div>
                 <!--Weight-->
                 {% if item.product.has_weight %}
                 <small class="text-muted">Each pack is 100g</small>
                 {% endif %}
-            <p class="small text-right w-50"><a href="#">Update</a></p>
+            <p class="small text-right w-75"><a href="#">Update</a></p>
             
         </div>
-        <!--Delete and price-->
-        <div class="col-2 d-flex justify-content-between flex-column">
+        <!--price and subtotal for tablet and desktop-->
+        <div class="d-none d-md-flex col-md-3 col-lg-3  justify-content-between flex-column">
             <div>
                 <h6 class="font-weight-bold ">Price:</h6>
                 <p><i class="fas fa-euro-sign "></i> {{ item.product.price }}</p>
@@ -59,8 +77,8 @@
                 </p>
             </div>
         </div>
-        <!--Remove button-->
-        <div class="col-1 text-right ">
+        <!--Remove button for tablet and desktop-->
+        <div class="d-none d-md-block col-6 col-md-1 col-lg-1 text-right ">
             <a href="" title="Remove"><i class="fas fa-trash-alt lead text-danger"></i></a>
         </div>
     </div>
