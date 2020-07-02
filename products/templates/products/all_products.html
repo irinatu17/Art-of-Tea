@@ -77,10 +77,10 @@
                 </div>
                 <p class="text-center main-heading">{{ product.name }}</p>
                 <p class="text-center">
-                    {% if product.has_weight %}
-                    <span>100 g/</span>
-                    {% endif %}
                     <span class=" font-weight-bold"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span>
+                    {% if product.has_weight %}
+                    <span> / 100g</span>
+                    {% endif %}
                 </p>
                 <div class="mb-4">
                     <a href="" class="btn button-green px-3">Add to Cart</a>

@@ -206,6 +206,11 @@ color: var(--white);
 }
 
 
+.update-cart-btn,
+.remove-button {
+cursor: pointer;
+}
+
 /* Landing page - main about section*/
 .landing-paragraph{
 font-family: var(--open-sans);

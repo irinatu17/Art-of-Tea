@@ -1,8 +1,9 @@
 {% extends "base.html"%}
 {% load static %}
+{% load cart_tools %}
 
 {% block content%}
-
+<!--Main Heading-->
 <div class="container mt-5 ">
     <div class="row">
         <div class="col-12 text-center mb-3">
@@ -10,7 +11,7 @@
         </div>
     </div>
 </div>
-
+<!--continue shopping link-->
 {% if cart_items %}
 <div class="container">
     <div class="row">
@@ -24,44 +25,74 @@
 <div class="container border border-dark rounded mt-4  mb-5">
     
     {% for item in cart_items %}
-    <div class="row  p-3 border-bottom  border-dark">
+    <div class="row p-3 border-bottom  border-dark">
         <!--Image-->
-        <div class="col-4">
-            <img class="img-fluid rounded-lg w-50" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
+        <div class="col-6 col-md-2 mb-3">
+            <img class="img-fluid rounded-lg" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
         </div>
-
-        <!--Name and quantity-->
-        <div class="col-5 ">
-            <h4 class="font-weight-bold">  {{ item.product.name }}</h4>
-            <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
-            <p class=" mt-3">Quantity:</p>
-                <div class="input-group w-50">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control " value="{{ item.quantity }}" required>
+        <!--price and subtotal for mobile-->
+        <div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="font-weight-bold mb-3">Price:</h6>
+                    <p><i class="fas fa-euro-sign "></i> {{ item.product.price }}
+                    {% if item.product.has_weight %}
+                     <span class="text-muted small"> / 100g</span>
+                    {% endif %}
+                    </p>
                 </div>
-                <!--Weight-->
-                {% if item.product.has_weight %}
-                <small class="text-muted">Each pack is 100g</small>
-                {% endif %}
-            <p class="small text-right w-50"><a href="#">Update</a></p>
-            
-        </div>
-        <!--Delete and price-->
-        <div class="col-2 d-flex justify-content-between flex-column">
-            <div>
-                <h6 class="font-weight-bold ">Price:</h6>
-                <p><i class="fas fa-euro-sign "></i> {{ item.product.price }}</p>
+                <div class="text-right">
+                    <a class="remove-button remove_{{ item.item_id }}" title="Remove" ><i class="fas fa-trash-alt lead text-danger"></i></a>
+                </div>
             </div>
             <div>
                 <h6 class="font-weight-bold mb-3">Subtotal:</h6>
-                <p class="font-weight-bold lead"><span class="border p-2 rounded-pill border-success">
+                <p class="font-weight-bold "><span class="border p-2 rounded-pill border-success">
                     <i class="fas fa-euro-sign mr-1"></i>
-                    {{ item.product.price }}</span>
+                    {{ item.product.price | calc_subtotal:item.quantity }} 
+                    </span>
+                </p>
+            </div> 
+        </div>
+        <!--Name-->
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+            <h5 class="font-weight-bold">  {{ item.product.name }}</h5>
+            <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
+            <!--Quantity-->
+                <p class="mt-3">Quantity:</p>
+                <form  class="quantity-update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                    {% csrf_token %}
+                    <div class="input-group w-100">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control"
+                        value="{{ item.quantity }}" required>
+                    </div>
+                </form>
+                <!--Update-->
+                <a class="update-cart-btn small text-primary float-right">Update</a>  
+        </div>
+        <!--price and subtotal for tablet and desktop-->
+        <div class="d-none d-md-flex col-md-3 col-lg-3  justify-content-between flex-column">
+            <div>
+                <h6 class="font-weight-bold ">Price:</h6>
+                <p><i class="fas fa-euro-sign "></i> {{ item.product.price }} 
+                {% if item.product.has_weight %}
+                  <span class="text-muted small"> / 100g</span>
+                {% endif %}
+               </p>
+            </div>
+            <div>
+                <h6 class="font-weight-bold mb-3">Subtotal:</h6>
+                <p class="font-weight-bold lead">
+                <span class="border p-2 rounded-pill border-success">
+                    <i class="fas fa-euro-sign mr-1"></i>
+                   {{ item.product.price | calc_subtotal:item.quantity }} 
+                   </span>
                 </p>
             </div>
         </div>
-        <!--Remove button-->
-        <div class="col-1 text-right ">
-            <a href="" title="Remove"><i class="fas fa-trash-alt lead text-danger"></i></a>
+        <!--Remove button for tablet and desktop-->
+        <div class="d-none d-md-block col-6 col-md-1 col-lg-1 text-right ">
+            <a class="remove-button remove_{{ item.item_id }}" title="Remove" ><i class="fas fa-trash-alt lead text-danger"></i></a>
         </div>
     </div>
     {% endfor %}
@@ -80,4 +111,28 @@
     </div>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript">
+    // Update the quantity when update btn is clicked
+    $('.update-cart-btn').click(function(e) {
+        var form = $(this).prev('.quantity-update-form');
+        form.submit();
+    })
+
+    // Remove item from the cart and reload the page on click
+     $('.remove-button').click(function(e) {
+        var itemId = $(this).attr('class').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var csrfToken = "{{ csrf_token }}";
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
