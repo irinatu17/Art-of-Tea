@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% load static %}
+{% load cart_tools %}
 
 {% block content%}
 <!--Main Heading-->
@@ -48,7 +49,8 @@
                 <h6 class="font-weight-bold mb-3">Subtotal:</h6>
                 <p class="font-weight-bold "><span class="border p-2 rounded-pill border-success">
                     <i class="fas fa-euro-sign mr-1"></i>
-                    {{ item.product.price }}</span>
+                    {{ item.product.price | calc_subtotal:item.quantity }} 
+                    </span>
                 </p>
             </div> 
         </div>
@@ -80,9 +82,11 @@
             </div>
             <div>
                 <h6 class="font-weight-bold mb-3">Subtotal:</h6>
-                <p class="font-weight-bold lead"><span class="border p-2 rounded-pill border-success">
+                <p class="font-weight-bold lead">
+                <span class="border p-2 rounded-pill border-success">
                     <i class="fas fa-euro-sign mr-1"></i>
-                    {{ item.product.price }}</span>
+                   {{ item.product.price | calc_subtotal:item.quantity }} 
+                   </span>
                 </p>
             </div>
         </div>
