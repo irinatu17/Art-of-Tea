@@ -53,14 +53,20 @@
             <h5 class="font-weight-bold">  {{ item.product.name }}</h5>
             <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
             <p class=" mt-3">Quantity:</p>
-                <div class="input-group w-75">
+                <div class="input-group w-100">
                     <input name="quantity" type="number" min="1" max="999" class="form-control " value="{{ item.quantity }}" required>
                 </div>
                 <!--Weight-->
-                {% if item.product.has_weight %}
-                <small class="text-muted">Each pack is 100g</small>
-                {% endif %}
-            <p class="small text-right w-75"><a href="#">Update</a></p>
+                <div class="d-flex">
+                    {% if item.product.has_weight %}
+                    <div class="mr-auto">
+                        <small class="text-muted">Each pack is 100g</small>
+                    </div>
+                    {% endif %}
+                    <div class=" text-right ml-auto">
+                        <span class="small w-100"><a href="#">Update</a></span>
+                    </div>
+                </div>
             
         </div>
         <!--price and subtotal for tablet and desktop-->
