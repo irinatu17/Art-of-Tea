@@ -206,7 +206,8 @@ color: var(--white);
 }
 
 
-.update-cart-btn {
+.update-cart-btn,
+.remove-button {
 cursor: pointer;
 }
 
