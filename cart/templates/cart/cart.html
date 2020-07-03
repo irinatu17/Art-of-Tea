@@ -30,13 +30,13 @@
 </div>
 
 <!--cart content-->
-<div class="container border border-dark rounded mt-4  mb-5">
+<div class="container border border-dark rounded mt-4  mb-5 shadow ">
     
     {% for item in cart_items %}
     <div class="row p-3 border-bottom  border-dark">
         <!--Image-->
-        <div class="col-6 col-md-2 mb-3">
-            <img class="img-fluid rounded-lg" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
+        <div class="col-6 col-md-2 mb-3 ">
+            <img class="img-fluid rounded-lg shadow-sm" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
         </div>
         <!--price and subtotal for mobile-->
         <div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
@@ -91,7 +91,7 @@
             <div>
                 <h6 class="font-weight-bold mb-3">Subtotal:</h6>
                 <p class="font-weight-bold lead">
-                <span class="border p-2 rounded-pill border-success">
+                <span class="border p-2 rounded-pill border-success shadow-sm">
                     <i class="fas fa-euro-sign mr-1"></i>
                    {{ item.product.price | calc_subtotal:item.quantity }} 
                    </span>
@@ -104,7 +104,25 @@
         </div>
     </div>
     {% endfor %}
-    
+    <div class="row ">
+        <div class="col-11 d-flex align-items-end flex-column my-3">
+            <h6 class="font-weight-bold">Cart Subtotal: €{{ total|floatformat:2 }}</h6>
+            <small>Delivery Cost: €{{ delivery|floatformat:2 }}</small>
+            <h5 class="lead font-weight-bolder mt-2">Grand Total: € {{ grand_total|floatformat:2 }}</h5>
+            <small class="text-muted">*Tax included </small>    
+            {% if free_delivery_delta > 0 %}
+                <small class="text-salmon">
+                    Free delivery is available by spending <strong>€{{ free_delivery_delta }}</strong> more!
+                </small>
+            {% endif %}
+            <a href="#" class="btn button-black uppercase shadow my-4 btn-lg">
+               <i class="fas fa-lock mr-3"></i>  Checkout
+                
+            </a>
+
+
+        </div> 
+    </div>   
 </div>
 
 {% else %}
