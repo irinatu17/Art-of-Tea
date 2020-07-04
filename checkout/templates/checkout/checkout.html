@@ -4,15 +4,71 @@
 
 {% block content%}
 <!--Delivery info-->
-    <div class="container-fluid delivery-info">
-        <div class="row">
-            <div class="col-12 text-center">
-            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
-            </div>
+<div class="container-fluid delivery-info">
+    <div class="row">
+        <div class="col-12 text-center">
+        <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
         </div>
     </div>
-    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                    {% csrf_token %}
-    {{ order_form| crispy }}
-    </form>
+</div>
+<!--Main Heading-->
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col-12 text-center mb-3">
+            <h1 class="uppercase main-heading">Checkout</h1>
+        </div>
+    </div>
+</div>
+<!--Form-->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-8 ">
+            <nav class="">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link text-dark active  shadow-sm" id="nav-home-tab" data-toggle="tab"
+                        href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                        Personal Details
+                    </a>
+                    <a class="nav-item nav-link text-dark  shadow-sm" id="nav-profile-tab" data-toggle="tab"
+                        href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Shipping Info
+                    </a>
+                    <a class="nav-item nav-link text-dark  shadow-sm" id="nav-contact-tab" data-toggle="tab"
+                        href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                        Payment Details
+                    </a>
+                </div>
+            </nav>
+            <div class="tab-content border border-top-0 rounded-lg shadow" id="nav-tabContent">
+                <div class="tab-pane fade show active p-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <h4 class="font-weight-bold mb-4">1. Personal Details</h4>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+
+                </div>
+                <div class="tab-pane fade p-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <h4 class="font-weight-bold mb-4">2. Shipping Info</h4>
+                    {{ order_form.address_line1 | as_crispy_field }}
+                    {{ order_form.address_line2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+
+                </div>
+            <div class="tab-pane fade p-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <h4 class="font-weight-bold mb-4">3. Payment Details</h4>            
+            </div>
+            </div>
+
+
+           
+        </div>
+        <div class="col-4">
+            <h4 class="font-weight-bold mb-4 text-center">Order Summary:</h4>
+        
+        </div>
+    </div>
+</div>
 {% endblock %}
