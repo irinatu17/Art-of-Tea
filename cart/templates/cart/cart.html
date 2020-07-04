@@ -115,7 +115,7 @@
                     Free delivery is available by spending <strong>€{{ free_delivery_delta }}</strong> more!
                 </small>
             {% endif %}
-            <a href="#" class="btn button-black uppercase shadow my-4 btn-lg">
+            <a href="{% url 'checkout' %}" class="btn button-black uppercase shadow my-4 btn-lg">
                <i class="fas fa-lock mr-3"></i>  Checkout
                 
             </a>

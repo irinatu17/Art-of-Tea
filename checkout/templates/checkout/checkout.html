@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% load static %}
+{% load cart_tools %}
+
+{% block content%}
+<!--Delivery info-->
+    <div class="container-fluid delivery-info">
+        <div class="row">
+            <div class="col-12 text-center">
+            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
+            </div>
+        </div>
+    </div>
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    {% csrf_token %}
+    {{ order_form| crispy }}
+    </form>
+{% endblock %}
