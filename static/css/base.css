@@ -9,7 +9,8 @@
 --brown-grey: #8E7A67;
 --lightgrey: #E4E3E2;
 --lavander: #D6D3F0;
---red-salmon: #E65555;
+--red-salmon: #ff7474;
+--red: #ff4d4d;
 --white: #ffffff;
 --darkwhite: #f5f5f5f3;
 
@@ -122,12 +123,36 @@ border: 1px solid var(--darkgreen);
 background-color: transparent;
 }
 
+.btn-next{
+color: var(--white) !important; 
+}
+.btn-next:hover{
+color: var(--black) !important; 
+background-color: var(--lightgreen) !important;
+}
+
+.btn-prev:hover{
+color: var(--white) !important; 
+}
+
+.btn-payment{
+border: 1px solid var(--black);
+font-family: var(--sawarabi-mincho);
+font-weight:500;
+background-color: var(--red);
+color: var(--black);
+}
+
+.btn-payment:hover{
+background-color: var(--red-salmon);
+}
+
 .button-green-transparent{
 background-color: transparent;
 color: var(--white);
 border: 1px solid var(--darkgreen);
 font-family: var(--sawarabi-mincho);
-font-weight: 500;
+font-weight:500;
 }
 
 .button-green-transparent:hover{

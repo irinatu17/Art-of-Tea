@@ -40,6 +40,18 @@ $(document).ready(function() {
     $("#search-form-container").toggle();
   });
 
-initMap();
 
+// The method of triggering Next and GoBack buttons is taken and modified from the following source:
+// https://stackoverflow.com/questions/22297964/bootstrap-tabs-next-previous-buttons-for-forms/22298275
+  $('.btnNext').click(function() {
+    $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
+  });
+
+  $('.btnGoBack').click(function() {
+    $('.nav-tabs .active').parent().prev('li').find('a').trigger('click');
+  });
+
+
+
+  initMap();
 });
