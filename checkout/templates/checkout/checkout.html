@@ -1,140 +1,19 @@
 {% extends "base.html"%}
 {% load static %}
-{% load cart_tools %}
 
 {% block content%}
 <!--Delivery info-->
-<div class="container-fluid delivery-info">
-    <div class="row">
-        <div class="col-12 text-center">
-        <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
-        </div>
-    </div>
-</div>
+{% include 'checkout/includes/delivery_info.html' %} 
 <!--Main Heading-->
-<div class="container mt-5 ">
+{% include 'checkout/includes/main_heading.html' %} 
+
+<div class="container mt-2 mb-4">
     <div class="row">
-        <div class="col-12 text-center mb-3">
-            <h1 class="uppercase main-heading">Checkout</h1>
-        </div>
-        <div class="col-12 mt-4">
-            <p class="text-muted">Please fill out the form to complete the order</p>
-        
-        </div>
-    </div>
-</div>
-<!--Form-->
-<div class="container mt-2 mb-5">
-    <div class="row">
-        <div class="col-8 ">
-                <ul class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark active shadow-sm" id="personal-details-tab" data-toggle="tab"
-                            href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">
-                            Personal Details
-                        </a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a class="nav-link text-dark shadow-sm" id="shipping-info-tab" data-toggle="tab"
-                            href="#shipping-info" role="tab" aria-controls="shipping-info" aria-selected="false">
-                            Shipping Info
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark  shadow-sm" id="payment-details-tab" data-toggle="tab"
-                            href="#payment-details" role="tab" aria-controls="payment-details" aria-selected="false">
-                            Payment Details
-                        </a>
-                    </li>
-                </ul>
-            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                <div class="tab-content border border-top-0 rounded-lg shadow" id="nav-tabContent">
-                    <div class="tab-pane fade show active p-4" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
-                        <h4 class="font-weight-bold mb-4">1. Personal Details</h4>
-                        {% csrf_token %}
-                        {{ order_form.full_name | as_crispy_field }}
-                        {{ order_form.email | as_crispy_field }}
-                        {{ order_form.phone_number | as_crispy_field }}
-                        <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
-                            <a class="btn button-green btn-next uppercase btnNext">Next <i class="fas fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade p-4" id="shipping-info" role="tabpanel" aria-labelledby="shipping-info-tab">
-                        <h4 class="font-weight-bold mb-4">2. Shipping Info</h4>
-                        {{ order_form.address_line1 | as_crispy_field }}
-                        {{ order_form.address_line2 | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.county | as_crispy_field }}
-                        {{ order_form.postcode | as_crispy_field }}
-                        {{ order_form.country | as_crispy_field }}
-
-                        <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
-                            <a class="btn button-black-outline btn-prev uppercase btnGoBack mr-3">
-                                <i class="fas fa-chevron-left"></i> Go Back
-                            </a>
-                            <a class="btn button-green btn-next uppercase btnNext">
-                                Next <i class="fas fa-angle-right"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade p-4" id="payment-details" role="tabpanel" aria-labelledby="payment-details-tab">
-                        <h4 class="font-weight-bold mb-4">3. Payment Details</h4>    
-
-
-                        <div class="input-group group-end text-right d-flex justify-content-end">
-                            <div>
-                                <a class="btn button-black-outline btn-prev uppercase btnGoBack mr-3">
-                                    <i class="fas fa-chevron-left"></i> Go Back
-                                </a>
-                            </div>
-                            <div>
-                                <button button id="submit-button" type="submit" class="btn btn-payment uppercase">
-                                 Proceed payment <i class="fas fa-lock"></i>
-                                </button>
-                                <p class="text-salmon small">
-                                    Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong>
-                                </p>
-                            </div>
-                        </div>      
-                    </div>
-                </div>
-            </form> 
-        </div>
+        <!--Form for mobile and for tablet/desktop-->
+        {% include 'checkout/includes/form_mobile.html' %} 
+        {% include 'checkout/includes/form_tablet_desktop.html' %} 
         <!--Order summary-->
-        <div class="col-4 border rounded-lg shadow p-3">
-            <!--Order summary Heading-->
-            <div class="border-bottom  mb-3">
-                <h4 class="font-weight-bold mb-0">Order Summary: </h4>
-                <small class="text-muted pb-3"> 
-                    {% if items_count > 2 %}
-                        {{ items_count }} items
-                    {% else %}
-                        {{ items_count }} item
-                    {% endif %}
-                </small>
-            </div>
-             <!--Order summary Items-->
-            <div class="row order-summary-items">
-            {% for item in cart_items %}
-                <div class="col-4 mb-3">
-                    <img class="img-fluid" src="{{ item.product.image_gallery.image }}" alt="{{ product.name }}">
-                </div>
-                <div class="col-8">
-                    <p class="font-weight-bold">{{ item.product.name }}</p>
-                    <p class="small">Qty: {{ item.quantity }}</p>
-                    <p class="small">Subtotal: €{{ item.product.price | calc_subtotal:item.quantity }}</p>
-
-                </div>
-                {% endfor %}
-            </div>
-            <!--Order summary Total-->
-            <div class="col-12 border-top pt-2">
-                <a href="{% url 'view_cart' %}"><i class="fas fa-chevron-left"></i> Edit Cart</a>
-                <p class="small mt-3 mb-1 text-muted">Delivery Cost: €{{ delivery|floatformat:2 }}</p>
-                <p class="lead">Total to pay: <span class="font-weight-bold">€{{ grand_total|floatformat:2 }}</span></p>
-            </div>
-        </div>
+        {% include 'checkout/includes/order_summary.html' %} 
     </div>
 </div>
 {% endblock %}

@@ -424,9 +424,13 @@ height: 30vh;
 
 /*Checkout*/
 .order-summary-items{
-min-height: 150px;
+
 max-height: 250px;
 overflow-y: auto;
+}
+
+.checkout-button{
+font-size: 0.8rem;
 }
 
 /*Media query for small devices (360px and up)*/
@@ -495,6 +499,10 @@ line-height: 1.7rem;
 font-size: 2.3rem;
 }
 
+.checkout-button{
+font-size: 0.9rem;
+}
+
 }
 
 /*Media query for large devices (desktops, 992px and up)*/
@@ -521,5 +529,7 @@ transform: translate(-50%, -50%);
 .landing-main-heading{
 font-size: 5.5rem;
 }
-
+.checkout-button{
+font-size: 1rem;
+}
 }
