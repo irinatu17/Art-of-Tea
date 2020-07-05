@@ -19,11 +19,11 @@
 <div class="container mt-4">
     <div class="row ">
         <div class="col-12">
-            <h1 class="uppercase main-heading display-6  text-center">{{ service.name }}</h1>
+            <h1 class="uppercase main-heading text-center">{{ service.name }}</h1>
             <hr class="divider-green w-25 my-4">
             <div class="col-12 col-md-10 offset-md-1">
                 <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
-                    <img class="img-fluid" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
+                    <img class="img-fluid w-100" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
                 </a>
                 
                 <div class="row mt-4">
@@ -31,12 +31,16 @@
                         <p class="landing-paragraph">{{ service.description }}</p>
                         <div>
                         <hr>
-                            <h3 class="main-heading text-salmon my-4">Itinerary:</h3>
+                            <h3 class="main-heading text-salmon my-4">Itinerary example:</h3>
+                            <table class="table">
                                 {% for item in  itinerary_items %} 
-                                <p >{{ item.time }}
-                                <span class="font-weight-bold ml-4">{{  item.text }}</span>
-                                </p> 
+                                <tr>
+                                   <th>{{ item.time }}</th>
+                                    <td class="ml-4">{{  item.text }}
+                                    </td> 
+                                </tr>
                                 {% endfor %}
+                            </table>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 ">
