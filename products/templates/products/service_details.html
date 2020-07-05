@@ -43,23 +43,36 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 d-flex justify-content-between">
-                        <div>
-                            <p>
-                                <span class="font-weight-bold mr-2">Duration:</span>
-                                {{ service.duration }}
-                            </p>
-                            <p>
-                                <i class="fas fa-star mr-2"></i><span class="text-dark">
-                                {{ service.rating|floatformat:1 }} / 5 </span>
-                            </p>
+                    <div class="col-12 col-md-6">
+                        <div class=" d-flex justify-content-between">
+                            <div>
+                                <p>
+                                    <span class="font-weight-bold mr-2">Duration:</span>
+                                    {{ service.duration }}
+                                </p>
+                                <p>
+                                    <i class="fas fa-star mr-2"></i><span class="text-dark">
+                                    {{ service.rating|floatformat:1 }} / 5 </span>
+                                </p>
+                            </div>
+                            <div class="mt-2">
+                                <p>
+                                    <span class="font-weight-bold border p-3 rounded-pill border-success">
+                                    <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span>
+                                </p>
+                                <p class="text-muted small text-center">per person</p>
+                            </div>
                         </div>
-                        <div class="mt-2">
-                            <p>
-                                <span class="font-weight-bold border p-3 rounded-pill border-success">
-                                <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span>
-                            </p>
-                            <p class="text-muted small text-center">per person</p>
+                        <div>
+                         <form class="form" action="" method="POST">
+                             {% csrf_token %}
+                              <!--Number of participans-->
+                            <h6 class="font-weight-bold mt-4">Number of participans:</h6>
+                            <div class="input-group mt-3">
+                                <input name="quantity" type="number" min="1" max="999" class="form-control " value="1" required>
+                            </div>
+                            <h6 class="font-weight-bold mt-4">Date and Time:</h6>
+                        </form>
                         </div>
                     </div>
                 </div>
