@@ -7,12 +7,14 @@
     <div class="container-fluid delivery-info">
         <div class="row">
             <div class="col-12 text-center">
-            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
+                <p class="uppercase mb-0">FREE DELIVERY FROM 
+                    <strong>€{{ free_delivery_threshold }}!</strong>
+                </p>
             </div>
         </div>
     </div>
 <!--Main Heading-->
-<div class="container mt-5 ">
+<div class="container mt-5">
     <div class="row">
         <div class="col-12 text-center mb-3">
             <h1 class="uppercase main-heading">Shopping cart</h1>
@@ -24,7 +26,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <a href="{% url 'products' %}" class="text-dark"><i class="fas fa-long-arrow-alt-left"></i> Continue shopping</a>
+            <a href="{% url 'products' %}" class="text-dark">
+                <i class="fas fa-long-arrow-alt-left"></i> 
+                Continue shopping
+            </a>
         </div>
     </div>
 </div>
@@ -36,7 +41,8 @@
     <div class="row p-3 border-bottom  border-dark">
         <!--Image-->
         <div class="col-6 col-md-2 mb-3 ">
-            <img class="img-fluid rounded-lg shadow-sm" src="{{ item.product.image_gallery.image }}" alt="{{ item.product.name }}">
+            <img class="img-fluid rounded-lg shadow-sm" src="{{ item.product.image_gallery.image }}"
+                 alt="{{ item.product.name }}">
         </div>
         <!--price and subtotal for mobile-->
         <div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
@@ -50,7 +56,9 @@
                     </p>
                 </div>
                 <div class="text-right">
-                    <a class="remove-button remove_{{ item.item_id }}" title="Remove" ><i class="fas fa-trash-alt lead text-danger"></i></a>
+                    <a class="remove-button remove_{{ item.item_id }}" title="Remove">
+                        <i class="fas fa-trash-alt lead text-danger"></i>
+                    </a>
                 </div>
             </div>
             <div>
@@ -100,7 +108,9 @@
         </div>
         <!--Remove button for tablet and desktop-->
         <div class="d-none d-md-block col-6 col-md-1 col-lg-1 text-right ">
-            <a class="remove-button remove_{{ item.item_id }}" title="Remove" ><i class="fas fa-trash-alt lead text-danger"></i></a>
+            <a class="remove-button remove_{{ item.item_id }}" title="Remove">
+                <i class="fas fa-trash-alt lead text-danger"></i>
+            </a>
         </div>
     </div>
     {% endfor %}
@@ -110,17 +120,15 @@
             <small>Delivery Cost: €{{ delivery|floatformat:2 }}</small>
             <h5 class="lead font-weight-bolder mt-2">Grand Total: € {{ grand_total|floatformat:2 }}</h5>
             <small class="text-muted">*Tax included </small>    
+
             {% if free_delivery_delta > 0 %}
                 <small class="text-salmon text-right">
                     Free delivery is available by spending <strong>€{{ free_delivery_delta }}</strong> more!
                 </small>
             {% endif %}
             <a href="{% url 'checkout' %}" class="btn button-black uppercase shadow my-4 btn-lg">
-               <i class="fas fa-lock mr-3"></i>  Checkout
-                
+               <i class="fas fa-lock mr-3"></i>  Checkout 
             </a>
-
-
         </div> 
     </div>   
 </div>
@@ -132,10 +140,13 @@
         <div class="col-12 mb-5 text-center">
             <i class="fab fa-pagelines icon-green mb-3 icon-large"></i>
             <p class="font-weight-bold lead mb-4">Your cart is empty.</p>
-            <a href="{% url 'products' %}" class="btn button-green px-3 mr-3"><i class="fas fa-long-arrow-alt-left"></i> Continue shopping</a>
+            <a href="{% url 'products' %}" class="btn button-green px-3 mr-3">
+                <i class="fas fa-long-arrow-alt-left"></i> Continue shopping
+            </a>
         </div>
     </div>
 </div>
+
 {% endif %}
 {% endblock %}
 

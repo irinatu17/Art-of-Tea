@@ -422,6 +422,13 @@ min-height:300px;
 height: 30vh;
 }
 
+/*Checkout*/
+.order-summary-items{
+min-height: 150px;
+max-height: 250px;
+overflow-y: auto;
+}
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
