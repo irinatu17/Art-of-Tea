@@ -376,6 +376,11 @@ min-height:300px;
 height: 30vh;
 }
 
+.service-image{
+object-fit: contain;
+height: 100%;
+}
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{

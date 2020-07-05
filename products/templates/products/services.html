@@ -28,12 +28,12 @@
         {% for service in services %} 
         {% if service.pk|divisibleby:2 %}
 
-        <div class="card mb-4" >
+        <div class="card mb-4 rounded-lg shadow" >
             <div class="row no-gutters">
-                <div class="col-md-4 col-lg-5">
-                <img src="{{ service.image_gallery.image}}" class="card-img" alt="{{ service.name }}">
+                <div class="col-12 col-md-5 ">
+                <img src="{{ service.image_gallery.image}}" class="card-img img-fluid service-image" alt="{{ service.name }}">
                 </div>
-                <div class="col-md-8 col-lg-7">
+                <div class="col-12 col-md-7">
                 <div class="card-body">
                     <h5 class="card-title uppercase">{{ service.name }}</h5>
                     <p class="card-text">{{ service.description }}</p>
@@ -47,9 +47,9 @@
         </div>
         {% else %}
 
-        <div class="card mb-4" >
+        <div class="card mb-4 rounded-lg shadow" >
             <div class="row no-gutters">
-                <div class="col-md-8 col-lg-7">
+                <div class="col-12 col-md-7">
                     <div class="card-body">
                         <h5 class="card-title uppercase">{{ service.name }}</h5>
                         <p class="card-text">{{ service.description }}</p>
@@ -59,8 +59,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-5">
-                    <img src="{{ service.image_gallery.image}}" class="card-img" alt="{{ service.name }}">
+                <div class=" col-12 col-md-5">
+                    <img src="{{ service.image_gallery.image}}" class="card-img service-image img-fluid" alt="{{ service.name }}">
                 </div>
             </div>
         </div>
