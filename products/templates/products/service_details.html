@@ -31,9 +31,9 @@
                         <p class="landing-paragraph">{{ service.description }}</p>
                         <div>
                         <hr>
-                            <h3 class="main-heading text-salmon my-4">Itinerary example:</h3>
+                            <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
                             <table class="table">
-                                {% for item in  itinerary_items %} 
+                                {% for item in itinerary_items %} 
                                 <tr>
                                    <th>{{ item.time }}</th>
                                     <td class="ml-4">{{  item.text }}
@@ -43,10 +43,24 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 ">
-                    <p><span class="font-weight-bold mr-3">Duration:</span>
-                    {{ service.duration }}
-                    </p>
+                    <div class="col-12 col-md-6 d-flex justify-content-between">
+                        <div>
+                            <p>
+                                <span class="font-weight-bold mr-2">Duration:</span>
+                                {{ service.duration }}
+                            </p>
+                            <p>
+                                <i class="fas fa-star mr-2"></i><span class="text-dark">
+                                {{ service.rating|floatformat:1 }} / 5 </span>
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <p>
+                                <span class="font-weight-bold border p-3 rounded-pill border-success">
+                                <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span>
+                            </p>
+                            <p class="text-muted small text-center">per person</p>
+                        </div>
                     </div>
                 </div>
             </div>
