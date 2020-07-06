@@ -64,7 +64,7 @@
                         </div>
                         <!--Form-->
                         <p class="text-muted mt-3">Please fill out the form below to book the ceremony</p>
-                        
+
                         <form class="form" action="{% url 'add_to_cart' service.id %}" method="POST">
                             {% csrf_token %}
                             <!--Number of participans-->
@@ -83,10 +83,9 @@
                             </div>   
                             <!--Place-->  
                             <h6 class="font-weight-bold mt-4">Where the ceremony will take place?</h6>
-                            <select class="custom-select">
+                            <select class="custom-select" name="service_place">
                                 <option value="tea_club" selected>in our tea club "Art of Tea"</option>
                                 <option value="customer_place">at your home/office (+ €50)</option>
-
                             </select>
                             <!--Comment-->   
                             <div class="form-group">
@@ -96,8 +95,8 @@
                             <p class="text-muted small">The certificate will be sent to your email and we will get back to you soon to discuss further details.</p>
                             <!--buttons-->
                             <div class="mt-4 mb-4 text-center text-md-left">
-                                <a href="{% url 'services' %}" class="btn uppercase button-black-outline px-3 mr-3"><i class="fas fa-angle-left"></i> Go back</a>
-                                <input type="submit" class="btn btn-salmon uppercase font-weight-bold px-3" value="Add to Cart">
+                                <a href="{% url 'services' %}" class="btn btn-service uppercase button-black-outline px-3 mr-0 mr-lg-3"><i class="fas fa-angle-left"></i> Go back</a>
+                                <input type="submit" class="btn btn-salmon btn-service uppercase font-weight-bold px-3" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
