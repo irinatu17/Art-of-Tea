@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{{ form.media }}
 {% block page_header %}
 {% endblock %}
 
@@ -25,12 +26,13 @@
                 <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
                     <img class="img-fluid w-100" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
                 </a>
-                
-                <div class="row mt-4">
+
+                <div class="row mt-4 mb-5">
                     <div class="col-12 col-md-6 ">
+                        <!--Description-->
                         <p class="landing-paragraph">{{ service.description }}</p>
+                        <!--Itinerary-->
                         <div>
-                        <hr>
                             <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
                             <table class="table">
                                 {% for item in itinerary_items %} 
@@ -46,42 +48,58 @@
                     <div class="col-12 col-md-6">
                         <div class=" d-flex justify-content-between">
                             <div>
-                                <p>
-                                    <span class="font-weight-bold mr-2">Duration:</span>
-                                    {{ service.duration }}
-                                </p>
-                                <p>
-                                    <i class="fas fa-star mr-2"></i><span class="text-dark">
-                                    {{ service.rating|floatformat:1 }} / 5 </span>
-                                </p>
+                                <!--Duration-->
+                                <p><span class="font-weight-bold mr-2">Duration:</span>
+                                    {{ service.duration }}</p>
+                                <!--Rating-->
+                                <p><i class="fas fa-star mr-2"></i><span class="text-dark">
+                                    {{ service.rating|floatformat:1 }} / 5 </span></p>
                             </div>
+                            <!--Price-->
                             <div class="mt-2">
-                                <p>
-                                    <span class="font-weight-bold border p-3 rounded-pill border-success">
-                                    <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span>
-                                </p>
+                                <p> <span class="font-weight-bold border p-3 rounded-pill border-success">
+                                    <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span></p>
                                 <p class="text-muted small text-center">per person</p>
                             </div>
                         </div>
-                        <div>
-                         <form class="form" action="" method="POST">
-                             {% csrf_token %}
-                              <!--Number of participans-->
-                            <h6 class="font-weight-bold mt-4">Number of participans:</h6>
-                            <div class="input-group mt-3 w-50">
-                                <input name="quantity" type="number" min="1" max="999" class="form-control " value="1" required>
+                        <!--Form-->
+                        <p class="text-muted mt-3">Please fill out the form below to book the ceremony</p>
+
+                        <form class="form" action="{% url 'add_to_cart' service.id %}" method="POST">
+                            {% csrf_token %}
+                            <!--Number of participans-->
+                            <h6 class="font-weight-bold mt-4">Number of participants:</h6>
+                            <div class="input-group mt-3 w-100">
+                                <input name="quantity" type="number" min="1" max="100" class="form-control" value="1" required>
                             </div>
-                             <!--Date and time picker-->
+                            <!--Date and time picker-->
                             <h6 class="font-weight-bold mt-4">Date and Time:</h6>
 
-                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                            <div class="input-group date w-100" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" name="data_time" class="form-control datetimepicker-input" data-target="#datetimepicker1" required/>
                                 <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
+                            </div>   
+                            <!--Place-->  
+                            <h6 class="font-weight-bold mt-4">Where the ceremony will take place?</h6>
+                            <select class="custom-select" name="service_place">
+                                <option value="tea_club" selected>in our tea club "Art of Tea"</option>
+                                <option value="customer_place">at your home/office (+ €50)</option>
+                            </select>
+                            <!--Comment-->   
+                            <div class="form-group">
+                                <label for="additional_comment" class= "font-weight-bold mt-4">Your additional comment/query:</label>
+                                <textarea class="form-control" name="comment" id="additional_comment" rows="4"></textarea>
                             </div>
+                            <p class="text-muted small">The certificate will be sent to your email and we will get back to you soon to discuss further details.</p>
+                            <!--buttons-->
+                            <div class="mt-4 mb-4 text-center text-md-left">
+                                <a href="{% url 'services' %}" class="btn btn-service uppercase button-black-outline px-3 mr-0 mr-lg-3"><i class="fas fa-angle-left"></i> Go back</a>
+                                <input type="submit" class="btn btn-salmon btn-service uppercase font-weight-bold px-3" value="Add to Cart">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'checkout',
 
     'crispy_forms',
+    'tempus_dominus',
 ]
 
 MIDDLEWARE = [
