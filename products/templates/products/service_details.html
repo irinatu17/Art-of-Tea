@@ -68,10 +68,18 @@
                              {% csrf_token %}
                               <!--Number of participans-->
                             <h6 class="font-weight-bold mt-4">Number of participans:</h6>
-                            <div class="input-group mt-3">
+                            <div class="input-group mt-3 w-50">
                                 <input name="quantity" type="number" min="1" max="999" class="form-control " value="1" required>
                             </div>
+                             <!--Date and time picker-->
                             <h6 class="font-weight-bold mt-4">Date and Time:</h6>
+
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
                         </form>
                         </div>
                     </div>

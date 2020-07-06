@@ -40,6 +40,11 @@ $(document).ready(function() {
     $("#search-form-container").toggle();
   });
 
+    //Tempus Dominus bootstrap-datetimepicker
+    $(function () {
+        $("#datetimepicker1").datetimepicker();
+      });
+
 initMap();
 
 });
