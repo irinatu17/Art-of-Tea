@@ -42,10 +42,8 @@ $(document).ready(function() {
 
     //Tempus Dominus bootstrap-datetimepicker
     $(function () {
-        $("#datetimepicker1").datetimepicker();
-      });
-
-initMap();
+        $('#datetimepicker1').datetimepicker();
+    });
 
 // The method of triggering Next and GoBack buttons is taken and modified from the following source:
 // https://stackoverflow.com/questions/22297964/bootstrap-tabs-next-previous-buttons-for-forms/22298275
