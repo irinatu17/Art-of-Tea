@@ -45,6 +45,10 @@ margin-top:74px;
 text-transform: uppercase;
 }
 
+h1 {
+font-size: 2rem;
+}
+
 .text-white{
 color: var(--white);
 }
@@ -433,6 +437,11 @@ overflow-y: auto;
 font-size: 0.8rem;
 }
 
+.service-image{
+object-fit: contain;
+height: 100%;
+}
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
@@ -444,6 +453,11 @@ box-shadow: none;
 }
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+
+h1 {
+font-size: 2.5rem;
+}
+
 .main-nav-sticky {
 padding-top: 56px;
 }

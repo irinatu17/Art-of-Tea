@@ -19,11 +19,11 @@
 <div class="container mt-4">
     <div class="row ">
         <div class="col-12">
-            <h1 class="uppercase main-heading display-6  text-center">{{ service.name }}</h1>
+            <h1 class="uppercase main-heading text-center">{{ service.name }}</h1>
             <hr class="divider-green w-25 my-4">
             <div class="col-12 col-md-10 offset-md-1">
                 <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
-                    <img class="img-fluid" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
+                    <img class="img-fluid w-100" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
                 </a>
                 
                 <div class="row mt-4">
@@ -31,18 +31,57 @@
                         <p class="landing-paragraph">{{ service.description }}</p>
                         <div>
                         <hr>
-                            <h3 class="main-heading text-salmon my-4">Itinerary:</h3>
-                                {% for item in  itinerary_items %} 
-                                <p >{{ item.time }}
-                                <span class="font-weight-bold ml-4">{{  item.text }}</span>
-                                </p> 
+                            <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
+                            <table class="table">
+                                {% for item in itinerary_items %} 
+                                <tr>
+                                   <th>{{ item.time }}</th>
+                                    <td class="ml-4">{{  item.text }}
+                                    </td> 
+                                </tr>
                                 {% endfor %}
+                            </table>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 ">
-                    <p><span class="font-weight-bold mr-3">Duration:</span>
-                    {{ service.duration }}
-                    </p>
+                    <div class="col-12 col-md-6">
+                        <div class=" d-flex justify-content-between">
+                            <div>
+                                <p>
+                                    <span class="font-weight-bold mr-2">Duration:</span>
+                                    {{ service.duration }}
+                                </p>
+                                <p>
+                                    <i class="fas fa-star mr-2"></i><span class="text-dark">
+                                    {{ service.rating|floatformat:1 }} / 5 </span>
+                                </p>
+                            </div>
+                            <div class="mt-2">
+                                <p>
+                                    <span class="font-weight-bold border p-3 rounded-pill border-success">
+                                    <i class="fas fa-euro-sign mr-2"></i>{{ service.price }}</span>
+                                </p>
+                                <p class="text-muted small text-center">per person</p>
+                            </div>
+                        </div>
+                        <div>
+                         <form class="form" action="" method="POST">
+                             {% csrf_token %}
+                              <!--Number of participans-->
+                            <h6 class="font-weight-bold mt-4">Number of participans:</h6>
+                            <div class="input-group mt-3 w-50">
+                                <input name="quantity" type="number" min="1" max="999" class="form-control " value="1" required>
+                            </div>
+                             <!--Date and time picker-->
+                            <h6 class="font-weight-bold mt-4">Date and Time:</h6>
+
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
