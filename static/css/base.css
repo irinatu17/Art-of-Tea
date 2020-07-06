@@ -61,9 +61,6 @@ color: var(--black);
 color: var(--red-salmon);
 }
 
-.btn-salmon{
-background-color: var(--red-salmon);
-}
 .divider-green{
 background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
 height: 4px;
@@ -139,7 +136,7 @@ background-color: var(--lightgreen) !important;
 color: var(--white) !important; 
 }
 
-.btn-payment{
+.btn-salmon{
 border: 1px solid var(--black);
 font-family: var(--sawarabi-mincho);
 font-weight:500;
@@ -147,7 +144,7 @@ background-color: var(--red);
 color: var(--black);
 }
 
-.btn-payment:hover{
+.btn-salmon:hover{
 background-color: var(--red-salmon);
 }
 
