@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, \
-    reverse, HttpResponse
+ reverse, HttpResponse, get_object_or_404
+from products.models import Product
 
 
 def view_cart(request):
@@ -22,6 +23,40 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+    # place = None
+    # if 'service_place' in request.POST:
+    #     place = request.POST.get('service_place')
+    # comment = None
+    # if 'comment' in request.POST:
+    #     comment = request.POST.get('comment')
+    # data_time = None
+    # if 'data_time' in request.POST:
+    #     data_time = request.POST.get('data_time')
+    # if item_id in list(cart.keys()):
+    #     cart[item_id] += quantity
+    # else:
+    #     cart[item_id] = quantity
+    # cart = {
+    # 'product': {
+    #     item_id: quantity
+    #     },
+    # 'service': {
+    #     item_id: {
+    #         'place': place,
+    #         'comment': comment,
+    #         'data_time': data_time,
+    #         }
+    #     }
+    # if item_id in cart:
+    #     cart[item_id] = int(cart[item_id]) + quantity
+    # else:
+    #     cart[item_id] = cart.get(item_id, quantity)
+    # cart['product'][item_id] = quantity
+    # cart['service'][item_id] = {
+    #     'place': place,
+    #     'comment': comment,
+    #     'data_time': data_time
+    #     }
 
 
 def update_cart(request, item_id):
