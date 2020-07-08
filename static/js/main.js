@@ -42,7 +42,9 @@ $(document).ready(function() {
 
     //Tempus Dominus bootstrap-datetimepicker
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $("#datetimepicker1").datetimepicker({
+        format: 'DD/MM/YYYY HH:mm',
+        });
     });
 
 // The method of triggering Next and GoBack buttons is taken and modified from the following source:
@@ -54,8 +56,6 @@ $(document).ready(function() {
   $('.btnGoBack').click(function() {
     $('.nav-tabs .active').parent().prev('li').find('a').trigger('click');
   });
-
-
 
   initMap();
 });
