@@ -57,5 +57,8 @@ $(document).ready(function() {
     $('.nav-tabs .active').parent().prev('li').find('a').trigger('click');
   });
 
+// Initialize Bootstrap toasts
+  $('.toast').toast('show');
+
   initMap();
 });

@@ -443,6 +443,15 @@ object-fit: contain;
 height: 100%;
 }
 
+
+/*Toasts - messages*/
+.container-messages {
+position: fixed;
+top: 118px;
+right: 15px;
+z-index: 9999;
+}
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
