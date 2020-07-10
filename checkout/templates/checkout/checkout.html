@@ -10,10 +10,16 @@
 <div class="container mt-2 mb-4">
     <div class="row">
         <!--Form for mobile and for tablet/desktop-->
-        {% include 'checkout/includes/form_mobile.html' %} 
-        {% include 'checkout/includes/form_tablet_desktop.html' %} 
+        {% include 'checkout/includes/checkout_form.html' %} 
         <!--Order summary-->
         {% include 'checkout/includes/order_summary.html' %} 
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}      
+    <script src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}

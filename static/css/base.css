@@ -438,7 +438,7 @@ overflow-y: auto;
 }
 
 .checkout-button{
-font-size: 0.8rem;
+font-size: 0.7rem;
 }
 
 .service-image{
@@ -446,6 +446,9 @@ object-fit: contain;
 height: 100%;
 }
 
+.checkout-form-paragraph{
+font-size: 80%;
+}
 
 /*Toasts - messages*/
 .container-messages {
@@ -482,7 +485,14 @@ border-left: 8px solid #17a2b8;
 background-color: transparent;
 border-radius: 0;
 box-shadow: none;
+}
 
+.checkout-form-paragraph{
+font-size: 100%;
+}
+
+.checkout-button{
+font-size: 0.8rem;
 }
 }
 /* Media query for medium devices (tablets, 768px and up)*/
@@ -559,6 +569,12 @@ right: 0.2rem;
 .toast-header{
 font-size: 1.2rem;
 }
+
+.tab-content{
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+border-radius: .5rem;
+border-top: 0;
+}
 }
 
 /*Media query for large devices (desktops, 992px and up)*/
@@ -598,4 +614,7 @@ top: 118px;
 right: 0.6rem;
 }
 
+#card-element{
+width: 70%;
+}
 }
