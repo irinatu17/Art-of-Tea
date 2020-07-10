@@ -35,13 +35,18 @@
         <div class="row mb-4 mt-4">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <a href="{{ product.image_gallery.image_url }}" target="_blank" rel="noopener">
-                    <img class="card-img-top img-fluid rounded-lg" src="{{ product.image_gallery.image }}" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid rounded-lg shadow-sm" src="{{ product.image_gallery.image }}" alt="{{ product.name }}">
                 </a>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-8">
-                <p><i class="fas fa-tag mr-2"></i><a href="{% url 'products' %}?category={{ product.category.name }}"  class="text-dark">{{ product.category.friendly_name }}</a></p>
+            <div class="col-sm-12 col-md-6 col-lg-8 d-flex justify-content-between flex-column">
+                <p class="text-salmon">
+                    <i class="fas fa-tag mr-2 "></i>
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-dark font-weight-bold">
+                        {{ product.category.friendly_name }}
+                    </a>
+                </p>
                 <p>{{ product.description }}</p>
-                <p><i class="fas fa-star mr-2"></i><span class="text-dark">{{ product.rating }} / 5 </span></p>
+                <p class="text-salmon"><i class="fas fa-star mr-2"></i><span class="text-dark">{{ product.rating }} / 5 </span></p>
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                 {% csrf_token %}
                
@@ -58,11 +63,11 @@
                             {% endif %}
                         </div>
                         <div class="col-5 col-md-6 text-center">
-                           <p class="font-weight-bold"><span class="border p-3 rounded-pill border-success"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span></p>
+                           <p class="font-weight-bold"><span class="border p-3 rounded-pill border-success "><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span></p>
                         </div>
                     </div>
                     <!--buttons-->
-                    <div class="mt-4 mb-4 text-center text-md-left">
+                    <div class="mt-4 mb-3 text-center text-md-left">
                     <a href="{% url 'products' %}" class="btn button-black-outline px-3 mr-3"><i class="fas fa-angle-left"></i> Go back</a>
                     <input type="submit" class="btn button-green px-3" value="Add to Cart">
                     </div>
