@@ -277,6 +277,11 @@ border: 2px solid var(--black);
 
 .span-benifits-container{
 margin-top: -2rem;
+}
+
+.benifits-section{
+overflow-x: hidden;
+overflow-y: hidden;   
 
 }
 
@@ -292,7 +297,10 @@ background-color: var(--white);
 }
 
 /*Landing page - Events section*/
-
+.events-container-landing{
+overflow-x: hidden; 
+overflow-y: hidden;
+}
 /*Landing page - reviews section*/
 .review-user-avatar{
 vertical-align: middle;
