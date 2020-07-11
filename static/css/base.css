@@ -26,7 +26,9 @@
 
 body, html {
 height: 100%;
+width:100vw;
 font-family: var(--open-sans);
+
 }
 
 body{
@@ -34,6 +36,7 @@ overflow-x: hidden;
 display: flex;
 flex-direction: column;
 color: var(--black);
+
 }
 
 main{
