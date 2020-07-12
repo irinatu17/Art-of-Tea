@@ -22,6 +22,13 @@
             {{ order_form.county | as_crispy_field }}
             {{ order_form.postcode | as_crispy_field }}
             {{ order_form.country | as_crispy_field }}
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input mr-2" type="checkbox" id="id-save-info" name="save-info" checked>
+
+                <label class="form-check-label text-muted" for="id-save-info">Save this shipping information to my profile</label>
+                    
+            </div>
         </div>
 
         <!--Payment Details--> 
@@ -38,7 +45,7 @@
             <!--Buttons proceed payment--> 
             <div class=" d-flex justify-content-between justify-content-lg-end input-group mt-3">
                 <div>
-                    <a class="btn button-black-outline btn-prev checkout-button py-2 uppercase mr-auto mr-lg-3">
+                    <a href="{% url 'view_cart' %}" class="btn button-black-outline btn-prev checkout-button py-2 uppercase mr-auto mr-lg-3">
                         <i class="fas fa-chevron-left"></i> Go Back
                     </a>
                 </div>
