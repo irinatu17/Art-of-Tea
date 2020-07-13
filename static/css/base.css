@@ -461,6 +461,13 @@ height: 100%;
 font-size: 80%;
 }
 
+.checkout-card-header{
+background-color: var(--darkwhite);
+color: var(--red);
+font-weight: 500;
+font-family: var(--sawarabi-mincho);
+}
+
 /*Toasts - messages*/
 .container-messages {
 position: fixed;
