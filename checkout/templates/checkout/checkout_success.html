@@ -29,8 +29,9 @@
             <!--Shipping details-->
                 <h5 class="card-header checkout-card-header"><i class="fas fa-shipping-fast"></i> Shipping Details</h5>
                 <div class="card-body">
-                    <p class="card-text"><strong>Full Name:</strong> {{ order.full_name }}</p>
-                    <p class="card-text"><strong> Address:</strong></p>
+                    <p class="card-text"><strong>Recipient's Name:</strong> {{ order.full_name }}</p>
+                    <div>
+                    <p class="card-text"><strong> Shipping Address:</strong></p>
                     <p>{{ order.address_line1 }}</p>
                     {% if order.address_line2 %}
                         <p>{{ order.address_line2 }}</p>
@@ -43,6 +44,7 @@
                     {% if order.postcode %}
                         <p>{{ order.postcode }}</p>
                     {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,8 +74,9 @@
                             {% endfor %}
                         </div>
                         <div class=" border-top pt-1 pt-md-2">
-                            <p class="small mt-1 mt-md-3 mb-1 text-muted">Delivery Cost: €{{ delivery|floatformat:2 }}</p>
-                            <p class="lead">Grand Total: <span class="font-weight-bold">€{{ grand_total|floatformat:2 }}</span></p>
+                            <p class="small mt-1 mt-md-3">Order Total: €{{ order.order_total }}</p>
+                            <p class="small mt-1 mt-md-3 mb-1">Delivery Cost: €{{ order.delivery_cost }}</p>
+                            <p class="lead">Grand Total: <span class="font-weight-bold">€{{ order.grand_total }}</span></p>
                         </div>
                     </div>
             </div>
