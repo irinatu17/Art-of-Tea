@@ -28,7 +28,9 @@
     <title>Art of Tea {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body onload="fadeSpinner()">
+{% include 'includes/spinner.html' %} 
+
 <header>
 {% include 'includes/navbar.html' %} 
 
@@ -68,7 +70,11 @@
 {% block extra_js %}
 <!--Initialization  AOS -->
 <script>
+    function fadeSpinner() {
+        $('.spinner-overlay-wrapper').fadeOut(1200);
+    }
   AOS.init();
+ 
 </script>
 {% endblock %}
 </body>

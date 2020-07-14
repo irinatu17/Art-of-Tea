@@ -468,12 +468,28 @@ font-weight: 500;
 font-family: var(--sawarabi-mincho);
 }
 
+.spinner-overlay-wrapper{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 99999999;
+}
+
+#spinner{
+background-image: url("/media/spinner.gif");
+background-repeat: no-repeat;
+background-position: center;
+height:100%;
+}
+
 /*Toasts - messages*/
 .container-messages {
 position: fixed;
 top: 73px;
 right: 0.1rem;
-z-index: 999999999999;
+z-index: 99999;
 background-color: #ffffff;
 }
 

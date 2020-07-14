@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
     //Function to initialize Map 
     function initMap() {
         const artOfTea = {lat: 53.349744, lng: -6.260177};
