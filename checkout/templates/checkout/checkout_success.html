@@ -9,14 +9,14 @@
     <div class="row">
         <div class="col-12 text-center mb-3">
             <h2 class="mb-3"><i class="far fa-check-circle text-green"></i> Thank you for your purchase!</h2>
-            <p>The order confirmation email with details of your order has been sent to your email address.</p>
+            <p>The order confirmation email with details of your order has been sent to <strong>{{order.email}}</strong>.</p>
             <p>See the order details below.</p>
         </div>
     </div>
     <!--Order details-->
     <div class="row mb-4">
         <div class="col-12 col-lg-6">
-        <!--Order info-->
+            <!--Order info-->
             <div class="card">
                 <h5 class="card-header checkout-card-header"><i class="fas fa-info-circle text-salmon"></i> Order Info</h5>
                 <div class="card-body">
@@ -25,60 +25,76 @@
                 </div>
             </div>
             
-            <div class="card mt-4">
+            <div class="card mt-3">
             <!--Shipping details-->
                 <h5 class="card-header checkout-card-header"><i class="fas fa-shipping-fast"></i> Shipping Details</h5>
                 <div class="card-body">
                     <p class="card-text"><strong>Recipient's Name:</strong> {{ order.full_name }}</p>
-                    <div>
-                    <p class="card-text"><strong> Shipping Address:</strong></p>
-                    <p>{{ order.address_line1 }}</p>
+                    <p class="card-text mb-1"><strong> Shipping Address:</strong></p>
+                    <p class="mb-1">{{ order.address_line1 }}</p>
                     {% if order.address_line2 %}
-                        <p>{{ order.address_line2 }}</p>
+                        <p class="mb-1">{{ order.address_line2 }}</p>
                     {% endif %}
-                    <p>{{ order.town_or_city }}</p>
+                    <p class="mb-1">{{ order.town_or_city }}</p>
                     {% if order.county %}
-                        <p>{{ order.county }}</p>
+                        <p class="mb-1">{{ order.county }}</p>
                     {% endif %}
-                    <p>{{ order.country }}</p>
+                    <p class="mb-1">{{ order.country }}</p>
                     {% if order.postcode %}
-                        <p>{{ order.postcode }}</p>
+                        <p class="mb-1">{{ order.postcode }}</p>
                     {% endif %}
-                    </div>
                 </div>
             </div>
         </div>
        
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6 mt-3 mt-lg-auto">
             <div class="card">
              <!--Order summary-->
-                    <h5 class="card-header checkout-card-header"><i class="fas fa-clipboard-list text-salmon"></i> Order Summary</h5>
-                    <div class="card-body">
-                        <div class="order-summary-items">
-                            {% for item in order.orderitems.all %}
-                            <div class="row mx-0">
-                                <div class="col-3 mb-1 mb-md-3">
-                                    <img class="img-fluid" src="{{ item.product.image_gallery.image }}" alt="{{ product.name }}">
-                                </div>
-                                <div class="col-9">
-                                    <p class="font-weight-bold">{{ item.product.name }}</p>
-                                    <p class="small">Price: €{{ item.product.price}}</p>
-                                    {% if item.product.is_a_service %}
-                                    <p class="small">{{ item.quantity }} participant(s)</p>
-                                    {% else %}
-                                    <p class="small">Qty: {{ item.quantity }}</p>
-                                    {% endif %}
-                                    <p class="small">Subtotal: €{{ item.product.price|mul:item.quantity}}</p>
-                                </div> 
+                <h5 class="card-header checkout-card-header"><i class="fas fa-clipboard-list text-salmon"></i> Order Summary</h5>
+                <div class="card-body pb-0">
+                    <div class="order-summary-items">
+                        {% for item in order.orderitems.all %}
+                        <div class="row mx-0">
+                            <div class="col-3 mb-1 mb-md-3">
+                                <img class="img-fluid" src="{{ item.product.image_gallery.image }}" alt="{{ product.name }}">
                             </div>
-                            {% endfor %}
+                            <div class="col-9">
+                                <p class="font-weight-bold">{{ item.product.name }}</p>
+                                <p class="small">Price: €{{ item.product.price}}</p>
+                                {% if item.product.is_a_service %}
+                                <p class="small">{{ item.quantity }} participant(s)</p>
+                                {% else %}
+                                <p class="small">Qty: {{ item.quantity }}</p>
+                                {% endif %}
+                                <p class="small">Subtotal: €{{ item.product.price|mul:item.quantity}}</p>
+                            </div> 
                         </div>
-                        <div class=" border-top pt-1 pt-md-2">
-                            <p class="small mt-1 mt-md-3">Order Total: €{{ order.order_total }}</p>
-                            <p class="small mt-1 mt-md-3 mb-1">Delivery Cost: €{{ order.delivery_cost }}</p>
-                            <p class="lead">Grand Total: <span class="font-weight-bold">€{{ order.grand_total }}</span></p>
-                        </div>
+                        {% endfor %}
                     </div>
+                    <div class="border-top pt-1 pt-md-2">
+                        <p class="small mt-1 mb-0">Order Total: €{{ order.order_total }}</p>
+                        <p class="small  mb-1">Delivery Cost: €{{ order.delivery_cost }}</p>
+                        <p class="lead">Grand Total: <span class="font-weight-bold">€{{ order.grand_total }}</span></p>
+                    </div>
+                </div>
+            </div>
+            <!--Buttons Continue shopping and View Order hostory-->
+            <div class="mt-4">
+                {% if user.is_authenticated %}
+                <a href="{% url 'products' %}" class="btn button-black-outline btn-prev checkout-button py-2 mr-auto mr-lg-3">
+                    <i class="fas fa-chevron-left"></i> Keep shopping
+                </a>
+                <a href="#" class="btn btn-salmon checkout-button py-2 mr-auto mr-lg-3">
+                    View full order history
+                </a>
+                {% else %}
+                <p class="mt-3"><a href="{% url 'account_login' %}" class="text-salmon">Login</a> or
+                    <a href="{% url 'account_signup' %}" class="text-salmon">Create an account</a> to view your full order history.
+                </p>
+                <a href="{% url 'products' %}" class="btn button-black-outline btn-prev checkout-button py-2 mr-auto mr-lg-3">
+                    <i class="fas fa-chevron-left"></i> Keep shopping
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>
