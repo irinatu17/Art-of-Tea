@@ -40,9 +40,9 @@ submitButton2.addEventListener('click', () => {
         let county =  document.getElementById('id_county').value; 
         let postcode =  document.getElementById('id_postcode').value; 
         let country =  document.getElementById('id_country').value; 
-        let saveInfo = Boolean($('#id-save-info'));
 
-       // let saveInfo = document.getElementById('id-save-info').value; 
+
+        //let saveInfo = document.getElementById('id-save-info').value; 
 
         let addressLine1Input = document.getElementById('address_line1').value = addressLine1;
         let addressLine2Input = document.getElementById('address_line2').value = addressLine2;
@@ -50,13 +50,18 @@ submitButton2.addEventListener('click', () => {
         let countyInput = document.getElementById('county').value = county;
         let postcodeInput = document.getElementById('postcode').value = postcode;
         let countryInput = document.getElementById('country').value = country;
-        let saveInfoInput = document.getElementById('save_info').value = saveInfo;
 
+        // get save-info input
+        let saveInfo = $('#id-save-info').attr('checked');
+
+        if (saveInfo) {
+            let saveInfoInput = document.getElementById('save_info').value = "True";     
+        }
         $('.nav-tabs .active').parent().next('li').removeClass("disabled");
         $('.nav-tabs .active').parent().next('li').find('a[data-toggle]').attr("data-toggle", "tab");
         $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
 
-        console.log(saveInfoInput)
+        
 
     }
 });
