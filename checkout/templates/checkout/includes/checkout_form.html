@@ -10,14 +10,14 @@
                 Personal Details
             </a>
         </li>
-        <li class="nav-item"> 
-            <a class="nav-link text-dark shadow-sm" id="shipping-info-tab" data-toggle="tab"
+        <li class="nav-item disabled"> 
+            <a class="nav-link text-dark shadow-sm" id="shipping-info-tab" data-toggle=""
                 href="#shipping-info" role="tab" aria-controls="shipping-info" aria-selected="false">
                 Shipping Info
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark  shadow-sm" id="payment-details-tab" data-toggle="tab"
+        <li class="nav-item disabled">
+            <a class="nav-link text-dark  shadow-sm" id="payment-details-tab" data-toggle=""
                 href="#payment-details" role="tab" aria-controls="payment-details" aria-selected="false">
                 Payment
             </a>
@@ -36,7 +36,7 @@
                 {{ order_form.phone_number | as_crispy_field }}
                 <!--Button Next-->
                 <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
-                    <button type="submit" id="personal-details-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
+                    <button type="submit"  id="personal-details-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
                         Next <i class="fas fa-angle-right"></i>
                     </button>
                 </div>
@@ -53,13 +53,17 @@
                 {{ order_form.county | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
                 {{ order_form.country | as_crispy_field }}
-                 
+                 <div class="form-check form-check-inline">
+                    <input class="form-check-input mr-2" type="checkbox" id="id-save-info" value="True" name="save-info" checked>
+
+                    <label class="form-check-label text-muted" for="id-save-info">Save this shipping information to my profile</label>      
+                </div>
                 <!--Buttons Next/Go back-->
                 <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
                     <a class="btn button-black-outline btn-prev checkout-button uppercase btnGoBack mr-3">
                         <i class="fas fa-chevron-left"></i> Go Back
                     </a>
-                    <button type="submit"id="shipping-info-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
+                    <button type="submit" id="shipping-info-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
                         Next <i class="fas fa-angle-right"></i>
                     </button>
                 </div>
@@ -82,6 +86,8 @@
                 <input type="hidden" id="county" name="county">
                 <input type="hidden" id="postcode" name="postcode">
                 <input type="hidden" id="country" name="country">
+                <input type="hidden" id="save_info" name="save-info">
+
                 <!--Stripe form--> 
                     <label for="card-element" class="text-muted small">
                     Credit/debit card
