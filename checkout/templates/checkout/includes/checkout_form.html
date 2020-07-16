@@ -31,15 +31,14 @@
             <div class="tab-pane fade show active p-1 p-md-4" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
             <form action="#" method="POST" id="personal-details-form" onsubmit="return false">
                 <h4 class="font-weight-bold mb-4">1. Personal Details</h4>
-                {% csrf_token %}
                 {{ order_form.full_name | as_crispy_field }}
                 {{ order_form.email | as_crispy_field }}
                 {{ order_form.phone_number | as_crispy_field }}
                 <!--Button Next-->
                 <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
-                    <a id="personal-details-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
+                    <button type="submit" id="personal-details-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
                         Next <i class="fas fa-angle-right"></i>
-                    </a>
+                    </button>
                 </div>
                 </form>
             </div>
@@ -60,9 +59,9 @@
                     <a class="btn button-black-outline btn-prev checkout-button uppercase btnGoBack mr-3">
                         <i class="fas fa-chevron-left"></i> Go Back
                     </a>
-                    <a id="shipping-info-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
+                    <button type="submit"id="shipping-info-btn" class="btn button-green btn-next uppercase checkout-button btnNext">
                         Next <i class="fas fa-angle-right"></i>
-                    </a>
+                    </button>
                 </div>
                  </form>
             </div>
@@ -71,7 +70,18 @@
             <!--Payment Details--> 
             <div class="tab-pane fade p-1 p-md-4" id="payment-details" role="tabpanel" aria-labelledby="payment-details-tab">
             <form  action="{% url 'checkout' %}" method="POST" id="payment-form">
-                <h4 class="font-weight-bold mb-3">3. Payment Details</h4>   
+                {% csrf_token %}
+
+                <h4 class="font-weight-bold mb-3">3. Payment Details</h4> 
+                <input type="hidden" id="full_name" name="full_name">
+                <input type="hidden" id="email" name="email">
+                <input type="hidden" id="phone_number" name="phone_number">
+                <input type="hidden" id="address_line1" name="address_line1">
+                <input type="hidden" id="address_line2" name="address_line2">
+                <input type="hidden" id="town_or_city" name="town_or_city">
+                <input type="hidden" id="county" name="county">
+                <input type="hidden" id="postcode" name="postcode">
+                <input type="hidden" id="country" name="country">
                 <!--Stripe form--> 
                     <label for="card-element" class="text-muted small">
                     Credit/debit card
@@ -80,22 +90,22 @@
                  <!--Stripe errors--> 
                      <div class="mb-3 mt-3 text-danger" id="card-errors" role="alert"></div>
 
-                <!--Buttons Next/Proceed payment--> 
-                <div class="d-flex justify-content-between justify-content-lg-end input-group">
-                    <div>
-                        <a class="btn button-black-outline btn-prev checkout-button uppercase btnGoBack mr-auto mr-lg-3">
-                            <i class="fas fa-chevron-left"></i> Go Back
-                        </a>
-                    </div>
-                    <div  class="text-right">
-                        <button button id="submit-button" type="submit" class="btn btn-salmon checkout-button uppercase">
-                        Proceed payment <i class="fas fa-lock"></i>
-                        </button>
-                        <p class="text-salmon text-right small">
-                            Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong>
-                        </p>
-                    </div>
-                </div>  
+                    <!--Buttons Next/Proceed payment--> 
+                    <div class="d-flex justify-content-between justify-content-lg-end input-group">
+                        <div>
+                            <a class="btn button-black-outline btn-prev checkout-button uppercase btnGoBack mr-auto mr-lg-3">
+                                <i class="fas fa-chevron-left"></i> Go Back
+                            </a>
+                        </div>
+                        <div  class="text-right">
+                            <button button id="submit-button" type="submit" class="btn btn-salmon checkout-button uppercase">
+                            Proceed payment <i class="fas fa-lock"></i>
+                            </button>
+                            <p class="text-salmon text-right small">
+                                Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong>
+                            </p>
+                        </div>
+                    </div>  
                  </form>     
             </div> 
     </div>

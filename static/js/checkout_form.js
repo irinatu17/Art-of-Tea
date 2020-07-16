@@ -1,48 +1,59 @@
-// Personal Details form, step 1
+$(document).ready(function() {
+    // Personal Details form, step 1
 const personalDetailsForm = document.querySelector('#personal-details-form');
-const submitButton = document.querySelector('#personal-details-btn');
+const submitButton = document.getElementById('personal-details-btn');
+let personalDetailsFormValid;
+
 submitButton.addEventListener('click', () => {
-    if (personalDetailsForm.checkValidity()) {
-        // grab input values and store in variables
-        let name =  $('#id-full-name').val();
-        let email =  $('#id-email').val(); 
-        let phoneNumber =  $('#id-phone-number').val(); 
-        // use javascript to toggle visibility of next form
+    personalDetailsFormValid = personalDetailsForm.checkValidity();
+    
+    if (personalDetailsFormValid) {
+        $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
+        let name = document.getElementById('id_full_name').value; 
+        let email = document.getElementById('id_email').value;  
+        let phoneNumber = document.getElementById('id_phone_number').value; 
 
-        $('.btnNext').click(function() {
-            $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
-        });
-
-        //console.log(name);
+        let nameInput = document.getElementById('full_name').value = name;
+        let emailInput = document.getElementById('email').value = email;
+        let phoneNumberInput = document.getElementById('phone_number').value = phoneNumber;
     }
 });
-
 
 // Shipping Info form, step 2
 const shippingInfoForm = document.querySelector('#shipping-info-form');
-const submitButton2 = document.querySelector('#shipping-info-btn');
+const submitButton2 = document.getElementById('shipping-info-btn');
+let shippingInfoFormValid;
+
 submitButton2.addEventListener('click', () => {
-    if (shippingInfoForm.checkValidity()) {
+    let shippingInfoFormValid = shippingInfoForm.checkValidity();
+
+    if (shippingInfoFormValid) {
+
         // grab input values and store in variables
-        let addressLine1 =  $('#id-address_line1').val();
-        let addressLine2 =  $('#id-address_line2').val(); 
-        let townOrCity =  $('#id-town_or_city').val();
-        let county =  $('#id-county').val(); 
-        let postcode =  $('#id-postcode').val(); 
-        let country =  $('#id-country').val(); 
-        
-        //console.log(country);
-        // use javascript to toggle visibility of next form 
+        let addressLine1 =  document.getElementById('id_address_line1').value;
+        let addressLine2 =  document.getElementById('id_address_line2').value; 
+        let townOrCity =  document.getElementById('id_town_or_city').value;
+        let county =  document.getElementById('id_county').value; 
+        let postcode =  document.getElementById('id_postcode').value; 
+        let country =  document.getElementById('id_country').value; 
+        $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
+
+        let addressLine1Input = document.getElementById('address_line1').value = addressLine1;
+        let addressLine2Input = document.getElementById('address_line2').value = addressLine2;
+        let townOrCityInput = document.getElementById('town_or_city').value = townOrCity;
+        let countyInput = document.getElementById('county').value = county;
+        let postcodeInput = document.getElementById('postcode').value = postcode;
+        let countryInput = document.getElementById('country').value = country;
     }
 });
-// once the first two forms have validated and the values stored,
 // add the values to hidden inputs in the final form and submit 
+
+
 
 // The method of triggering Next and GoBack buttons is taken and modified from the following source:
 // https://stackoverflow.com/questions/22297964/bootstrap-tabs-next-previous-buttons-for-forms/22298275
   $('.btnGoBack').click(function() {
     $('.nav-tabs .active').parent().prev('li').find('a').trigger('click');
   });
-  $('.btnNext').click(function() {
-    $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
+
 });
