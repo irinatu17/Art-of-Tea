@@ -51,17 +51,13 @@ submitButton2.addEventListener('click', () => {
         let postcodeInput = document.getElementById('postcode').value = postcode;
         let countryInput = document.getElementById('country').value = country;
 
-        // get save-info input
-        let saveInfo = $('#id-save-info').attr('checked');
-
-        if (saveInfo) {
-            let saveInfoInput = document.getElementById('save_info').value = "True";     
-        }
+        // get save-info input(true or false)
+        let saveInfo = document.getElementById('id-save-info').checked;
+        let saveInfoInput = document.getElementById('save_info').value = saveInfo;  
+        
         $('.nav-tabs .active').parent().next('li').removeClass("disabled");
         $('.nav-tabs .active').parent().next('li').find('a[data-toggle]').attr("data-toggle", "tab");
         $('.nav-tabs .active').parent().next('li').find('a').trigger('click');
-
-        
 
     }
 });
