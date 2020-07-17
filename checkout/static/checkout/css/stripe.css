@@ -2,7 +2,8 @@
     CSS is taken from Stripe documentation: 
     https://stripe.com/docs/stripe-js
  */
-.StripeElement {
+.StripeElement,
+.stripe-style-input {
 box-sizing: border-box;
 height: 40px;
 padding: 10px 12px;
@@ -26,4 +27,8 @@ border-color: #fa755a;
 
 .StripeElement--webkit-autofill {
 background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+color: rgb(73, 80, 87);
 }

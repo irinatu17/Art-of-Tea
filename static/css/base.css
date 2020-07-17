@@ -468,6 +468,20 @@ font-weight: 500;
 font-family: var(--sawarabi-mincho);
 }
 
+select:invalid, 
+select option[value=""]{
+color:rgb(73, 80, 87) !important;
+}
+
+.form-control{
+color:rgb(73, 80, 87);
+}
+.form-control:focus {
+border-color: var(--lightgreen);
+box-shadow: 0 0 0 0.2rem rgba(30, 255, 0, 0.206);
+}
+
+/*Spinner*/
 .spinner-overlay-wrapper{
 position: fixed;
 top: 0;
