@@ -54,7 +54,7 @@ form.addEventListener('submit', function(ev) {
     $('#payment-form').fadeToggle(1200);
     $('.spinner-overlay-wrapper').fadeToggle(1200);
 
-    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    var saveInfo = Boolean($('#save_info'));
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -108,7 +108,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
+                   form.submit();
                 }
             }
         });
