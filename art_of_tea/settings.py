@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'events',
     'cart',
     'checkout',
+    'profiles',
 
     'crispy_forms',
     'tempus_dominus',
