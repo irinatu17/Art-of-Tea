@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'tempus_dominus',
     'mathfilters',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
