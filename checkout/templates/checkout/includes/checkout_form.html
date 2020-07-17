@@ -54,9 +54,16 @@
                 {{ order_form.postcode | as_crispy_field }}
                 {{ order_form.country | as_crispy_field }}
                  <div class="form-check form-check-inline">
-                    <input class="form-check-input mr-2" type="checkbox" id="id-save-info" name="save-info" checked>
-
+                 	{% if user.is_authenticated %}
+                    <input class="form-check-input mr-1" type="checkbox" id="id-save-info" name="save-info" checked>
                     <label class="form-check-label text-muted" for="id-save-info">Save this shipping information to my profile</label>      
+                    {% else %}
+                    <p class="text-muted small"><a class="text-info mr-1" href="{% url 'account_signup' %}">Create an account</a>
+                     or 
+                     <a class="text-info mr-1" href="{% url 'account_login' %}">login</a> to save this information to your profile
+                    </p>
+                    {% endif %}
+
                 </div>
                 <!--Buttons Next/Go back-->
                 <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
