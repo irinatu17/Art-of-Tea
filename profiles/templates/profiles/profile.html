@@ -6,10 +6,14 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="uppercase main-heading">{{ profile }}'s Profile</h1>
+            <h1 class="uppercase main-heading">{{ user.username }}'s Profile</h1>
         </div>
         <div class="col-12 mt-3">
-        {{ profile }}
+        <form  action="{% url 'profile' %}" method="POST" id="profile-form">
+            {% csrf_token %}
+            {{ profile_form|crispy }}
+            <button class="btn buttontn-black uppercase">Update Information</button>
+        </form>
         </div>
     </div>
 </div>
