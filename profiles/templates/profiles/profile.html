@@ -4,19 +4,39 @@
 {% block content%}
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-12 text-center">
+    <div class="row mb-5">
+        <div class="col-12 text-center border-bottom pb-4">
             <h1 class="uppercase main-heading">{{ user.username }}'s Profile</h1>
         </div>
-        <div class="col-12 mt-3">
-        <form  action="{% url 'profile' %}" method="POST" id="profile-form">
-            {% csrf_token %}
-            {{ profile_form|crispy }}
-            <button class="btn buttontn-black uppercase">Update Information</button>
-        </form>
+        <div class="col-6 mt-5">
+            <!--Personal info-->
+            <div class="card shadow">
+                <h5 class="card-header checkout-card-header"><i class="fas fa-user"></i>  Personal Info</h5>
+                <div class="card-body">
+                    <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+                    <p class="card-text"><strong>Email:</strong>  {{ user.email }}</p>
+                </div>
+            </div>
+            <!--Shipping details-->
+            <div class="card mt-3 shadow">
+                <h5 class="card-header checkout-card-header "><i class="fas fa-shipping-fast"></i> Shipping details</h5>
+                <div class="card-body">
+                    <form  action="{% url 'profile' %}" method="POST" id="profile-form">
+                        {% csrf_token %}
+                        {{ profile_form|crispy }}
+                        <button class="btn button-green uppercase mt-3">Update Information</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div>
-        {{ orders }}
+        <div class="col-6 mt-5"> 
+            <!--Personal info-->
+            <div class="card shadow">
+                <h5 class="card-header checkout-card-header"><i class="fas fa-clipboard-list"></i>  Order History</h5>
+                <div class="card-body">
+                    {{ orders }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
