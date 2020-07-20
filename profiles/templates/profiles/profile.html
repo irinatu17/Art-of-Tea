@@ -5,36 +5,38 @@
 
 <div class="container mt-5">
     <div class="row mb-5">
-        <div class="col-12 text-center border-bottom pb-4">
+        <div class="col-12 text-center pb-3">
             <h1 class="uppercase main-heading">{{ user.username }}'s Profile</h1>
+            <i class="fab fa-pagelines icon-green icon-large"></i>
         </div>
-        <div class="col-6 mt-5">
+        <div class="col-12 d-flex justify-content-end">
+            <a href="#" class="text-dark"> 
+                View Order History
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+        <div class="col-12 col-md-5 mt-3">
             <!--Personal info-->
             <div class="card shadow">
                 <h5 class="card-header checkout-card-header"><i class="fas fa-user"></i>  Personal Info</h5>
                 <div class="card-body">
                     <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
-                    <p class="card-text"><strong>Email:</strong>  {{ user.email }}</p>
+                    <p class="card-text border-bottom pb-4"><strong>Email:</strong>  {{ user.email }}</p>
+                    <a href="{% url 'account_change_password' %}" class="btn button-green mt-2">Change password</a>
+                    <a href="{% url 'account_email' %}" class="btn btn-salmon text-white mt-2">Manage your emails</a>
                 </div>
-            </div>
+            </div>      
+        </div>
+        <div class="col-12 col-md-7 mt-3"> 
             <!--Shipping details-->
-            <div class="card mt-3 shadow">
+            <div class="card shadow">
                 <h5 class="card-header checkout-card-header "><i class="fas fa-shipping-fast"></i> Shipping details</h5>
                 <div class="card-body">
                     <form  action="{% url 'profile' %}" method="POST" id="profile-form">
                         {% csrf_token %}
                         {{ profile_form|crispy }}
-                        <button class="btn button-green uppercase mt-3">Update Information</button>
+                        <button class="btn btn-salmon uppercase mt-3">Update Information</button>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 mt-5"> 
-            <!--Personal info-->
-            <div class="card shadow">
-                <h5 class="card-header checkout-card-header"><i class="fas fa-clipboard-list"></i>  Order History</h5>
-                <div class="card-body">
-                    {{ orders }}
                 </div>
             </div>
         </div>
