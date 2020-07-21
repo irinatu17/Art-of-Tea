@@ -16,7 +16,8 @@
                         <a href="#" class="dropdown-item">Admin Management</a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'order_history' %}">Order History</a>
+                        <a class="dropdown-item border-top" href="{% url 'account_logout' %}">Logout</a>
                     </div>
            </li>
             {% else %}
@@ -126,6 +127,9 @@
                 {% endif %}
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'profile' %}">My profile</a>
+                </li>
+                <li class="nav-item d-md-none d-block">
+                    <a class="nav-link uppercase text-white" href="{% url 'order_history' %}">Order History</a>
                 </li>
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'account_logout' %}">Logout</a>
