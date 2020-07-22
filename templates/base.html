@@ -65,17 +65,18 @@
     <script src="https://js.stripe.com/v3/"></script>
     <!--AOS JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Initialization  AOS -->
+    <script>
+        function fadeSpinner() {
+            $('.spinner-overlay-wrapper').fadeOut(1200);
+        }
+    AOS.init();
+    
+</script>
 {% endblock %}
 
 {% block extra_js %}
-<!--Initialization  AOS -->
-<script>
-    function fadeSpinner() {
-        $('.spinner-overlay-wrapper').fadeOut(1200);
-    }
-  AOS.init();
- 
-</script>
+
 {% endblock %}
 </body>
 </html>
