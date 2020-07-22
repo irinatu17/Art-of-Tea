@@ -1,0 +1,31 @@
+{% load cart_tools %}
+<div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
+    <div class="d-flex justify-content-between">
+        <div>
+            <!--Price-->
+            <h6 class="font-weight-bold mb-3">Price:</h6>
+            <p>
+                <i class="fas fa-euro-sign "></i> 
+                {{ item.product.price }}
+                {% if item.product.has_weight %}
+                    <span class="text-muted small"> / 100g</span>
+                {% endif %}
+            </p>
+        </div>
+        <!--Remove button-->
+        <div class="text-right">
+            <a class="remove-button remove_{{ item.item_id }}" title="Remove">
+                <i class="fas fa-trash-alt lead text-danger"></i>
+            </a>
+        </div>
+    </div>
+    <div>
+        <!--Subtotal-->
+        <h6 class="font-weight-bold mb-3">Subtotal:</h6>
+        <p class="font-weight-bold "><span class="border p-2 rounded-pill border-success">
+            <i class="fas fa-euro-sign mr-1"></i>
+            {{ item.product.price | calc_subtotal:item.quantity }} 
+            </span>
+        </p>
+    </div> 
+</div>

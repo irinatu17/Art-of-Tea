@@ -1,0 +1,19 @@
+{% if item.product.is_a_service %}
+<p class="mt-3">Number of participants:</p>
+{% else %}
+<p class="mt-3">Quantity:</p>
+{% endif %}
+<form  class="quantity-update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+    {% csrf_token %}
+    <div class="input-group w-100">
+        <input name="quantity" type="number" min="1" max="999" class="form-control"
+        value="{{ item.quantity }}" required>
+    </div>
+    {% if item.product.is_a_service %}
+    <!--<div class="my-3">
+        <p>Place</p>
+    </div>-->
+    {% endif %}
+</form>
+<!--Update button-->
+<a class="update-cart-btn btn btn-sm text-white rounded-lg btn-success mt-2 float-right">Update</a> 
