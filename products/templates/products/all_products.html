@@ -5,26 +5,10 @@
 
 {% block content %}
     <!--Delivery info-->
-    <div class="container-fluid delivery-info">
-        <div class="row">
-            <div class="col-12 text-center">
-            <p class="uppercase mb-0">FREE DELIVERY FROM <strong>€{{ free_delivery_threshold }}!</strong></p>
-            </div>
-        </div>
-    </div>
+    {% include 'includes/delivery_banner.html' %} 
     <!--Breadcrumbs-->    
-    <div class="container-fluid breadcrumbs-container pl-3">
-        <div class="row">
-            <div class="col-12 pt-3">
-                <a href="{% url 'landing' %}" class="breadcrumbs-text pl-3">Home</a>  &gt;
-                <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a> 
-                {% for category in selected_categories %}
-                    &gt; <a href="{% url 'products' %}?category={{ category.name }}" class="breadcrumbs-text">{{ category.friendly_name }}</a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-     <hr>
+    {% include 'products/includes_products/breadcrumbs_all_products.html' %} 
+
     <!--Main content-->
     <div class="container mt-4">
         <div class="row">
@@ -32,61 +16,13 @@
                 <h1 class="uppercase main-heading">Products</h1>
                 <hr class="divider-green w-25 mt-3">
             </div>
-           <!-- <div class="col-12">
-                <p class="text-center">
-                   Your search for {% if search_word %}  <strong>"{{ search_word }}"</strong>{% endif %} produced {{ products|length }} search result(s) 
-                </p>
-            </div>-->
-            <div class="col-12">
-                <ul class="nav justify-content-center uppercase">
-
-                    <li class="nav-item border border-dark mr-3 dropdown">
-                        <a class="nav-link category-main-nav" id="dropdownMenuButton" data-toggle="dropdown" 
-                            aria-haspopup="true" aria-expanded="false" href="#"> 
-                            <i class="fas fa-leaf mr-3 icon-green"></i> Tea
-                        </a>
-                        <ul class="dropdown-menu dropdown-tea-columns" aria-labelledby="dropdownMenuButton">
-                            <li><a href="{% url 'products' %}?category=black_tea" class="dropdown-item">Black Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=green_tea" class="dropdown-item">Green Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=white_tea" class="dropdown-item">White Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=herbal_tea" class="dropdown-item">Herbal Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=wellness_tea" class="dropdown-item">Wellness Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=matcha" class="dropdown-item">Matcha</a></li>
-                            <li><a href="{% url 'products' %}?category=pu_erh_tea" class="dropdown-item">Pu Erh Tea</a></li>
-                            <li><a href="{% url 'products' %}?category=oolong_tea" class="dropdown-item">Oolong tea</a></li>
-                            <li><a href="{% url 'products' %}?category=rooibos_tea" class="dropdown-item">Rooibos Tea</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item border border-dark">
-                        <a class="nav-link category-main-nav" href="{% url 'products' %}?category=teaware"> 
-                            <i class="fas fa-coffee mr-3 icon-green"></i> Teaware
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <!--Tea Categories-->    
+            {% include 'products/includes_products/tea_categories.html' %} 
         </div>
         <div class="row ">
             {% for product in products %}
-            <div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4">
-                <a href="{% url 'product_details' product.id %}">
-                    <img class="card-img-top img-fluid rounded-lg shadow-sm" src="{{ product.image_gallery.image }}" alt="{{ product.name }}">
-                </a>
-                <div class="text-block">
-                <p>{{ product.category.friendly_name }}</p>
-                </div>
-                <h6 class="text-center main-heading mt-3 mb-3 lead">{{ product.name }}</h6>
-                
-                <div class=" mb-3 d-flex justify-content-around align-items-baseline">
-                    <p class="text-center">
-                        <span class=" font-weight-bold"><i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span>
-                        {% if product.has_weight %}
-                        <span> / 100g</span>
-                        {% endif %}
-                    </p>
-                    <a href="{% url 'product_details' product.id %}" class="btn button-green px-3">View Details</a>
-                </div>
-            </div>
+                <!--Products Cards-->    
+                {% include 'products/includes_products/products_cards.html' %} 
             {% endfor %}
         </div>
     </div>
