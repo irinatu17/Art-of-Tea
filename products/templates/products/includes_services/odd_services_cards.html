@@ -1,0 +1,17 @@
+<div class="card mb-4 rounded-lg shadow" >
+    <div class="row no-gutters">
+        <div class="col-12 col-md-7  d-flex justify-content-between flex-row">
+            <div class="card-body d-flex justify-content-between flex-column" >
+                <h5 class="card-title text-center uppercase font-weight-bold">{{ service.name }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+                <div class="d-flex justify-content-between">
+                    <p class="card-text font-weight-bold"><i class="fas fa-euro-sign mr-1"></i>{{ service.price}}</p>
+                    <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class=" col-12 col-md-5">
+            <img src="{{ service.image_gallery.image}}" class="card-img service-image img-fluid" alt="{{ service.name }}">
+        </div>
+    </div>
+</div>

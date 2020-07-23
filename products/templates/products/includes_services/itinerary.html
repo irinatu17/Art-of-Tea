@@ -1,0 +1,12 @@
+<div>
+    <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
+    <table class="table">
+        {% for item in itinerary_items %} 
+        <tr>
+            <th>{{ item.time }}</th>
+            <td class="ml-4">{{  item.text }}
+            </td> 
+        </tr>
+        {% endfor %}
+    </table>
+</div>

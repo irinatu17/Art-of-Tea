@@ -1,0 +1,9 @@
+<div class="container-fluid breadcrumbs-container border-bottom py-3">
+    <div class="row">
+        <div class="col-12">
+            <a href="{% url 'landing' %}" class="breadcrumbs-text pl-2">Home</a> &gt;
+            <a href="{% url 'services' %}" class="breadcrumbs-text">Services</a> &gt;
+            <a href="{% url 'service_details' service.id %}" class="breadcrumbs-text">{{ service.name }}</a>
+        </div>
+    </div>
+</div>
