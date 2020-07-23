@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'tempus_dominus',
     'mathfilters',
     'django_countries',
+    'storages',
 ]
 
 MIDDLEWARE = [
