@@ -1,0 +1,25 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at Art of Tea. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.purchase_date }}
+
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Delivery details:
+
+Recipient's Name: {{ order.full_name }}
+Address: {{ order.address_line1 }} {{ order.address_line2 }}, {{ order.town_or_city }}, {{ order.country }}, {{ order.postcode }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Yours sincerely,
+
+Art of Tea
