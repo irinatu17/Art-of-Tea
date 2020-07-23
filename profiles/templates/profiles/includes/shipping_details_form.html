@@ -1,0 +1,10 @@
+<div class="card shadow">
+    <h5 class="card-header checkout-card-header "><i class="fas fa-shipping-fast"></i> Shipping details</h5>
+    <div class="card-body">
+        <form  action="{% url 'profile' %}" method="POST" id="profile-form">
+            {% csrf_token %}
+            {{ profile_form|crispy }}
+            <button class="btn btn-salmon uppercase mt-3">Update Information</button>
+        </form>
+    </div>
+</div>
