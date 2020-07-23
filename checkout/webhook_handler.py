@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from .models import Order, OrderItemDetails
 from products.models import Product
+from profiles.models import Profile
 
 import json
 import time
@@ -40,6 +41,20 @@ class StripeWH_Handler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = Profile.objects.get(user__username=username)
+            if save_info:
+                profile.profile_phone_number = shipping_details.phone
+                profile.profile_country = shipping_details.address.country
+                profile.profile_postcode = shipping_details.address.postal_code
+                profile.profile_town_or_city = shipping_details.address.city
+                profile.profile_address_line1 = shipping_details.address.line1
+                profile.profile_address_line2 = shipping_details.address.line2
+                profile.profile_county = shipping_details.address.state
+                profile.save()
 
         order_exists = False
         # creates a delay of 5 seconds to avoid the order being added twice
@@ -48,6 +63,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
+                    profile=profile,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
