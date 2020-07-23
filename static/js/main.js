@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     //Sliding down and up the search form, when the search icon is clicked
     $("#search-button").click(function(){
-        $("#search-form-container").toggle();
+        $("#search-form-container").slideToggle("slow");
     });
 
     //Tempus Dominus bootstrap-datetimepicker

@@ -201,10 +201,10 @@ z-index: 1070;
 }
 
 #search-form-container{
-position: absolute;
 left: 0;
 width: 100vw;
-margin: 0.5rem;
+top:100%;
+background-color: var(--black);
 }
 
 /* Landing page - hero image section*/
