@@ -13,7 +13,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_superuser %}
-                        <a href="#" class="dropdown-item">Admin Management</a>
+                        <a href="{% url 'add_product' %}" class="dropdown-item">Admin Management</a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
                         <a class="dropdown-item" href="{% url 'order_history' %}">Order History</a>
@@ -122,7 +122,7 @@
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="#">Admin Management</a>
+                    <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Admin Management</a>
                 </li>
                 {% endif %}
                 <li class="nav-item d-md-none d-block">
