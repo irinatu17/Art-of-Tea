@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, ItineraryItem, Itinerary
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -79,3 +80,13 @@ def service_details(request, service_id):
         'itinerary_items':  itinerary_items,
     }
     return render(request, 'products/service_details.html', context)
+
+
+def add_product(request):
+    """ A view allowing admin to add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
