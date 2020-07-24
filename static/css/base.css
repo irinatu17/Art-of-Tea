@@ -210,7 +210,7 @@ background-color: var(--black);
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
-background: url('/media/landing/landing-background.jpg') no-repeat center top fixed;
+background: url('/static/img/landing/landing-background.jpg') no-repeat center top fixed;
 background-size: cover;
 }
 
@@ -257,7 +257,7 @@ font-size: 1.2rem;
 /* Landing page - quote section*/
 .quote-section{
 min-height:60vh;
-background: url('/media/landing/quote-bg-landing.jpg') no-repeat center center fixed;
+background: url('/static/img/landing/quote-bg-landing.jpg') no-repeat center center fixed;
 background-size: cover;
 position: relative;
 opacity: 0.9;
@@ -415,7 +415,7 @@ height: 30vh;
 
 /*Events page*/
 .events-container{
-background: url('/media/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
+background: url('/static/img/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
 background-size: cover;
 height: 80vh;
 opacity: 0.9;
@@ -492,7 +492,7 @@ z-index: 99999999;
 }
 
 #spinner{
-background-image: url("/media/spinner.gif");
+background-image: url("/static/img/spinner.gif");
 background-repeat: no-repeat;
 background-position: center;
 height:100%;
@@ -584,7 +584,7 @@ margin-top: -1rem;
 
 .events-container-landing{
 min-height:50vh;
-background: url('/media/landing/events-background-landing.jpg') no-repeat right center fixed;
+background: url('/static/img/landing/events-background-landing.jpg') no-repeat right center fixed;
 background-size: cover;
 }
 
