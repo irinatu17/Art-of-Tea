@@ -17,17 +17,24 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     product = Product.objects.get(pk=item_id)
     cart = request.session.get('cart', {})
+    datatime = None
+    if 'datatime' in request.POST:
+        datatime = request.POST['datatime']
 
-    if item_id in list(cart.keys()):
-        cart[item_id] += quantity
-        messages.success(request, (f'Updated {product.name} '
-                                   f'quantity to {cart[item_id]}'))
-
-    else:
-        cart[item_id] = quantity
+    if datatime:
+        cart[item_id] = {'items_by_datatime': {datatime: quantity}}
         messages.success(request, f'{product.name} was added to your cart')
+    else:
+        if item_id in list(cart.keys()):
+            cart[item_id] += quantity
+            messages.success(request, (f'Updated {product.name} '
+                                       f'quantity to {cart[item_id]}'))
+        else:
+            cart[item_id] = quantity
+            messages.success(request, f'{product.name} was added to your cart')
 
     request.session['cart'] = cart
+    print(cart)
     return redirect(redirect_url)
     # place = None
     # if 'service_place' in request.POST:
