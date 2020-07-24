@@ -4,7 +4,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Oolong Rose Tea",
-      "image": "/media/products/oolong_rose.jpg",
+      "image": "/static/img/products/oolong_rose.jpg",
       "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg"
     }
   },
@@ -13,7 +13,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Ceylon Op Nuwara Eliya",
-      "image": "/media/products/ceylon_op_nuwara_eliya.jpg",
+      "image": "/static/img/products/ceylon_op_nuwara_eliya.jpg",
       "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
     }
   },
@@ -22,7 +22,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Home Matcha Kit",
-      "image": "/media/products/home_matcha_kit.jpg",
+      "image": "/static/img/products/home_matcha_kit.jpg",
       "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg"
     }
   },
@@ -31,7 +31,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "White Peach Tea",
-      "image": "/media/products/white_peach.jpg",
+      "image": "/static/img/products/white_peach.jpg",
       "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg"
     }
   },
@@ -40,7 +40,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Naked Pu-erh Tea",
-      "image": "/media/products/naked_pu-erh_tea.jpg",
+      "image": "/static/img/products/naked_pu-erh_tea.jpg",
       "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg"
     }
   },
@@ -49,7 +49,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Fresh Green Tea",
-      "image": "/media/products/fresh_green_tea.jpg",
+      "image": "/static/img/products/fresh_green_tea.jpg",
       "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg"
     }
   },
@@ -58,7 +58,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Sleep Tea",
-      "image": "/media/products/sleep_tea.jpg",
+      "image": "/static/img/products/sleep_tea.jpg",
       "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg"
     }
   },
@@ -67,7 +67,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Classic Rooibos Tea",
-      "image": "/media/products/classic_rooibos_tea.jpg",
+      "image": "/static/img/products/classic_rooibos_tea.jpg",
       "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg"
     }
   },
@@ -76,7 +76,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Matcha Tea",
-      "image": "/media/products/matcha.jpg",
+      "image": "/static/img/products/matcha.jpg",
       "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg"
     }
   },
@@ -85,7 +85,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Chamomile Tea",
-      "image": "/media/products/chamomile.jpg",
+      "image": "/static/img/products/chamomile.jpg",
       "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg"
     }
   },
@@ -94,7 +94,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Iron Tea Pot",
-      "image": "/media/products/iron_tea_pot.jpg",
+      "image": "/static/img/products/iron_tea_pot.jpg",
       "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
     }
   },
@@ -103,7 +103,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Introduction to Japanese Tea",
-      "image": "/media/services/tea-ceremony-japaneese.jpg",
+      "image": "/static/img/services/tea-ceremony-japaneese.jpg",
       "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg"
     }
   },
@@ -112,7 +112,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Chinese Tea Ceremony",
-      "image": "/media/services/chinese-tea-ceremony.jpg",
+      "image": "/static/img/services/chinese-tea-ceremony.jpg",
       "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg"
     }
   },
@@ -121,7 +121,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Incense Tea Ceremony",
-      "image": "/media/services/incense_ceremony.jpg",
+      "image": "/static/img/services/incense_ceremony.jpg",
       "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg"
     }
   },
@@ -130,7 +130,7 @@
     "model": "products.imagegallery",
     "fields": {
       "name": "Exclusive Traditional Tea Ceremony",
-      "image": "/media/services/exclusive_traditional_tea_ceremony.jpg",
+      "image": "/static/img/services/exclusive_traditional_tea_ceremony.jpg",
       "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg"
     }
   }
