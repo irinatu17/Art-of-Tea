@@ -59,14 +59,12 @@ def update_cart(request, item_id):
         if quantity > 0:
             cart[item_id] = {'items_by_datetime': {datetime: quantity}}
             messages.success(request,
-                             (f'Updated datetime {datetime}'
-                              f'{product.name} for'
-                              f'{cart[item_id]["items_by_datetime"][datetime]} participants'))
+                             (f'Successfully Updated {product.name}'))
         else:
             del cart[item_id]['items_by_datetime'][datetime]
             if not cart[item_id]['items_by_datetime']:
                 cart.pop(item_id)
-            messages.success(request,
+            messages.info(request,
                              (f'Removed {product.name} from your cart'))
     else:
         if quantity > 0:
