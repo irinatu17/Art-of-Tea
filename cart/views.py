@@ -17,13 +17,19 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     product = Product.objects.get(pk=item_id)
     cart = request.session.get('cart', {})
-    datatime = None
-    if 'datatime' in request.POST:
-        datatime = request.POST['datatime']
-
-    if datatime:
-        cart[item_id] = {'items_by_datatime': {datatime: quantity}}
-        messages.success(request, f'{product.name} was added to your cart')
+    datetime = None
+    if 'datetime' in request.POST:
+        datetime = request.POST['datetime']
+    # as in 99.99% cases customers would book only one ceremony at once,
+    # it's restricted to add more than one ceremony
+    if datetime:
+        if item_id in list(cart.keys()):
+            messages.error(request, f'{product.name} already in your cart!\
+                Check your cart to continue booking.')
+            return redirect(redirect_url)
+        else:
+            cart[item_id] = {'items_by_datetime': {datetime: quantity}}
+            messages.success(request, f'{product.name} was added to your cart')
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
@@ -36,40 +42,6 @@ def add_to_cart(request, item_id):
     request.session['cart'] = cart
     print(cart)
     return redirect(redirect_url)
-    # place = None
-    # if 'service_place' in request.POST:
-    #     place = request.POST.get('service_place')
-    # comment = None
-    # if 'comment' in request.POST:
-    #     comment = request.POST.get('comment')
-    # data_time = None
-    # if 'data_time' in request.POST:
-    #     data_time = request.POST.get('data_time')
-    # if item_id in list(cart.keys()):
-    #     cart[item_id] += quantity
-    # else:
-    #     cart[item_id] = quantity
-    # cart = {
-    # 'product': {
-    #     item_id: quantity
-    #     },
-    # 'service': {
-    #     item_id: {
-    #         'place': place,
-    #         'comment': comment,
-    #         'data_time': data_time,
-    #         }
-    #     }
-    # if item_id in cart:
-    #     cart[item_id] = int(cart[item_id]) + quantity
-    # else:
-    #     cart[item_id] = cart.get(item_id, quantity)
-    # cart['product'][item_id] = quantity
-    # cart['service'][item_id] = {
-    #     'place': place,
-    #     'comment': comment,
-    #     'data_time': data_time
-    #     }
 
 
 def update_cart(request, item_id):
@@ -80,15 +52,31 @@ def update_cart(request, item_id):
     product = Product.objects.get(pk=item_id)
 
     cart = request.session.get('cart', {})
-
-    if quantity > 0:
-        cart[item_id] = quantity
-        messages.success(request, f'Updated {product.name}\
-            quantity to {cart[item_id]}')
+    datetime = None
+    if 'datetime' in request.POST:
+        datetime = request.POST['datetime']
+    if datetime:
+        if quantity > 0:
+            cart[item_id] = {'items_by_datetime': {datetime: quantity}}
+            messages.success(request,
+                             (f'Updated datetime {datetime}'
+                              f'{product.name} for'
+                              f'{cart[item_id]["items_by_datetime"][datetime]} participants'))
+        else:
+            del cart[item_id]['items_by_datetime'][datetime]
+            if not cart[item_id]['items_by_datetime']:
+                cart.pop(item_id)
+            messages.success(request,
+                             (f'Removed {product.name} from your cart'))
     else:
-        cart.pop(item_id)
-        messages.info(request, (f'Removed {product.name} '
-                                f'from your cart'))
+        if quantity > 0:
+            cart[item_id] = quantity
+            messages.success(request, f'Updated {product.name}\
+                quantity to {cart[item_id]}')
+        else:
+            cart.pop(item_id)
+            messages.info(request, (f'Removed {product.name} '
+                                    f'from your cart'))
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))

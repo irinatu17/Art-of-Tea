@@ -10,8 +10,9 @@ $(document).ready(function() {
 
     //Tempus Dominus bootstrap-datetimepicker
     $(function () {
-        $("#datetimepicker1").datetimepicker({
-        format: 'DD/MM/YYYY HH:mm',
+        $("#datetime").datetimepicker({
+            format: 'DD/MM/YYYY HH:mm',
+            minDate: new Date(),
         });
     });
 

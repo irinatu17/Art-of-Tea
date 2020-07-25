@@ -10,25 +10,14 @@
     <h6 class="font-weight-bold mt-4">Date and Time:</h6>
 
     <div class="input-group date w-100" id="datetime" data-target-input="nearest">
-        <input type="text" name="datatime" class="form-control datetimepicker-input" data-target="#datetime" required/>
+        <input type="text" name="datetime" class="form-control datetimepicker-input" data-target="#datetime" required/>
         <div class="input-group-append" data-target="#datetime" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
         </div>
-    </div>   
-    <!--Place 
-    <h6 class="font-weight-bold mt-4">Where the ceremony will take place?</h6>
-    <select class="custom-select" name="service_place">
-        <option value="tea_club">in our tea club "Art of Tea"</option>
-        <option value="customer_place">at your place (home/office)</option>
-    </select>--> 
-    <!--Comment  
-    <div class="form-group">
-        <label for="additional_comment" class= "font-weight-bold mt-4">Your additional comment/query:</label>
-        <textarea class="form-control" name="comment" id="additional_comment" rows="4"></textarea>
-    </div>--> 
-    <p class="text-muted small mt-2">The confirmation of your booking will be sent to your email
+    </div>
+    <p class="text-muted small mt-2">
+        The confirmation of your booking will be sent to your email
      and we will get back to you soon to discuss further details.</p>
-    
     <!--buttons-->
     <div class="mt-4 mb-4 text-center text-md-left">
         <a href="{% url 'services' %}" class="btn btn-service uppercase button-black-outline px-3 mr-0 mr-lg-3"><i class="fas fa-angle-left"></i> Go back</a>

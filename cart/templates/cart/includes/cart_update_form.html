@@ -1,0 +1,23 @@
+<form  class="quantity-update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+    {% csrf_token %}
+
+    {% if item.product.is_a_service %}
+    <p class="small font-weight-bold">Date and Time:</p>
+    <div class="input-group date w-100" id="datetime" data-target-input="nearest">
+        <input type="text" name="datetime" class="form-control datetimepicker-input"
+             value="{{ item.datetime }}" data-target="#datetime" required/>
+        <div class="input-group-append" data-target="#datetime" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+        </div>
+    </div> 
+    <p class="mt-3 small font-weight-bold">Number of participants:</p>
+    {% else %}
+    <p class="mt-3 small font-weight-bold">Quantity:</p>
+    {% endif %}
+    <div class="input-group w-100">
+        <input name="quantity" type="number" min="1" max="999" class="form-control"
+        value="{{ item.quantity }}" required>
+    </div>
+</form>
+<!--Update button-->
+<a class="update-cart-btn btn btn-sm text-white rounded-lg btn-success mt-2 float-right">Update</a> 

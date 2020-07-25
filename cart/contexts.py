@@ -23,14 +23,14 @@ def cart_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
-            for datatime, quantity in item_data['items_by_datatime'].items():
+            for datetime, quantity in item_data['items_by_datetime'].items():
                 total += quantity * product.price
                 items_count += quantity
                 cart_items.append({
                     'item_id': item_id,
-                    'quantity': item_data,
+                    'quantity': quantity,
                     'product': product,
-                    'datatime': datatime,
+                    'datetime': datetime,
                 })
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

@@ -25,15 +25,13 @@
         {% include 'cart/includes/price_subtotal_mobile.html' %} 
         <!--Name-->
         <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
-            <h5 class="font-weight-bold">  {{ item.product.name }}</h5>
-            {% if item.product.is_a_service %}
-            <!--<p>Data and time</p>-->
-            {% else %}
-            <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
+            <h4 class="font-weight-bold">  {{ item.product.name }}</h4>
+            {% if item.product.is_a_service == False %}
+             <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
             {% endif %}
 
             <!--Quantity/nubmer of participants-->
-            {% include 'cart/includes/quantity_form.html' %} 
+            {% include 'cart/includes/cart_update_form.html' %} 
         </div>
 
         <!--Price and subtotal for tablet and desktop-->
