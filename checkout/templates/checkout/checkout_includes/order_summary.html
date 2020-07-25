@@ -3,21 +3,14 @@
 <div class="col-12 col-md-5 col-lg-4 order-1 order-md-2 px-2 mt-3">
     <div class="border p-3 p-lg-4 rounded-lg shadow">
         <!--Order summary Heading-->
-        <div class="border-bottom  mb-1 mb-md-3">
+        <div class="border-bottom pb-1 mb-1 mb-md-3">
             <h4 class="font-weight-bold mb-0">Order Summary: </h4>
-            <small class="text-muted pb-3"> 
-                {% if items_count > 1 %}
-                    {{ items_count }} items
-                {% else %}
-                    {{ items_count }} item
-                {% endif %}
-            </small>
         </div>
 
         <!--Order summary Items-->
         <div class="order-summary-items">
             {% for item in cart_items %}
-            <div class="row mx-0">
+            <div class="row mx-1 border-bottom pt-2">
                 <div class="col-4 mb-1 mb-md-3">
                     <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
                         alt="{{ product.name }}">
@@ -26,10 +19,14 @@
                     <p class="font-weight-bold">{{ item.product.name }}</p>
                     {% if item.product.is_a_service %}
                     <p class="small">{{ item.quantity }} participant(s)</p>
+                    <p class="small mb-0 font-weight-bold">Date and Time:</p> 
+                    <p class="small mt-0">{{ item.datetime }}</p>
                     {% else %}
-                    <p class="small">Qty: {{ item.quantity }}</p>
+                    <p class="small font-weight-bold">Qty: {{ item.quantity }}</p>
                     {% endif %}
-                    <p class="small">Subtotal: €{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    <p class="small"><span class="font-weight-bold">Subtotal:
+                        </span> €{{ item.product.price | calc_subtotal:item.quantity }}
+                    </p>
                 </div> 
             </div>
             {% endfor %}

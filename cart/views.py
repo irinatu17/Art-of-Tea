@@ -50,7 +50,6 @@ def update_cart(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     product = Product.objects.get(pk=item_id)
-
     cart = request.session.get('cart', {})
     datetime = None
     if 'datetime' in request.POST:
@@ -75,7 +74,7 @@ def update_cart(request, item_id):
             cart.pop(item_id)
             messages.info(request, (f'Removed {product.name} '
                                     f'from your cart'))
-
+    print(cart)
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
