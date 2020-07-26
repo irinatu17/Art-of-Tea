@@ -30,4 +30,3 @@ class ProductForm(forms.ModelForm):
             self.fields[field].label = labels[field]
 
         self.fields['description'].widget.attrs['rows'] = 4
-

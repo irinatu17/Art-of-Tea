@@ -33,6 +33,7 @@ def checkout(request):
             'county': request.POST['county'],
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
+            'comment': request.POST['comment'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -51,6 +52,15 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
+                    else:
+                        for datetime, quantity in item_data['items_by_datetime'].items():
+                            order_line_item = OrderItemDetails(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                datetime=datetime,
+                            )
+                            order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your cart\

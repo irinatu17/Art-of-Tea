@@ -92,11 +92,72 @@
     
         <!--Payment Details--> 
         <div class="tab-pane fade p-1 p-md-4" id="payment-details" role="tabpanel" aria-labelledby="payment-details-tab">
+            <!--Form summary-->
+
+            <h4 class="font-weight-bold mb-4">3. Summary and Payment</h4>
+            <p class="text-muted small">
+                Please review your order details before proceeding to payment
+            </p>
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Full Name</td>
+                    <td id="full_name_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Email</td>
+                    <td id="email_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Phone Number</td>
+                    <td id = "phone_number_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Address line1</td>
+                    <td id = "address_line1_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Address line2</td>
+                    <td id = "address_line2_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Town/City</td>
+                    <td id = "town_or_city_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">County</td>
+                    <td id = "county_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Postcode</td>
+                    <td id = "postcode_table"></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"></th>
+                    <td class="font-weight-bold">Country</td>
+                    <td id= "country_table"></td>
+                    </tr>
+                </tbody>
+            </table>
             <!--Stripe form--> 
             <form  action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
 
-                <h4 class="font-weight-bold mb-3">3. Payment Details</h4> 
+                    <!--Additional Comment field--> 
+                    {{ order_form.comment | as_crispy_field }}
+                    <p class="small text-muted mt-0">
+                        You can leave here any additional comments or queries about your order,
+                        and we will get back to you soon to discuss further details.
+                     </p>
+                <h4 class="font-weight-bold mb-3 mt-3"> Payment Details</h4> 
 
                 <input type="hidden" id="full_name" name="full_name">
                 <input type="hidden" id="email" name="email">
@@ -117,7 +178,7 @@
                 <div class="mb-3 mt-3 text-danger" id="card-errors" role="alert"></div>
                 <!-- Pass the client secret to the view so we can get the payment intent id -->
                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
-
+                
                 <!--Buttons Next/Proceed payment--> 
                 <div class="d-flex justify-content-between justify-content-lg-end input-group">
                     <div>
@@ -129,7 +190,7 @@
                     <div class="text-right">
                         <button button id="submit-button" type="submit" 
                             class="btn btn-salmon checkout-button uppercase">
-                            Proceed payment <i class="fas fa-lock"></i>
+                            Proceed to payment <i class="fas fa-lock"></i>
                         </button>
                         <p class="text-salmon text-right small">
                             Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong>

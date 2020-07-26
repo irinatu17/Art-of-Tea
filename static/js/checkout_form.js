@@ -20,6 +20,11 @@ submitButton.addEventListener('click', () => {
         let emailInput = document.getElementById('email').value = email;
         let phoneNumberInput = document.getElementById('phone_number').value = phoneNumber;
 
+        // send the user's input to display in a Form Summary table before the final form is submitted
+        let fullNameTable = $("#full_name_table").text(name);
+        let emailTable = $("#email_table").text(email);
+        let phoneNumberTable = $("#phone_number_table").text(phoneNumber);
+
         // activate the next tab on click, when form-set is valid 
         $('.nav-tabs .active').parent().next('li').removeClass("disabled");
         $('.nav-tabs .active').parent().next('li').find('a[data-toggle]').attr("data-toggle", "tab");
@@ -52,6 +57,15 @@ submitButton2.addEventListener('click', () => {
         let countyInput = document.getElementById('county').value = county;
         let postcodeInput = document.getElementById('postcode').value = postcode;
         let countryInput = document.getElementById('country').value = country;
+
+        // send the user's input to display in a Form Summary table before the final form is submitted
+        let addressLine1Table = $("#address_line1_table").text(addressLine1);
+        let addressLine2Table = $("#address_line2_table").text(addressLine2);
+        let townOrCityTable = $("#town_or_city_table").text(townOrCity);
+        let countyTable = $("#county_table").text(county);
+        let postcodeTable = $("#postcode_table").text(postcode);
+        let countryTable = $("#country_table").text(country);
+
 
         // get save-info value(true or false) if the user is authenticated
         let saveInfoExist = document.getElementById('id-save-info');

@@ -7,7 +7,7 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'address_line1', 'address_line2',
-                  'town_or_city', 'county', 'postcode', 'country',
+                  'town_or_city', 'county', 'postcode', 'country', 'comment'
                   )
 
     def __init__(self, *args, **kwargs):
@@ -25,6 +25,7 @@ class OrderForm(forms.ModelForm):
             'county': 'County/State',
             'postcode': 'Postcode',
             'country': 'Country',
+            'comment': 'Additional comment/query',
         }
         for field in self.fields:
             if field != 'country':
@@ -33,5 +34,6 @@ class OrderForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].label = False
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False
+            self.fields['comment'].widget.attrs['rows'] = 3
