@@ -18,7 +18,7 @@ class OrderAdmin(admin.ModelAdmin):
     # fields allows to specify the order of the fields in the admin interface
     fields = ('order_number', 'profile', 'full_name',
               'email', 'phone_number', 'address_line1', 'address_line2',
-              'town_or_city', 'county', 'country',
+              'town_or_city', 'county', 'country', 'comment',
               'postcode', 'purchase_date', 'delivery_cost',
               'order_total', 'grand_total', 'original_cart',
               'stripe_pid')

@@ -9,6 +9,9 @@
             {% if item.product.has_weight %}
                 <span class="text-muted small"> / 100g</span>
             {% endif %}
+            {% if item.product.is_a_service %}
+                <br/><span class="text-muted small text-center">per person</span>
+            {% endif %}
         </p>
     </div>
     <div>

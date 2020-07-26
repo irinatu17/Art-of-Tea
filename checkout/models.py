@@ -29,6 +29,7 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    comment = models.TextField(max_length=254, null=True, blank=True)
 
     def _generate_order_number(self):
         """
@@ -71,6 +72,9 @@ class OrderItemDetails(models.Model):
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    # because of Django DateTimeField functionality does not support the desired format(DD/MM/YYYY HH:mm)
+    # it was decided to replace it to the CharField for better UI
+    datetime = models.CharField(null=True, blank=True, max_length=20) 
 
     def save(self, *args, **kwargs):
         """

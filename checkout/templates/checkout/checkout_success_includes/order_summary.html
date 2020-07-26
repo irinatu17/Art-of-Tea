@@ -6,25 +6,39 @@
 <div class="card-body pb-0">
     <div class="order-summary-items">
         {% for item in order.orderitems.all %}
-        <div class="row mx-0">
+        <div class="row mx-0 border-bottom py-2">
             <div class="col-3 mb-1 mb-md-3">
                 <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
-                        alt="{{ product.name }}">
+                     alt="{{ product.name }}">
             </div>
             <div class="col-9">
-                <p class="font-weight-bold">{{ item.product.name }}</p>
-                <p class="small">Price: €{{ item.product.price}}</p>
-                {% if item.product.is_a_service %}
-                <p class="small">{{ item.quantity }} participant(s)</p>
+                <p class="font-weight-bold mb-2">{{ item.product.name }}</p>
+                <p class="small my-1">
+                {% if item.quantity > 1 %}
+                    {{ item.quantity }} participants
                 {% else %}
-                <p class="small">Qty: {{ item.quantity }}</p>
+                    {{ item.quantity }} participant
                 {% endif %}
-                <p class="small">Subtotal: €{{ item.product.price|mul:item.quantity}}</p>
+                 </p>
+                <p class="small my-1 ">Price: €{{ item.product.price}}</p>
+                {% if item.product.is_a_service %}
+                
+                <p class="small my-1">Date and Time:</p> 
+                <p class="small my-1">{{ item.datetime }}</p>
+                
+                {% else %}
+                <p class="small my-1">Qty: {{ item.quantity }}</p>
+                {% endif %}
+                <p class="small my-1">Subtotal: €{{ item.product.price|mul:item.quantity}}</p>
             </div> 
         </div>
         {% endfor %}
     </div>
     <div class="border-top pt-1 pt-md-2">
+        {% if order.comment %}
+            <p class="small font-weight-bold my-1">Your aditional comment/query:</p> 
+            <p class="small mt-1 ">{{ order.comment }}</p>
+        {% endif %}
         <p class="small mt-1 mb-0">Order Total: €{{ order.order_total }}</p>
             {% if order.delivery_cost > 0 %}
                 <p class="small  mb-1">Delivery Cost: €{{ order.delivery_cost }}</p>
