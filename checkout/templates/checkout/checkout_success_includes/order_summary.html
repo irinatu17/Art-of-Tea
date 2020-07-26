@@ -15,7 +15,13 @@
                 <p class="font-weight-bold">{{ item.product.name }}</p>
                 <p class="small">Price: €{{ item.product.price}}</p>
                 {% if item.product.is_a_service %}
-                <p class="small">{{ item.quantity }} participant(s)</p>
+                <p class="small">
+                {% if item.quantity > 1 %}
+                    {{ item.quantity }} participants
+                {% else %}
+                    {{ item.quantity }} participant
+                {% endif %}
+                 </p>
                 <p class="small mb-0 font-weight-bold">Date and Time:</p> 
                 <p class="small mt-0">{{ item.datetime }}</p>
                 
