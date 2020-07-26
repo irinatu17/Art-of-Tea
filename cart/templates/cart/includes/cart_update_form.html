@@ -3,10 +3,12 @@
 
     {% if item.product.is_a_service %}
     <p class="small font-weight-bold">Date and Time:</p>
-    <div class="input-group date w-100 datetime_cart" id="datetime_cart" data-target-input="nearest" >
+    <!--Datetime picker-->
+    <div class="input-group date w-100 datetime_cart" id="datetime_cart-{{ forloop.counter }}" 
+            data-value="{{ item.datetime }}" data-target-input="nearest">
         <input type="text" name="datetime" class="form-control datetimepicker-input"
-             value="{{ item.datetime }}" data-target="#datetime_cart" required/>
-        <div class="input-group-append" data-target="#datetime_cart" data-toggle="datetimepicker">
+             value="{{ item.datetime }}" data-target="#datetime_cart-{{ forloop.counter }}" required/>
+        <div class="input-group-append" data-target="#datetime_cart-{{ forloop.counter }}" data-toggle="datetimepicker">
             <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
         </div>
     </div> 

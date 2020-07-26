@@ -74,7 +74,6 @@ def update_cart(request, item_id):
             cart.pop(item_id)
             messages.info(request, (f'Removed {product.name} '
                                     f'from your cart'))
-    print(cart)
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
