@@ -98,55 +98,8 @@
             <p class="text-muted small">
                 Please review your order details before proceeding to payment
             </p>
-            <table class="table table-sm">
-                <tbody>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Full Name</td>
-                    <td id="full_name_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Email</td>
-                    <td id="email_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Phone Number</td>
-                    <td id = "phone_number_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Address line1</td>
-                    <td id = "address_line1_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Address line2</td>
-                    <td id = "address_line2_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Town/City</td>
-                    <td id = "town_or_city_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">County</td>
-                    <td id = "county_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Postcode</td>
-                    <td id = "postcode_table"></td>
-                    </tr>
-                    <tr>
-                    <th scope="row"></th>
-                    <td class="font-weight-bold">Country</td>
-                    <td id= "country_table"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <!--Table Summary-->
+            {% include 'checkout/checkout_includes/table_summary.html' %} 
             <!--Stripe form--> 
             <form  action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
@@ -176,7 +129,7 @@
                 <div class="mb-3 border rounded p-3" id="card-element"></div>
                 <!--Stripe errors--> 
                 <div class="mb-3 mt-3 text-danger" id="card-errors" role="alert"></div>
-                <!-- Pass the client secret to the view so we can get the payment intent id -->
+                <!-- Pass the client secret to the view to get the payment intent id -->
                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 
                 <!--Buttons Next/Proceed payment--> 
