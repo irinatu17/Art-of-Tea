@@ -65,7 +65,6 @@ class Product(models.Model):
                                  null=True, blank=True)
     # Fields related to teas and teaware
     has_weight = models.BooleanField(default=False, null=True, blank=True)
-    in_stock = models.BooleanField(default=False, null=True)
     is_a_service = models.BooleanField(default=False)
     # Fields related to services/tea ceremonies
     duration = models.CharField(null=True, max_length=254)
