@@ -4,12 +4,9 @@ This is a confirmation of your order at Art of Tea. Your order information is be
 
 Order Number: {{ order.order_number }}
 Order Date: {{ order.purchase_date }}
-
-Order Total: €{{ order.order_total }}
-Delivery: €{{ order.delivery_cost }}
 Grand Total: €{{ order.grand_total }}
 
-Delivery details:
+Billing/Shipping details:
 
 Recipient's Name: {{ order.full_name }}
 Address: {{ order.address_line1 }} {{ order.address_line2 }}, {{ order.town_or_city }}, {{ order.country }}, {{ order.postcode }}.

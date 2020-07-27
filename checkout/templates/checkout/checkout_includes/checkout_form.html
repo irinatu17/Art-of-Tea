@@ -15,7 +15,7 @@
         <li class="nav-item disabled"> 
             <a class="nav-link text-dark shadow-sm" id="shipping-info-tab" data-toggle=""
                 href="#shipping-info" role="tab" aria-controls="shipping-info" aria-selected="false">
-                Shipping Info
+                Billing/Shipping Info
             </a>
         </li>
         <li class="nav-item disabled">
@@ -48,10 +48,10 @@
             </form>
         </div>
     
-        <!--Shipping Info-->
+        <!--Billing/Shipping Info Info-->
         <div class="tab-pane fade p-1 p-md-4" id="shipping-info" role="tabpanel" aria-labelledby="shipping-info-tab">
             <form action="#" method="POST" id="shipping-info-form" onsubmit="return false">
-                <h4 class="font-weight-bold mb-4">2. Shipping Info</h4>
+                <h4 class="font-weight-bold mb-4">2. Billing/Shipping Info</h4>
                 {{ order_form.address_line1 | as_crispy_field }}
                 {{ order_form.address_line2 | as_crispy_field }}
                 {{ order_form.town_or_city | as_crispy_field }}
