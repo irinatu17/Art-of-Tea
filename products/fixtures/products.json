@@ -10,7 +10,6 @@
       "category": 2,
       "rating": 4.9,
       "image_gallery": 2,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -26,7 +25,6 @@
       "category": 10,
       "rating": 4.6,
       "image_gallery": 1,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -42,7 +40,6 @@
       "category": 1,
       "rating": 4.9,
       "image_gallery": 3,
-      "in_stock": "True",
       "has_weight": "False",
       "is_a_service": "False"
     }
@@ -58,7 +55,6 @@
       "category": 4,
       "rating": 4.1,
       "image_gallery": 4,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -74,7 +70,6 @@
       "category": 7,
       "rating": 5.0,
       "image_gallery": 5,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -90,7 +85,6 @@
       "category": 3,
       "rating": 4.8,
       "image_gallery": 6,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -106,7 +100,6 @@
       "category": 9,
       "rating": 4.5,
       "image_gallery": 7,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -122,7 +115,6 @@
       "category": 8,
       "rating": 4.5,
       "image_gallery": 8,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }
@@ -138,7 +130,6 @@
       "category": 6,
       "rating": 4.2,
       "image_gallery": 9,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }   
@@ -154,7 +145,6 @@
       "category": 5,
       "rating": 4.8,
       "image_gallery": 10,
-      "in_stock": "True",
       "has_weight": "True",
       "is_a_service": "False"
     }   
@@ -170,7 +160,6 @@
       "category": 1,
       "rating": 4.8,
       "image_gallery": 11,
-      "in_stock": "True",
       "has_weight": "False",
       "is_a_service": "False"
     }   
