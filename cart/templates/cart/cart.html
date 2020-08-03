@@ -27,7 +27,9 @@
         <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
             <h4 class="font-weight-bold">  {{ item.product.name }}</h4>
             {% if item.product.is_a_service == False %}
-             <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
+                {% if item.product.sku %}
+                <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
+                {% endif %}
             {% endif %}
 
             <!--Quantity/nubmer of participants-->

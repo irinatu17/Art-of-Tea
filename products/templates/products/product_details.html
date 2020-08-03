@@ -29,7 +29,7 @@
                     {% else %}
                     <a href="">
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
-                            src="{{ STATIC_URL }}img/no_image.png" 
+                            src="{{ STATIC_URL }}img/no-image.jpg" 
                             alt="{{ product.name }}">
                     </a>
                 {% endif %}
@@ -44,10 +44,12 @@
                     </a>
                 </p>
                 <p>{{ product.description }}</p>
+                {% if product.rating %}
                 <p class="text-salmon">
                     <i class="fas fa-star mr-2"></i>
                     <span class="text-dark">{{ product.rating }} / 5 </span>
                 </p>
+                {% endif %}
                 <!--Product Form-->
                 {% include 'products/includes_products/products_quantity_form.html' %} 
             </div>

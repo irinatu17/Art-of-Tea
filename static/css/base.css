@@ -380,6 +380,10 @@ font-weight: 500;
 color: var(--black);
 }
 
+.product-img{
+max-height: 330px;
+object-fit: cover;
+}
 .delivery-info{
 background-color: var(--lightgreen);
 }

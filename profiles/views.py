@@ -15,8 +15,11 @@ def profile(request):
         if profile_form.is_valid():
             profile_form.save()
             messages.success(request, 'Your Profile was successfully updated!')
-
-    profile_form = ProfileForm(instance=profile)
+        else:
+            messages.error(request, 'Update failed.\
+                 Please ensure the form is valid.')
+    else:
+        profile_form = ProfileForm(instance=profile)
 
     context = {
         'profile_form': profile_form,

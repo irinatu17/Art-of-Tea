@@ -19,7 +19,7 @@ class ProductForm(forms.ModelForm):
             'sku': 'SKU',
             'category': 'Category',
             'price': 'Price',
-            'rating': 'Rating',
+            'rating': 'Rating (0-5)',
             'has_weight': 'Product Type',
         }
 

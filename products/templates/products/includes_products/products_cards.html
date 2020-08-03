@@ -1,9 +1,18 @@
 <div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4">
-    <a href="{% url 'product_details' product.id %}">
-        <img class="card-img-top img-fluid rounded-lg shadow-sm" 
-                src="{{ product.image_gallery.image }}" 
+    {% if product.image_gallery.image %}
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                    src="{{ product.image_gallery.image }}" 
+                    alt="{{ product.name }}">
+        </a>
+        {% else %}
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                src="{{ STATIC_URL }}img/no-image.jpg" 
                 alt="{{ product.name }}">
-    </a>
+        </a>
+    {% endif %}
+    
     <div class="text-block">
     <p>{{ product.category.friendly_name }}</p>
     </div>
