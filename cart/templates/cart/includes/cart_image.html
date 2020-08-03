@@ -1,5 +1,12 @@
 <div class="col-6 col-md-2 mb-3">
+    
+    {% if item.product.image_gallery.image %}
     <img class="img-fluid rounded-lg shadow-sm" 
         src="{{ item.product.image_gallery.image }}"
         alt="{{ item.product.name }}">
+    {% else %}
+    <img class="img-fluid rounded-lg shadow-sm" 
+         src="{{ STATIC_URL }}img/no_image.png"  
+         alt="{{ item.product.name }}">
+    {% endif %}
 </div>

@@ -12,8 +12,27 @@
             {% for item in cart_items %}
             <div class="row mx-1 border-bottom pt-2">
                 <div class="col-4 mb-1 mb-md-3">
-                    <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
-                        alt="{{ product.name }}">
+                {% if item.product.is_a_service %}
+                    <a href="{% url 'service_details' item.product.id %}">
+                        {% if item.product.image_gallery.image  %}
+                            <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
+                                 alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid" src="{{ STATIC_URL }}img/no_image.png"  
+                                 alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
+                 {% else %}
+                    <a href="{% url 'product_details' item.product.id %}">
+                        {% if item.product.image_gallery.image  %}
+                            <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
+                                 alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid" src="{{ STATIC_URL }}img/no_image.png"  
+                                 alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
+                 {% endif %}
                 </div>
                 <div class="col-8">
                     <p class="font-weight-bold">{{ item.product.name }}</p>

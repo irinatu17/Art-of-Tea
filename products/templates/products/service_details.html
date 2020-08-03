@@ -14,10 +14,19 @@
             <h1 class="uppercase main-heading text-center">{{ service.name }}</h1>
             <hr class="divider-green w-25 my-4">
             <div class="col-12 col-md-10 offset-md-1">
-                <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
-                    <img class="img-fluid w-100" src="{{ service.image_gallery.image }}" alt="{{ service.name }}">
-                </a>
-
+                {% if service.image_gallery.image %}
+                    <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
+                        <img class="img-fluid w-100" 
+                             src="{{ service.image_gallery.image }}" 
+                             alt="{{ service.name }}">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img class="img-fluid w-100" 
+                            src="{{ STATIC_URL }}img/no_image.png" 
+                            alt="{{ service.name  }}">
+                    </a>
+                {% endif %}
                 <div class="row mt-4 mb-5">
                     <div class="col-12 col-md-6 ">
                         <!--Description-->
