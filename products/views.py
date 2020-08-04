@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from .models import Product, Category, ItineraryItem, Itinerary
 from .forms import ProductForm
 
@@ -82,8 +83,13 @@ def service_details(request, service_id):
     return render(request, 'products/service_details.html', context)
 
 
+@login_required
 def add_product(request):
     """ A view allowing admin to add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can add products.')
+        return redirect(reverse('landing'))
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -103,8 +109,13 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can edit products.')
+        return redirect(reverse('landing'))
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -128,8 +139,13 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can delete products.')
+        return redirect(reverse('landing'))
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.info(request, 'Product was successfully deleted.')
