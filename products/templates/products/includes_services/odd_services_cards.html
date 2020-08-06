@@ -11,7 +11,15 @@
             </div>
         </div>
         <div class=" col-12 col-md-5">
-            <img src="{{ service.image_gallery.image}}" class="card-img service-image img-fluid" alt="{{ service.name }}">
+            {% if service.image_gallery.image %}
+                <img src="{{ service.image_gallery.image}}" 
+                    class="card-img img-fluid service-image" 
+                    alt="{{ service.name }}">
+            {% else %}
+                <img class="card-img img-fluid service-no-img"
+                    src="{{ STATIC_URL }}img/no-image.jpg" 
+                    alt="{{ service.name }}">
+            {% endif %}
         </div>
     </div>
 </div>

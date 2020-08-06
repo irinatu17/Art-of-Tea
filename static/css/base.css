@@ -460,6 +460,10 @@ font-size: 0.7rem;
 object-fit: contain;
 height: 100%;
 }
+.service-no-img{
+max-height: 300px;
+object-fit: cover;
+}
 
 .checkout-form-paragraph{
 font-size: 80%;

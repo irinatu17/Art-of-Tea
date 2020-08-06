@@ -1,7 +1,16 @@
 <div class="card mb-4 rounded-lg shadow" >
     <div class="row no-gutters">
         <div class="col-12 col-md-5 ">
-        <img src="{{ service.image_gallery.image}}" class="card-img img-fluid service-image" alt="{{ service.name }}">
+        {% if service.image_gallery.image %}
+            <img src="{{ service.image_gallery.image}}" 
+                 class="card-img img-fluid service-image" 
+                 alt="{{ service.name }}">
+        {% else %}
+            <img class="card-img img-fluid service-no-img"
+                src="{{ STATIC_URL }}img/no-image.jpg" 
+                alt="{{ service.name }}">
+        {% endif %}
+        
         </div>
         <div class="col-12 col-md-7 d-flex justify-content-between flex-row">
             <div class="card-body d-flex justify-content-between flex-column">
