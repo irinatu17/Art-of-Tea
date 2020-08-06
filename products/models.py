@@ -43,6 +43,10 @@ class Itinerary(models.Model):
 
 
 class ItineraryItem(models.Model):
+
+    class Meta:
+        ordering = ('time', )
+
     itinerary = models.ForeignKey('Itinerary', null=True, blank=True,
                                   on_delete=models.SET_NULL)
     time = models.CharField(max_length=254)

@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category, ItineraryItem, Itinerary
-from .forms import ProductForm, ServiceForm
+from .forms import ProductForm, ServiceForm, ItineraryForm
 
 
 def all_products(request):
@@ -74,11 +74,27 @@ def service_details(request, service_id):
     service = get_object_or_404(all_services, pk=service_id)
     itinerary = Itinerary.objects.get(service=service)
     itinerary_items = ItineraryItem.objects.filter(itinerary=itinerary)
+    form = ItineraryForm(request.POST or None)
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            if form.is_valid():
+                itinerary_form = form.save(commit=False)
+                itinerary_form.itinerary = service.itinerary
+                itinerary_form.save()
+                messages.success(request, 'Itinerary line item added!')
+                return redirect(reverse('service_details', args=[service.id]))
+            else:
+                messages.error(request,
+                               'Failed to add itinerary line. \
+                                   Please ensure the form is valid.')
+        else:
+            form = ItineraryForm()
 
     context = {
         'service': service,
         'itinerary': itinerary,
         'itinerary_items':  itinerary_items,
+        'itinerary_form': form,
     }
     return render(request, 'products/service_details.html', context)
 
@@ -96,7 +112,6 @@ def add_product(request):
         return redirect(reverse('landing'))
     if request.method == 'POST':
         if 'product' in request.POST:
-            print("did you check this")
             product_form = ProductForm(request.POST, request.FILES,
                                        prefix='product')
             if product_form.is_valid():
@@ -108,7 +123,6 @@ def add_product(request):
                                 Please ensure the form is valid.')
             service_form = ServiceForm(prefix='service')
         elif 'service' in request.POST:
-            print("here instead")
             service_form = ServiceForm(request.POST, request.FILES,
                                        prefix='service')
             if service_form.is_valid():
@@ -119,7 +133,6 @@ def add_product(request):
                 itinerary.save()
                 messages.success(request, 'Successfully added service!')
                 return redirect(reverse('service_details', args=[service.id]))
-                # return redirect(reverse('landing'))
             else:
                 messages.error(request, 'Failed to add service. \
                                 Please ensure the form is valid.')
@@ -177,3 +190,34 @@ def delete_product(request, product_id):
     product.delete()
     messages.info(request, 'Product was successfully deleted.')
     return redirect(reverse('products'))
+
+
+@login_required
+def edit_service(request, service_id):
+    """ Edit a service in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can edit services.')
+        return redirect(reverse('landing'))
+    service = get_object_or_404(Product, pk=service_id)
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.is_a_service = True
+            service.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('service_details', args=[service.id]))
+        else:
+            messages.error(request, 'Failed to update product.\
+                 Please ensure the form is valid.')
+    else:
+        form = ServiceForm(instance=service)
+        messages.info(request, f'You are editing {service.name}')
+
+    template = 'products/edit_service.html'
+    context = {
+        'form': form,
+        'service': service,
+    }
+    return render(request, template, context)

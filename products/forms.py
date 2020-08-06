@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, ItineraryItem
 
 
 class ProductForm(forms.ModelForm):
@@ -38,7 +38,6 @@ class ServiceForm(forms.ModelForm):
         model = Product
         fields = ('name', 'description', 'price',
                   'rating', 'duration',
-                #   'is_a_service',
                   )
 
     def __init__(self, *args, **kwargs):
@@ -49,7 +48,6 @@ class ServiceForm(forms.ModelForm):
             'price': 'Price',
             'rating': 'Rating (0-5)',
             'duration': 'Duration (in hrs)',
-            # 'is_a_service': 'is a service',
 
         }
 
@@ -57,6 +55,23 @@ class ServiceForm(forms.ModelForm):
             self.fields[field].label = labels[field]
 
         self.fields['description'].widget.attrs['rows'] = 4
-        # self.fields['is_a_service'].initial = True
-        # self.fields['is_a_service'].disabled = True
-        # self.fields['is_a_service'].widget.attrs['readonly'] = 'readonly'
+
+
+class ItineraryForm(forms.ModelForm):
+
+    class Meta:
+        model = ItineraryItem
+        fields = ('time', 'text'
+                  )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        labels = {
+            'time': 'Time',
+            'text': 'Description',
+        }
+
+        for field in self.fields:
+            self.fields[field].label = labels[field]
+        self.fields['time'].initial = "14:00"
+        self.fields['text'].widget.attrs['placeholder'] = "e.g. Tasting of 3 different types of tea"
