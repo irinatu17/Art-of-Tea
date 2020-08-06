@@ -1,28 +1,30 @@
+{% if itinerary_items %}
+    <div>
+        <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
+        <table class="table">
+            {% for item in itinerary_items %} 
+            <tr>
+                <th>{{ item.time }}</th>
+                <td class="ml-4">{{  item.text }}
+                </td> 
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endif %}
 <div>
-    <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
-    {% if itinerary_items %}
-    <table class="table">
-        {% for item in itinerary_items %} 
-        <tr>
-            <th>{{ item.time }}</th>
-            <td class="ml-4">{{  item.text }}
-            </td> 
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-            <p class="mb-4">Sorry, itinerary is not provided for this service.</p>
-    {% endif %}
     {% if request.user.is_superuser %}
             <h4 class="font-weight-bold border-top pt-2 mb-3 mt-4">Admin Itinerary form:</h4>
-            <p class="text-muted">Please, provide service itinerary, if it's relevant.</p>
+            {% if not itinerary_items %}
+            <p>Please, provide service itinerary, if it's relevant.</p>
+            {% endif %}
             <p class="small text-muted">You can add as many itinerary line items as needed <br/>
             (e.g. 14:20 - Introduction to the Chineese Tea Ceremony)</p>
             <form method="POST" action="{% url 'service_details'  service.id %}" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ itinerary_form.time | as_crispy_field }}
                 {{ itinerary_form.text | as_crispy_field }}
-                <div class="text-right mt-4">
+                <div class="text-right my-4">
                     <button class="btn button-green" type="submit">Add Itinerary Line</button>
                 </div>
             </form>

@@ -3,6 +3,12 @@
         <div class="col-12 col-md-7  d-flex justify-content-between flex-row">
             <div class="card-body d-flex justify-content-between flex-column" >
                 <h5 class="card-title text-center uppercase font-weight-bold">{{ service.name }}</h5>
+                {% if request.user.is_superuser %}
+                    <small class="text-center my-2">
+                        <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                    </small>
+                {% endif %}
                 <p class="card-text">{{ service.description }}</p>
                 <div class="d-flex justify-content-between">
                     <p class="card-text font-weight-bold"><i class="fas fa-euro-sign mr-1"></i>{{ service.price}}</p>
