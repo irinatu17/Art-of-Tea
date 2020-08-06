@@ -1,5 +1,6 @@
 <div>
     <h4 class="main-heading text-salmon my-4">Itinerary example:</h4>
+    {% if itinerary_items %}
     <table class="table">
         {% for item in itinerary_items %} 
         <tr>
@@ -9,4 +10,10 @@
         </tr>
         {% endfor %}
     </table>
+    {% else %}
+        <p>
+            Sorry, itinerary is not provided for this service.
+        </p>
+        
+    {% endif %}
 </div>

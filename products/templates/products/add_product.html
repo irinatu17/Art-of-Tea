@@ -11,16 +11,17 @@
     </div>
 
     <div class="row mb-5">
+        <!--Add Product form-->
         <div class="col-12 col-md-6">
         <h3 class=" my-4 ml-4">Add a New Product</h3>
             <form method="POST" action="{% url 'add_product' %}" class="form p-4 shadow rounded-lg" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.name | as_crispy_field }}
-                {{ form.description | as_crispy_field }}
-                {{ form.category | as_crispy_field }}
-                {{ form.sku| as_crispy_field }}
-                {{ form.price | as_crispy_field }}
-                {{ form.rating | as_crispy_field }}
+                {{ product_form.name | as_crispy_field }}
+                {{ product_form.description | as_crispy_field }}
+                {{ product_form.category | as_crispy_field }}
+                {{ product_form.sku| as_crispy_field }}
+                {{ product_form.price | as_crispy_field }}
+                {{ product_form.rating | as_crispy_field }}
                 <p>Select a Product Type</p>
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="tea" name="has_weight" class="custom-control-input" value="True" required>
@@ -31,11 +32,28 @@
                     <label class="custom-control-label" for="teaware">Teaware</label>
                 </div>
 
-                <input type="hidden" id="is_a_service" name="is_a_service" value="False">
+                <!--<input type="hidden" name="is_a_service" value="False">-->
 
                 <div class="text-right mt-4">
                     <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn button-green" type="submit">Add Product</button>
+                    <button class="btn button-green" name="product"  type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+        <!--Add Service form-->
+        <div class="col-12 col-md-6">
+            <h3 class=" my-4 ml-4">Add a New Service</h3>
+            <form method="POST" action="{% url 'add_product' %}" class="form p-4 shadow rounded-lg" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ service_form.name | as_crispy_field }}
+                {{ service_form.description | as_crispy_field }}
+                {{ service_form.duration | as_crispy_field }}
+                {{ service_form.price | as_crispy_field }}
+                {{ service_form.rating | as_crispy_field }}
+                <!--<input type="checkbox"  name="is_a_service" value="True" checked>-->
+                <div class="text-right mt-4">
+                    <a class="btn button-black-outline mr-2" href="{% url 'services' %}">Cancel</a>
+                    <button class="btn button-green" name="service" type="submit">Add Service</button>
                 </div>
             </form>
         </div>            

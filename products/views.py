@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category, ItineraryItem, Itinerary
-from .forms import ProductForm
+from .forms import ProductForm, ServiceForm
 
 
 def all_products(request):
@@ -85,26 +85,53 @@ def service_details(request, service_id):
 
 @login_required
 def add_product(request):
-    """ A view allowing admin to add a product to the store """
+    """ A view allowing admin to add a product/service to the store
+        Credits: the solutions for combining 2 forms
+        in one view was found here:
+        https://stackoverflow.com/questions/1395807/proper-way-to-handle-multiple-forms-on-one-page-in-django
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
-             Only store owners can add products.')
+             Only store owners can do that!')
         return redirect(reverse('landing'))
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            messages.success(request, 'Successfully added product!')
-            return redirect(reverse('product_details', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to add product. \
-                            Please ensure the form is valid.')
+        if 'product' in request.POST:
+            print("did you check this")
+            product_form = ProductForm(request.POST, request.FILES,
+                                       prefix='product')
+            if product_form.is_valid():
+                product = product_form.save()
+                messages.success(request, 'Successfully added product!')
+                return redirect(reverse('product_details', args=[product.id]))
+            else:
+                messages.error(request, 'Failed to add product. \
+                                Please ensure the form is valid.')
+            service_form = ServiceForm(prefix='service')
+        elif 'service' in request.POST:
+            print("here instead")
+            service_form = ServiceForm(request.POST, request.FILES,
+                                       prefix='service')
+            if service_form.is_valid():
+                service = service_form.save(commit=False)
+                service.is_a_service = True
+                service.save()
+                itinerary = Itinerary.objects.create(service=service, name=service.name)
+                itinerary.save()
+                messages.success(request, 'Successfully added service!')
+                return redirect(reverse('service_details', args=[service.id]))
+                # return redirect(reverse('landing'))
+            else:
+                messages.error(request, 'Failed to add service. \
+                                Please ensure the form is valid.')
+            product_form = product_form(prefix='product')
     else:
-        form = ProductForm()
+        product_form = ProductForm(prefix='product')
+        service_form = ServiceForm(prefix='service')
 
     template = 'products/add_product.html'
     context = {
-        'form': form,
+        'product_form': product_form,
+        'service_form': service_form,
     }
     return render(request, template, context)
 
