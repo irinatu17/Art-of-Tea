@@ -221,3 +221,15 @@ def edit_service(request, service_id):
         'service': service,
     }
     return render(request, template, context)
+
+@login_required
+def delete_service(request, service_id):
+    """ Delete a service from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can delete services.')
+        return redirect(reverse('landing'))
+    service = get_object_or_404(Product, pk=service_id)
+    service.delete()
+    messages.info(request, 'Service was successfully deleted.')
+    return redirect(reverse('services'))
