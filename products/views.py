@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, \
+    get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -224,6 +225,7 @@ def edit_service(request, service_id):
     }
     return render(request, template, context)
 
+
 @login_required
 def delete_service(request, service_id):
     """ Delete a service from the store """
@@ -235,3 +237,14 @@ def delete_service(request, service_id):
     service.delete()
     messages.info(request, 'Service was successfully deleted.')
     return redirect(reverse('services'))
+
+
+def remove_itinerary_item(request, item_id):
+    """Remove the itinerary line item"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access denied!\
+             Only store owners can ddo that.')
+    itinerary_items = ItineraryItem.objects.get(pk=item_id)
+    itinerary_items.delete()
+    messages.info(request, ('Itinerary item was removed'))
+    return redirect(request.META['HTTP_REFERER'])

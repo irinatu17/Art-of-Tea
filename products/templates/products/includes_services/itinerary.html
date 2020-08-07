@@ -5,7 +5,18 @@
             {% for item in itinerary_items %} 
             <tr>
                 <th>{{ item.time }}</th>
-                <td class="ml-4">{{  item.text }}
+                <td class="ml-4">
+                {% if request.user.is_superuser %}
+                <div class="d-flex justify-content-between">
+                 <p>{{  item.text }}</p>
+                    <!--Remove button-->
+                    <a href="{% url 'remove_itinerary_item' item.id %}" class="remove-button text-right" title="Remove">
+                        <i class="fas fa-trash-alt text-danger"></i>
+                    </a>
+                </div>
+                {% else %}
+                {{  item.text }}
+                {% endif %}
                 </td> 
             </tr>
             {% endfor %}
@@ -30,3 +41,4 @@
             </form>
     {% endif %}
 </div>
+
