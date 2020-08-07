@@ -115,7 +115,9 @@ def add_product(request):
             product_form = ProductForm(request.POST, request.FILES,
                                        prefix='product')
             if product_form.is_valid():
-                product = product_form.save()
+                product = product_form.save(commit=False)
+                product.has_weight = request.POST.get('has_weight_value')
+                product.save()
                 messages.success(request, 'Successfully added product!')
                 return redirect(reverse('product_details', args=[product.id]))
             else:

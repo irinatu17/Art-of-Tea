@@ -44,10 +44,13 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <!--Duration-->
-                                <p><span class="font-weight-bold mr-2">Duration:</span>
-                                    {{ service.duration }}</p>
+                                <p>
+                                <span class="font-weight-bold mr-2">Duration:</span>
+                                    {{ service.duration }}
+                                    {% if service.duration > 1 %} hours {% else %} hour {% endif %}
+                                </p>
                                 <!--Rating-->
-                                {% if service.rating%}
+                                {% if service.rating %}
                                 <p class="text-salmon"><i class="fas fa-star mr-2"></i><span class="text-dark">
                                     {{ service.rating|floatformat:1 }} / 5 </span>
                                 </p>

@@ -112,7 +112,7 @@
     "model": "products.itineraryitem",
     "fields": {
       "itinerary": 3,
-      "time": "14:20",
+      "time": "14:30",
       "text": "Traditional incense-game: preparing 2 kinds of incense woods for you to listen to and distinguish"
     }
   },
@@ -121,7 +121,7 @@
     "model": "products.itineraryitem",
     "fields": {
       "itinerary": 3,
-      "time": "14:45",
+      "time": "15:00",
       "text": "Service of tea ceremony with 5 different types of tea of your choice"
     }
   },
@@ -130,7 +130,7 @@
     "model": "products.itineraryitem",
     "fields": {
       "itinerary": 3,
-      "time": "15:10",
+      "time": "15:40",
       "text": "Conclusive meditation and Q&A"
     }
   },
@@ -139,7 +139,7 @@
     "model": "products.itineraryitem",
     "fields": {
       "itinerary": 3,
-      "time": "15:30",
+      "time": "16:00",
       "text": "End of service"
     }
   },

@@ -8,19 +8,20 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ('name', 'description', 'sku',
                   'category', 'price',
-                  'rating', 'has_weight',
+                  'rating',
+                  'has_weight',
                   )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         labels = {
-            'name': 'Product Name',
-            'description': 'Description',
-            'sku': 'SKU',
-            'category': 'Category',
-            'price': 'Price',
-            'rating': 'Rating (0-5)',
-            'has_weight': 'Product Type',
+            'name': 'Product Name *',
+            'description': 'Description *',
+            'sku': 'SKU *',
+            'category': 'Category *',
+            'price': 'Price(€) *',
+            'rating': 'Rating(0-5)',
+            'has_weight': 'Product Type *',
         }
 
         categories = Category.objects.all()
@@ -30,6 +31,10 @@ class ProductForm(forms.ModelForm):
             self.fields[field].label = labels[field]
 
         self.fields['description'].widget.attrs['rows'] = 4
+        self.fields['price'].widget.attrs['min'] = 0
+        self.fields['price'].widget.attrs['max'] = 1000
+        self.fields['rating'].widget.attrs['min'] = 0
+        self.fields['rating'].widget.attrs['max'] = 5
 
 
 class ServiceForm(forms.ModelForm):
@@ -43,11 +48,11 @@ class ServiceForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         labels = {
-            'name': 'Service Name',
-            'description': 'Description',
-            'price': 'Price',
-            'rating': 'Rating (0-5)',
-            'duration': 'Duration (in hrs)',
+            'name': 'Service Name *',
+            'description': 'Description *',
+            'price': 'Price(€) *',
+            'rating': 'Rating(0-5)',
+            'duration': 'Duration (in hrs) *',
 
         }
 
@@ -55,6 +60,10 @@ class ServiceForm(forms.ModelForm):
             self.fields[field].label = labels[field]
 
         self.fields['description'].widget.attrs['rows'] = 4
+        self.fields['price'].widget.attrs['min'] = 0
+        self.fields['price'].widget.attrs['max'] = 1000
+        self.fields['rating'].widget.attrs['min'] = 0
+        self.fields['rating'].widget.attrs['max'] = 5
 
 
 class ItineraryForm(forms.ModelForm):

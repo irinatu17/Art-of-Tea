@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Category(models.Model):
 
@@ -36,7 +36,7 @@ class Itinerary(models.Model):
 
     name = models.CharField(max_length=254, null=True)
     service = models.OneToOneField('Product', null=True, blank=True,
-                                   on_delete=models.SET_NULL)
+                                   on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -48,7 +48,7 @@ class ItineraryItem(models.Model):
         ordering = ('time', )
 
     itinerary = models.ForeignKey('Itinerary', null=True, blank=True,
-                                  on_delete=models.SET_NULL)
+                                  on_delete=models.CASCADE)
     time = models.CharField(max_length=254)
     text = models.CharField(max_length=254)
 
@@ -61,17 +61,22 @@ class Product(models.Model):
                                  on_delete=models.SET_NULL)
     image_gallery = models.ForeignKey('ImageGallery', null=True, blank=True,
                                       on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=800)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2,
-                                 null=True, blank=True)
-    # Fields related to teas and teaware
-    has_weight = models.BooleanField(default=False, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2,
+                                validators=[MinValueValidator(0.01)])
+    rating = models.DecimalField(max_digits=2, decimal_places=1,
+                                 null=True, blank=True,
+                                 validators=[MinValueValidator(0),
+                                             MaxValueValidator(5)])
     is_a_service = models.BooleanField(default=False)
-    # Fields related to services/tea ceremonies
-    duration = models.CharField(null=True, max_length=254)
+    # Fields related to only teas and teaware
+    has_weight = models.BooleanField(default=False, null=True, blank=True)
+    sku = models.CharField(max_length=254, null=True, blank=True)
+    # Fields related to  only services(tea ceremonies)
+    duration = models.IntegerField(null=True,
+                                   validators=[MinValueValidator(1),
+                                               MaxValueValidator(24)])
 
     def __str__(self):
         return self.name

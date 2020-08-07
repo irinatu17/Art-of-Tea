@@ -22,13 +22,13 @@
                 {{ product_form.sku| as_crispy_field }}
                 {{ product_form.price | as_crispy_field }}
                 {{ product_form.rating | as_crispy_field }}
-                <p>Select a Product Type</p>
+                <p>Select a Product Type *</p>
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="tea" name="has_weight" class="custom-control-input" value="True" required>
+                    <input type="radio" id="tea" name="has_weight_value" class="custom-control-input" value="True" required>
                     <label class="custom-control-label" for="tea">Tea</label>
                 </div>
                  <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="teaware" name="has_weight" class="custom-control-input" value="False"> 
+                    <input type="radio" id="teaware" name="has_weight_value" class="custom-control-input" value="False"> 
                     <label class="custom-control-label" for="teaware">Teaware</label>
                 </div>
                 <div class="text-right mt-4">
