@@ -10,7 +10,8 @@
                 <div class="d-flex justify-content-between">
                  <p>{{  item.text }}</p>
                     <!--Remove button-->
-                    <a href="{% url 'remove_itinerary_item' item.id %}" class="remove-button text-right" title="Remove">
+                    <a class="remove-button text-right"
+                        data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}" title="Remove">
                         <i class="fas fa-trash-alt text-danger"></i>
                     </a>
                 </div>
@@ -19,6 +20,31 @@
                 {% endif %}
                 </td> 
             </tr>
+            
+            <!-- Delete Itinerary Item Modal -->
+            <div class="modal fade" id="deleteModal{{ forloop.counter }}" tabindex="-1" role="dialog" 
+                aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Itinerary Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-red">
+                        <i class="fas fa-exclamation-circle text-danger"></i>
+                        Are you sure you want to delete <br/><span class="font-weight-bold">{{  item.time }}-{{  item.text }}</span>?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn button-black-outline" data-dismiss="modal">Close</button>
+                    <a href="{% url 'remove_itinerary_item' item.id %}" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+            </div>
+            </div>
             {% endfor %}
         </table>
     </div>
@@ -31,6 +57,7 @@
             {% endif %}
             <p class="small text-muted">You can add as many itinerary line items as needed <br/>
             (e.g. 14:20 - Introduction to the Chineese Tea Ceremony)</p>
+            <p class="small text-muted">Please, make sure Itinerary items are within the stated duration.</p>
             <form method="POST" action="{% url 'service_details'  service.id %}" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ itinerary_form.time | as_crispy_field }}
@@ -41,4 +68,3 @@
             </form>
     {% endif %}
 </div>
-

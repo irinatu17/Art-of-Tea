@@ -15,5 +15,6 @@ urlpatterns = [
          name='delete_product'),
     path('services/delete/<int:service_id>/', views.delete_service,
          name='delete_service'),
-    path('services/remove/<item_id>/', views.remove_itinerary_item, name='remove_itinerary_item'),
+    path('services/remove/<item_id>/', views.remove_itinerary_item,
+         name='remove_itinerary_item'),
 ]
