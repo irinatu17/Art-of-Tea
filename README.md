@@ -59,55 +59,42 @@ Explore the misterious and amazing world of tea with us!
 - People who want to organise a party in Chineese or Japaneese style, search for tea ceremony service
 - People who want to get a new experiance, who curious about new things and want to get more knowldge about tea practise
 - People who is interedted in Eastern culture in general
-- People who want to buy tea and teaware, cary about good quality
+- People who want to buy tea and teaware, care about good quality
 - People who are into meditation, youga and similar practices   
 
 #### Visitor/user goals:
 - Purchase products/services shown on the website in a safe and secure way
-- Read more about tea ceremonies and different aspects of drinking tea
+- Get information about tea ceremonies and different aspects of drinking tea
 - Organise the own custom tea event with special preferences
 
 #### Business goals(site owner's goals):
 - Provide users a secure professional e-commerce online shop
-- Make profit from selling teas and tea ceremony services
+- Make profit from selling teas, teaware and tea ceremony services
 - Promote tea culture in Ireland
 - Make a brand more recognisable and expand the buisiness
-### User Stories
-:white_check_mark: *implemented*    
+### User Stories    
 
-**As a user, I want/expect:**
-- to access the website from any device (laptop, tablet, mobile)
-- to easily navigate the website
-- to read information about the business, its ideas and offers
-- to learn more about different types of tea ceremonies, tea culture in general
-- to view all the services and products information
-- to view individual service/product details(e.g. image, price, quantity, description)
-- being a new user, to create my own account
-- being a returning user, to easily login/logout
-- to reset my password if I forgot it 
-- to have my personal profile with my personal information, needed for making payments
-- to view my order history
-- to be able to update my personal information, upload profile picture and delete it anytime
-- to delete my account at any time
-- to read reviews on the services/products
-- to write my own review and to be able to edit/delete it
-- to search and filter the products/services easily in order to buy a specific product I am looking for
-- to sort all products/services by specific category
-- to buy services/products: to be able to add them to my cart and to view my cart at any time
-- to edit my cart and remove products/services from the cart 
-- to view a total price of my purchases 
-- to view delivery coast and to see how much more I need to spend to reach free delivery
-- to make payments for the products/services by card in a safe and secure way
-- to receive an email confirmation after checkout to make sure that payment was successfull
-- to be able to read the company's private policy and delivery information
-- to view events that happen in the tea club this week so that I can come and join any event
-- to easily access social media links 
-- to see the location of the company as well as its contact details
-- to be able easily contact the owner/manager of the company if I have an additional query
+- As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.
+- As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.
+- As a user, I want to easily access social media links of the company, so that I can read more information about it.
+- As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.
+- As a user, I want to learn more about different types of tea ceremonies, about tea culture in general, so that I can choose and book one of the tea ceremonies.
+- As a user, I want to view service/product details(e.g. image, price, description), so that I can book/buy some of them.
+- As a user, I want to search and filter the products/services easily, so that i can quickly find a specific product I am looking for.
+- As a user, I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment. 
+- As a user, I want to view a total price of my purchases and delivery coast, so that I will understand and see how much I will be charged.
+- As a user, I expect to to make payments by card in a safe and secure way, so that I won't concern about my card details safety or won't be charged incorrectly.
+- As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
+- As a new user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.
+- As a returning user, I want to easily login anytime, so that I can get access to my  saved profile details and make next purchase quicker.
+- As a returning user, I want to reset my password if I forgot it, so that I can get access to my profile again. 
+- As a user, I want to view events that happen in the tea club this week in Dublin, so that I can come and join any event.
+- As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events. 
+- As a user, I want to be able easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
 
-**As a website owner, I want/expect:**
-- to be able to add, edit and remove products/services
-- to be able to be contacted by users through email if they have any special queries
+**Website Owner Stories**
+- As a website owner, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.
+- As a website owner, I want to recieve emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.
 ### Design
 #### Framework
 - [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for its layout.
