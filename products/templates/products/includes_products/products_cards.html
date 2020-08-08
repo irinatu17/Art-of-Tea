@@ -20,8 +20,10 @@
     <h6 class="text-center main-heading lead">{{ product.name }}</h6>
         {% if request.user.is_superuser %}
             <small>
-                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-info px-1 py-0">Edit</a> | 
+                <button type="button" class="btn btn-sm btn-outline-danger px-1 py-0" 
+                        data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">Delete
+                </button>
             </small>
         {% endif %}
     </div>
@@ -40,4 +42,28 @@
             View Details
         </a>
     </div>
+</div>
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal{{ forloop.counter }}" tabindex="-1" role="dialog" 
+     aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-red">
+            <i class="fas fa-exclamation-circle text-danger"></i>
+            Are you sure you want to delete <br/><span class="font-weight-bold">{{ product.name }}</span>?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button-black-outline" data-dismiss="modal">Close</button>
+        <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>

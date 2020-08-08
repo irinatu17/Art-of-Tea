@@ -17,16 +17,46 @@
                 <h5 class="card-title text-center uppercase font-weight-bold">{{ service.name }}</h5>
                 {% if request.user.is_superuser %}
                     <small class="text-center my-2">
-                        <a href="{% url 'edit_service' service.id %}">Edit</a> | 
-                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                        <a href="{% url 'edit_service' service.id %}" 
+                           class="btn btn-sm btn-outline-info px-1 py-0">Edit</a> | 
+                        <button type="button" class="btn btn-sm btn-outline-danger px-1 py-0" 
+                                data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">Delete
+                        </button>
                     </small>
                 {% endif %}
                 <p class="card-text">{{ service.description }}</p>
                 <div class="d-flex justify-content-between">
-                    <p class="card-text font-weight-bold"><i class="fas fa-euro-sign mr-1"></i>{{ service.price}}</p>
+                    <p class="card-text font-weight-bold">
+                        <i class="fas fa-euro-sign mr-1"></i>{{ service.price}}
+                    </p>
                     <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal{{ forloop.counter }}" tabindex="-1" role="dialog" 
+     aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-red">
+            <i class="fas fa-exclamation-circle text-danger"></i>
+            Are you sure you want to delete <br/><span class="font-weight-bold">{{ service.name }}</span>?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button-black-outline" data-dismiss="modal">Close</button>
+        <a href="{% url 'delete_service' service.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>

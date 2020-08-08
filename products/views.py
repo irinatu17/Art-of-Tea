@@ -191,7 +191,7 @@ def delete_product(request, product_id):
         return redirect(reverse('landing'))
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.info(request, 'Product was successfully deleted.')
+    messages.info(request, f'{product.name} was successfully deleted.')
     return redirect(reverse('products'))
 
 
@@ -235,7 +235,7 @@ def delete_service(request, service_id):
         return redirect(reverse('landing'))
     service = get_object_or_404(Product, pk=service_id)
     service.delete()
-    messages.info(request, 'Service was successfully deleted.')
+    messages.info(request, f'{service.name} was successfully deleted.')
     return redirect(reverse('services'))
 
 
