@@ -97,24 +97,25 @@ Explore the misterious and amazing world of tea with us!
 - As a website owner, I want to recieve emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.
 ### Design
 #### Framework
-- [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for its layout.
-- [JQuery](https://jquery.com/) is used for initializing some Bootstrap, as well as for custom functions, DOM manipulation.
+- [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for the layout.
+- [JQuery](https://jquery.com/) is used for initializing some Bootstrap components, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
 One of the main goals in UI was to focus user's attention on the products/services images. Therefore **calm** colors and **different shades** of one colour were mostly used accross the website's design.   
- Green, brown and black are the colours associated with tea help us to immerse users to the **tea world**. While different shades of grey colour allow us to create clean and neat backgrounds and volume effect accross the website.   
+**Green** and **black** are the colours associated with tea world, help us to immerse users to the **tea world**. While bright **salmon** colour is used for some buttons, headings to create a contrast and catch user's attention.   
+ Different shades of grey colour and shadows allow us to create clean and neat backgrounds and volume effect accross the website.   
  
-![Color Palette](wireframes/palette.png)
+![Color Palette](wireframes/colour-palette.png)
 #### Typography
 There are three fonts used across the project that I find a good combination: 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans) used as the main body font, popular modern sans-serif typeface providing good readability.
 - [Marko One](https://fonts.google.com/specimen/Marko+One) - elegant, decarative and eye-catching font, used mostly for headings.  
-- [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme.
+- [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme, used for navbar elements and some headings.
 #### Icons
 Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
 - I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
-- Apart from that, I used some icons, specific to the tea world and East topic that were found in a free icons library [Flaticon](https://www.flaticon.com/). 
+- Apart from that, I used some icons, specific to the tea world and East topic, that were found in a free icon library [Flaticon](https://www.flaticon.com/). 
 #### Further styling decisions
-*will be added during development phase*
+
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
 
