@@ -57,21 +57,21 @@ Explore the misterious and amazing world of tea with us!
 - People who love tea
 - People who want to get acquainted with tea culture
 - People who want to organise a party in Chineese or Japaneese style, search for tea ceremony service
-- People who want to get a new experiance, who curious about new things and want to get more knowldge about tea practise
-- People who is interedted in Eastern culture in general
-- People who want to buy tea and teaware, care about good quality
-- People who are into meditation, youga and similar practices   
+- People who want to get a new experience, who curious about new things and want to get more knowledge about tea practise
+- People interested in Eastern culture in general
+- People who want to buy tea, teaware and care about good quality
+- People who are into meditation, yoga and similar practices   
 
 #### Visitor/user goals:
 - Purchase products/services shown on the website in a safe and secure way
 - Get information about tea ceremonies and different aspects of drinking tea
-- Organise the own custom tea event with special preferences
+- Organise the custom tea event with special preferences
 
 #### Business goals(site owner's goals):
-- Provide users a secure professional e-commerce online shop
+- Provide users with a secure professional e-commerce online shop
 - Make profit from selling teas, teaware and tea ceremony services
 - Promote tea culture in Ireland
-- Make a brand more recognisable and expand the buisiness
+- Make a brand more recognisable and expand the business
 ### User Stories    
 
 - As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.
@@ -80,10 +80,10 @@ Explore the misterious and amazing world of tea with us!
 - As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.
 - As a user, I want to learn more about different types of tea ceremonies, about tea culture in general, so that I can choose and book one of the tea ceremonies.
 - As a user, I want to view service/product details(e.g. image, price, description), so that I can book/buy some of them.
-- As a user, I want to search and filter the products/services easily, so that i can quickly find a specific product I am looking for.
+- As a user, I want to search and filter the products/services easily, so that I can quickly find a specific product I am looking for.
 - As a user, I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment. 
 - As a user, I want to view a total price of my purchases and delivery coast, so that I will understand and see how much I will be charged.
-- As a user, I expect to to make payments by card in a safe and secure way, so that I won't concern about my card details safety or won't be charged incorrectly.
+- As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about my card details safety or won't be charged incorrectly.
 - As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
 - As a new user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.
 - As a returning user, I want to easily login anytime, so that I can get access to my  saved profile details and make next purchase quicker.
@@ -108,7 +108,7 @@ One of the main goals in UI was to focus user's attention on the products/servic
 #### Typography
 There are three fonts used across the project that I find a good combination: 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans) used as the main body font, popular modern sans-serif typeface providing good readability.
-- [Marko One](https://fonts.google.com/specimen/Marko+One) - elegant, decarative and eye-catching font, used mostly for headings.  
+- [Marko One](https://fonts.google.com/specimen/Marko+One) - elegant, decorative and eye-catching font, used mostly for headings.  
 - [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme, used for navbar elements and some headings.
 #### Icons
 Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
@@ -120,13 +120,13 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 
 Initial wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
 
-```text
-Note:The website was changed and evolved through the development process and several improvements were applied.
+
+**Note** :The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of 
  images, buttons and other refinements diverge from the original wireframes.    
  Apart from that, there are some features that were included into original wireframes(such as reviews, social account login, image galleries for services/products), 
- but were considered of secondary importance and were not implemented yet due to time constraints. This is reflected in Features left to implement section, and I intent to come back to them and implement them in future when I can dedicate more time to it.
-```
+ but were considered of secondary importance and were not implemented yet due to time constraints. This is reflected in Features left to implement section, and I intend to come back to them and implement them in future when I can dedicate more time to it.
+
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -135,12 +135,13 @@ The wireframes served as guidelines but some details such as positioning, placem
 ---
 
 ## Features
-### Existing Features
-:white_check_mark: *implemented*     
-
+### Existing Features     
 #### Home page
 #### Navbar
-The navbar is fixed at the top of the page, this allows a user to easily navigate throughout the website. The logo is located in the top right corner on a desktop and in the center on smaller devices. It redirects the user to the home page when clicked. On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.   
+The navbar is fixed at the top of the page, this allows a user to easily navigate throughout the website.
+ The logo is located in the top left corner on a desktop and in the center on smaller devices. 
+ It redirects the user to the home page when clicked. On the smaller resolutions (tablet, mobile) 
+ the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.   
 The difference in navbar for logged in, non-logged in users and admin:   
 - For **non-logged in** users or guests navbar contains the following links: Login, Register.   
 - For **logged in** users it contains the following links: Logout, Profile.   
@@ -150,7 +151,7 @@ The difference in navbar for logged in, non-logged in users and admin:
 #### Contact
 #### Footer
 #### Create account
-The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirenments to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
+The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
 #### Google and facebook login
