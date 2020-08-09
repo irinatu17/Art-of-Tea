@@ -17,4 +17,5 @@ urlpatterns = [
          name='delete_service'),
     path('services/remove/<item_id>/', views.remove_itinerary_item,
          name='remove_itinerary_item'),
+
 ]

@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
 class Category(models.Model):
 
     class Meta:
@@ -60,7 +61,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     image_gallery = models.ForeignKey('ImageGallery', null=True, blank=True,
-                                      on_delete=models.SET_NULL)
+                                      on_delete=models.CASCADE)
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=800)
     price = models.DecimalField(max_digits=6, decimal_places=2,

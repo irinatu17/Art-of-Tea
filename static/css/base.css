@@ -5,15 +5,12 @@
 --darkgreen: #0A5C15;
 --lightgreen: #3E9D47;
 --black: #070605;
---brown: #876A1D;
---brown-grey: #8E7A67;
 --lightgrey: #E4E3E2;
 --lavander: #D6D3F0;
 --red-salmon: #ff7474;
 --red: #ff4d4d;
 --white: #ffffff;
---darkwhite: #f5f5f5f3;
-
+--darkwhite: #f6f6f6f3;
 --lightblack: #2e2e2e;
 --darkgrey: #515151;
 
@@ -408,6 +405,34 @@ background-color: var(--lavander);
 line-height: 5px;
 }
 
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: var(--red-salmon);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: var(--red-salmon);
+    border-color: var(--red-salmon);
+    border-radius: 0;
+}
+
 /*Contact page*/
 
 #map{
@@ -529,7 +554,7 @@ border-left: 8px solid #fdc211;
 }
 
 .toast-error{
-border-left: 8px solid #dc3545;
+border-left: 8px solid var(--red-salmon);
 }
 
 .toast-info{
