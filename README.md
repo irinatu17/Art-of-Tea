@@ -114,12 +114,23 @@ There are three fonts used across the project that I find a good combination:
 Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
 - I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
 - Apart from that, I used some icons, specific to the tea world and East topic, that were found in a free icon library [Flaticon](https://www.flaticon.com/). 
-#### Further styling decisions
 
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
 
 Initial wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
+
+```text
+Note:The website was changed and evolved through the development process and several improvements were applied.
+The wireframes served as guidelines but some details such as positioning, placement of 
+ images, buttons and other refinements diverge from the original wireframes.    
+ Apart from that, there are some features that were included into original wireframes(such as reviews, social account login, image galleries for services/products), 
+ but were considered of secondary importance and were not implemented yet due to time constraints. This is reflected in Features left to implement section, and I intent to come back to them and implement them in future when I can dedicate more time to it.
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
 
 ---
 
