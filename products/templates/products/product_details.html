@@ -25,12 +25,20 @@
                 <i class="fab fa-pagelines icon-green icon-large"></i>
             </div>
         </div>
-        <div class="row mb-4 mt-4">
+        <div class="row my-4">
             <div class="col-sm-12 col-md-6 col-lg-4">
-                {% if product.image_gallery.image %}
+                    {% if '/static/' in product.image_gallery.image.name %}
                     <a href="{{ product.image_gallery.image_url }}" target="_blank" rel="noopener">
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
                             src="{{ product.image_gallery.image }}" 
+                            alt="{{ product.name }}">
+                    </a>
+                    {% elif product.image_gallery.image %}
+                    <a {% if  product.image_gallery.image_url %} href="{{ product.image_gallery.image_url }}" {%endif%}
+                    
+                    target="_blank" rel="noopener">
+                        <img class="card-img-top img-fluid rounded-lg shadow-sm" 
+                            src="{{ MEDIA_URL }}{{ product.image_gallery.image }}" 
                             alt="{{ product.name }}">
                     </a>
                     {% else %}
@@ -40,7 +48,7 @@
                             alt="{{ product.name }}">
                     </a>
                 {% endif %}
-                
+
             </div>
             <div class="col-sm-12 col-md-6 col-lg-8 d-flex justify-content-between flex-column">
                 <p class="text-salmon">
@@ -61,6 +69,24 @@
                 {% include 'products/includes_products/products_quantity_form.html' %} 
             </div>
         </div>
+        {% if request.user.is_superuser %}
+        <div class="row mb-4">
+            <div class="col-md-6 col-lg-4">
+            <hr class="divider-green w-25 d-md-none d-block">
+                
+                <h4 class="font-weight-bold mt-1 text-center mb-3"> Admin Image Form</h4>
+                <form method="POST" action="{% url 'product_details'  product.id %}" class="form mt-2"
+                     enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ image_form.image | as_crispy_field}}
+                    {{ image_form.image_url | as_crispy_field }}
+                    <div class="text-right">
+                        <button class="btn btn-salmon text-white" type="submit">Upload Image</button>
+                    </div>
+                </form>  
+            </div>
+        </div>
+         {% endif %}
     </div>
     <!-- Delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" 

@@ -1,5 +1,4 @@
 from django import forms
-from .widgets import CustomClearableFileInput
 from .models import Product, Category, ItineraryItem, ImageGallery
 
 
@@ -91,12 +90,10 @@ class ImageGalleryForm(forms.ModelForm):
 
     class Meta:
         model = ImageGallery
-        fields = ('image_url',
-                )
-    image = forms.ImageField(label='Image',
-                             required=False,
-                             widget=CustomClearableFileInput)
+        fields = ('image_url', 'image')
+    image = forms.ImageField()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['image_url'].label = 'Image Url'
+        self.fields['image'].label = ''

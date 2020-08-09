@@ -52,11 +52,56 @@ def product_details(request, product_id):
     """ A view to display single product details page """
     all_products = Product.objects.filter(is_a_service=False)
     product = get_object_or_404(all_products, pk=product_id)
+    image_gallery = ImageGallery.objects.get(name=product)
+
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = ImageGalleryForm(request.POST, request.FILES,
+                                    instance=image_gallery)
+            if form.is_valid():
+                form.save()
+                print(form)
+                messages.success(request, 'New Image added!')
+                return redirect(reverse('product_details', args=[product.id]))
+            else:
+                messages.error(request,
+                               'Failed to add image. \
+                                   Please ensure the form is valid.')
+        else:
+            form = ImageGalleryForm(instance=image_gallery)
     context = {
         'product': product,
+        'image_form': form,
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+# @login_required
+# def add_product_image(request, product_id):
+#     if not request.user.is_superuser:
+#         messages.error(request, 'Access denied!\
+#              Only store owners can do that!')
+#         return redirect(reverse('landing'))
+#     image_form = ImageGalleryForm(request.POST, request.FILES)
+#     product = get_object_or_404(Product, pk=product_id)
+#     product_form = ProductForm(request.POST, request.FILES, instance=product)
+#     if request.method == 'POST':
+#         if image_form.is_valid():
+#             image_form.save()
+#             messages.success(request, 'Successfully added product!')
+#             return redirect(reverse('product_details', args=[product.id]))
+#         else:
+#             messages.error(request, 'Failed to add product. \
+#                             Please ensure the form is valid.')
+#     else:
+#         image_form = ImageGalleryForm()
+#     template = 'products/add_product.html'
+#     context = {
+#         'product_form': product_form,
+#         'image_form': image_form,
+#     }
+#     return render(request, template, context)
 
 
 def services(request):
@@ -111,49 +156,28 @@ def add_product(request):
         messages.error(request, 'Access denied!\
              Only store owners can do that!')
         return redirect(reverse('landing'))
-    image_form = ImageGalleryForm()
     if request.method == 'POST':
         if 'product' in request.POST:
-            product_form = ProductForm(request.POST)
-            print(product_form)
+            print("did you check this")
+            product_form = ProductForm(request.POST,
+                                       prefix='product')
             if product_form.is_valid():
                 product = product_form.save(commit=False)
-                print(product)
-                name = request.POST.get('name')
-                description = request.POST.get('description')
-                category = Category.objects.get(id=request.POST.get('category'))
-                sku = request.POST.get('sku')
-                price = request.POST.get('price')
-                rating = request.POST.get('rating')
-                has_weight = True if request.POST.get('has_weight_value') == "true" else False
-                print(has_weight)
-                product = Product.objects.create(name=name, description=description,
-                                                 category=category, sku=sku,
-                                                 price=price, rating=rating, has_weight=has_weight)
-                product.save()
+                product.has_weight = request.POST.get('has_weight_value')
                 image_gallery = ImageGallery.objects.create(name=product.name)
                 image_gallery.save()
                 product.image_gallery = ImageGallery.objects.get(name=product)
                 product.save()
-                print(product)
-
-                image_form = ImageGalleryForm(request.POST, request.FILES)
-                if image_form.is_valid():
-                    image_form.save()
-                    messages.success(request, 'Successfully added product!')
-                    # return redirect(reverse('add_product_image', args=[product.id]))
-                    return redirect(reverse('product_details', args=[product.id]))
-                else:
-                    messages.error(request, 'Failed to add product. \
-                                    Please ensure the form is valid.')
-                service_form = ServiceForm()
-                product_form = ProductForm()
+                messages.success(request, 'Successfully added product!')
+                return redirect(reverse('product_details', args=[product.id]))
             else:
                 messages.error(request, 'Failed to add product. \
                                 Please ensure the form is valid.')
-            service_form = ServiceForm()
+            service_form = ServiceForm(prefix='service')
         elif 'service' in request.POST:
-            service_form = ServiceForm(request.POST)
+            print("here instead")
+            service_form = ServiceForm(request.POST,
+                                       prefix='service')
             if service_form.is_valid():
                 service = service_form.save(commit=False)
                 service.is_a_service = True
@@ -166,49 +190,22 @@ def add_product(request):
                 service.save()
                 messages.success(request, 'Successfully added service!')
                 return redirect(reverse('service_details', args=[service.id]))
+                # return redirect(reverse('landing'))
             else:
                 messages.error(request, 'Failed to add service. \
                                 Please ensure the form is valid.')
-            product_form = ProductForm()
+            product_form = ProductForm(prefix='product')
     else:
-        product_form = ProductForm()
-        service_form = ServiceForm()
-        image_form = ImageGalleryForm()
+        product_form = ProductForm(prefix='product')
+        service_form = ServiceForm(prefix='service')
 
     template = 'products/add_product.html'
     context = {
         'product_form': product_form,
         'service_form': service_form,
-        'image_form': image_form,
     }
     return render(request, template, context)
 
-
-# @login_required
-# def add_product_image(request, product_id):
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Access denied!\
-#              Only store owners can do that!')
-#         return redirect(reverse('landing'))
-#     image_form = ImageGalleryForm(request.POST, request.FILES)
-#     product = get_object_or_404(Product, pk=product_id)
-#     product_form = ProductForm(request.POST, request.FILES, instance=product)
-#     if request.method == 'POST':
-#         if image_form.is_valid():
-#             image_form.save()
-#             messages.success(request, 'Successfully added product!')
-#             return redirect(reverse('product_details', args=[product.id]))
-#         else:
-#             messages.error(request, 'Failed to add product. \
-#                             Please ensure the form is valid.')
-#     else:
-#         image_form = ImageGalleryForm()
-#     template = 'products/add_product.html'
-#     context = {
-#         'product_form': product_form,
-#         'image_form': image_form,
-#     }
-#     return render(request, template, context)
 
 
 @login_required
