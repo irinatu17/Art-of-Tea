@@ -21,7 +21,8 @@ class ImageGallery(models.Model):
 
     class Meta:
         verbose_name_plural = 'Image Galleries'
-
+    # service = models.OneToOneField('Product', null=True, blank=True,
+    #                                on_delete=models.CASCADE)
     name = models.CharField(max_length=254, null=True)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)

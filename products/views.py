@@ -60,7 +60,6 @@ def product_details(request, product_id):
                                     instance=image_gallery)
             if form.is_valid():
                 form.save()
-                print(form)
                 messages.success(request, 'New Image added!')
                 return redirect(reverse('product_details', args=[product.id]))
             else:
@@ -75,33 +74,6 @@ def product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
-
-
-# @login_required
-# def add_product_image(request, product_id):
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Access denied!\
-#              Only store owners can do that!')
-#         return redirect(reverse('landing'))
-#     image_form = ImageGalleryForm(request.POST, request.FILES)
-#     product = get_object_or_404(Product, pk=product_id)
-#     product_form = ProductForm(request.POST, request.FILES, instance=product)
-#     if request.method == 'POST':
-#         if image_form.is_valid():
-#             image_form.save()
-#             messages.success(request, 'Successfully added product!')
-#             return redirect(reverse('product_details', args=[product.id]))
-#         else:
-#             messages.error(request, 'Failed to add product. \
-#                             Please ensure the form is valid.')
-#     else:
-#         image_form = ImageGalleryForm()
-#     template = 'products/add_product.html'
-#     context = {
-#         'product_form': product_form,
-#         'image_form': image_form,
-#     }
-#     return render(request, template, context)
 
 
 def services(request):
@@ -120,27 +92,47 @@ def service_details(request, service_id):
     service = get_object_or_404(all_services, pk=service_id)
     itinerary = Itinerary.objects.get(service=service)
     itinerary_items = ItineraryItem.objects.filter(itinerary=itinerary)
-    form = ItineraryForm(request.POST or None)
+    image_gallery = ImageGallery.objects.get(pk=service_id)
+
     if request.user.is_superuser:
         if request.method == 'POST':
-            if form.is_valid():
-                itinerary_form = form.save(commit=False)
-                itinerary_form.itinerary = service.itinerary
-                itinerary_form.save()
-                messages.success(request, 'Itinerary line item added!')
-                return redirect(reverse('service_details', args=[service.id]))
-            else:
-                messages.error(request,
-                               'Failed to add itinerary line. \
-                                   Please ensure the form is valid.')
+            if 'itinerary' in request.POST:
+                itinerary_form = ItineraryForm(request.POST or None)
+                if itinerary_form.is_valid():
+                    itinerary = itinerary_form.save(commit=False)
+                    itinerary.itinerary = service.itinerary
+                    itinerary.save()
+                    messages.success(request, 'Itinerary line item added!')
+                    return redirect(reverse('service_details',
+                                            args=[service.id]))
+                else:
+                    messages.error(request,
+                                   'Failed to add itinerary line. \
+                                    Please ensure the form is valid.')
+                image_form = ImageGalleryForm(instance=image_gallery)
+            elif 'image_gallery' in request.POST:
+                image_form = ImageGalleryForm(request.POST, request.FILES,
+                                              instance=image_gallery)
+                if image_form.is_valid():
+                    image_form.save()
+                    messages.success(request, 'New Image added!')
+                    return redirect(reverse('service_details',
+                                            args=[service.id]))
+                else:
+                    messages.error(request,
+                                   'Failed to add image. \
+                                    Please ensure the form is valid.')
+                itinerary_form = ItineraryForm()
         else:
-            form = ItineraryForm()
+            itinerary_form = ItineraryForm()
+            image_form = ImageGalleryForm(instance=image_gallery)
 
     context = {
         'service': service,
         'itinerary': itinerary,
         'itinerary_items':  itinerary_items,
-        'itinerary_form': form,
+        'itinerary_form': itinerary_form,
+        'image_form': image_form,
     }
     return render(request, 'products/service_details.html', context)
 
@@ -158,7 +150,6 @@ def add_product(request):
         return redirect(reverse('landing'))
     if request.method == 'POST':
         if 'product' in request.POST:
-            print("did you check this")
             product_form = ProductForm(request.POST,
                                        prefix='product')
             if product_form.is_valid():
@@ -175,7 +166,6 @@ def add_product(request):
                                 Please ensure the form is valid.')
             service_form = ServiceForm(prefix='service')
         elif 'service' in request.POST:
-            print("here instead")
             service_form = ServiceForm(request.POST,
                                        prefix='service')
             if service_form.is_valid():
@@ -184,7 +174,7 @@ def add_product(request):
                 service.save()
                 itinerary = Itinerary.objects.create(service=service, name=service.name)
                 itinerary.save()
-                image_gallery = ImageGallery.objects.create(name=service.name)
+                image_gallery = ImageGallery.objects.create(pk=service.id)
                 image_gallery.save()
                 service.image_gallery = ImageGallery.objects.get(name=service)
                 service.save()

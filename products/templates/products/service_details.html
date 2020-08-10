@@ -21,20 +21,28 @@
             {% endif %}
             <hr class="divider-green w-25 my-4">
             <div class="col-12 col-md-10 offset-md-1">
-                {% if service.image_gallery.image %}
-                    <a href="{{ service.image_gallery.image_url }}" target="_blank" rel="noopener">
+                {% if '/static/' in service.image_gallery.image.name %}
+                    <a {% if  service.image_gallery.image_url %} href="{{ service.image_gallery.image_url }}" {%endif%}
+                    target="_blank" rel="noopener">
                         <img class="img-fluid w-100" 
                              src="{{ service.image_gallery.image }}" 
                              alt="{{ service.name }}">
                     </a>
-                    {% else %}
+                {% elif service.image_gallery.image %}
+                    <a {% if  service.image_gallery.image_url %} href="{{ service.image_gallery.image_url }}" {%endif%}
+                    target="_blank" rel="noopener">
+                        <img class="img-fluid w-100" 
+                             src="{{ MEDIA_URL }}{{ service.image_gallery.image }}" 
+                             alt="{{ service.name }}">
+                    </a>
+                {% else %}
                     <a href="">
                         <img class="img-fluid" 
                             src="{{ STATIC_URL }}img/no-image.jpg"
                             alt="{{ service.name }}">
                     </a>
                 {% endif %}
-                <div class="row mt-4 mb-5">
+                <div class="row mt-4 mb-2">
                     <div class="col-12 col-md-6 ">
                         <!--Description-->
                         <p class="landing-paragraph">{{ service.description }}</p>
@@ -68,9 +76,53 @@
                         {% include 'products/includes_services/service_form.html' %}
                     </div>
                 </div>
+                    {% if request.user.is_superuser %}
+                <div class="row mb-4 border-top pt-3">
+
+                    <!--Itinerary form-->
+                    <div class="col-12 col-md-6 ">
+                        <hr class="divider-green w-25 d-md-none d-block">
+                        <h4 class="font-weight-bold mt-1 text-center mb-3">Admin Itinerary form:</h4>
+                        {% if not itinerary_items %}
+                            <p>Please, provide service itinerary, if it's relevant.</p>
+                        {% endif %}
+                        <p class="small text-muted"><span class="font-weight-bold">Note:</span> You can add as many itinerary line items as needed <br/>
+                        (e.g. 14:20 - Introduction to the Chineese Tea Ceremony).</p>
+                        <p class="small text-muted">Please, make sure Itinerary items are within the stated duration.<br/>
+                        You can remove itinerary items by clicking the delete icon in front of each itinerary line item.</p>
+                        <form method="POST" action="{% url 'service_details'  service.id %}" class="form" 
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ itinerary_form.time | as_crispy_field }}
+                            {{ itinerary_form.text | as_crispy_field }}
+                            <div class="text-right my-4">
+                                <button class="btn button-green" name="itinerary" type="submit">Add Itinerary Line</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--Imageform-->
+                    <div class="col-12 col-md-6">
+                    <hr class="divider-green w-25 d-md-none d-block">
+                        <h4 class="font-weight-bold mt-1 text-center mb-3"> Admin Image Form:</h4>
+                        <p class="small text-muted"><span class="font-weight-bold">Note:</span>
+                            Image URL field is optional.
+                        </p>
+                        <form method="POST" action="{% url 'service_details'  service.id %}" class="form mt-2"
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ image_form.image | as_crispy_field}}
+                            {{ image_form.image_url | as_crispy_field }}
+                            <div class="text-right">
+                                <button class="btn btn-salmon text-white" name="image_gallery" type="submit">Upload Image</button>
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
+    
 </div>
 
 <!-- Delete Service Modal -->

@@ -47,7 +47,7 @@
                             src="{{ STATIC_URL }}img/no-image.jpg" 
                             alt="{{ product.name }}">
                     </a>
-                {% endif %}
+                   {% endif %}
 
             </div>
             <div class="col-sm-12 col-md-6 col-lg-8 d-flex justify-content-between flex-column">
@@ -71,17 +71,20 @@
         </div>
         {% if request.user.is_superuser %}
         <div class="row mb-4">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
             <hr class="divider-green w-25 d-md-none d-block">
                 
                 <h4 class="font-weight-bold mt-1 text-center mb-3"> Admin Image Form</h4>
+                <p class="small text-muted"><span class="font-weight-bold">Note:</span>
+                            Image URL field is optional.
+                        </p>
                 <form method="POST" action="{% url 'product_details'  product.id %}" class="form mt-2"
                      enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ image_form.image | as_crispy_field}}
                     {{ image_form.image_url | as_crispy_field }}
                     <div class="text-right">
-                        <button class="btn btn-salmon text-white" type="submit">Upload Image</button>
+                        <button class="btn btn-salmon text-white" name="image_gallery" type="submit">Upload Image</button>
                     </div>
                 </form>  
             </div>
