@@ -53,7 +53,8 @@ form.addEventListener('submit', function(ev) {
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(1200);
     $('.spinner-overlay-wrapper').fadeToggle(1200);
-
+    var comment = document.getElementById('id_comment').value;
+    console.log(comment)
     var saveInfo = Boolean($('#save_info'));
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
@@ -61,6 +62,7 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
+        'comment': comment,
     };
     var url = '/checkout/cache_checkout_data/';
 
