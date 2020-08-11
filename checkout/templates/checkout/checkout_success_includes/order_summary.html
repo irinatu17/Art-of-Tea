@@ -8,8 +8,11 @@
         {% for item in order.orderitems.all %}
         <div class="row mx-0 border-bottom py-2">
             <div class="col-3 mb-1 mb-md-3">
-            {% if item.product.image_gallery.image  %}
-                <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
+            {% if '/static/' in item.product.image.name  %}
+                <img class="img-fluid" src="{{ item.product.image }}" 
+                     alt="{{ product.name }}">
+            {% elif item.product.image %}
+            <img class="img-fluid" src="{{ MEDIA_URL }}{{ item.product.image }}" 
                      alt="{{ product.name }}">
             {% else %}
                 <img class="img-fluid" src="{{ STATIC_URL }}img/no-image.jpg"   

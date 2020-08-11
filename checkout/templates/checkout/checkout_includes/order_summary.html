@@ -14,8 +14,11 @@
                 <div class="col-4 mb-1 mb-md-3">
                 {% if item.product.is_a_service %}
                     <a href="{% url 'service_details' item.product.id %}">
-                        {% if item.product.image_gallery.image  %}
-                            <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
+                        {% if '/static/' in item.product.image.name  %}
+                            <img class="img-fluid" src="{{ item.product.image }}" 
+                                 alt="{{ product.name }}">
+                        {% elif item.product.image %}
+                        <img class="img-fluid" src="{{ MEDIA_URL }}{{ item.product.image }}" 
                                  alt="{{ product.name }}">
                         {% else %}
                             <img class="img-fluid" src="{{ STATIC_URL }}img/no-image.jpg"   
@@ -24,8 +27,11 @@
                     </a>
                  {% else %}
                     <a href="{% url 'product_details' item.product.id %}">
-                        {% if item.product.image_gallery.image  %}
-                            <img class="img-fluid" src="{{ item.product.image_gallery.image }}" 
+                        {% if  '/static/' in item.product.image.name  %}
+                            <img class="img-fluid" src="{{ item.product.image }}" 
+                                 alt="{{ product.name }}">
+                        {% elif item.product.image %}
+                        <img class="img-fluid" src="{{ MEDIA_URL }}{{ item.product.image }}" 
                                  alt="{{ product.name }}">
                         {% else %}
                             <img class="img-fluid" src="{{ STATIC_URL }}img/no-image.jpg"  
