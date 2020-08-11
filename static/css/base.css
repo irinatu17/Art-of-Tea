@@ -378,7 +378,7 @@ color: var(--black);
 }
 
 .product-img{
-max-height: 330px;
+height: 330px;
 object-fit: cover;
 }
 .delivery-info{
@@ -403,34 +403,6 @@ opacity: 0.9;
 border-radius: 3px;
 background-color: var(--lavander);
 line-height: 5px;
-}
-
-/* Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: var(--red-salmon);
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: var(--red-salmon);
-    border-color: var(--red-salmon);
-    border-radius: 0;
 }
 
 /*Contact page*/

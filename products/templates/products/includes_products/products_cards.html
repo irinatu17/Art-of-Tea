@@ -1,8 +1,14 @@
 <div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4">
-    {% if product.image_gallery.image %}
+    {% if '/static/' in product.image.name %}
         <a href="{% url 'product_details' product.id %}">
             <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
-                    src="{{ product.image_gallery.image }}" 
+                    src="{{ product.image }}" 
+                    alt="{{ product.name }}">
+        </a>
+        {% elif product.image %}
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                    src="{{ MEDIA_URL }}{{ product.image }}" 
                     alt="{{ product.name }}">
         </a>
         {% else %}

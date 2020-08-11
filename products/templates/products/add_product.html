@@ -16,10 +16,9 @@
             <h3 class=" my-4 ml-4 text-salmon">Add a New Product</h3>
             <form method="POST"  action="{% url 'add_product' %}" 
                     class="form p-4 shadow rounded-lg" 
-                    enctype="multipart/form-data"
-                    id="product_form">
+                    id="product_form" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h5 class="font-weight-bold mb-4">Step 1. Product Details</h5>
+                <!-- <h5 class="font-weight-bold mb-4">Step 1. Product Details</h5> -->
                 {{ product_form.name | as_crispy_field }}
                 {{ product_form.description | as_crispy_field }}
                 {{ product_form.category | as_crispy_field }}
@@ -35,47 +34,39 @@
                     <input type="radio" id="teaware" name="has_weight_value" class="custom-control-input" value="False"> 
                     <label class="custom-control-label" for="teaware">Teaware</label>
                 </div>
-                <div class=" text-right mt-4">
-                    <!-- <button class="btn button-green uppercase" name="product"  type="submit"
-                        	data-toggle="collapse" 
-                            href="#imageForm" role="button" 
-                            aria-expanded="false" aria-controls="imageForm"
-                            > -->
-                        <button class="btn button-green uppercase" name="product"  id="nextStep" type="submit">
-                        Next 
-                        <i class="fas fa-angle-right"></i>
-                    </button>
+                <div class="my-3">
+                    {{ product_form.image_url | as_crispy_field }}
+                     {{ product_form.image }}
+                    <p class="small text-muted mb-0 mt-2"><span class="font-weight-bold">Note:</span>
+                     If you don't provide an image, no-image placeholder will be assigned.</p>
+                    <p  class="small text-muted my-0"> Image URL field is optional. 
+                    You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here.</p>
+                </div>
+                <div class="text-right mt-4">
+                    <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
+                    <button class="btn button-green" name="product"  type="submit">Add Product</button>
                 </div>
             </form>
-            <div class="p-4 shadow rounded-lg mt-4" id="imageForm">
-                <h5 class="font-weight-bold mb-4">Step 2. Product Image</h5>
-                <small>If you skip this step, no-image placeholder will be assigned to the image field.</small>
-                <form method="POST" action="{% url 'add_product' %}" 
-                    class="form " 
-                    enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ image_form.image_url | as_crispy_field }}
-                    {{ image_form.image }}
-                    
-                    <div class=" text-right mt-4">
-                        <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn button-green uppercase" id="image_add" name="image_add" value="True"
-                         type="submit">Add Product</button>
-                    </div>
-                </form>
-            </div>
         </div>
         <!--Add Service form-->
         <div class="col-12 col-md-6">
             <h3 class=" my-4 ml-4 text-salmon">Add a New Service</h3>
             <form method="POST" action="{% url 'add_product' %}" class="form p-4 shadow rounded-lg" 
-                  enctype="multipart/form-data">
+                enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ service_form.name | as_crispy_field }}
                 {{ service_form.description | as_crispy_field }}
                 {{ service_form.duration | as_crispy_field }}
                 {{ service_form.price | as_crispy_field }}
                 {{ service_form.rating | as_crispy_field }}
+                <div class="my-3">
+                    {{ service_form.image_url | as_crispy_field }}
+                     {{ service_form.image }}
+                    <p class="small text-muted mt-2 mb-0"><span class="font-weight-bold">Note:</span>
+                     If you don't provide an image, no-image placeholder will be assigned.</p>
+                    <p  class="small text-muted my-0"> Image URL field is optional. 
+                    You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here.</p>
+                </div>
                 <div class="text-right mt-4">
                     <a class="btn button-black-outline mr-2" href="{% url 'services' %}">Cancel</a>
                     <button class="btn button-green" name="service" type="submit">Add Service</button>
@@ -84,16 +75,4 @@
         </div>            
     </div>
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-
-        $('#new-image').change(function() {
-            var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to: ${file.name}`);
-        });
-
-    </script>
 {% endblock %}

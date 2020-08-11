@@ -25,22 +25,28 @@
                 <i class="fab fa-pagelines icon-green icon-large"></i>
             </div>
         </div>
-        <div class="row mb-4 mt-4">
+        <div class="row my-4">
             <div class="col-sm-12 col-md-6 col-lg-4">
-                {% if product.image_gallery.image %}
-                    <a href="{{ product.image_gallery.image_url }}" target="_blank" rel="noopener">
+                    {% if '/static/' in product.image.name %}
+                    <a href="{{ product.image_url }}" target="_blank" rel="noopener">
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
-                            src="{{ product.image_gallery.image }}" 
+                            src="{{ product.image }}" 
+                            alt="{{ product.name }}">
+                    </a>
+                    {% elif product.image %}
+                    <a {% if  product.image_url %} href="{{ product.image_url }}" {%endif%}
+                    
+                    target="_blank" rel="noopener">
+                        <img class="card-img-top img-fluid rounded-lg shadow-sm" 
+                            src="{{ MEDIA_URL }}{{ product.image }}" 
                             alt="{{ product.name }}">
                     </a>
                     {% else %}
-                    <a href="">
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
                             src="{{ STATIC_URL }}img/no-image.jpg" 
                             alt="{{ product.name }}">
-                    </a>
-                {% endif %}
-                
+                   {% endif %}
+
             </div>
             <div class="col-sm-12 col-md-6 col-lg-8 d-flex justify-content-between flex-column">
                 <p class="text-salmon">

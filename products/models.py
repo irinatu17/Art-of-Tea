@@ -17,19 +17,6 @@ class Category(models.Model):
         return self.friendly_name
 
 
-class ImageGallery(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Image Galleries'
-
-    name = models.CharField(max_length=254, null=True)
-    image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Itinerary(models.Model):
 
     class Meta:
@@ -60,8 +47,6 @@ class ItineraryItem(models.Model):
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
-    image_gallery = models.ForeignKey('ImageGallery', null=True, blank=True,
-                                      on_delete=models.CASCADE)
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=800)
     price = models.DecimalField(max_digits=6, decimal_places=2,
@@ -71,6 +56,8 @@ class Product(models.Model):
                                  validators=[MinValueValidator(0),
                                              MaxValueValidator(5)])
     is_a_service = models.BooleanField(default=False)
+    image = models.ImageField(null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     # Fields related to only teas and teaware
     has_weight = models.BooleanField(default=False, null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)

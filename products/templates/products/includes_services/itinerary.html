@@ -49,22 +49,4 @@
         </table>
     </div>
 {% endif %}
-<div>
-    {% if request.user.is_superuser %}
-            <h4 class="font-weight-bold border-top pt-2 mb-3 mt-4">Admin Itinerary form:</h4>
-            {% if not itinerary_items %}
-                <p>Please, provide service itinerary, if it's relevant.</p>
-            {% endif %}
-            <p class="small text-muted">You can add as many itinerary line items as needed <br/>
-            (e.g. 14:20 - Introduction to the Chineese Tea Ceremony)</p>
-            <p class="small text-muted">Please, make sure Itinerary items are within the stated duration.</p>
-            <form method="POST" action="{% url 'service_details'  service.id %}" class="form" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ itinerary_form.time | as_crispy_field }}
-                {{ itinerary_form.text | as_crispy_field }}
-                <div class="text-right my-4">
-                    <button class="btn button-green" type="submit">Add Itinerary Line</button>
-                </div>
-            </form>
-    {% endif %}
-</div>
+

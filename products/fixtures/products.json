@@ -9,9 +9,10 @@
       "price": 3.90,
       "category": 2,
       "rating": 4.9,
-      "image_gallery": 2,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/ceylon_op_nuwara_eliya.jpg",
+      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
     }
   },
   {
@@ -24,9 +25,10 @@
       "price": 5.50,
       "category": 10,
       "rating": 4.6,
-      "image_gallery": 1,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/oolong_rose.jpg",
+      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg"
     }
   },
   {
@@ -39,9 +41,10 @@
       "price": 45.00,
       "category": 1,
       "rating": 4.9,
-      "image_gallery": 3,
       "has_weight": "False",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/home_matcha_kit.jpg",
+      "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg"
     }
   },
   {
@@ -54,9 +57,10 @@
       "price": 4.00,
       "category": 4,
       "rating": 4.1,
-      "image_gallery": 4,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/white_peach.jpg",
+      "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg"
     }
   },
   {
@@ -69,9 +73,10 @@
       "price": 2.20,
       "category": 7,
       "rating": 5.0,
-      "image_gallery": 5,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/naked_pu-erh_tea.jpg",
+      "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg"
     }
   },
   {
@@ -84,9 +89,10 @@
       "price": 3.10,
       "category": 3,
       "rating": 4.8,
-      "image_gallery": 6,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/fresh_green_tea.jpg",
+      "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg"
     }
   },
   {
@@ -99,9 +105,10 @@
       "price": 3.10,
       "category": 9,
       "rating": 4.5,
-      "image_gallery": 7,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/sleep_tea.jpg",
+      "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg"
     }
   },
   {
@@ -114,9 +121,10 @@
       "price": 2.00,
       "category": 8,
       "rating": 4.5,
-      "image_gallery": 8,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/classic_rooibos_tea.jpg",
+      "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg"
     }
   },
   {
@@ -129,9 +137,10 @@
       "price": 3.90,
       "category": 6,
       "rating": 4.2,
-      "image_gallery": 9,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/matcha.jpg",
+      "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg"
     }   
   },
   {
@@ -144,9 +153,10 @@
       "price": 2.90,
       "category": 5,
       "rating": 4.8,
-      "image_gallery": 10,
       "has_weight": "True",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/chamomile.jpg",
+      "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg"
     }   
   },
   {
@@ -159,9 +169,10 @@
       "price": 25.00,
       "category": 1,
       "rating": 4.8,
-      "image_gallery": 11,
       "has_weight": "False",
-      "is_a_service": "False"
+      "is_a_service": "False",
+      "image": "/static/img/products/iron_tea_pot.jpg",
+      "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
     }   
   },
   {
@@ -172,9 +183,10 @@
       "description": "Discover all aspects of Japanese tea culture during a brief, yet thorough outline of the various aspects of tea culture in Japan. What is matcha and how is it made? What is the tea ceremony and how is it done? And, is Japanese tea only green tea? These questions will be addressed during this one-hour session.",
       "price": 70.00,
       "rating": 5.0,
-      "image_gallery": 12,
       "is_a_service": "True",
-      "duration": "1"
+      "duration": "1",
+      "image": "/static/img/services/tea-ceremony-japaneese.jpg",
+      "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg"
     }   
   },
   {
@@ -185,9 +197,10 @@
       "description": "Chinese Tea Ceremony is not as elaborate and formal as the Japanese one. Instead, it more focused on the quality of the tea and the teaware. It takes about one hour.  We will give you an insight in the beauty and value this ritual has to offer.",
       "price": 75.00,
       "rating": 4.9,
-      "image_gallery": 13,
       "is_a_service": "True",
-      "duration": "1"
+      "duration": "1",
+      "image": "/static/img/services/chinese-tea-ceremony.jpg",
+      "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg"
     }   
   },
   {
@@ -198,9 +211,10 @@
       "description": "Our tea-masters will guide you through a traditional kodo incense ceremony. Savour and competitively distinguish the fragrances of different incense woods. In the format of a traditional incense-game, we will prepare 2 kinds of incense woods for you to listen to and distinguish. The incense ritual will be followed by a conclusive service of tea ceremony.",
       "price": 80.00,
       "rating": 5.0,
-      "image_gallery": 14,
       "is_a_service": "True",
-      "duration": "1,5"
+      "duration": "2",
+      "image": "/static/img/services/incense_ceremony.jpg",
+      "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg"
     }   
   },
   {
@@ -211,9 +225,10 @@
       "description": "To get immersed into a real atmosphere of a full traditional Japanese Ceremony, you will be offered to wear kimono.  You will enjoy a Buddhist vegetarian lunch before the main event: a service of thick tea. We will round off the event with a final more casual service, of thin tea. During this stage you may also try your hand at making a bowl of thin tea yourself.",
       "price": 100.00,
       "rating": 5.0,
-      "image_gallery": 15,
       "is_a_service": "True",
-      "duration": "2"
+      "duration": "2",
+      "image": "/static/img/services/exclusive_traditional_tea_ceremony.jpg",
+      "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg"
     }   
   }
 ]

@@ -1,10 +1,14 @@
 <div class="card mb-4 rounded-lg shadow" >
     <div class="row no-gutters">
         <div class="col-12 col-md-5 ">
-        {% if service.image_gallery.image %}
-            <img src="{{ service.image_gallery.image}}" 
+        {% if '/static/' in service.image.name %}
+            <img src="{{ service.image}}" 
                  class="card-img img-fluid service-image" 
                  alt="{{ service.name }}">
+        {% elif service.image %}
+            <img src="{{ MEDIA_URL }}{{ service.image}}" 
+                    class="card-img img-fluid service-image" 
+                    alt="{{ service.name }}">
         {% else %}
             <img class="card-img img-fluid service-no-img"
                 src="{{ STATIC_URL }}img/no-image.jpg" 
