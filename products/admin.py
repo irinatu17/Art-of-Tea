@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, ImageGallery, Itinerary, ItineraryItem
+from .models import Product, Category, Itinerary, ItineraryItem
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -10,7 +10,8 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
         'rating',
         'has_weight',
-        'image_gallery',
+        'image',
+        'image_url',
     )
 
     ordering = ('sku',)
@@ -38,16 +39,7 @@ class ItineraryItemAdmin(admin.ModelAdmin):
     )
 
 
-class ImageGalleryAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-        'image',
-        'image_url',
-    )
-
-
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(ImageGallery, ImageGalleryAdmin)
 admin.site.register(Itinerary, ItineraryAdmin)
 admin.site.register(ItineraryItem, ItineraryItemAdmin)

@@ -20,7 +20,14 @@
                 {{ form.duration | as_crispy_field }}
                 {{ form.price | as_crispy_field }}
                 {{ form.rating | as_crispy_field }}
-            
+                <div class="my-3">
+                    {{ form.image_url | as_crispy_field }}
+                     {{ form.image }}
+                    <p class="small text-muted my-0"><span class="font-weight-bold">Note:</span>
+                     If you don't provide an image, no-image placeholder will be assigned.</p>
+                    <p  class="small text-muted my-0"> Image URL field is optional. 
+                    You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here.</p>
+                </div>
                 <div class="text-right mt-4">
                     <a class="btn button-black-outline mr-2" href="{% url 'services' %}">Cancel</a>
                     <button class="btn btn-info" type="submit">Edit Service</button>

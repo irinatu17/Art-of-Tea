@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category, ItineraryItem, ImageGallery
+from .models import Product, Category, ItineraryItem
 
 
 class ProductForm(forms.ModelForm):
@@ -10,7 +10,10 @@ class ProductForm(forms.ModelForm):
                   'category', 'price',
                   'rating',
                   'has_weight',
+                  'image_url',
+                  'image',
                   )
+    image = forms.ImageField(label='Image')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,6 +25,8 @@ class ProductForm(forms.ModelForm):
             'price': 'Price(€) *',
             'rating': 'Rating(0-5)',
             'has_weight': 'Product Type *',
+            'image_url': 'Image URL',
+            'image': 'Image',
         }
 
         categories = Category.objects.all()
@@ -42,7 +47,8 @@ class ServiceForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('name', 'description', 'price',
-                  'rating', 'duration',
+                  'rating', 'duration', 'image_url',
+                  'image',
                   )
 
     def __init__(self, *args, **kwargs):
@@ -53,6 +59,8 @@ class ServiceForm(forms.ModelForm):
             'price': 'Price(€) *',
             'rating': 'Rating(0-5)',
             'duration': 'Duration (in hrs) *',
+            'image_url': 'Image URL',
+            'image': 'Image',
 
         }
 
@@ -84,16 +92,3 @@ class ItineraryForm(forms.ModelForm):
             self.fields[field].label = labels[field]
         self.fields['time'].initial = "14:00"
         self.fields['text'].widget.attrs['placeholder'] = "e.g. Tasting of 3 different types of tea"
-
-
-class ImageGalleryForm(forms.ModelForm):
-
-    class Meta:
-        model = ImageGallery
-        fields = ('image_url', 'image')
-    image = forms.ImageField()
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['image_url'].label = 'Image Url'
-        self.fields['image'].label = ''

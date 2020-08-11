@@ -42,7 +42,14 @@
                     <label class="custom-control-label" for="teaware1">Teaware</label>
                 {% endif %}
                 </div>
-
+    	        <div class="my-3">
+                    {{ form.image_url | as_crispy_field }}
+                     {{ form.image }}
+                    <p class="small text-muted my-0"><span class="font-weight-bold">Note:</span>
+                     If you don't provide an image, no-image placeholder will be assigned.</p>
+                    <p  class="small text-muted my-0"> Image URL field is optional. 
+                    You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here.</p>
+                </div>
                 <input type="hidden" id="is_a_service" name="is_a_service" value="False">
                 <div class="text-right mt-4">
                     <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
