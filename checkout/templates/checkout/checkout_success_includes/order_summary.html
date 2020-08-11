@@ -23,10 +23,12 @@
             <div class="col-9">
                 <p class="font-weight-bold mb-2">{{ item.product.name }}</p>
                 <p class="small my-1">
-                {% if item.quantity > 1 %}
-                    {{ item.quantity }} participants
-                {% else %}
-                    {{ item.quantity }} participant
+                {% if item.product.is_a_service %}
+                    {% if item.quantity > 1 %}
+                        {{ item.quantity }} participants
+                    {% else %}
+                        {{ item.quantity }} participant
+                    {% endif %}
                 {% endif %}
                  </p>
                 <p class="small my-1 ">Price: €{{ item.product.price}}</p>
