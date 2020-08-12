@@ -200,8 +200,8 @@ The User model used in this project is provided by Django as a part of defaults 
  User | user | OneToOneField 'User' |  on_delete=models.CASCADE
  Full Name | profile_full_name | CharField | max_length=70, null=True, blank=True
  Phone number | profile_phone_number | CharField | max_length=20, null=True, blank=True
- Street address Line1 | profile_address_line1 | CharField | max_length=80, null=True, blank=True
- Street address Line2 | profile_address_line2 | CharField | max_length=80, null=True, blank=True
+ Address Line1 | profile_address_line1 | CharField | max_length=80, null=True, blank=True
+ Address Line2 | profile_address_line2 | CharField | max_length=80, null=True, blank=True
  Town/City | profile_town_or_city | CharField | max_length=40, null=True, blank=True
  County | profile_county | CharField | max_length=80, null=True, blank=True
  Postcode | profile_postcode | CharField | max_length=20, null=True, blank=True
@@ -247,40 +247,36 @@ Text | text | CharField | max_length=254
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
 Order Number | order_number | CharField | max_length=32, null=False, editable=False
-User Profile | user_profile | ForeignKey 'UserProfile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
-Full Name | full_name | CharField | max_length=50, null=False, blank=False
+Profile | profile | ForeignKey 'Profile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+Full Name | full_name | CharField | max_length=70, null=False, blank=False
 Email | email | EmailField | max_length=254, null=False, blank=False
 Phone number | phone_number | CharField | max_length=20, null=False, blank=False
-Street address Line1 | street_address1 | CharField | max_length=80, null=False, blank=False
-Street address Line2 | street_address2 | CharField | max_length=80, null=True, blank=True
-Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
-County | county | CharField | max_length=80, null=True, blank=True
-Country | country | CountryField | null=False, blank=False
+Address Line1 | address_line1 | CharField | max_length=60, null=False, blank=False
+Address Line2 | address_line2 | CharField | max_length=60, null=False, blank=False
+Town/City | town_or_city | CharField | max_length=50, null=False, blank=False
+County | county | CharField | max_length=50, null=True, blank=True
 Postcode | postcode | CharField | max_length=20, null=True, blank=True
-Date | date | DateTimeField | auto_now_add=True
+Country | country | CountryField | blank_label='Country*', null=False, blank=False
+Purchase Date | purchase_date | DateTimeField | auto_now_add=True
 Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
 Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Original Cart | original_cart | TextField | null=False, blank=False, default=''
+Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
+Comment | comment | TextField | max_length=254, null=True, blank=True
 
-#### Review
+##### Order Item Details 
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
- Author | author | OneToOneField 'User' |  on_delete=models.CASCADE
- Published Date | published_date | DateTimeField | blank=True, null=True, default=timezone.now
- Created Date | created_date | DateTimeField | auto_now_add=True
- Content | content | TextField |
- Rating | rating | DecimalField | max_digits=6, decimal_places=2
- Product |
- Service |
- 
- This model will be replaced with built-in reusable Django app that lets users write reviews for any model. **django-review 1.10.0**
- 
-#### 
+Order | order | ForeignKey 'Order' | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
+Product | product | ForeignKey 'Product' | null=False, blank=False, on_delete=models.CASCADE
+Quantity | quantity | IntegerField | null=False, blank=False, default=0
+Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+Datetime | datetime | CharField | null=True, blank=True, max_length=20
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
-
 
 ---
 
@@ -313,7 +309,8 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
 - [GitHub](https://git-scm.com/) - for remotely storing project's code.
 - [PIP](https://pip.pypa.io/en/stable/installing/) - for installation of necessary tools.
 - [Heroku](https://heroku.com/) - to host the project.
-- [AWS S3 Bucket](https://aws.amazon.com/) -  to store static files.
+- [AWS S3 Bucket](https://aws.amazon.com/) -  to store user-uploaded media files.
+- [WhiteNoise](http://whitenoise.evans.io/en/stable/) - to store static files.
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
 - [Travis](https://travis-ci.org/) - for integration testing.
 - [TinyPng](https://tinypng.com/) - for compressing images.
