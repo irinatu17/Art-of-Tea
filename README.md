@@ -177,6 +177,11 @@ Customized 404 and 500 pages contain short information about the error and a but
 
 ### Features Left to Implement
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
+
 ---
 ## Information Architecture
 ### Database choice
@@ -273,6 +278,10 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
  
 #### 
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
 
 ---
 
@@ -316,6 +325,11 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
 ### Databases
 - [SQlite3](https://www.sqlite.org/index.html) - a development database.
 - [PostgreSQL](https://www.postgresql.org/) - a production database.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
 ---
 
 
@@ -326,12 +340,20 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
 
 ### Compatibility
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
 ---
 
 ## Deployment
 ### Local Deployment
 
 ### Remote Deployment
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
 
 ---
 
@@ -341,7 +363,17 @@ Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null
 ### Media
 ### Code
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
 ---
 ### Acknowledgements
 
 ## Disclaimer
+This site is intended for **educational purposes** only.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ Back To Top</a></b>
+</div>
+
