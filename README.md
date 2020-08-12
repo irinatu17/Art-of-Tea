@@ -1,4 +1,6 @@
-# Art of Tea
+# [Art of Tea](https://art-of-tea.herokuapp.com/)
+
+<img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="800">
 
 Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilization.  
 Tea connects people, calms the mind, brings harmony and balance.    
