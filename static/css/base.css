@@ -11,7 +11,7 @@
 --red: #ff4141;
 --white: #ffffff;
 --darkwhite: #f6f6f6f3;
---lightblack: #2e2e2e;
+--lightblack: #252525;
 --darkgrey: #515151;
 
 --marko-one: 'Marko One', serif;
@@ -25,7 +25,6 @@ body, html {
 height: 100%;
 width:100vw;
 font-family: var(--open-sans);
-
 }
 
 body{
@@ -33,7 +32,6 @@ overflow-x: hidden;
 display: flex;
 flex-direction: column;
 color: var(--black);
-
 }
 
 main{
@@ -41,12 +39,25 @@ flex: 1 0 auto;
 margin-top:74px;
 }
 
-.uppercase{
-text-transform: uppercase;
-}
-
 h1 {
 font-size: 2rem;
+}
+
+footer{
+background-color: var(--black);
+color: var(--white);
+}
+
+.footer-top{
+background:linear-gradient(to bottom, var(--black), var(--lightblack))
+}
+
+.main-footer{
+background: linear-gradient(to top, var(--black), var(--lightblack));
+}
+
+.uppercase{
+text-transform: uppercase;
 }
 
 .text-white{
@@ -92,9 +103,11 @@ font-size: 1rem;
 .btn{
 transition: all .15s ease-in-out;
 }
+
 .btn:hover{
 transform: scale(1.05);
 }
+
 .button-black{
 background:linear-gradient(var(--black), var(--lightblack));
 color: var(--white);
@@ -216,12 +229,22 @@ top:100%;
 background-color: var(--black);
 }
 
-li.nav-item:not(.category-nav-item):not(.checkout-nav-item){
+.nav-item:not(.category-nav-item):not(.checkout-nav-item){
 transition: all .15s ease-in-out;
 }
 
-li.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
+.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
 transform: scale(1.1);
+}
+
+.footer-link{
+transition: all .15s ease-in-out;
+color: var(--white);
+}
+
+.footer-link:hover{
+transform: scale(1.1);
+color: var(--lightgreen);
 }
 
 /* Landing page - hero image section*/
@@ -343,14 +366,6 @@ padding: 0 10%;
 }
 
 
-
-/*Footer*/
-footer{
-background-color: var(--black);
-color: var(--white);
-
-}
-
 /*Smooth transition on hover makes icons */
 .media-icons{
 font-size: 1.5rem;
@@ -457,10 +472,6 @@ box-shadow: 1px 1px 3px;
 
 }
 
-#map2{
-min-height:300px;
-height: 30vh;
-}
 
 /*Checkout*/
 .order-summary-items{

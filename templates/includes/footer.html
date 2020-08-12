@@ -1,7 +1,7 @@
 <!--Footer-->
-<div class="py-3 container-fluid">
+<div class="pt-3 container-fluid">
     <!--Desktop only footer section-->
-    <div class="row text-center my-3 d-none d-lg-flex  border-bottom border-white pb-3">
+    <div class="row text-center footer-top d-none d-lg-flex  border-bottom border-white pb-3">
         <div class="col-4">
             <a class="navbar-brand" href="#">
                 <img src="/static/img/logo.png" alt="logo" class="logo">
@@ -12,10 +12,10 @@
         <div class="col-4">
             <h4 class="uppercase">Quick links</h4>
             <nav class="nav flex-column">
-                <a class="nav-link text-white" href="{% url 'about' %}">About</a>
-                <a class="nav-link text-white" href="{% url 'services' %}">Services</a>
-                <a class="nav-link text-white" href="{% url 'products' %}">Products</a>
-                <a class="nav-link text-white" href="{% url 'events' %}">Events</a>
+                <a class="nav-link footer-link py-1" href="{% url 'about' %}">About</a>
+                <a class="nav-link footer-link py-1" href="{% url 'services' %}">Services</a>
+                <a class="nav-link footer-link py-1" href="{% url 'products' %}">Products</a>
+                <a class="nav-link footer-link py-1" href="{% url 'events' %}">Events</a>
             </nav>
         </div>
         <div class="col-4 text-left">
@@ -28,7 +28,7 @@
         </div>
     </div>
     <!--Bottom main -->
-    <div class="row">
+    <div class="row main-footer py-3">
         <div class="col-12 container text-center">
             <a href="https://github.com/" target="_blank" rel="noopener" class="icon-footer-container">
                 <i class="fab fa-github media-icons" aria-hidden="true"></i>
