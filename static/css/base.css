@@ -8,7 +8,7 @@
 --lightgrey: #E4E3E2;
 --lavander: #D6D3F0;
 --red-salmon: #ff7474;
---red: #ff4d4d;
+--red: #ff4141;
 --white: #ffffff;
 --darkwhite: #f6f6f6f3;
 --lightblack: #2e2e2e;
@@ -96,14 +96,14 @@ transition: all .15s ease-in-out;
 transform: scale(1.05);
 }
 .button-black{
-background-color: var(--black);
+background:linear-gradient(var(--black), var(--lightblack));
 color: var(--white);
 border: 1px solid var(--black);
 font-family: var(--sawarabi-mincho);
 }
 
 .button-black:hover{
-background-color: var(--white);
+background:linear-gradient(var(--white), var(--darkgrey));
 color: var(--black);
 }
 
@@ -120,7 +120,7 @@ color: var(--white);
 }
 
 .button-green{
-background-color: var(--darkgreen);
+background: linear-gradient(var(--darkgreen), var(--lightgreen));;
 color: var(--white);
 font-family: var(--sawarabi-mincho);
 font-weight: 500;
@@ -129,7 +129,7 @@ font-weight: 500;
 .button-green:hover{
 color: var(--black);
 border: 1px solid var(--darkgreen);
-background-color: transparent;
+background: linear-gradient(var(--lightgrey), transparent);
 }
 
 .btn-next{
@@ -148,12 +148,12 @@ color: var(--white) !important;
 border: 1px solid var(--black);
 font-family: var(--sawarabi-mincho);
 font-weight:500;
-background-color: var(--red);
+background: linear-gradient(to left, var(--red), var(--red-salmon));
 color: var(--black);
 }
 
 .btn-salmon:hover{
-background-color: var(--red-salmon);
+background: linear-gradient(var(--red), var(--darkwhite), var(--red));
 }
 
 .btn-service{
@@ -172,9 +172,11 @@ font-weight:500;
 color: var(--white); 
 background-color: var(--darkgreen);
 }
+
 .update-cart-btn{
 color: var(--white) !important;
 }
+
 .update-cart-btn:hover{
 color: var(--black) !important;
 }
@@ -213,11 +215,12 @@ width: 100vw;
 top:100%;
 background-color: var(--black);
 }
-li.nav-item:not(.category-nav-item.checkout-nav-item){
+
+li.nav-item:not(.category-nav-item):not(.checkout-nav-item){
 transition: all .15s ease-in-out;
 }
 
-li.nav-item:hover:not(.category-nav-item.checkout-nav-item){
+li.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
 transform: scale(1.1);
 }
 
