@@ -71,10 +71,8 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
             if request.POST['save_info'] == "true":
                 request.session['save_info'] = True
-                print(request.session['save_info'])
             else:
                 request.session['save_info'] = False
-                print(request.session['save_info'])
             return redirect(reverse('checkout_success',
                             args=[order.order_number]))
         else:
@@ -133,7 +131,6 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    print(save_info, "from checkout_success")
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
@@ -186,7 +183,6 @@ def cache_checkout_data(request):
             'comment': request.POST.get('comment'),
             'username': request.user,
         })
-        print(request.user)
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \

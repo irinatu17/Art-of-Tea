@@ -53,7 +53,6 @@ class StripeWH_Handler:
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None
-        print(save_info)
         comment = intent.metadata.comment if hasattr(intent.metadata, 'comment') else None
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -66,7 +65,6 @@ class StripeWH_Handler:
         # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
-        print(username)
         if username != 'AnonymousUser':
             profile = Profile.objects.get(user__username=username)
             if save_info == "true":
@@ -80,9 +78,6 @@ class StripeWH_Handler:
                 profile.save()
             else:
                 profile = None
-                print(profile)
-                print("save info doesn't exist")
-
         order_exists = False
         # creates a delay of 5 seconds to avoid the order being added twice
         attempt = 1

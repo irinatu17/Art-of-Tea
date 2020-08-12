@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from .forms import ContactForm
 
 
-# Create your views here.
 def contact(request):
     """
     A view to return contact page and render the form, allowing a user
