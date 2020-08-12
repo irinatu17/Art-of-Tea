@@ -213,11 +213,11 @@ width: 100vw;
 top:100%;
 background-color: var(--black);
 }
-li.nav-item:not(.category-nav-item){
+li.nav-item:not(.category-nav-item.checkout-nav-item){
 transition: all .15s ease-in-out;
 }
 
-li.nav-item:hover:not(.category-nav-item){
+li.nav-item:hover:not(.category-nav-item.checkout-nav-item){
 transform: scale(1.1);
 }
 
