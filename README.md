@@ -197,16 +197,15 @@ The User model used in this project is provided by Django as a part of defaults 
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
  User | user | OneToOneField 'User' |  on_delete=models.CASCADE
- Avatar | avatart | ImageField | null=True, blank=True
- Username | username | CharField | max_length=254, null=False, blank=False
- Email | email | EmailField | max_length=254, null=False, blank=False
- Phone number | phone_number | CharField | max_length=20, null=False, blank=False
- Street address Line1 | street_address1 | CharField | max_length=80, null=False, blank=False
- Street address Line2 | street_address2 | CharField | max_length=80, null=True, blank=True
- Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
- County | county | CharField | max_length=80, null=True, blank=True
- Country | country | CountryField | null=False, blank=False
- Postcode | postcode | CharField | max_length=20, null=True, blank=True
+ Full Name | profile_full_name | CharField | max_length=70, null=True, blank=True
+ Phone number | profile_phone_number | CharField | max_length=20, null=True, blank=True
+ Street address Line1 | profile_address_line1 | CharField | max_length=80, null=True, blank=True
+ Street address Line2 | profile_address_line2 | CharField | max_length=80, null=True, blank=True
+ Town/City | profile_town_or_city | CharField | max_length=40, null=True, blank=True
+ County | profile_county | CharField | max_length=80, null=True, blank=True
+ Postcode | profile_postcode | CharField | max_length=20, null=True, blank=True
+ Country | profile_country | CountryField | blank_label='Country', null=True, blank=True
+
 
 #### Service/Ceremony
 | **Name** | **Database Key** | **Field Type** | **Validation** |
