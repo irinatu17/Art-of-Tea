@@ -169,10 +169,15 @@ font-weight:500;
 }
 
 .button-green-transparent:hover{
-color: var(--white);
+color: var(--white); 
 background-color: var(--darkgreen);
 }
-
+.update-cart-btn{
+color: var(--white) !important;
+}
+.update-cart-btn:hover{
+color: var(--black) !important;
+}
 
 /* Navbar */
 .navbar{
