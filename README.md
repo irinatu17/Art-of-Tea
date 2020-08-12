@@ -193,60 +193,57 @@ For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
 ### Data Modelling
 #### User
 The User model used in this project is provided by Django as a part of defaults "django.contrib.auth.models". More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
-#### Profile
+#### Profile App
+##### Profile
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
  User | user | OneToOneField 'User' |  on_delete=models.CASCADE
- Avatar | avatart | ImageField | null=True, blank=True
- Username | username | CharField | max_length=254, null=False, blank=False
- Email | email | EmailField | max_length=254, null=False, blank=False
- Phone number | phone_number | CharField | max_length=20, null=False, blank=False
- Street address Line1 | street_address1 | CharField | max_length=80, null=False, blank=False
- Street address Line2 | street_address2 | CharField | max_length=80, null=True, blank=True
- Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
- County | county | CharField | max_length=80, null=True, blank=True
- Country | country | CountryField | null=False, blank=False
- Postcode | postcode | CharField | max_length=20, null=True, blank=True
+ Full Name | profile_full_name | CharField | max_length=70, null=True, blank=True
+ Phone number | profile_phone_number | CharField | max_length=20, null=True, blank=True
+ Street address Line1 | profile_address_line1 | CharField | max_length=80, null=True, blank=True
+ Street address Line2 | profile_address_line2 | CharField | max_length=80, null=True, blank=True
+ Town/City | profile_town_or_city | CharField | max_length=40, null=True, blank=True
+ County | profile_county | CharField | max_length=80, null=True, blank=True
+ Postcode | profile_postcode | CharField | max_length=20, null=True, blank=True
+ Country | profile_country | CountryField | blank_label='Country', null=True, blank=True
 
-#### Service/Ceremony
+#### Products App
+##### Product
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
- Sku | sku | CharField | max_length=254
- Name | name | CharField | max_length=254 
- Description | description | TextField | max_length=500 
- Price | price | DecimalField |max_digits=6, decimal_places=2 
- Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
- Image1 | image1 | ImageField | null=True, blank=True
- Image2 | image2 | ImageField | null=True, blank=True
- Image3 | image3 | ImageField | null=True, blank=True
- Image4 | image4 | ImageField | null=True, blank=True
- Image5 | image5 | ImageField | null=True, blank=True
- Date and Time | date_and_time | DateTimeField | 
- Duration | duration | 
- Number of participants  | number_of_participants | ...
- Place | place | 
-#### Product
-| **Name** | **Database Key** | **Field Type** | **Validation** |
---- | --- | --- | --- 
- Sku | sku | CharField | max_length=254
+ Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
  Name | name | CharField | max_length=254 
  Description | description | TextField | max_length=800 
- Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
- Price | price | DecimalField |max_digits=6, decimal_places=2 
- Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
- Weight | has_weight | BooleanField | null=True, blank=True, default=False
- Image1 | image1| ImageField | null=True, blank=True
- Image2 | image2| ImageField | null=True, blank=True
- Image3 | image3| ImageField | null=True, blank=True
+ Price | price | DecimalField |max_digits=6, decimal_places=2, validators=[MinValueValidator(0.01)] 
+ Rating | rating | DecimalField | max_digits=2, decimal_places=1, null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(5)]
+ Is a service | is_a_service | BooleanField | default=False
+ Image | image| ImageField | null=True, blank=True
  Image Url | image_url | URLField | max_length=1024, null=True, blank=True
- Availability | in_stock | Boolean | default=False
+ Has Weight | has_weight | BooleanField | default=False, null=True, blank=True
+ Sku | sku | CharField | max_length=254, null=True, blank=True
+ Duration | duration | IntegerField | null=True, validators=[MinValueValidator(1), MaxValueValidator(24)]
  
-#### Tea Category
+##### Category
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
 Programmatic Name | name | CharField | max_length=254
 Friendly Name | friendly_name | CharField | max_length=254, null=True, blank=True
-#### Order
+
+##### Itinerary
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Name | name | CharField | max_length=254, null=True
+Service | service | OneToOneField 'Product' | null=True, blank=True, on_delete=models.CASCADE
+
+##### Itinerary Item
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Itinerary | itinerary | ForeignKey 'Itinerary' | null=True, blank=True, on_delete=models.CASCADE
+Time | time | CharField | max_length=254
+Text | text | CharField | max_length=254
+
+#### Checkout App
+##### Order
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
 Order Number | order_number | CharField | max_length=32, null=False, editable=False
