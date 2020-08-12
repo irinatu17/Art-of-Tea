@@ -20,10 +20,16 @@
             {% include 'products/includes_products/tea_categories.html' %} 
         </div>
         <div class="row" data-aos="fade-up" data-aos-duration="1100" data-aos-easing="ease-in-out">
+        {% if not products %}
+        <div class="col-12 text-center mt-2 mb-4">
+            <h5>Sorry, no products were found matching your search query.</h5>
+        </div>
+        {% else %}
             {% for product in products %}
                 <!--Products Cards-->    
                 {% include 'products/includes_products/products_cards.html' %} 
             {% endfor %}
+        {% endif %}
         </div>
     </div>
 {% endblock %}
