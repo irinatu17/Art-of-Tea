@@ -89,7 +89,12 @@ font-size: 1rem;
 }
 
 /*Buttons*/
-
+.btn{
+transition: all .15s ease-in-out;
+}
+.btn:hover{
+transform: scale(1.05);
+}
 .button-black{
 background-color: var(--black);
 color: var(--white);
