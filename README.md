@@ -137,7 +137,7 @@ The wireframes served as guidelines but some details such as positioning, placem
 ---
 
 ## Features
-Art of Tea website is composed by eight different applications: `landing`, `about`, `events`, `contact`, `products`, `cart`, `checkout`, `profiles`.
+Art of Tea website is composed by eight different applications: `landing`, `about`, `events`, `contact`, `products`(contains products and services), `cart`, `checkout`, `profiles`.
 ### Existing Features     
 #### Navbar
 The navbar is fixed at the top of the page all the time, this allows a user to easily navigate throughout the website.
@@ -195,12 +195,33 @@ Contact page consist of 2 section:
 - If the user is **admin**, there are also 2 buttons displayed in the cards: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
 - User can filter the products by **category** to see the specific items. When the category is clicked, the are the products displayed only of the selected category, as well as the  Category Name and number of the specific items satisfying the query.
 
-#### Single product details
-- The product details page displays information about the selected product: category, name, description, rating, price and product image (or recipe placeholder if no image was added by user). Clicking the image will open it in the new tab, if the image_url is assigned.
+#### Product details page
+- The product details page displays information about the selected product: category, name, description, rating, price and product image (or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
 - If a product is one of the tea categories, not teaware (that checked by using "has_weight" Boolean field), there's additional paragraph informing that price is displayed per 100g.
 - The item quantity can be assigned filling the quantity form, the validation is in place restricting the quantity to the range of 1-999. The validation errors will be displayed, if the user tries to input the numbers outsade of that range.
 - Product can be added to the cart by clicking **Add to cart** button, that will be reflected in the cart item in the navbar(grand total will be increased there). As well as that, the **toast success message** will be displayed when the product is added to the cart.
-- - If the user is **admin**, there are also 2 buttons displayed below the product name: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
+- If the user is **admin**, there are also 2 buttons displayed below the product name: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
+- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the product-related pages(e.g. to come back to the category selected).
+- **Go Back** button redirects user back to the All Products page.
+
+#### Services
+- Services page displays horizontal services cards including the following information: name, description, price and image. No-image placeholder is assigned if no image is provided. 
+- Button "Learn more" redirects a user to the individual service page with detailed information. 
+- Similar to products, **Edit** and **Delete** are displayed on the cards if the user is **admin** with the corresponding functionality to render Edit Service page and toggle Delete modal.
+- At the bottom of the page there's a paragraph with a link to the **Contact page**, offering a user to contact a store manager for organising a custom tea ceremony anf discussing further details.
+- As the website initial ideas and purposes do not presuppose to contain many services(there are only 4 services displayed), there is no filtering or searching options that are in place for the products pages. 
+
+#### Service details page
+- The service details page displays the following information: name, description, rating, price per person, itinerary, duration and image(or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
+- **Itinerary** example table contains the time and description within the stated duration. This section's purpose is to showcase a user how the ceremony is organised, what is included in it. 
+- For **admin** there is an **Itinerary form** functionality and **remove itinerary buttons** in the bottom of the page. That's allow a superuser to quickly add/delete itinerary items.
+- Other features available only to the **admin** are the **Edit** and **Delete** (same as in the Services page) allowing admin to edit or delete services correspondingly.
+- To **add service to cart** a user has to fill the form that contains 2 fields: number of participants and data-time. 
+- **Number of participants** field is a quantity field in the back end, providing same functionality and validations as for quantity in product details page. The value range is withtin 1-100, the valudation error messages will be fired when user tries to enter invalid input. 
+- The **datatime picker** allows a user to choose the desireble date and time. Only dates and times in future, after the current date/time can be assigned. As well as that, the hours are restricted to only open-hours(12-8 p.m.) and minute stepping is set to 30 to enhance User Experience.
+- If the form is valid, clicking on **Add to Cart** button will update the cart with a new service added and success toast message will ensure a user that item was added to the cart.
+- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the service-related pages(e.g. to come back to the all services page).
+- **Go Back** button redirects user back to the Services page.
 
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
