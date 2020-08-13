@@ -179,6 +179,16 @@ The page provides the user an information about the main focus of the website, i
 
 It contains of 3 sections: **Who we are**, **Our principals** and **Our mission** followed by the images and an image-carousel in the last section.
 
+#### Events page
+This page represents the events happens each week in the tea club "Art of Tea". The short paragraph explains the user how the events are organised and about the donation system welcome.   
+
+As well as that, the page contains **Weekly events table** displaying weekdays,time and name of the event that available in the tea club.   
+There's also a **Find us here** section, showing the address, phone number and the link to the Facebook page, that would be checked to see more details about each week events.
+
+#### Contact page
+Contact page consist of 2 section:
+- **Contact form** that's offered to fill out(name, email, message) if a user has any questions or queries. The real email will be sent to the admin of the website(handling by django "Sending email" functionality).
+- **Contact details** section provides company's address, phone number and email, along with a Map showing the location of the tea club. Clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
 
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
