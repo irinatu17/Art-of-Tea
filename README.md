@@ -223,6 +223,16 @@ Contact page consist of 2 section:
 - **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the service-related pages(e.g. to come back to the all services page).
 - **Go Back** button redirects user back to the Services page.
 
+#### Cart page
+- The link at the top of the page "Continue shopping" navigate back a user to the products page, if a user wants to add something else to the cart.
+- Cart page is available for both logged in and non-logged in users, so that it is possible to make purchase being a guest.
+- The page contains a summary of the user's order: the item's **name*, **image**, **quantitie**/ **number of participants**, **price**, **sub-total** and **sku**(for products).
+- A user can **update** item's quantity/number of participants and data-time(if it's a service) and **remove** items from their order completely. To prevent from the accident clicking the remove button, the modal will be opened on click asking a user to confirm the deletion.
+- **Toast messages** will be displayed when a user update/remove items in the cart.
+- At the bottom of the page the **cart subtotal**, **delivery coast** and **grand total** are displayed.
+- There is a **Checkout button** that takes a user to the checkout page to proceed the payment.
+
+
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
@@ -230,11 +240,8 @@ The login page features the form with "username" and "password" fields, allowing
 
 #### Logout
 Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
-#### Services
-#### Single service details
-#### Products
 
-#### Cart
+
 #### Checkout
 #### Profile
 #### Order history
