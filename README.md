@@ -141,26 +141,26 @@ Art of Tea website is composed by eight different applications: `landing`, `abou
 ### Existing Features     
 #### Navbar
 The navbar is fixed at the top of the page all the time, this allows a user to easily navigate throughout the website.
- The logo is located in the top left corner on a desktop and in the center on the smaller devices. 
+ The **logo** is located in the top left corner on a desktop and in the center on the smaller devices. 
  It redirects the user to the home/landing page when clicked. On the smaller resolutions (tablet, mobile) 
  the navbar is collapsed into a burger icon. Menu links appear when the burger icon is clicked and collapse back, when clicked again.    
  
-Navbar also contains a search box, where user can search for product and also cart icon. It's collapsed into a search icon on the mobile and tablet, and slides down when the icon is clicked.     
-Also, navbar contains a cart icon alomg with a grand total displayed if there are items in the cart added. It changes the colour to yellow when there's something
+Navbar also contains a **search box**, where user can search for product and also cart icon. It's collapsed into a search icon on the mobile and tablet, and slides down when the icon is clicked.     
+Also, navbar contains a **cart icon** alomg with a grand total displayed if there are items in the cart added. It changes the colour to yellow when there's something
 in the cart to catch user's attention, and remains white(as other navbar elements) when the cart is empty. Clicking the cart icon will redirect user to the cart page.   
 
 The difference in navbar for logged in, non-logged in users and admin:   
 - For **non-logged in** users or guests navbar contains the following links: Login, Register.   
-- For **logged in** users it contains the "My Account" nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
+- For **logged in** users it contains the **"My Account"** nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
 - For **admin** apart from all the links available for logged-in users mentioned above, there is also link to Admin Managment, where admin can add new products and services. That's avaliable only for superusers and defensive-design with corresponding error-messages is in place to protect this from manual entering the url in the browser.
 #### Footer
 Footer consists of 2 parts: main footer section and additional footer section which is displayed only on the large screens.   
 
 Main footer section is stick to the bottom of the page and displayed across all the screens. It contains the social media icons-links which redirect a user to the corresponding page, opening in a new tab. As it is not the real company, the links redirect a user only to social media main pages.   
 The additional desktop only section contains 
-- logo, that is clickable and redirect to the landing page and also small paragraph about the company
-- quick links to the main pages
-- contact informations that contains address, phone number and email
+- **logo**, that is clickable and redirect to the landing page and also small paragraph about the company
+- **quick links** to the main pages
+- **contact information** that contains address, phone number and email
 
 #### Landing(home) page
 The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality(book ceremony/buy products). It contains of 9 sections:
@@ -190,32 +190,44 @@ Contact page consist of 2 section:
 - **Contact form** that's offered to fill out(name, email, message) if a user has any questions or queries. The real email will be sent to the admin of the website(handling by django "Sending email" functionality).
 - **Contact details** section provides company's address, phone number and email, along with a Map showing the location of the tea club. Clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
 
+#### Products page
+- The all products page displays Products cards including the following information: category, name, price. All product cards are clickable and redirect a user to the individual product page with detailed information (by clicking on the image or the "View details buttons").   
+- If the user is **admin**, there are also 2 buttons displayed in the cards: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
+- User can filter the products by **category** to see the specific items. When the category is clicked, the are the products displayed only of the selected category, as well as the  Category Name and number of the specific items satisfying the query.
+
+#### Single product details
+- The product details page displays information about the selected product: category, name, description, rating, price and product image (or recipe placeholder if no image was added by user). Clicking the image will open it in the new tab, if the image_url is assigned.
+- If a product is one of the tea categories, not teaware (that checked by using "has_weight" Boolean field), there's additional paragraph informing that price is displayed per 100g.
+- The item quantity can be assigned filling the quantity form, the validation is in place restricting the quantity to the range of 1-999. The validation errors will be displayed, if the user tries to input the numbers outsade of that range.
+- Product can be added to the cart by clicking **Add to cart** button, that will be reflected in the cart item in the navbar(grand total will be increased there). As well as that, the **toast success message** will be displayed when the product is added to the cart.
+- - If the user is **admin**, there are also 2 buttons displayed below the product name: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
+
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
-#### Google and facebook login
-Allows users to login using social networks accounts.
+
 #### Logout
 Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
-#### About Page
 #### Services
 #### Single service details
 #### Products
-#### Single product details
-#### Search
+
 #### Cart
 #### Checkout
 #### Profile
 #### Order history
-#### Review
+
 #### Admin product managment
 Product managment page allows admin of the website edit and add new products/services. Only admin of the page(superuser) has access to that feature.
-#### Back to the top button
-#### 404 and 500 error pages
-Customized 404 and 500 pages contain short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
 
 ### Features Left to Implement
+#### Reviews
+#### Back to the top button
+#### Google and facebook login
+Allows users to login using social networks accounts.
+#### 404 and 500 error pages
+Customized 404 and 500 pages contain short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
