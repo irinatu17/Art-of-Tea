@@ -254,23 +254,30 @@ Checkout page contains 2 main section: checkout 3-steps form and order summary.
 - For logged-in users there's a button **View full order history** that takes users to the order history page.
 - For non-logged in users the links to **create an account** page to allow to register and view an order history. 
 
+#### Profile page
+- Profile page contains **Personal info** section(username and email displayed). Also it contains buttons **Change password** and **Manage emails** that takes a user to the corresponding pages (that's a part of Django allauth functionality with a custom UI styling in place).
+- **Shipping details** section allows to save the shipping information so for the next purchase the fields in the checkout form will be prefilled with this info.
+- **View order hostory** link will redirects a user to the Order History page.
+
+#### Order History
+- If a user has not made any purchase, the paragraph will inform that the order history is empty with a link to the Product page.
+- If there are completed orders, the table with the following fields: **Order Number**, **Date**, **Items**, **Total** is in place.
+- Clicking the link on the Order number will redirects a user to the **checkout success** page with all the order information. The Toast info message will tell the user that it's a past confirmation for the order number.
+- **View My Profile** link will redirects a user to the Profile page.
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
-
 #### Logout
 Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
 
-#### Profile
-#### Order History
-
 #### Admin product managment
-Product managment page allows admin of the website edit and add new products/services. Only admin of the page(superuser) has access to that feature.
+Product managment page allows admin of the website add new products/services filling out the corresponding form. Only admin(superuser) has an access to that feature.
 
 ### Features Left to Implement
-#### Reviews
-#### Back to the top button
+There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but would like to do so in future. All of these features are displayed in my original wireframes.
+#### Star based Reviews
+Users would be able to create, edit and delete their reviews, that would be displayd as a stars in the pruduct details and service details pages.
 #### Google and facebook login
 Allows users to login using social networks accounts.
 #### 404 and 500 error pages
