@@ -137,7 +137,7 @@ The wireframes served as guidelines but some details such as positioning, placem
 ---
 
 ## Features
-Art of Tea website is composed by eight different applications: `landing`, `about`, `products`, `events`, `contact`, `cart`, `checkout` and `profiles`.
+Art of Tea website is composed by eight different applications: `landing`, `about`, `events`, `contact`, `products`, `cart`, `checkout`, `profiles`.
 ### Existing Features     
 #### Navbar
 The navbar is fixed at the top of the page all the time, this allows a user to easily navigate throughout the website.
@@ -173,7 +173,12 @@ The landing page serves to attract new users to the business, to give a clear un
 - **Events** section contains a paragraph about the events in happening in the tea club with a link to the Events page.
 - **Reviews** sections contains the customer's reviews carousel with the user's avatars, review and usernames. Note: this section is static at the moment, but there's an intent to make it dynamic and to showcase real reviews, what's documented in Features left to implement section(reviews).
 - **Contact** section contains a question and a link to the Contact page, allowing a user to post a query/question there via the form.
-#### Contact
+
+#### About page
+The page provides the user an information about the main focus of the website, it's purposes, ideas and principals.    
+
+It contains of 3 sections: **Who we are**, **Our principals** and **Our mission** followed by the images and an image-carousel in the last section.
+
 
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
