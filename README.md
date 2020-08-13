@@ -123,7 +123,7 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 Initial wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
 
 
-**Note** :The website was changed and evolved through the development process and several improvements were applied.
+**Note:** The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of 
  images, buttons and other refinements diverge from the original wireframes.    
  Apart from that, there are some features that were included into original wireframes(such as reviews, social account login, image galleries for services/products), 
@@ -137,21 +137,35 @@ The wireframes served as guidelines but some details such as positioning, placem
 ---
 
 ## Features
+Art of Tea website is composed by eight different applications: `landing`, `about`, `products`, `events`, `contact`, `cart`, `checkout` and `profiles`.
 ### Existing Features     
-#### Home page
 #### Navbar
-The navbar is fixed at the top of the page, this allows a user to easily navigate throughout the website.
- The logo is located in the top left corner on a desktop and in the center on smaller devices. 
- It redirects the user to the home page when clicked. On the smaller resolutions (tablet, mobile) 
- the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.   
+The navbar is fixed at the top of the page all the time, this allows a user to easily navigate throughout the website.
+ The logo is located in the top left corner on a desktop and in the center on the smaller devices. 
+ It redirects the user to the home/landing page when clicked. On the smaller resolutions (tablet, mobile) 
+ the navbar is collapsed into a burger icon. Menu links appear when the burger icon is clicked and collapse back, when clicked again.    
+ 
+Navbar also contains a search box, where user can search for product and also cart icon. It's collapsed into a search icon on the mobile and tablet, and slides down when the icon is clicked.     
+Also, navbar contains a cart icon alomg with a grand total displayed if there are items in the cart added. It changes the colour to yellow when there's something
+in the cart to catch user's attention, and remains white(as other navbar elements) when the cart is empty. Clicking the cart icon will redirect user to the cart page.   
+
 The difference in navbar for logged in, non-logged in users and admin:   
 - For **non-logged in** users or guests navbar contains the following links: Login, Register.   
-- For **logged in** users it contains the following links: Logout, Profile.   
-- For **admin** there is also link to Product Managment, where admin can add new products.
+- For **logged in** users it contains the "My Account" nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
+- For **admin** apart from all the links available for logged-in users mentioned above, there is also link to Admin Managment, where admin can add new products and services. That's avaliable only for superusers and defensive-design with corresponding error-messages is in place to protect this from manual entering the url in the browser.
+#### Footer
+Footer consists of 2 parts: main footer section and additional footer section which is displayed only on the large screens.   
 
+Main footer section is stick to the bottom of the page and displayed across all the screens. It contains the social media icons-links which redirect a user to the corresponding page, opening in a new tab. As it is not the real company, the links redirect a user only to social media main pages.   
+The additional desktop only section contains 
+- logo, that is clickable and redirect to the landing page and also small paragraph about the company
+- quick links to the main pages
+- contact informations that contains address, phone number and email
+
+#### Home page
 
 #### Contact
-#### Footer
+
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
 #### Login
