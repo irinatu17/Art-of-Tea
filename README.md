@@ -232,6 +232,27 @@ Contact page consist of 2 section:
 - At the bottom of the page the **cart subtotal**, **delivery coast** and **grand total** are displayed.
 - There is a **Checkout button** that takes a user to the checkout page to proceed the payment.
 
+#### Checkout page
+Checkout page contains 2 main section: checkout 3-steps form and order summary.
+- **Order summary** includes short information about items in the order(image,name,quantity,subtotal,datetime), the link to **Edit cart**, redirecting a user to the Cart page, delivery cost and also **Total to pay**.
+- **Checkout form** is represented as 3 tabs with the **Next** and **Go back** to navigate between the tabs. The form sections are the following **Personal Details**, **Billing/Shipping ingo** and **Payment**.
+- If a user already has a profile with the shipping information saved, the form will be populated with this information.
+- The **validation** messages will be displayed on click **Next** buttons, so a user can move on the next tab only if the current form-section is filled with valid information.
+- The **save info** checkbox allows the form information to be saved to the user's profile for the **logged in** users.
+- If it's a new or **non-logged** user there are links to register or login to save the information to the profile.
+- Before proceeding the payment, user can review all the information in the table(**Form Summary**).
+- There's also an optional **Comment** field for cases if a user has any additional comments to the order.
+- A user is informed how much the card will be charged in the paragraph below the **Proceed to payment** button.
+- Since the website is made for educational purposes only and the Stripe functionality is only for testing, only **4242 4242 4242 4242** card number will lead to the successfull payment.
+- A webhook is used to make sure that the order is processed even in the cases when the payment process is interrupted(e.g. if a user accidently close the page or browser after clicking "Proceed to payment" button).
+- Once the form is submitted and the payment is successfully proceeded, the **Checkout sucesss** page is loaded and a confirmation email is sent to the user's email. Also, a toast message is appeared to ensure the user that the order being processed successfully.
+
+#### Checkout Success page
+- The paragraph with a Thank you message is displayed on the top of the page to inform a user that the payment was proceed and the email was sent to the user's email.
+- The 3 sections **Order info**, **Shipping details** and **Order Summary** contains all the information about the completed order. 
+- **Keep shopping** button redirects user to the Products page.
+- For logged-in users there's a button **View full order history** that takes users to the order history page.
+- For non-logged in users the links to **create an account** page to allow to register and view an order history. 
 
 #### Create account
 The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
@@ -241,10 +262,8 @@ The login page features the form with "username" and "password" fields, allowing
 #### Logout
 Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
 
-
-#### Checkout
 #### Profile
-#### Order history
+#### Order History
 
 #### Admin product managment
 Product managment page allows admin of the website edit and add new products/services. Only admin of the page(superuser) has access to that feature.
