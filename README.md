@@ -466,7 +466,53 @@ Datetime | datetime | CharField | null=True, blank=True, max_length=20
 ---
 
 ## Deployment
+The Art of Tea project was developed using the [GitPod](https://www.gitpod.io/) online IDE and
+using Git & GitHub for version control. It is hosted on the [Heroku](https://heroku.com/) platform, with static files on WhiteNoise and user-uploaded images being hosted in AWS S3 Basket.
 ### Local Deployment
+To be able to run this project, the following tools have to be installed:
+- An IDE of your choice (I used [GitPod](https://www.gitpod.io/) for creating this project)
+- [Git](https://git-scm.com/)
+- [PIP](https://pip.pypa.io/en/stable/installing/) 
+- [Python3](https://www.python.org/download/releases/3.0/)    
+
+Apart from that, you also need to create accounts with the following services:
+- [Stripe](https://stripe.com/en-ie)
+- [AWS](https://aws.amazon.com/) to setup the [S3 basket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+- [Gmail](https://mail.google.com/)
+
+#### Directions
+1. You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:   
+`git clone https://github.com/irinatu17/Art-of-Tea`    
+Alternatively, you can save a copy of this repository by clicking the green button **Clone or download** , then **Download Zip** button, and after extract the Zip file to your folder.      
+In the terminal window of your local IDE change the directory (CD) to the correct file location (directory that you have just created).       
+
+Note: You can read more information about the cloning process [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).   
+
+2. Set up environment variables.     
+Note, that this process will be different depending on IDE you use.   
+In this it was done using the following way:      
+    - Create `.env` file in the root directory.
+    - Add `.env` to the `.gitignore` file in your project's root directory
+    - In `.env` file set environment variables with the following syntax:     
+    `import os`   
+    `os.environ["DEVELOPMENT"] = "True"`    
+    `os.environ["SECRET_KEY"] = "<Your Secret key>"`    
+    `os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"`    
+    `os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"`    
+    `os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"`       
+    Read more about how to set up the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys)
+    
+3. Install all requirements from the **requirements.txt** file putting this command into your terminal:     
+`pip3 install -r requirements.txt`     
+4. In the terminal in your IDE migrate the models to crete a database using the following commands:         
+`python3 manage.py migrate`     
+5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) in that order into the database using the following command:    
+`python3 manage.py loaddata <fixture_name>`        
+6. Create a super user to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
+`python3 manage.py createsuperuser`   
+7. You will now be able to run the application using the following command:     
+`python3 manage.py runserver`     
+8. To access the admin panel, you can add the `/admin` path at the end of the url link and login using your superuser credentials.
 
 ### Remote Deployment
 
