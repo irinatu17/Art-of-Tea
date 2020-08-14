@@ -229,14 +229,6 @@ top:100%;
 background-color: var(--black);
 }
 
-.nav-item:not(.category-nav-item):not(.checkout-nav-item){
-transition: all .15s ease-in-out;
-}
-
-.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
-transform: scale(1.1);
-}
-
 .footer-link{
 transition: all .15s ease-in-out;
 color: var(--white);
@@ -701,4 +693,13 @@ right: 0.6rem;
 #card-element{
 width: 70%;
 }
+
+.nav-item:not(.category-nav-item):not(.checkout-nav-item){
+transition: all .15s ease-in-out;
+}
+
+.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
+transform: scale(1.1);
+}
+
 }
