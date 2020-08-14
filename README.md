@@ -256,33 +256,52 @@ Checkout page contains 2 main section: checkout 3-steps form and order summary.
 - For non-logged in users the links to **create an account** page to allow to register and view an order history. 
 
 #### Profile page
-- Profile page contains **Personal info** section(username and email displayed). Also it contains buttons **Change password** and **Manage emails** that takes a user to the corresponding pages (that's a part of Django allauth functionality with a custom UI styling in place).
-- **Shipping details** section allows to save the shipping information so for the next purchase the fields in the checkout form will be prefilled with this info.
+Profle feature is available only for **authenticated** users.
+- Profile page contains **Personal info** section(username and email displayed). Also it contains 2 buttons **Change password** and **Manage emails**(changing the current or adding a new email) that takes a user to the corresponding pages (that's a part of Django allauth functionality with a customized templates).
+- **Shipping details** section allows to save the shipping information, so for the next purchase the fields in the checkout form will be prefilled with this info. User can update this information anytime.
 - **View order hostory** link will redirects a user to the Order History page.
 
 #### Order History
+Order history feature is available only for **authenticated** users.
 - If a user has not made any purchase, the paragraph will inform that the order history is empty with a link to the Product page.
 - If there are completed orders, the table with the following fields: **Order Number**, **Date**, **Items**, **Total** is in place.
 - Clicking the link on the Order number will redirects a user to the **checkout success** page with all the order information. The Toast info message will tell the user that it's a past confirmation for the order number.
 - **View My Profile** link will redirects a user to the Profile page.
-#### Create account
-The register page allows a user to create a new account. The user is asked to fill the fields "username", "password" and "confirm password". When adding a username, the code compares it against existing usernames to ensure that it is unique. The requirements to username and password are displayed as well. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
-#### Login
-The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password match the ones in the database, a user is redirected to the home page and informed that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
-#### Logout
-Hitting "logout" button by the logged in users ends their session and redirects to the homepage.
 
 #### Admin product managment
-Product managment page allows admin of the website add new products/services filling out the corresponding form. Only admin(superuser) has an access to that feature.
+Admin managment feature is available only for **authenticated superuser**.
+Admin page allows an owner of the website to add new products/services by filling out one of the two forms - **Add New Product** and **Add New Service**. 
+If the form is valid, the product/service is added to the database and the user is redirected to the new created product/service details page.
+The defensive design is implemented to restrict others than admin users to manually enter the url to get access to the page. User will be redirected to the home page with the toast error messages appeared.
+
+#### Django-allauth features
+##### Sign Up
+The sign up page allows a user to create a new account. The user is asked to fill the fields "email", "username", "password" and "password(again)". When adding a username, the code compares it against existing email to ensure that it is unique. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted, a **verification email** is sent to the user's email to verify the email and finish registration process.   
+There is also a link to the login page for existing users at the bottom of the form.
+##### Login
+The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the login was successfull, a user is redirected to the home page and the toast success message appears informing that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input.   
+There is also a link to the sign up page for new users at the bottom of the form.
+As well as that, there's a link to the **forgot password** functionality, using which a user can reset their password.
+##### Forgot password
+A user can reset their password to be able to login by entering the email. Then the link for reseting password will be sent to the email provided. The user can create a new password and then login with a new password.
+##### Logout
+Hitting "logout" button renders logout page, asking to confirm if a user wants to logout. It will end their session and redirects to the homepage with a toast success message appeared .
 
 ### Features Left to Implement
-There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but would like to do so in future. All of these features are displayed in my original wireframes.
-#### Star based Reviews
-Users would be able to create, edit and delete their reviews, that would be displayd as a stars in the pruduct details and service details pages.
-#### Google and facebook login
-Allows users to login using social networks accounts.
+There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but intend to do so in future when I will be able to dedicate more time to them. Most of these features are displayed in my [original wireframes](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
+#### Star based  Rating and Reviews
+Users would be able to create, edit and delete their reviews for products and services. Rating would be displayd as stars(0-5) in the pruduct details and service details pages. Also, in the landing page reviews section, the static reviews would be replaced with the real ones, displaying up to 5 random reviews from the database.
+#### User avatart
+This feature would allow users to assigne the standard randomly picked avatar or upload their own photos/avatart. Avatar would be displayed on the user Profile page and also near the reviews, if a user have some.
+####  Social account login (Google and Facebook)
+This feature allows users to login using social networks accounts, Google and Facebook, that would enhance user experience and make the login process easier.
+#### Image galleries 
+As can be viewed in the original wireframes, I initially planned to assigne up to 3 for products and 5 for services images. An attempt at this was made by creating **ImageGallery** Model in the Products app. However, this feature would require much more time to search for the sutable images, resize them and implement further functionality. So due to mentioned above time constraints the ImageGallery model was removed from the database,image and image_url fields were moved to the Product model. In the future, I would like to implement this feature and add more images to the products and services for enchancing User Experience.
 #### 404 and 500 error pages
-Customized 404 and 500 pages contain short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
+I would also like to implement custom 404 and 500 pages containing a paragraph about the error and a button "Back Home". This would improve and simplify the navigation back to the website in case the user is get lost and error occured.   
+
+
+Other small features are also consider to be implemented in feature, such as **Back to Top button**, **Scroll down button** on the landing page, **Sorting products** by price/name.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
@@ -293,11 +312,10 @@ Customized 404 and 500 pages contain short information about the error and a but
 ## Information Architecture
 ### Database choice
 During the development phase I worked with **sqlite3** database which is installed with Django.   
-For deployment, a **PostgreSQL** database is provided by Heroku as an add-on.
+For deployment(production), a **PostgreSQL** database is provided by Heroku as an add-on.
+- The **User model** used in this project is provided by Django as a part of defaults `django.contrib.auth.models`. More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
 
 ### Data Modelling
-#### User
-The User model used in this project is provided by Django as a part of defaults "django.contrib.auth.models". More information about Django’s authentication system can be found [here](https://docs.djangoproject.com/en/3.0/ref/contrib/auth/).
 #### Profile App
 ##### Profile
 | **Name** | **Database Key** | **Field Type** | **Validation** |
