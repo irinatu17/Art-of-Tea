@@ -603,15 +603,25 @@ In order to send real emails from the application, you need to connect it to you
 ### Media
 ### Code
 
+
+
+
+
+### Acknowledgements
+I would like to thank everyone who has helped me throughout the development of this project:      
+- My mentor [Simen Daehlin](https://github.com/Eventyret) for his support, help, patience and guidance, very useful tips and advice!         
+- Code Institute tutors for their help to debug issues, assistance and support!    
+- Many thanks to my fellow students, Slack community and also my friends and my family for the time, passion, help and support!         
+
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
 
 ---
-### Acknowledgements
 
 ## Disclaimer
-This site is intended for **educational purposes** only.
+This site is made for **educational purposes** only.        
+
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
