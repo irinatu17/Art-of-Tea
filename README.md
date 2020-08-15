@@ -494,12 +494,14 @@ In this it was done using the following way:
     - Create `.env` file in the root directory.
     - Add `.env` to the `.gitignore` file in your project's root directory
     - In `.env` file set environment variables with the following syntax:     
-    `import os`   
-    `os.environ["DEVELOPMENT"] = "True"`    
-    `os.environ["SECRET_KEY"] = "<Your Secret key>"`    
-    `os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"`    
-    `os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"`    
-    `os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"`       
+    ```bash 
+    import os  
+    os.environ["DEVELOPMENT"] = "True"    
+    os.environ["SECRET_KEY"] = "<Your Secret key>"    
+    os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public key>"    
+    os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret key>"    
+    os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH_Secret key>"    
+     ```
        
 Read more about how to set up the Stripe keys in the [Stripe Documentation](https://stripe.com/docs/keys)
     
