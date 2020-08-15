@@ -505,11 +505,12 @@ Read more about how to set up the Stripe keys in the [Stripe Documentation](http
     
 3. Install all requirements from the **requirements.txt** file putting this command into your terminal:     
 `pip3 install -r requirements.txt`     
-4. In the terminal in your IDE migrate the models to crete a database using the following commands:         
+4. In the terminal in your IDE migrate the models to crete a database using the following commands:    
+`python3 manage.py makemigrations`     
 `python3 manage.py migrate`     
 5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) in that order into the database using the following command:    
 `python3 manage.py loaddata <fixture_name>`        
-6. Create a super user to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
+6. Create a superuser to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
 `python3 manage.py createsuperuser`   
 7. You will now be able to run the application using the following command:     
 `python3 manage.py runserver`     
@@ -520,10 +521,11 @@ Read more about how to set up the Stripe keys in the [Stripe Documentation](http
 To deploy the project to [Heroku](https://heroku.com/) the following steps need to be completed:    
 1. Create a **requirement.txt** file, which contains a list of the dependencies, using the following command in the terminal:    
 `pip3 freeze > requirements.txt`    
-2. Create a **Procfile**, in order to tell Heroku how to run the project, using the following command in the terminal:
+2. Create a **Procfile**, in order to tell Heroku how to run the project, using the following command in the terminal:      
 `web: gunicorn art_of_tea.wsgi:application`    
 3. `git add`, `git commit` and `git push` these files to GitHub repository.     
-NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illistrated here as they are required for the successfull deployment to Heroku.   
+NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illistrated here as they are required for the successfull deployment to Heroku.        
+As well as that, other things that are required for the Heroku deployment and have to be installed: **gunicorn** (WSGI HTTP Server), **dj-database-url** for database connection and **Psycopg** (PostgreSQL driver for Python). All of the mentioned above are *already installed* in this project in the requirements.txt file.     
 4. On the [Heroku](https://heroku.com/) website you need to create a **new app**, assigne a name (must be unique),set a region to the closest to you(for my project I set Europe) and click **Create app**.   
 5. Go to **Resources** tab in Heroku, then in the **Add-ons** search bar look for **Heorku Postgres**(you can type `postgres`), select **Hobby Dev — Free** and click **Provision** button to add it to your project.     
 6. In Heroku **Settings** click on **Reveal Config Vars**.   
@@ -542,6 +544,52 @@ NOTE: these 1-3 steps already done in this project and included in the GitHub re
 | STRIPE_WH_SECRET| `<your stripe wh key>`  |
 | USE_AWS | `True`  |
 
+8. Copy **DATABASE_URL's value**(Postrgres database URL) from the Convig Vars and temporary paste it into the default database in **settings.py**.     
+You can temporary comment out the current database settings code and just paste the following in the settings.py:   
+```bash 
+  DATABASES = {     
+        'default': dj_database_url.parse("<your Postrgres database URL here>")     
+    }
+  ```
+Note: that's just temporary set up, this URL **should not be committed and published to GitHub** for security reasons, so make sure not to commit your changes to Git while the URL is in the settings.py.     
+9. Migrate the database models to the Postgres database using the following commands in the terminal:    
+`python3 manage.py makemigrations`     
+`python3 manage.py migrate`     
+10. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) into the  Postgres database using the following command:     
+`python3 manage.py loaddata <fixture_name>`      
+11. Create a **superuser** for the Postgres database by running the following command(*you need to follow the instructions and inserting username,email and password*):      
+`python3 manage.py createsuperuser`     
+12. You need to remove your Postgres URL database from the settings and uncomment the default DATABASE settings code in the settings.py file.    
+Note: for production you get the environment variable 'DATABASE_URL' from the Heroku Config Vars and use Postgress database, while for development you use the SQLite as a default database.     
+13. Add your Heroku app URL to **ALLOWED_HOSTS** in the settings.py file.
+14. You can connect Heroku to GitHub to automatically deploy each time you push to GitHub.    
+To do so, from the Heroku dashboard follow the steps:
+-  **Deploy** section -> **Deployment method** -> select **GitHub**
+-  link the Heroku app to your GitHub repository for this project
+- click **Enable Automatic Deploys** in the Automatic Deployment section
+- Run `git push` command in the terminal, that would now push your code to both Github and Heroku, and perform the deployment.     
+
+Alternatively, in the terminal you can run:    
+- `heroku login`    
+-  after adding and comitting to Git, run the following command:     
+`git push heroku master`
+15. After successful deployment, you can view your app bu clicking **Open App** on Heroku platform.
+16. You will also need to verify your email address, so you need to login with your superuser credentials and verify your email address in the admin panel. Now you will be able to view the app running!    
+##### Hosting media files with AWS
+The **static files** for this project are hosted in [WhiteNoise](http://whitenoise.evans.io/en/stable/)(all the settings are in place and will be installed with requirements.txt, you don't need to do anything). The **media files** that will be uploaded by users(product/service images upliaded by superuser) are hosted in the [AWS S3 Bucket](https://aws.amazon.com/). To do so, you need to create an account in AWS and create your S3 basket with *public access*. More about setting it up you can read in [Amazon S3 documentation](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) and [this tutorial](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html).
+##### Senging email via Gmail
+In order to send real emails from the application, you need to connect it to your **Gmail account**, setting up your **email address** in EMAIL_HOST_USER variable and your **app password** generated by your email provider in EMAIL_HOST_PASS variable.
+
+##### Google Maps API key set up
+- In the [Google Cloud Platform Console](https://console.cloud.google.com/google/maps-apis/) create a new project.
+- Click **Continue** to enable the API and any related services.
+- Get an **API key** and set the API key restrictions on the **Credentials** page. You can read more about [Using API Keys documentation](https://cloud.google.com/docs/authentication/api-keys).
+- In the **scripts.html** file (templates/includes/scripts.html) replace the value of the key parameter in the URL with **your own API key**.
+  ```bash 
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_GOES_HERE&callback=initMap">
+  </script>
+  ```
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
