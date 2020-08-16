@@ -610,8 +610,13 @@ In order to send real emails from the application, you need to connect it to you
 
 ## Credits
 ### Code
+- The project's code (e.g. `cart` app, `checkout` app and the Stripe logic, `profiles`) was developed by following the Code Institute video lessons and based on the understanding of the Boutique Ado Mini-Project, but  was customized and modified to fit the project purposes. The comments were added for some parts in the code
+- [Stack Overflow](https://stackoverflow.com/) was extremely helpful and useful during the process of building this project, credits for the certain solutions are given in the comments above the code.
+- For UI & UX design concept I took inspiration from different projects found in [Dribble](https://dribbble.com/)
+- I constantly referred to the following documentation sources during the development: [Django](https://docs.djangoproject.com/en/3.1/), [Stripe](https://stripe.com/docs),
+- Animation on scroll - [AOS](https://github.com/michalsnik/aos)
 ### Content and Media
-- Texts on the landing and about pages is taken, translated(from Russian language - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
+- Text on the landing and about pages is taken, translated(from Russian - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
 - Services content(names, description,itineraries) is taken and modifyed from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
 - Products content and images are taken from [Artoftea shop](https://www.artoftea.com/) 
 - Favicon, icons in the benifits section(landing page) and a heart-icon in the events page: icon library [Flaticon](https://www.flaticon.com/)
