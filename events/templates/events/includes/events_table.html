@@ -1,29 +1,11 @@
 <div class="col-12 col-lg-6">
     <h3 class="mb-3 text-salmon"> Weekly events:</h3>
     <table class="table">
+    {% for event in events %}
         <tr>
-            <th> Monday, 19.00 </th>
-            <td>Meditation</td>
+            <th> {{ event.weekday }}, {{ event.time }}</th>
+            <td>{{ event.description }}</td>
         </tr>
-        <tr>
-            <th> Tuesday, 19.00 </th>
-            <td>Lecture by our best tea masters</td>
-        </tr>
-        <tr>
-            <th> Thursday, 17.00 </th>
-            <td>Music night</td>
-        </tr>
-        <tr>
-            <th> Friday, 20.00 </th>
-            <td>Tea tasting</td>
-        </tr>
-        <tr>
-            <th> Saturday, 08.00 </th>
-            <td>Morning yoga class (all levels)</td>
-        </tr>
-        <tr>
-            <th> Sunday, 21.00 </th>
-            <td>Movie night</td>
-        </tr>
+    {% endfor %}
     </table>
 </div>
