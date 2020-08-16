@@ -397,6 +397,14 @@ Quantity | quantity | IntegerField | null=False, blank=False, default=0
 Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 Datetime | datetime | CharField | null=True, blank=True, max_length=20
 
+#### Events app
+##### Event
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Weekday | weekday | CharField | max_length=10
+Time | time | CharField | max_length=80
+Description | description | CharField | max_length=254
+
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
