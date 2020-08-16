@@ -1,4 +1,6 @@
-# [Art of Tea](https://art-of-tea.herokuapp.com/)
+# Art of Tea
+
+[![Build Status](https://travis-ci.org/irinatu17/Art-of-Tea.svg?branch=master)](https://travis-ci.org/irinatu17/Art-of-Tea)
 
 <img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="800">
 
