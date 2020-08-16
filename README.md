@@ -440,6 +440,7 @@ Datetime | datetime | CharField | null=True, blank=True, max_length=20
 - [ImgBB](https://imgbb.com/) - to host images.
 - [GIMP2](https://www.gimp.org/) - for editing and resizing images.
 - [Balsamiq](https://balsamiq.com/) - to create wireframes.
+- [Coolors.co](https://coolors.co/) - to create colour palette used in the README.
 
 ### Databases
 - [SQlite3](https://www.sqlite.org/index.html) - a development database.
@@ -600,20 +601,24 @@ In order to send real emails from the application, you need to connect it to you
 ---
 
 ## Credits
-
-### Content
-### Media
 ### Code
-
-
-
-
+### Content and Media
+- Texts on the landing and about pages is taken, translated(from Russian language - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
+- Services content(names, description,itineraries) is taken and modifyed from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
+- Products content and images are taken from [Artoftea shop](https://www.artoftea.com/) 
+- Favicon, icons in the benifits section(landing page) and a heart-icon in the events page: icon library [Flaticon](https://www.flaticon.com/)
+- Graphic image in the Contact page: [Sapiens](https://sapiens.ui8.net/8f1c3s7)
+- Logo was created in [GIMP2](https://www.gimp.org/) graphic editor, using the tea leaf and fan icons from [Flaticon](https://www.flaticon.com/)
+- Other images used in the website(landing, about, event pages) are taken from [Unsplash](https://unsplash.com/), [Pixels](https://www.pexels.com/) and free available Google images(no-image placeholder).
+- Loading Spinner: [icons8](https://icons8.com/preloaders/en/circular)
+- [Introduction to the Japaneese Tea Image](https://trulyexperiences.com/blog/history-of-japanese-tea/)
+- [Exclusive Traditional Tea Ceremony Image](https://www.viator.com/tours/Kyoto/Private-Tea-Ceremony-Experience-and-Japanese-Lunch-in-Kyoto/d332-19221P4)
 
 ### Acknowledgements
 I would like to thank everyone who has helped me throughout the development of this project:      
 - My mentor [Simen Daehlin](https://github.com/Eventyret) for his support, help, patience and guidance, very useful tips and advice!         
 - Code Institute tutors for their help to debug issues, assistance and support!    
-- Many thanks to my fellow students, Slack community and also my friends and my family for the time, passion, help and support!         
+- Many thanks to my fellow students, Slack community and also my friends and my family for the time, patience, help and support!         
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
