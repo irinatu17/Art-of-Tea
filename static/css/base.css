@@ -464,6 +464,12 @@ box-shadow: 1px 1px 3px;
 
 }
 
+.events-teapot-image{
+left: -50px;
+top: -60px;
+position: relative;
+z-index: -1;
+}
 
 /*Checkout*/
 .order-summary-items{
