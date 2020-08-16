@@ -44,9 +44,8 @@ Explore the misterious and amazing world of tea with us!
     - [**Heroku Deployment**](#heroku-deployment)
 
 7. [**Credits**](#credits)
-    - [**Content**](#content)
-    - [**Media**](#media)
     - [**Code**](#code)
+    - [**Content and Media**](#content-and-media)
     - [**Acknowledgements**](#acknowledgements)
 8. [**Disclaimer**](#disclaimer)
 
@@ -397,6 +396,14 @@ Quantity | quantity | IntegerField | null=False, blank=False, default=0
 Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 Datetime | datetime | CharField | null=True, blank=True, max_length=20
 
+#### Events app
+##### Event
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Weekday | weekday | CharField | max_length=10
+Time | time | CharField | max_length=80
+Description | description | CharField | max_length=254
+
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
@@ -451,8 +458,6 @@ Datetime | datetime | CharField | null=True, blank=True, max_length=20
 </div>
 
 ---
-
-
 ## Testing
 ### Manual Testing
 
@@ -602,8 +607,13 @@ In order to send real emails from the application, you need to connect it to you
 
 ## Credits
 ### Code
+- The project's code was developed by following the [Code Institute](https://codeinstitute.net/) video lessons and based on the understanding of the Boutique Ado Django Mini-Project, but was customized, modified and enhanced to fit the project purposes. Some comments with credits to that were added to some parts of the code, where needed.
+- [Stack Overflow](https://stackoverflow.com/) was extremely helpful and useful during the process of building this project, credits for the certain solutions are given in the comments.
+- I also constantly referred to the following documentation sources during the development: [Django](https://docs.djangoproject.com/en/3.1/), [Stripe](https://stripe.com/docs).
+- Animation on scroll was implemented using [AOS](https://github.com/michalsnik/aos)
+- The idea of implementation of Checkout 3-steps form(handling validation on click and preventing submission) in `checkout_form.js` was given in Slack by my fellow student [Johann Albert](https://github.com/wondrousWebWorks).
 ### Content and Media
-- Texts on the landing and about pages is taken, translated(from Russian language - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
+- Text on the landing and about pages is taken, translated(from Russian - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
 - Services content(names, description,itineraries) is taken and modifyed from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
 - Products content and images are taken from [Artoftea shop](https://www.artoftea.com/) 
 - Favicon, icons in the benifits section(landing page) and a heart-icon in the events page: icon library [Flaticon](https://www.flaticon.com/)
