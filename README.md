@@ -13,8 +13,6 @@ In **Art of Tea** you can visit one of our tea ceremonies, book an event for you
 
 Explore the misterious and amazing world of tea with us!
 
-Link to live website can be found [here](https://art-of-tea.herokuapp.com/)
-
 ---
 
 
@@ -41,7 +39,7 @@ Link to live website can be found [here](https://art-of-tea.herokuapp.com/)
 5. [**Testing**](#testing)
     - [**Manual Testing**](#manual-testing)
     - [**Validators**](#validators)
-    - [**Compatibility**](#compatibility)
+    - [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
 
 6. [**Deployment**](#deployment)
     - [**Local Deployment**](#local-deployment)
@@ -466,8 +464,25 @@ Description | description | CharField | max_length=254
 ### Manual Testing
 
 ### Validators
+#### HTML
+All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
+#### CSS
+CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
+As well as that, there are a few error warnings for some -webkit, -moz pseudo element selectors. Both errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.   
+#### JavaScript
+JS file was tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint (it is necessary for jQuery Materialize initializing).    
+#### Python
+All python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
 
-### Compatibility
+### Compatibility and Responsiveness
+This website had been being tested during the development across **multiple browsers** (Chrome, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).              
+Also, the following tools were used to constantly test the project:
+- **Google Chrome's developer tools** to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.       
+-  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices.
+Plenty of changes were made and necessary media queries added to make the website fully responsive.
+
+#### Travis
+[Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
