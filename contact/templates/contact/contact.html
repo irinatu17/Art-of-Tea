@@ -17,9 +17,30 @@
     </div>
 </div>
 
+<!--Info window content in the Map, hidden by default, visible when the marker is clicked-->
+<div style="display: none;">
+    <div class="m-2" id="info-window-content">
+        <h5 class="landing-about-heading">Art of Tea<i class="fab fa-pagelines icon-green ml-2"></i></h5>
+        <h6>Opening hours:</h6>
+        <table>
+            <tr><th>Monday</th><td>10am - 8pm</td></tr>
+            <tr><th>Tuesday</th><td>10am - 8pm</td></tr>
+            <tr><th>Wednesday</th><td>10am - 8pm</td></tr>
+            <tr><th>Thursday</th><td>10am - 8pm</td></tr>
+            <tr><th>Friday</th><td>10am - 10pm</td></tr>
+            <tr><th>Saturday</th><td>11am - 10pm</td></tr>
+            <tr><th>Sunday</th><td>11am - 9pm</td></tr>
+        </table>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
+<!--Google map API settings-->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1aLxU4RAyoDVOs6mELM1ZAJDpiiXTy1A&callback=initMap">
+</script>
+
 <script src="{% static 'js/map.js' %}"></script>
    
 {% endblock %}
