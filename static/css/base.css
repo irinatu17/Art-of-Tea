@@ -708,4 +708,38 @@ transition: all .15s ease-in-out;
 transform: scale(1.1);
 }
 
+#contact-form-btn{
+width:50% !important;
+}
+
+}
+
+/*  iPad Pro  and iPad landscape size Media queries */
+@media only screen and (min-width: 992px) and (max-width: 1366px)and (-webkit-min-device-pixel-ratio: 1.5){
+.landing-text {
+left: 45%;
+top: 60%;
+}
+
+.blockquote {
+bottom: 2rem;
+right: 2rem;
+}
+
+.nav-item-header{
+margin-right: 1rem !important;
+}
+
+.nav-link-header{
+font-size: 0.8rem;
+}
+
+.events-container {
+background-position: bottom left;
+height: 60vh;
+}
+
+.events-text-block {
+margin-top:6.5rem !important;
+}
 }
