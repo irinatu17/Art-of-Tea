@@ -13,6 +13,8 @@ In **Art of Tea** you can visit one of our tea ceremonies, book an event for you
 
 Explore the misterious and amazing world of tea with us!
 
+Link to live website can be found [here](https://art-of-tea.herokuapp.com/)
+
 ---
 
 
