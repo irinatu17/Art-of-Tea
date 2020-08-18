@@ -2,6 +2,7 @@ import os
 
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
 from django.http import HttpResponse
 from .forms import ContactForm
 
@@ -27,7 +28,8 @@ def contact(request):
         contact_form = ContactForm()
 
     context = {
-        'contact_form': contact_form
+        'contact_form': contact_form,
+        'api_key': settings.GOOGLE_MAP_API_KEY,
     }
 
     return render(request, 'contact/contact.html', context)
