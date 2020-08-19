@@ -101,22 +101,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item nav-item-header ml-lg-5 mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white" href="{% url 'about' %}">About</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About</a>
                 </li>
 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white" href="{% url 'services' %}">Services</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/services/' %}active{% endif %}" href="{% url 'services' %}">Services</a>
                 </li>
                 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white" href="{% url 'products' %}">Products</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/' %}active{% endif %}" href="{% url 'products' %}">Products</a>
                 </li>
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white" href="{% url 'events' %}">Events</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/events/' %}active{% endif %}" href="{% url 'events' %}">Events</a>
                 </li>
 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <div class="dropdown-divider d-md-none d-block"></div>
                 {% if request.user.is_authenticated %}

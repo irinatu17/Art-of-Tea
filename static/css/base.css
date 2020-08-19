@@ -92,6 +92,10 @@ font-weight: 900;
 font-size: 1.7rem;
 }
 
+.active{
+color: var(--lightgreen) !important;
+}
+
 .w-30{
 width: 30%;
 }
