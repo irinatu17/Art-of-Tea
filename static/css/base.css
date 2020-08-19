@@ -92,7 +92,7 @@ font-weight: 900;
 font-size: 1.7rem;
 }
 
-.active{
+.active-nav-link{
 color: var(--lightgreen) !important;
 }
 
