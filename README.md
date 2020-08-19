@@ -4,7 +4,7 @@
 
 <img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="800">
 
-Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilization.  
+Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilizations.  
 Tea connects people, calms the mind, brings harmony and balance.    
 **Art of Tea** is a refuge for a soul in the bustle of the city, an island of calm in the very heart of Dublin!   
 Tea ceremonies in our tea club proceed in the atmosphere of solitude and relaxation. This is an immersion into the secrets of the tea consuming traditions of the nations of the world, as well as a place for romantic dates and meetings with friends.
@@ -60,7 +60,7 @@ Explore the misterious and amazing world of tea with us!
 - People who love tea
 - People who want to get acquainted with tea culture
 - People who want to organise a party in Chineese or Japaneese style, search for tea ceremony service
-- People who want to get a new experience, who curious about new things and want to get more knowledge about tea practise
+- People who want to get a new experience, curious about new things and want to get more knowledge about tea practice
 - People interested in Eastern culture in general
 - People who want to buy tea, teaware and care about good quality
 - People who are into meditation, yoga and similar practices   
@@ -68,13 +68,13 @@ Explore the misterious and amazing world of tea with us!
 #### Visitor/user goals:
 - Purchase products/services shown on the website in a safe and secure way
 - Get information about tea ceremonies and different aspects of drinking tea
-- Organise the custom tea event with special preferences
+- Organise custom tea events with special preferences
 
 #### Business goals(site owner's goals):
 - Provide users with a secure professional e-commerce online shop
 - Make profit from selling teas, teaware and tea ceremony services
 - Promote tea culture in Ireland
-- Make a brand more recognisable and expand the business
+- Make the brand more recognisable and expand the business
 ### User Stories    
 #### All users (guests, new users and authenticated users)
 - As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.
@@ -83,29 +83,29 @@ Explore the misterious and amazing world of tea with us!
 - As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.
 - As a user, I want to view events that happen in the tea club this week in Dublin, so that I can come and join any event.
 - As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events. 
-- As a user, I want to be able easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
+- As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
 - As a user, I want to learn more about different types of tea ceremonies, about tea culture in general, so that I can choose and book one of the tea ceremonies.
-- As a user, I want to view service details and product details(e.g. image, price, description), so that I can book/buy some of them.
+- As a user, I want to view service details and product details (e.g. image, price, description), so that I can book/buy some of them.
 - As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.
 - As a user, I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment. 
-- As a user, I want to view a total price of my purchases and delivery coast, so that I will understand and see how much I will be charged.
-- As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about my card details safety and won't be charged incorrectly.
+- As a user, I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.
+- As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.
 - As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
 #### New Users
 - As a user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.
 #### Returning users
-- As a user, I want to easily login anytime, so that I can get access to my  saved profile details and make next purchase quicker.
+- As a user, I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.
 - As a user, I want to reset my password if I forgot it, so that I can get access to my profile again. 
 #### Website Owner(admin)
 - As a user, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.
-- As a user, I want to recieve emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.
+- As a user, I want to receive emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.
 ### Design
 #### Framework
 - [Bootstrap](https://www.bootstrapcdn.com/), front-end framework is chosen for this project for its modern interface, ease of use and ability to be easily customized. It is used for creating features such as navbar, cards, forms, modals, as well as for the layout.
 - [JQuery](https://jquery.com/) is used for initializing some Bootstrap components, as well as for custom functions, DOM manipulation.
 #### Colour Scheme
 One of the main goals in UI was to focus user's attention on the products/services images. Therefore **calm** colors and **different shades** of one colour were mostly used accross the website's design.   
-**Green** and **black** are the colours associated with tea world, help us to immerse users to the **tea world**. While bright **salmon** colour is used for some buttons, headings to create a contrast and catch user's attention.   
+**Green** and **black** are the colours associated with tea world, help us to immerse users to the **tea world**. While bright **salmon** colour is used for some headings and icons to create a contrast and catch user's attention.   
  Different shades of grey colour and shadows allow us to create clean and neat backgrounds and volume effect accross the website.   
  
 ![Color Palette](wireframes/colour-palette.png)
@@ -122,14 +122,14 @@ Icons are used widely, as they are good attention grabbers. They help users to f
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
 
-Initial wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
+Original wireframes for desktop, tablet and mobile can be found [here](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
 
 
 **Note:** The website was changed and evolved through the development process and several improvements were applied.
 The wireframes served as guidelines but some details such as positioning, placement of 
  images, buttons and other refinements diverge from the original wireframes.    
- Apart from that, there are some features that were included into original wireframes(such as reviews, social account login, image galleries for services/products), 
- but were considered of secondary importance and were not implemented yet due to time constraints. This is reflected in Features left to implement section, and I intend to come back to them and implement them in future when I can dedicate more time to it.
+ Apart from that, there are some features that were included into original wireframes (such as reviews, social account login, image galleries for services/products), 
+ but were considered of secondary importance and were not implemented yet due to time constraints. This is reflected in [Features left to implement](#features-left-to-implement) section, and I intend to come back to them and implement them in future when I can dedicate more time to it.
 
 
 <div align="right">
@@ -139,145 +139,144 @@ The wireframes served as guidelines but some details such as positioning, placem
 ---
 
 ## Features
-Art of Tea website is composed by eight different applications: `landing`, `about`, `events`, `contact`, `products`(contains products and services), `cart`, `checkout`, `profiles`.
+Art of Tea website is composed by eight applications: `landing`, `about`, `events`, `contact`, `products`(contains products and services), `cart`, `checkout`, `profiles`.
 ### Existing Features     
 #### Navbar
 The navbar is fixed at the top of the page all the time, this allows a user to easily navigate throughout the website.
  The **logo** is located in the top left corner on a desktop and in the center on the smaller devices. 
- It redirects the user to the home/landing page when clicked. On the smaller resolutions (tablet, mobile) 
+ It redirects a user to the home/landing page when clicked. On smaller resolutions (tablet, mobile) 
  the navbar is collapsed into a burger icon. Menu links appear when the burger icon is clicked and collapse back, when clicked again.    
  
-Navbar also contains a **search box**, where user can search for product and also cart icon. It's collapsed into a search icon on the mobile and tablet, and slides down when the icon is clicked.     
-Also, navbar contains a **cart icon** alomg with a grand total displayed if there are items in the cart added. It changes the colour to yellow when there's something
-in the cart to catch user's attention, and remains white(as other navbar elements) when the cart is empty. Clicking the cart icon will redirect user to the cart page.   
+Navbar also contains a **search box**, where a user can search for product. It is collapsed into a search icon on the mobile and tablet, and slides down when the icon is clicked.     
+Also, navbar contains a **cart icon** along with a grand total displayed if there are items in the cart added. It changes the colour to yellow when there's something
+in the cart to catch user's attention, and remains white (as other navbar elements) when the cart is empty. Clicking the cart icon will redirect a user to the cart page.   
 
 The difference in navbar for logged in, non-logged in users and admin:   
 - For **non-logged in** users or guests navbar contains the following links: Login, Register.   
 - For **logged in** users it contains the **"My Account"** nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
-- For **admin** apart from all the links available for logged-in users mentioned above, there is also link to Admin Managment, where admin can add new products and services. That's avaliable only for superusers and defensive-design with corresponding error-messages is in place to protect this from manual entering the url in the browser.
+- For **admin** apart from all the links available for logged-in users mentioned above, there is also a link to the Admin Managment page, where admin can add new products and services. This is avaliable only for superusers. Defensive design with corresponding error messages is in place to protect this page from manual entering the url in the browser.
 #### Footer
 Footer consists of 2 parts: main footer section and additional footer section which is displayed only on the large screens.   
 
-Main footer section is stick to the bottom of the page and displayed across all the screens. It contains the social media icons-links which redirect a user to the corresponding page, opening in a new tab. As it is not the real company, the links redirect a user only to social media main pages.   
+Main footer section is stuck to the bottom of the page and displayed across all the screens. It contains the social media icon-links which redirect a user to the corresponding page, opening in a new tab. As it is not the real company, the links (except GitHub) redirect a user only to social media main pages.   
 The additional desktop only section contains 
-- **logo**, that is clickable and redirect to the landing page and also small paragraph about the company
+- **logo**, that is clickable and redirects to the landing page and also a small paragraph about the company
 - **quick links** to the main pages
 - **contact information** that contains address, phone number and email
 
-#### Landing(home) page
-The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality(book ceremony/buy products). It contains of 9 sections:
-- **Hero image** section contains a full-screen image, main heading with a subheading and 2 buttons "Book tea ceremony" and "Buy tea or teaware" that redirect a user to the services and products pages correspondingly. The purpose of this section is to interest new user,to make the first impression and to call to action.
-- **Introduction about** section  contains an introduction about the company, what it does and what can be find on the website. It also contain an image and "Learn more" button which redirects a user to the About page.
-- **Quote**  section  contains heading and Osho's quote about process of drinking tea, that gives a user an impression and understanding of the some principles and ideas in the "Art of Tea" tea-club.
-- **Our benefits** - this section provides a user information about the advantages of the company with a purpose of convincing users to use the functionality of the website. It contains 5 small benefits-paragraphs, along with authentic icons to enhance User Experience. 
-- **Tea Ceremony** section contains a paragraph about tea ceremonies offered to book in the website, along with a button "View our services" that leads to the Services page. There's also an image-carousel with 3 images representing tea ceremonies.
-- **Tea and Teaware** section also displays an image-carousel (3 images) and a paragraph about the online tea-shop products, along with a button "View our products" that redirects to the Products page. 
-- **Events** section contains a paragraph about the events in happening in the tea club with a link to the Events page.
-- **Reviews** sections contains the customer's reviews carousel with the user's avatars, review and usernames. Note: this section is static at the moment, but there's an intent to make it dynamic and to showcase real reviews, what's documented in Features left to implement section(reviews).
+#### Landing (home) page
+The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book ceremony/buy products). It consists of 9 sections:
+- **Hero image** section contains a full-screen image, main heading with a subheading and 2 buttons "Book tea ceremony" and "Buy tea or teaware" that redirect a user to the services and products pages, correspondingly. The purpose of this section is to attract new users, to make the first impression and to call to action.
+- **Introduction about** section  contains an introduction about the company, what it does and what can be found on the website. It also contains an image and a "Learn more" button which redirects a user to the About page.
+- **Quote**  section  contains heading and Osho's quote about process of drinking tea, that gives a user an impression and understanding of some principles and ideas of the "Art of Tea" tea-club.
+- **Our benefits** section provides a user information about the advantages of the company with a purpose of convincing users to use the functionality of the website. It contains 5 small paragraphs that describe benifits, along with authentic icons to enhance User Experience. 
+- **Tea Ceremony** section contains a paragraph about tea ceremonies offered to book on the website, along with a button "View our services" that leads to the Services page. There's also an image-carousel with 3 images representing tea ceremonies.
+- **Tea and Teaware** section also displays an image-carousel (3 images) and a paragraph about the online tea shop products, along with a button "View our products" that redirects to the Products page. 
+- **Events** section contains a paragraph about the events happening in the tea club with a link to the Events page.
+- **Reviews** sections contains the customers' reviews carousel with the user's avatars, review and usernames. Note: this section is static at the moment, but there's an intent to make it dynamic and to showcase real reviews, what's documented in [Features left to implement](#features-left-to-implement) section(reviews).
 - **Contact** section contains a question and a link to the Contact page, allowing a user to post a query/question there via the form.
 
 #### About page
-The page provides the user an information about the main focus of the website, it's purposes, ideas and principals.    
+The page provides a user information about the main focus of the website, its purposes, ideas and principles.    
 
-It contains of 3 sections: **Who we are**, **Our principals** and **Our mission** followed by the images and an image-carousel in the last section.
+It contains 3 sections: **Who we are**, **Our principles** and **Our mission** followed by the images and an image-carousel in the last section.
 
 #### Events page
-This page represents the events happens each week in the tea club "Art of Tea". The short paragraph explains the user how the events are organised and about the donation system welcome.   
+This page represents the events that happen each week in the tea club "Art of Tea". The short paragraph explains to a user how the events are organised and about the donation system.   
 
-As well as that, the page contains **Weekly events table** displaying weekdays,time and name of the event that available in the tea club.   
-There's also a **Find us here** section, showing the address, phone number and the link to the Facebook page, that would be checked to see more details about each week events.
+As well as that, the page contains **Weekly events table** displaying weekdays, time and name of the event that are available in the tea club.   
+There's also a **Find us here** section, showing the address, phone number and the link to the Facebook page, that can be checked to see more details about each week's events.
 
 #### Contact page
-Contact page consist of 2 section:
-- **Contact form** that's offered to fill out(name, email, message) if a user has any questions or queries. The real email will be sent to the admin of the website(handling by django "Sending email" functionality).
-- **Contact details** section provides company's address, phone number and email, along with a Map showing the location of the tea club. Clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
+Contact page consists of 2 sections:
+- **Contact form** that's offered to fill out (name, email, message) if a user has any questions or queries. The real email will be sent to the admin of the website (handling by django "Sending email" functionality).
+- **Contact details** section provides company's address, phone number and email, along with a map showing the location of the tea club. By clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
 
 #### Products page
-- The all products page displays Products cards including the following information: category, name, price. All product cards are clickable and redirect a user to the individual product page with detailed information (by clicking on the image or the "View details buttons").   
-- If the user is **admin**, there are also 2 buttons displayed in the cards: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
-- User can filter the products by **category** to see the specific items. When the category is clicked, the are the products displayed only of the selected category, as well as the  Category Name and number of the specific items satisfying the query.
+- The "All products" page displays product cards, including the following information: category, name, price. All product cards are clickable and redirect a user to the individual product page with detailed information (by clicking on the image or the "View details" button).   
+- If the user is **admin**, there are also 2 buttons displayed in the cards: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Product page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attempts to access them by other users will end up with redirection to the landing page with toast error messages displayed.
+- User can filter the products by **category** to see the specific items. When the category is clicked, only products of the selected category are displayed, as well as the  Category Name and number of the specific items satisfying the query.
 
 #### Product details page
 - The product details page displays information about the selected product: category, name, description, rating, price and product image (or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
 - If a product is one of the tea categories, not teaware (that checked by using "has_weight" Boolean field), there's additional paragraph informing that price is displayed per 100g.
-- The item quantity can be assigned filling the quantity form, the validation is in place restricting the quantity to the range of 1-999. The validation errors will be displayed, if the user tries to input the numbers outsade of that range.
-- Product can be added to the cart by clicking **Add to cart** button, that will be reflected in the cart item in the navbar(grand total will be increased there). As well as that, the **toast success message** will be displayed when the product is added to the cart.
-- If the user is **admin**, there are also 2 buttons displayed below the product name: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Prodcut page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attepts to access to them by other users will end up with redirection to the landing page with toast error messages displayed.
-- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the product-related pages(e.g. to come back to the category selected).
+- The item quantity can be assigned filling the quantity form, the validation is in place restricting the quantity to the range of 1-999. The validation errors will be displayed, if the user tries to input the numbers outside of that range.
+- Product can be added to the cart by clicking **Add to cart** button, that will be reflected in the cart icon in the navbar (grand total will be increased there). As well as that, the **toast success message** will be displayed when the product is added to the cart.
+- If the user is **admin**, there are also 2 buttons displayed below the product name: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Product page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will be removed from the database, page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by a superuser, attempts to access them by other users will end up with redirection to the landing page with toast error messages displayed.
+- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the product-related pages (e.g. to come back to the category selected).
 - **Go Back** button redirects user back to the All Products page.
 
 #### Services
 - Services page displays horizontal services cards including the following information: name, description, price and image. No-image placeholder is assigned if no image is provided. 
 - Button "Learn more" redirects a user to the individual service page with detailed information. 
 - Similar to products, **Edit** and **Delete** are displayed on the cards if the user is **admin** with the corresponding functionality to render Edit Service page and toggle Delete modal.
-- At the bottom of the page there's a paragraph with a link to the **Contact page**, offering a user to contact a store manager for organising a custom tea ceremony anf discussing further details.
-- As the website initial ideas and purposes do not presuppose to contain many services(there are only 4 services displayed), there is no filtering or searching options that are in place for the products pages. 
+- At the bottom of the page there's a paragraph with a link to the **Contact page**, offering a user to contact a store manager for organising a custom tea ceremony and discussing further details.
+- As the website initial ideas and purposes did not suppose to contain many services (there are only 4 services displayed), there is no filtering or searching options that are in place for the products pages. 
 
 #### Service details page
-- The service details page displays the following information: name, description, rating, price per person, itinerary, duration and image(or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
+- The service details page displays the following information: name, description, rating, price per person, itinerary, duration and image (or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
 - **Itinerary** example table contains the time and description within the stated duration. This section's purpose is to showcase a user how the ceremony is organised, what is included in it. 
-- For **admin** there is an **Itinerary form** functionality and **remove itinerary buttons** in the bottom of the page. That's allow a superuser to quickly add/delete itinerary items.
-- Other features available only to the **admin** are the **Edit** and **Delete** (same as in the Services page) allowing admin to edit or delete services correspondingly.
-- To **add service to cart** a user has to fill the form that contains 2 fields: number of participants and data-time. 
-- **Number of participants** field is a quantity field in the back end, providing same functionality and validations as for quantity in product details page. The value range is withtin 1-100, the valudation error messages will be fired when user tries to enter invalid input. 
-- The **datatime picker** allows a user to choose the desireble date and time. Only dates and times in future, after the current date/time can be assigned. As well as that, the hours are restricted to only open-hours(12-8 p.m.) and minute stepping is set to 30 to enhance User Experience.
+- For **admin** there is an **Itinerary form** functionality and **remove itinerary buttons** at the bottom of the page. This allows a superuser to quickly add/delete itinerary items.
+- Other features available only to the **admin** are the **Edit** and **Delete** (same as in the Services page) allowing admin to edit or delete services respectivelly.
+- To **add service to cart** a user has to fill the form that contains 2 fields: number of participants and date-time. 
+- **Number of participants** field is a quantity field in the back end, providing same functionality and validations as for quantity in product details page. The value range is withtin 1-100, the validation error messages will be fired when user tries to enter invalid input. 
+- The **datatime picker** allows a user to choose the desirable date and time. Only dates and times in future (after the current date/time) can be assigned. As well as that, the hours are restricted only to opening hours (12-8 p.m.) and minute stepping is set to 30 to enhance User Experience.
 - If the form is valid, clicking on **Add to Cart** button will update the cart with a new service added and success toast message will ensure a user that item was added to the cart.
-- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the service-related pages(e.g. to come back to the all services page).
-- **Go Back** button redirects user back to the Services page.
+- **Breadcrumbs** on the top of the page give a user an additional opportunity to navigate through the service-related pages (e.g. to come back to the all services page).
+- **Go Back** button redirects a user back to the Services page.
 
 #### Cart page
-- The link at the top of the page "Continue shopping" navigate back a user to the products page, if a user wants to add something else to the cart.
+- The link at the top of the page "Continue shopping" navigates  a user back to the products page, if a user wants to add something else to the cart.
 - Cart page is available for both logged in and non-logged in users, so that it is possible to make purchase being a guest.
 - The page contains a summary of the user's order: the item's **name*, **image**, **quantitie**/ **number of participants**, **price**, **sub-total** and **sku**(for products).
-- A user can **update** item's quantity/number of participants and data-time(if it's a service) and **remove** items from their order completely. To prevent from the accident clicking the remove button, the modal will be opened on click asking a user to confirm the deletion.
-- **Toast messages** will be displayed when a user update/remove items in the cart.
+- A user can **update** item's quantity/number of participants and date-time (if it's a service) and **remove** items from their order completely. To prevent from the accidental clicking the remove button, the modal will be opened on click asking a user to confirm the deletion.
+- **Toast messages** will be displayed when a user updates/removes items in the cart.
 - At the bottom of the page the **cart subtotal**, **delivery coast** and **grand total** are displayed.
-- There is a **Checkout button** that takes a user to the checkout page to proceed the payment.
+- There is a **Checkout button** that takes a user to the checkout page to proceed with the payment.
 
 #### Checkout page
 Checkout page contains 2 main section: checkout 3-steps form and order summary.
-- **Order summary** includes short information about items in the order(image,name,quantity,subtotal,datetime), the link to **Edit cart**, redirecting a user to the Cart page, delivery cost and also **Total to pay**.
-- **Checkout form** is represented as 3 tabs with the **Next** and **Go back** to navigate between the tabs. The form sections are the following **Personal Details**, **Billing/Shipping ingo** and **Payment**.
+- **Order summary** includes short information about items in the order (image, name, quantity, subtotal, date-time), the link to **Edit cart**, redirecting a user to the Cart page, delivery cost and also **Total to pay**.
+- **Checkout form** is represented as 3 tabs with the **Next** and **Go back** buttons to navigate between the tabs. The form sections are the following: **Personal Details**, **Billing/Shipping info** and **Payment**.
 - If a user already has a profile with the shipping information saved, the form will be populated with this information.
 - The **validation** messages will be displayed on click **Next** buttons, so a user can move on the next tab only if the current form-section is filled with valid information.
 - The **save info** checkbox allows the form information to be saved to the user's profile for the **logged in** users.
 - If it's a new or **non-logged** user there are links to register or login to save the information to the profile.
-- Before proceeding the payment, user can review all the information in the table(**Form Summary**).
+- Before proceeding the payment, user can review all the information in the table (**Form Summary**).
 - There's also an optional **Comment** field for cases if a user has any additional comments to the order.
 - A user is informed how much the card will be charged in the paragraph below the **Proceed to payment** button.
 - Since the website is made for educational purposes only and the Stripe functionality is only for testing, only **4242 4242 4242 4242** card number will lead to the successfull payment.
-- A webhook is used to make sure that the order is processed even in the cases when the payment process is interrupted(e.g. if a user accidently close the page or browser after clicking "Proceed to payment" button).
-- Once the form is submitted and the payment is successfully proceeded, the **Checkout sucesss** page is loaded and a confirmation email is sent to the user's email. Also, a toast message is appeared to ensure the user that the order being processed successfully.
+- A webhook is used to make sure that the order is processed even in the cases when the payment process is interrupted (e.g. if a user accidentally closes the page or browser after clicking "Proceed to payment" button).
+- Once the form is submitted and the payment is successfully proceeded, the **Checkout sucesss** page is loaded and a confirmation email is sent to the user's email. Also, a toast message appears to ensure the user that the order was processed successfully.
 
 #### Checkout Success page
-- The paragraph with a Thank you message is displayed on the top of the page to inform a user that the payment was proceed and the email was sent to the user's email.
-- The 3 sections **Order info**, **Shipping details** and **Order Summary** contains all the information about the completed order. 
+- The paragraph with a Thank you message is displayed on the top of the page to inform a user that the payment was processed and the email was sent to the user's email.
+- The 3 sections **Order info**, **Shipping details** and **Order Summary** contain all the information about the completed order. 
 - **Keep shopping** button redirects user to the Products page.
 - For logged-in users there's a button **View full order history** that takes users to the order history page.
-- For non-logged in users the links to **create an account** page to allow to register and view an order history. 
 
 #### Profile page
 Profle feature is available only for **authenticated** users.
-- Profile page contains **Personal info** section(username and email displayed). Also it contains 2 buttons **Change password** and **Manage emails**(changing the current or adding a new email) that takes a user to the corresponding pages (that's a part of Django allauth functionality with a customized templates).
-- **Shipping details** section allows to save the shipping information, so for the next purchase the fields in the checkout form will be prefilled with this info. User can update this information anytime.
-- **View order hostory** link will redirects a user to the Order History page.
+- Profile page contains **Personal info** section (username and email displayed). Also it contains 2 buttons **Change password** and **Manage emails** (changing the current or adding a new email) that take a user to the corresponding pages (that's a part of Django allauth functionality with a customized templates).
+- **Shipping details** section allows to save the shipping information, so for the next purchase the fields in the checkout form will be pre-filled with this info. User can update this information anytime.
+- **View order history** link will redirect a user to the Order History page.
 
 #### Order History
 Order history feature is available only for **authenticated** users.
 - If a user has not made any purchase, the paragraph will inform that the order history is empty with a link to the Product page.
 - If there are completed orders, the table with the following fields: **Order Number**, **Date**, **Items**, **Total** is in place.
-- Clicking the link on the Order number will redirects a user to the **checkout success** page with all the order information. The Toast info message will tell the user that it's a past confirmation for the order number.
-- **View My Profile** link will redirects a user to the Profile page.
+- Clicking the link on the Order number will redirect a user to the **checkout success** page with all the order information. The Toast info message will tell the user that it's a past confirmation for the order number.
+- **View My Profile** link will redirect a user to the Profile page.
 
 #### Admin product managment
 Admin managment feature is available only for **authenticated superuser**.
 Admin page allows an owner of the website to add new products/services by filling out one of the two forms - **Add New Product** and **Add New Service**. 
 If the form is valid, the product/service is added to the database and the user is redirected to the new created product/service details page.
-The defensive design is implemented to restrict others than admin users to manually enter the url to get access to the page. User will be redirected to the home page with the toast error messages appeared.
+The defensive design is implemented to restrict other than admin users to manually enter the url to get access to the page. User will be redirected to the home page with the toast error messages appeared.
 
 #### Django-allauth features
 ##### Sign Up
-The sign up page allows a user to create a new account. The user is asked to fill the fields "email", "username", "password" and "password(again)". When adding a username, the code compares it against existing email to ensure that it is unique. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted, a **verification email** is sent to the user's email to verify the email and finish registration process.   
+The sign up page allows a user to create a new account. The user is asked to fill the fields "email", "username", "password" and "password (again)". When adding a username, the code compares it against existing email to ensure that it is unique. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted, a **verification email** is sent to the user's email to verify the email and finish registration process.   
 There is also a link to the login page for existing users at the bottom of the form.
 ##### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the login was successfull, a user is redirected to the home page and the toast success message appears informing that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input.   
@@ -286,23 +285,23 @@ As well as that, there's a link to the **forgot password** functionality, using 
 ##### Forgot password
 A user can reset their password to be able to login by entering the email. Then the link for reseting password will be sent to the email provided. The user can create a new password and then login with a new password.
 ##### Logout
-Hitting "logout" button renders logout page, asking to confirm if a user wants to logout. It will end their session and redirects to the homepage with a toast success message appeared .
+Hitting "logout" button renders logout page, asking to confirm if a user wants to logout. It will end their session and redirects to the homepage with a toast success message appeared.
 
 ### Features Left to Implement
 There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but intend to do so in future when I will be able to dedicate more time to them. Most of these features are displayed in my [original wireframes](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
 #### Star based  Rating and Reviews
-Users would be able to create, edit and delete their reviews for products and services. Rating would be displayd as stars(0-5) in the pruduct details and service details pages. Also, in the landing page reviews section, the static reviews would be replaced with the real ones, displaying up to 5 random reviews from the database.
-#### User avatart
-This feature would allow users to assigne the standard randomly picked avatar or upload their own photos/avatart. Avatar would be displayed on the user Profile page and also near the reviews, if a user have some.
+Users would be able to create, edit and delete their reviews for products and services. Rating would be displayd as stars(0-5) in the product details and service details pages. Also, in the landing page reviews section, the static reviews would be replaced with the real ones, displaying up to 5 random reviews from the database.
+#### User avatar
+This feature would allow users to assign the standard randomly picked avatar or upload their own photos/avatar. Avatar would be displayed on the user Profile page and also near the reviews, if a user have some.
 ####  Social account login (Google and Facebook)
 This feature allows users to login using social networks accounts, Google and Facebook, that would enhance user experience and make the login process easier.
 #### Image galleries 
-As can be viewed in the original wireframes, I initially planned to assigne up to 3 for products and 5 for services images. An attempt at this was made by creating **ImageGallery** Model in the Products app. However, this feature would require much more time to search for the sutable images, resize them and implement further functionality. So due to mentioned above time constraints the ImageGallery model was removed from the database,image and image_url fields were moved to the Product model. In the future, I would like to implement this feature and add more images to the products and services for enchancing User Experience.
+As can be viewed in the original wireframes, I initially planned to assign up to 3 for products and 5 for service images. An attempt at this was made by creating **ImageGallery** Model in the Products app. However, this feature would require much more time to search for the suitable images, resize them and implement further functionality. So due to mentioned above time constraints the ImageGallery model was removed from the database, image and image_url fields were moved to the Product model. In the future, I would like to implement this feature and add more images to the products and services for enchancing User Experience.
 #### 404 and 500 error pages
 I would also like to implement custom 404 and 500 pages containing a paragraph about the error and a button "Back Home". This would improve and simplify the navigation back to the website in case the user is get lost and error occured.   
 
 
-Other small features are also consider to be implemented in feature, such as **Back to Top button**, **Scroll down button** on the landing page, **Sorting products** by price/name.
+Other small features are also considered to be implemented in feature, such as **Back to Top button** or/and **Pagination** in products, **Scroll down button** on the landing page, **Sorting products** by price/name, **Discout system**.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
