@@ -1,7 +1,8 @@
 # Art of Tea
 
-[![Build Status](https://travis-ci.org/irinatu17/Art-of-Tea.svg?branch=master)](https://travis-ci.org/irinatu17/Art-of-Tea)
+[![Build Status](https://travis-ci.org/irinatu17/Art-of-Tea.svg?branch=master)](https://travis-ci.org/irinatu17/Art-of-Tea)      
 
+The live website can be viewed [here](https://art-of-tea.herokuapp.com/)      
 <img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="800">
 
 Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilizations.  
@@ -12,6 +13,7 @@ Tea ceremonies in our tea club proceed in the atmosphere of solitude and relaxat
 In **Art of Tea** you can visit one of our tea ceremonies, book an event for your company and buy nice fresh tea and teaware delivered straight to your doors!
 
 Explore the misterious and amazing world of tea with us!
+
 
 ---
 
@@ -461,7 +463,25 @@ Description | description | CharField | max_length=254
 ---
 ## Testing
 ### Manual Testing
-
+Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers.
+#### Navbar, Search and Footer
+- All links in the navbar and the footer were tested to ensure that they are pointing to the correct destination.
+- On the smaller devices the **search** button collapse the search input box and redirects me to the products page with correct results displayed. I've tried to submit an empty search query, the error appeard informing that no search word was entered. Also, I've tried to enter key that doesn't exist in the database to check if I get the paragraph telling that no reults were found for the entered query.
+- The hower effect on the nav-items was checked as well as the active page is highlited correctly depending on which page I'am currently on.
+- In footer all the social media links lead to the corresponding pages and open in the new tabs.
+#### Landing page 
+- The animation on scroll works as expected
+- All the links lead to the correct pages
+- All the image-carusels works properly
+#### About page
+- Information is displayed correctly, animation on scroll and image gallery work as expected
+#### Events page 
+- The data from the Events model is displayed correctly in the events table
+- Facebook link opens in the new tab leading to the main Facebook page
+#### Contact
+- I've tried to submit the empty form, or enter incorrect email address(without @), that led to the validation messages displayed correspondingly. 
+- After the form was valid and clicking "Send" buttin, I was redirected to the "Thank you" page, informing that the message was sent. As well as that, being an admin of the website, I recieved the real message on my email, that was assigned in the environmental variables.
+- Map on the contact page displays the correct location, the Info Window shows the opening hours, ehrn the red marker is clicked. Zoom buttons also work correctly.
 ### Validators
 #### HTML
 All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
@@ -478,11 +498,13 @@ This website had been being tested during the development across **multiple brow
 Also, the following tools were used to constantly test the project:
 - **Google Chrome's developer tools** to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.       
 -  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices.
-Plenty of changes were made and necessary media queries added to make the website fully responsive.
+Plenty of changes were made and necessary media queries added to make the website fully responsive.        
+The website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on all the other browsers.
 
-#### Travis
-[Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
-
+### Other Testing 
+- [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
+- The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
+- I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
