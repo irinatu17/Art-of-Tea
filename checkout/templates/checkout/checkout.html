@@ -20,7 +20,9 @@
 {% block extra_js %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}      
+    {{ client_secret|json_script:"id_client_secret" }}    
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>  
     <script src="{% static 'js/stripe.js' %}"></script>
     <script src="{% static 'js/checkout_form.js' %}"></script>
     

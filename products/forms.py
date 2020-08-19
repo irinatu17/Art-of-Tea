@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
                   'image_url',
                   'image',
                   )
-    image = forms.ImageField(label='Image')
+    image = forms.ImageField(label='Image', required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -50,6 +50,7 @@ class ServiceForm(forms.ModelForm):
                   'rating', 'duration', 'image_url',
                   'image',
                   )
+    image = forms.ImageField(label='Image', required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
