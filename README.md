@@ -536,7 +536,7 @@ Read more about how to set up the Stripe keys in the [Stripe Documentation](http
 `python3 manage.py migrate`     
 5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) in that order into the database using the following command:    
 `python3 manage.py loaddata <fixture_name>`        
-6. Create a superuser to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
+6. Create a superuser to have an access to the the admin panel (you need to follow the instructions then and insert username, email and password):    
 `python3 manage.py createsuperuser`   
 7. You will now be able to run the application using the following command:     
 `python3 manage.py runserver`     
@@ -552,7 +552,7 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 3. `git add`, `git commit` and `git push` these files to GitHub repository.     
 NOTE: these 1-3 steps already done in this project and included in the GitHub repository, but illistrated here as they are required for the successfull deployment to Heroku.        
 As well as that, other things that are required for the Heroku deployment and have to be installed: **gunicorn** (WSGI HTTP Server), **dj-database-url** for database connection and **Psycopg** (PostgreSQL driver for Python). All of the mentioned above are *already installed* in this project in the requirements.txt file.     
-4. On the [Heroku](https://heroku.com/) website you need to create a **new app**, assigne a name (must be unique),set a region to the closest to you(for my project I set Europe) and click **Create app**.   
+4. On the [Heroku](https://heroku.com/) website you need to create a **new app**, assign a name (must be unique), set a region to the closest to you (for my project I set Europe) and click **Create app**.   
 5. Go to **Resources** tab in Heroku, then in the **Add-ons** search bar look for **Heorku Postgres**(you can type `postgres`), select **Hobby Dev — Free** and click **Provision** button to add it to your project.     
 6. In Heroku **Settings** click on **Reveal Config Vars**.   
 7. Set the following config variables there:     
@@ -632,7 +632,7 @@ In order to send real emails from the application, you need to connect it to you
 - The idea of implementation of Checkout 3-steps form(handling validation on click and preventing submission) in `checkout_form.js` was given in Slack by my fellow student [Johann Albert](https://github.com/wondrousWebWorks).
 ### Content and Media
 - Text on the landing and about pages is taken, translated(from Russian - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
-- Services content(names, description,itineraries) is taken and modifyed from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
+- Services content(names, description,itineraries) is taken and modified from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
 - Products content and images are taken from [Artoftea shop](https://www.artoftea.com/) 
 - Favicon, icons in the benifits section(landing page) and a heart-icon in the events page: icon library [Flaticon](https://www.flaticon.com/)
 - Graphic image in the Contact page: [Sapiens](https://sapiens.ui8.net/8f1c3s7)
