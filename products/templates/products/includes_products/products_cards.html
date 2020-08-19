@@ -1,4 +1,5 @@
-<div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4" data-aos="fade-up" data-aos-duration="1100" data-aos-easing="ease-in-out">
+<div class="col-sm-12 col-md-6 col-lg-4  text-center mt-4" data-aos="fade-up" 
+     data-aos-duration="1100" data-aos-easing="ease-in-out">
     {% if '/static/' in product.image.name %}
         <a href="{% url 'product_details' product.id %}">
             <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
@@ -26,9 +27,12 @@
     <h6 class="text-center main-heading lead">{{ product.name }}</h6>
         {% if request.user.is_superuser %}
             <small>
-                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-info px-1 py-0">Edit</a> | 
+                <a href="{% url 'edit_product' product.id %}" 
+                    class="btn btn-sm btn-outline-info px-1 py-0">Edit
+                </a> | 
                 <button type="button" class="btn btn-sm btn-outline-danger px-1 py-0" 
-                        data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">Delete
+                        data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">
+                        Delete
                 </button>
             </small>
         {% endif %}
@@ -63,7 +67,8 @@
       <div class="modal-body">
         <p class="text-red">
             <i class="fas fa-exclamation-circle text-danger"></i>
-            Are you sure you want to delete <br/><span class="font-weight-bold">{{ product.name }}</span>?
+            Are you sure you want to delete <br/>
+            <span class="font-weight-bold">{{ product.name }}</span>?
         </p>
       </div>
       <div class="modal-footer">

@@ -2,23 +2,23 @@
 {% csrf_token %}
 
     <!--Quantity-->
-    <h6 class="font-weight-bold mt-4">Quantity:</h6>
     <div class="row d-flex justify-content-between">
         <div class="col-7 col-md-6">
-            <div class="input-group">
-                <input name="quantity" type="number" min="1" max="999" class="form-control " value="1" required>
+            <div class="input-group d-flex align-items-center">
+                <span class="font-weight-bold mr-2">Quantity:</span>
+                <div class="w-30">
+                   <input name="quantity" type="number" min="1" max="999" 
+                            class="form-control" value="1" required>
+                </div>
             </div>
             <!--Weight-->
             {% if product.has_weight %}
             <small class="text-muted">Each pack is 100g</small>
             {% endif %}
         </div>
-        <div class="col-5 col-md-6 text-center">
-            <p class="font-weight-bold">
+        <div class="col-5 col-md-6  text-center">
             <!--Price-->
-                <span class="border p-3 rounded-pill border-success">
-                <i class="fas fa-euro-sign mr-2"></i>{{ product.price }}</span>
-            </p>
+            <p class="price-sign mb-0"><i class="fas fa-euro-sign mr-1"></i>{{ product.price }}</p>
         </div>
     </div>
     <!--buttons-->
@@ -26,7 +26,7 @@
         <a href="{% url 'products' %}" class="btn button-black-outline px-3 mr-3">
             <i class="fas fa-angle-left"></i> Go back
         </a>
-        <input type="submit" class="btn button-green px-3" value="Add to Cart">
+        <input type="submit" class="btn button-green uppercase px-3" value="Add to Cart">
     </div>
     <input type="hidden" name="redirect_url" value="{{ request.path }}">
 </form>

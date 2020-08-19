@@ -17,7 +17,8 @@
         </div>
         <!--Remove button-->
         <div class="text-right">
-            <a class="remove-button" title="Remove" data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">
+            <a class="remove-button" title="Remove" data-toggle="modal" 
+               data-target="#deleteModal{{ forloop.counter }}">
                 <i class="fas fa-trash-alt lead text-danger"></i>
             </a>
         </div>
@@ -25,10 +26,9 @@
     <div>
         <!--Subtotal-->
         <h6 class="font-weight-bold mb-3">Subtotal:</h6>
-        <p class="font-weight-bold "><span class="border p-2 rounded-pill border-success">
-            <i class="fas fa-euro-sign mr-1"></i>
+        <p class="lead font-weight-bolder">
+            <i class="fas fa-euro-sign"></i>
             {{ item.product.price | calc_subtotal:item.quantity }} 
-            </span>
         </p>
     </div> 
 </div>
@@ -47,7 +47,8 @@
       <div class="modal-body">
         <p class="text-red">
             <i class="fas fa-exclamation-circle text-danger"></i>
-            Are you sure you want to remove <br/><span class="font-weight-bold">{{ item.product.name }}</span> from your cart?
+            Are you sure you want to remove <br/>
+            <span class="font-weight-bold">{{ item.product.name }}</span> from your cart?
         </p>
       </div>
       <div class="modal-footer">

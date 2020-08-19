@@ -23,7 +23,7 @@ class OrderAdmin(admin.ModelAdmin):
               'order_total', 'grand_total', 'original_cart',
               'stripe_pid')
     # restrict the columns that show up in the order list to only few key items
-    list_display = ('order_number', 'purchase_date', 'full_name',
+    list_display = ('order_number', 'purchase_date', 'full_name', 'profile',
                     'order_total', 'delivery_cost',
                     'grand_total',)
     # displays most recent orders on the top

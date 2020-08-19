@@ -13,7 +13,7 @@ from profiles.models import Profile
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     profile = models.ForeignKey(Profile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+                                null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=70, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -24,11 +24,15 @@ class Order(models.Model):
     country = CountryField(blank_label='Country *', null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
     purchase_date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
+                                        null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
     comment = models.TextField(max_length=254, null=True, blank=True)
 
     def _generate_order_number(self):
@@ -68,13 +72,18 @@ class OrderItemDetails(models.Model):
     """Model displaying individual cart items details
         relating to the specific order"""
 
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='orderitems')
+    product = models.ForeignKey(Product, null=False,
+                                blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
-    # because of Django DateTimeField functionality does not support the desired format(DD/MM/YYYY HH:mm)
-    # it was decided to replace it to the CharField for better UI
-    datetime = models.CharField(null=True, blank=True, max_length=20) 
+    item_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                     null=False, blank=False, editable=False)
+    # Because of Django DateTimeField functionality does not support
+    #  the desired format (DD/MM/YYYY HH:mm) it was decided
+    #  to replace it to the CharField to achieve better UI
+    datetime = models.CharField(null=True, blank=True, max_length=20)
 
     def save(self, *args, **kwargs):
         """

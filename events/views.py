@@ -2,10 +2,10 @@ from django.shortcuts import render
 from .models import Event
 
 
-# Create your views here.
 def events(request):
     """
-    A view to return events page
+    A view to return events page, getting event items(day,time and description)
+    from the Event model
     """
     events = Event.objects.all()
     context = {

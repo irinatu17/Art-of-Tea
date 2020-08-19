@@ -65,7 +65,7 @@
 
         <!--Order summary Total-->
         <div class=" border-top pt-1 pt-md-2">
-            <a href="{% url 'view_cart' %}"><i class="fas fa-chevron-left"></i> Edit Cart</a>
+            <a href="{% url 'view_cart' %}" class="font-weight-bold"><i class="fas fa-chevron-left"></i> Edit Cart</a>
             <p class="small mt-1 mt-md-3 mb-1 text-muted">Delivery Cost: €{{ delivery|floatformat:2 }}</p>
             <p class="lead">Total to pay: 
                 <span class="font-weight-bold">€{{ grand_total|floatformat:2 }}</span>

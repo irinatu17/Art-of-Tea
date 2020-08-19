@@ -35,9 +35,9 @@
                         <div><i class="fas fa-shopping-cart"></i></div>
                         <small>
                         {% if grand_total %}
-                           <span class="font-weight-bold"> € {{ grand_total|floatformat:2 }} </span>
+                           <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
                         {% else %}
-                           € 0.00
+                           €0.00
                         {% endif %}
                         </small>
                     </div>
@@ -62,11 +62,10 @@
             <!--Search button-->
             <div class="d-flex">
                 <button class="btn btn-large px-1 d-block d-lg-none mr-md-3" id="search-button">
-                <div class="text-center text-white">
+                    <div class="text-center text-white">
                         <div> <i class="fas fa-search"></i></div>
                         <small>Search</small>
                     </div>
-                    
                 </button>
                 
                 <a href="{% url 'view_cart' %}" 
@@ -77,7 +76,7 @@
                         {% if grand_total %}
                             <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
                         {% else %}
-                            € 0.00
+                            €0.00
                         {% endif %}
                         </small>
                     </div>
@@ -88,7 +87,8 @@
         <div class="px-3 py-1" id="search-form-container">
             <form  method="GET" action="{% url 'products' %}">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="text" name="serach_term_input" 
+                            placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn button-black border-white rounded-right" type="submit">
                             <i class="fas fa-search text-white"></i>
@@ -120,11 +120,11 @@
                 </li>
                 <div class="dropdown-divider d-md-none d-block"></div>
                 {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Admin Management</a>
-                </li>
-                {% endif %}
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item d-md-none d-block">
+                        <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Admin Management</a>
+                    </li>
+                    {% endif %}
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'profile' %}">My profile</a>
                 </li>
@@ -147,9 +147,11 @@
             </ul>
             <form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="serach_term_input" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="text" name="serach_term_input" 
+                            placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" type="submit">
+                        <button class="btn btn-outline-dark my-2 my-sm-0 border-white rounded-right" 
+                                type="submit">
                             <i class="fas fa-search text-white"></i>
                         </button>
                     </div>

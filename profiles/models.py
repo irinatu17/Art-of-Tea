@@ -13,13 +13,20 @@ class Profile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_full_name = models.CharField(max_length=70, null=True, blank=True)
-    profile_phone_number = models.CharField(max_length=20, null=True, blank=True)
-    profile_address_line1 = models.CharField(max_length=60, null=True, blank=True)
-    profile_address_line2 = models.CharField(max_length=60, null=True, blank=True)
-    profile_town_or_city = models.CharField(max_length=50, null=True, blank=True)
-    profile_county = models.CharField(max_length=50, null=True, blank=True)
-    profile_postcode = models.CharField(max_length=20, null=True, blank=True)
-    profile_country = CountryField(blank_label='Country', null=True, blank=True)
+    profile_phone_number = models.CharField(max_length=20,
+                                            null=True, blank=True)
+    profile_address_line1 = models.CharField(max_length=60,
+                                             null=True, blank=True)
+    profile_address_line2 = models.CharField(max_length=60,
+                                             null=True, blank=True)
+    profile_town_or_city = models.CharField(max_length=50,
+                                            null=True, blank=True)
+    profile_county = models.CharField(max_length=50,
+                                      null=True, blank=True)
+    profile_postcode = models.CharField(max_length=20,
+                                        null=True, blank=True)
+    profile_country = CountryField(blank_label='Country',
+                                   null=True, blank=True)
 
     def __str__(self):
         return self.user.username

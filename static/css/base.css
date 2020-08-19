@@ -9,6 +9,7 @@
 --lavander: #D6D3F0;
 --red-salmon: #ff7474;
 --red: #ff4141;
+--yellow: #ffc00f;
 --white: #ffffff;
 --darkwhite: #f6f6f6f3;
 --lightblack: #252525;
@@ -75,6 +76,7 @@ color: var(--red-salmon);
 .text-green{
 color: var(--darkgreen);
 }
+
 .divider-green{
 background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
 height: 4px;
@@ -85,10 +87,18 @@ border-radius: 100%;
 display: none;
 }
 
+.price-sign{
+font-weight: 900;
+font-size: 1.7rem;
+}
+
+.w-30{
+width: 30%;
+}
+
 /*Headings*/
 .main-heading{
 font-family: var(--marko-one);
-
 }
 
 .products-heading{
@@ -116,7 +126,7 @@ font-family: var(--sawarabi-mincho);
 }
 
 .button-black:hover{
-background:linear-gradient(var(--white), var(--darkgrey));
+background: var(--white);
 color: var(--black);
 }
 
@@ -133,16 +143,14 @@ color: var(--white);
 }
 
 .button-green{
-background: linear-gradient(var(--darkgreen), var(--lightgreen));;
+background: linear-gradient(var(--darkgreen), var(--lightgreen));
 color: var(--white);
 font-family: var(--sawarabi-mincho);
-font-weight: 500;
 }
 
 .button-green:hover{
-color: var(--black);
-border: 1px solid var(--darkgreen);
-background: linear-gradient(var(--lightgrey), transparent);
+color: var(--white);
+background: linear-gradient(var(--darkgreen), var(--darkgreen));
 }
 
 .btn-next{
@@ -159,15 +167,10 @@ color: var(--white) !important;
 
 .btn-salmon{
 border: 1px solid var(--black);
-font-family: var(--sawarabi-mincho);
-font-weight:500;
-background: linear-gradient(to left, var(--red), var(--red-salmon));
-color: var(--black);
+background-color: var(--red-salmon);
+color: var(--white);
 }
 
-.btn-salmon:hover{
-background: linear-gradient(var(--red), var(--darkwhite), var(--red));
-}
 
 .btn-service{
 font-size: 0.8rem;
@@ -333,12 +336,12 @@ background-color: var(--white);
 overflow-x: hidden; 
 overflow-y: hidden;
 }
+
 /*Landing page - reviews section*/
 .review-user-avatar{
 vertical-align: middle;
 width: 100px;
 height: 100px;
-
 }
 
 #reviews-carousel ol.carousel-indicators li{
@@ -398,6 +401,7 @@ font-size: 2.5rem;
 color: var(--brown-grey);
 font-weight: 500;
 }
+
 .category-main-nav:hover,
 .category-main-nav:active,
 .category-main-nav:focus{
@@ -479,7 +483,7 @@ overflow-y: auto;
 }
 
 .checkout-button{
-font-size: 0.7rem;
+font-size: 0.6rem;
 }
 
 .service-image{
@@ -561,6 +565,7 @@ border-left: 8px solid var(--red-salmon);
 .toast-info{
 border-left: 8px solid #17a2b8;
 }
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
@@ -577,6 +582,7 @@ font-size: 100%;
 font-size: 0.8rem;
 }
 }
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 
@@ -640,7 +646,7 @@ font-size: 2.3rem;
 }
 
 .checkout-button{
-font-size: 0.9rem;
+font-size: 0.8rem;
 }
 
 .container-messages {
@@ -663,6 +669,10 @@ border-top: 0;
 @media (min-width: 992px) {
 .logo-navbar{
 height: 3.1rem;
+}
+
+.checkout-button{
+font-size: 0.9rem;
 }
 
 .btn-service{
@@ -700,18 +710,18 @@ right: 0.6rem;
 width: 70%;
 }
 
-.nav-item:not(.category-nav-item):not(.checkout-nav-item){
+.nav-link-header{
 transition: all .15s ease-in-out;
 }
 
-.nav-item:hover:not(.category-nav-item):not(.checkout-nav-item){
+.nav-link-header:hover{
 transform: scale(1.1);
+color: var(--lightgreen) !important;
 }
 
 #contact-form-btn{
 width:50% !important;
 }
-
 }
 
 /*  iPad Pro  and iPad landscape size Media queries */

@@ -4,7 +4,7 @@
         <!--Price(tablet/desktop)-->
         <h6 class="font-weight-bold ">Price:</h6>
         <p>
-            <i class="fas fa-euro-sign "></i> 
+            € 
             {{ item.product.price }} 
             {% if item.product.has_weight %}
                 <span class="text-muted small"> / 100g</span>
@@ -17,11 +17,9 @@
     <div>
         <!--Subtotal(tablet/desktop)-->
         <h6 class="font-weight-bold mb-3">Subtotal:</h6>
-        <p class="font-weight-bold lead">
-            <span class="border p-2 rounded-pill border-success shadow-sm">
-                <i class="fas fa-euro-sign mr-1"></i>
-                {{ item.product.price | calc_subtotal:item.quantity }} 
-            </span>
+        <p class="lead font-weight-bolder">
+            <i class="fas fa-euro-sign"></i>
+            {{ item.product.price | calc_subtotal:item.quantity }} 
         </p>
     </div>
 </div>

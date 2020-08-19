@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, \
-    get_object_or_404, HttpResponse
+    get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -69,7 +69,9 @@ def services(request):
 
 
 def service_details(request, service_id):
-    """ A view to display single service details page """
+    """ A view to display single service details page  with Itinerary form
+        allowing admin to add itinerary line items
+    """
     all_services = Product.objects.filter(is_a_service=True)
     service = get_object_or_404(all_services, pk=service_id)
     itinerary = Itinerary.objects.get(service=service)
@@ -102,8 +104,8 @@ def service_details(request, service_id):
 @login_required
 def add_product(request):
     """ A view allowing admin to add a product/service to the store
-        Credits: the solutions for combining 2 forms
-        in one view was found here:
+        Credits: the solution for combining 2 forms
+        in one view was found in the Stack Overflow:
         https://stackoverflow.com/questions/1395807/proper-way-to-handle-multiple-forms-on-one-page-in-django
     """
     if not request.user.is_superuser:
@@ -131,12 +133,12 @@ def add_product(request):
                 service = service_form.save(commit=False)
                 service.is_a_service = True
                 service.save()
-                itinerary = Itinerary.objects.create(service=service, name=service.name)
+                itinerary = Itinerary.objects.create(service=service,
+                                                     name=service.name)
                 itinerary.save()
                 service.save()
                 messages.success(request, 'Successfully added service!')
                 return redirect(reverse('service_details', args=[service.id]))
-                # return redirect(reverse('landing'))
             else:
                 messages.error(request, 'Failed to add service. \
                                 Please ensure the form is valid.')
@@ -155,7 +157,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """ A view to allow only admin to edit a product in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
              Only store owners can edit products.')
@@ -185,7 +187,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """ A view to allow only admin to delete a product from the store """
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
              Only store owners can delete products.')
@@ -198,7 +200,7 @@ def delete_product(request, product_id):
 
 @login_required
 def edit_service(request, service_id):
-    """ Edit a service in the store """
+    """ A view to allow only admin to edit a service in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
              Only store owners can edit services.')
@@ -229,7 +231,7 @@ def edit_service(request, service_id):
 
 @login_required
 def delete_service(request, service_id):
-    """ Delete a service from the store """
+    """ A view to allow only admin to delete a service from the store """
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
              Only store owners can delete services.')
@@ -241,10 +243,10 @@ def delete_service(request, service_id):
 
 
 def remove_itinerary_item(request, item_id):
-    """Remove the itinerary line item"""
+    """ A view to allow only admin to remove the itinerary line item"""
     if not request.user.is_superuser:
         messages.error(request, 'Access denied!\
-             Only store owners can ddo that.')
+             Only store owners can do that.')
     itinerary_items = ItineraryItem.objects.get(pk=item_id)
     itinerary_items.delete()
     messages.info(request, ('Itinerary item was removed'))

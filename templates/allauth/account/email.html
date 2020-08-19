@@ -29,9 +29,9 @@
         {% endfor %}
 
         <div class="buttonHolder mt-3">
-            <button class="secondaryAction button-green mr-2 rounded" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-            <button class="secondaryAction button-green mr-2 rounded" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-            <button class="primaryAction button-black mt-2 rounded" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+            <button class="secondaryAction button-black mr-2 rounded" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+            <button class="secondaryAction button-black mr-2 rounded" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+            <button class="primaryAction btn-danger mt-2 rounded" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
         </div>
     </fieldset>
 </form>
@@ -49,7 +49,7 @@
         {{ form|crispy }}
         <a href="{% url 'profile' %}" class="btn button-black-outline mr-3"><i class="fas fa-angle-left"></i> Back to Profile</a>
 
-        <button name="action_add" class="btn btn-salmon" type="submit">{% trans "Add E-mail" %}</button>
+        <button name="action_add" class="btn button-green" type="submit">{% trans "Add E-mail" %}</button>
     </form>
 
 {% endblock %}
