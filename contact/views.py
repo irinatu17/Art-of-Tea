@@ -5,6 +5,8 @@ from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
 from .forms import ContactForm
+from profiles.models import Profile
+
 
 
 def contact(request):
@@ -31,7 +33,17 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
     else:
-        contact_form = ContactForm()
+        # Attempt to prefill full_name and email fields for logged in user, if they have
+        # this information saved in the profile
+        if request.user.is_authenticated:
+            profile = Profile.objects.get(user=request.user)
+            user_email = profile.user.email
+            contact_form = ContactForm(initial={
+                'full_name': profile.profile_full_name,
+                'email': user_email,
+                })
+        else:
+            contact_form = ContactForm()
 
     context = {
         'contact_form': contact_form,
