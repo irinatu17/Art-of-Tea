@@ -15,12 +15,16 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            full_name = contact_form.cleaned_data['full_name']
-            user_email = contact_form.cleaned_data['email']
-            message = contact_form.cleaned_data['message']
+            subject = request.POST['full_name']
+            user_email = request.POST['email']
+            message = request.POST['message']
             try:
-                send_mail(full_name, message, user_email, [
-                       os.environ.get("EMAIL_HOST_USER")], fail_silently=False)
+                send_mail(
+                    subject,
+                    message,
+                    user_email,
+                    [settings.DEFAULT_FROM_EMAIL]
+                )
                 return redirect('contact_thankyou')
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
