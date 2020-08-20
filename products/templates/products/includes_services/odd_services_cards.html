@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class=" col-12 col-md-5">
-            {% if '/static/' in service.image.name %}
-                <img src="{{ service.image}}" 
+            {% if 'img/' in service.image.name %}
+                <img src="{{ STATIC_URL }}{{ service.image}}" 
                     class="card-img img-fluid service-image" 
                     alt="{{ service.name }}">
             {% elif service.image %}

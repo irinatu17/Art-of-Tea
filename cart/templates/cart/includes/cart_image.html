@@ -1,8 +1,8 @@
 <div class="col-6 col-md-2 mb-3">
     
-    {% if  '/static/' in item.product.image.name %}
+    {% if  'img/' in item.product.image.name %}
     <img class="img-fluid rounded-lg shadow-sm" 
-        src="{{ item.product.image }}"
+        src="{{ STATIC_URL }}{{ item.product.image }}"
         alt="{{ item.product.name }}">
     {% elif item.product.image %}
     <img class="img-fluid rounded-lg shadow-sm" 

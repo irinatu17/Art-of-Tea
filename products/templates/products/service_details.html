@@ -21,11 +21,11 @@
             {% endif %}
             <hr class="divider-green w-25 my-4">
             <div class="col-12 col-md-10 offset-md-1">
-                {% if '/static/' in service.image.name %}
+                {% if  'img/' in service.image.name %}
                     <a {% if  service.image_url %} href="{{ service.image_url }}" {%endif%}
                     target="_blank" rel="noopener">
                         <img class="img-fluid w-100 rounded-lg" 
-                             src="{{ service.image }}" 
+                             src="{{ STATIC_URL }}{{ service.image }}" 
                              alt="{{ service.name }}">
                     </a>
                 {% elif service.image %}
