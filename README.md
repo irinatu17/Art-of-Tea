@@ -466,69 +466,70 @@ Description | description | CharField | max_length=254
 Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers. Some results and the actions that took place during the manual testing phase are displayed below:
 #### Navbar, Search and Footer
 - All links in the navbar and the footer were tested to ensure that they are pointing to the correct destination.
-- On the smaller devices the **search** button collapse the search input box and redirects me to the products page with correct results displayed. I've tried to submit an empty search query, the error appeard informing that no search word was entered. Also, I've tried to enter key that doesn't exist in the database to check if I get the paragraph telling that no reults were found for the entered query.
-- The hower effect on the nav-items was checked as well as the active page is highlited correctly depending on which page I'am currently on.
+- On the smaller devices the **search** button collapses the search input box and redirects to the products page with correct results displayed. I've tried to submit an empty search query, the error appeared informing that no search word was entered. Also, I've tried to enter key that doesn't exist in the database to check if I get the paragraph telling that no results were found for the entered query.
+- The hover effect on the nav-items was checked as well as the active page was highlighted correctly depending on which page I am currently on.
 - In footer all the social media links lead to the corresponding pages and open in the new tabs.
 #### Landing page 
 - The animation on scroll works as expected
 - All the links lead to the correct pages
-- All the image-carusels works properly
+- All the image-carousels work properly
 #### About page
 - Information is displayed correctly, animation on scroll and image gallery work as expected
 #### Events page 
-- The data from the Events model is displayed correctly in the events table
-- Facebook link opens in the new tab leading to the main Facebook page
+- The data from the Events model is displayed correctly in the events table- Facebook link opens in the new tab leading to the main Facebook page (since there is no real page exists for the website)
 #### Contact
-- I've tried to submit the empty form, or enter incorrect email address(without @), that led to the validation messages displayed correspondingly. 
-- After the form was valid and clicking "Send" buttin, I was redirected to the "Thank you" page, informing that the message was sent. As well as that, being an admin of the website, I recieved the real message on my email, that was assigned in the environmental variables.
-- Map on the contact page displays the correct location, the Info Window shows the opening hours, ehrn the red marker is clicked. Zoom buttons also work correctly.
+- I've tried to submit the empty form, or enter incorrect email address (without @), that led to the corresponding validation messages displayed. 
+- If the form was valid and "Send" button clicked, I was redirected to the "Thank you" page, informing that the message was sent. As well as that, being an admin of the website, I received the real message on my email, that was assigned in the environment variables.
+- Map on the contact page displays the correct location, the Info Window shows the opening hours, when the red marker is clicked. Zoom buttons also work correctly.
 #### Products and product details pages
-- I've tried to select the category, sorting results were displayed correctly, the number of the products found shown in parentheses. 
-- Logged in as an admin I could see Edit/Delete buttons, while when I've tried to manually enter the `/edit/` and `/delete/` urls I got the error message displayed as expected.
-- Clicking "View details" button or product image redirects me to the products details page
-- Bredcrumbs navigation works correctly on both products and product detailes pages
-- On the product details page I've tried to submit the form with negative number, but got the validation error messages as expected.
-- Clicking on the category leads me to the Products page with the filtering by the selected category.
+- I tried to select the category, sorting results were displayed correctly, the number of the products found shown in parentheses. 
+- Logged in as an admin I could see Edit/Delete buttons, while when I tried to manually enter the `/edit/` and `/delete/` urls I got the error message displayed as expected.
+- Clicking the "View details" button or product image redirects to the products details page.
+- Breadcrumbs navigation works correctly on both products and product detailes pages.
+- On the product details page I tried to submit the form with negative number (or higher than 999), but got the validation error messages as expected.
+- Clicking on the category leads to the Products page with the filtering by the selected category.
 - If the quantity form is submitted correctly, I can see the grand total in the navbar reflects this addition. Toast success message is displayed as expected.
 #### Services and service details pages
 - Edit/delete buttons on both pages are visible only for the admin of the store
 - Clicking "Learn more" button redirects me to the service details page
 - Contact us button redirects to the contact page
-- I've tried to submit empty form, leave the datetime field blank, put the incorrect number or datetime manually, after all these actions the validation errors were displayd not allowing me to submit the for with incorrect data.
+- I tried to submit empty form, leave the datetime field blank, put the incorrect number or datetime manually, after all these actions the validation errors were displayed not allowing me to submit the form with incorrect data.
 - If the quantity form is submitted correctly, I can see the grand total in the navbar reflects this addition. Toast success message is displayed as expected.
-- Bredcrumbs navigation works correctly on both services and service detailes pages
-- I've added some itinerary items, page reloaded and I could see new itinerary item added and displayed. As well as that, I could remove the itinerary item bu clicking the trash icon, toggling the delete modal and confirming the deletion. I've tested this functionality from the different accounts to make sure that only authenticated admin have an access to that.
+- Bredcrumbs navigation works correctly on both services and service detailes pages.
+- I added some itinerary items, page reloaded and I could see new itinerary item added and displayed. As well as that, I could remove the itinerary item by clicking the trash icon, toggling the delete modal and confirming the deletion. I tested this functionality from different accounts to make sure that only authenticated admin has an access to that.
 #### Cart page
-- All the items added to the cart displayed correctly
-- Clicking "Continue shopping" leads to the products page
-- I've tested update/remove functionality with different products and services to make sure that everything works as expected. Clicking remove button toggles the remove modal and to confirm the action. Update functionality works well for both products and services, subtotal changes correspondingly to reflect the update.
-- Clicking "Checkout" button redirects to the Checkout page
-- Toast messages are displayed as expected after update/remove actions
+- All the items added to the cart are displayed correctly.
+- Clicking "Continue shopping" leads to the products page.
+- I tested update/remove functionality with different products and services to make sure that everything works as expected. Clicking remove button toggles the remove modal asking to confirm the action. Update functionality works well for both products and services, subtotal changes correspondingly to reflect the update.
+- Clicking "Checkout" button redirects to the Checkout page.
+- Toast messages are displayed as expected after update/remove actions.
 #### Checkout and checkout success pages
-- Order summary displays the order correctly, clicking "Edit cart" redirects back to the cart
--I've tried to submit the empty form or with incorrect information. The validation error messages were displayed correctly, not allowing me to go to the next step before the one form-section is filled up with correct information.
-- I've crated a huge number of orders as an logged-in or non-logged in user, ticking or not the save-info checkbox. There was an issue with save-info field found, that is described in the Bugs section and was succfully fixed.
-- As well, I've checked if the webhooks work as expected by temporary commenting out the part of `stripe.js` code that's responsible for submission and also by closing the page stright after the clicking the "Proceed to payment" button. After that I've checked the Stripe Dashboard to make sure that the order was created via webhooks and was saved to the database.
-- 4242 4242 4242 4242 card number leads to the sussessfull payment completed
-- During testing this feature I was always checking the Stripe dashboard to see if the charge was successfull
-- I've tried to put the incorrect or incomplete card details to make sure the error messages are displayed correctly.
-- After the valid form is submitted, I recieved the confirmation email with all the correct order info, as well as that, the checkout page renders showing the order summary.
-- When the order was completed by the logged-in user, in the checkout success page the "View full order history" button leads to the Order history page
+- Order summary displays the order correctly, clicking "Edit cart" redirects back to the cart.
+-I tried to submit an empty form or filled out incorrectly. The validation error messages were displayed correctly, not allowing to go to the next step before the current section is filled up with correct information.
+- I created a large number of orders as logged in or non-logged in user, ticking or not the save-info checkbox. There was an issue with save-info field, that is described in the Bugs section and was successfully fixed.
+- Also, I checked if the webhooks work as expected by temporary commenting out the part of `stripe.js` code that's responsible for submission and also by closing the page straight after clicking the "Proceed to payment" button. After that I checked the Stripe Dashboard to make sure that the order was created via webhooks and was saved to the database.
+- 4242 4242 4242 4242 card number leads to the successfull payment.
+- During testing of this feature I was always checking the Stripe dashboard to see if the charge was successfull.
+- I tried to put the incorrect or incomplete card details to make sure that the error messages are displayed correctly.
+- After the valid form was submitted, I received the confirmation email with all the correct order info. As well as that, the checkout page renders showing the order summary.
+- When the order was completed by the logged-in user in the checkout success page, the "View full order history" button led to the Order history page.
 #### Profile and Order History
-- These feature were tested to check if they are available only to the logged-in users
-- Clicking on the Order number on the order history page opens the past confirmation(checkout success) page with the corresponding toast info message
-- Profile page displayes all the personal info(email and username), clicking on the "Change password" and "Manage emails" buttons leads to the proper destinations
-- If I deleted all the shipping information on the profile page, then on the checkout page all the fields were empty. At the same time when I saved some shipping details on the profile page, the checkout form fields were prefilled, confirming that the shipping info was saved into the Prodile model.
-#### Admin product managment functionality
-- Add product/service forms work as expected: validation error messages in place, after successfull addition it redirects to the new created product/service page
-- I've added few products/services without the image to test the no-image assignement
-- In production all images are stored in the AWS S3, so the Buscket was constantly checked to make sure it works as expected
-- Edit/Delete functionality was tested many times, all the changes stright away can be seen in the database
-- The defensive design workd well allowing only superuser to have access to this functionality
+- These features were tested to check if they are available only to the logged-in users.
+- Clicking on the Order number on the order history page opens the past confirmation (checkout success) page with the corresponding toast info message.
+- Profile page displayes all the personal info (email and username), clicking on the "Change password" and "Manage emails" buttons leads to the correct destinations.
+- If all the shipping information on the profile page was deleted, then on the checkout page all the fields were empty. At the same time when I saved some shipping details on the profile page, the checkout form fields were prefilled, confirming that the shipping info was saved into the Profile model.
+#### Admin product management functionality
+- Add product/service forms work as expected: validation error messages in place, after successfull addition it redirects to the new created product/service page.
+- I added few products/services without the image to test the no-image assignment.
+- In production all images are stored in the AWS S3, so the Basket was constantly checked to make sure it works as expected.
+- Edit/Delete functionality was tested many times, all the changes straight away can be seen in the database.
+- The defensive design worked well allowing only superuser to have an access to this functionality.
 #### Login/sign up/logout/forgot password
-These features are built-in componentes of Django allauth package were tested manually as well, as about 5-10 different accounts were created.     
+These features are built-in components of Django allauth package were tested manually as well, as about 5-10 different accounts were created.     
 Forgot password, verification email, login - all work as expected.
-
+- Entering incorrect emails, incorrect password and case sensitivity works as expected.
+- Trying to register with an already registered email works as expected.
+- Entering two different passwords and trying to enter old password when re-setting password works as expected.
 
 ### Validators
 #### HTML
@@ -546,7 +547,7 @@ This website had been being tested during the development across **multiple brow
 Also, the following tools were used to constantly test the project:
 - **Google Chrome's developer tools** to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.       
 -  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices.
-Plenty of changes were made and necessary media queries added to make the website fully responsive.        
+Plenty of changes were made and necessary media queries added to make the website is fully responsive.        
 The website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on all the other browsers.
 
 ### Other Testing 
