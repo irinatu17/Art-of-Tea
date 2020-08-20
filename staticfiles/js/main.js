@@ -3,13 +3,13 @@ $(document).ready(function() {
     //Hiding search field on mobile when the page loads
     $('#search-form-container').hide();
 
-
-    //Sliding down and up the search form, when the search icon is clicked
+    //Sliding down and up the search form, when the search icon is clicked(tablet and mobile screens)
     $("#search-button").click(function(){
         $("#search-form-container").slideToggle("slow");
     });
 
-    //Tempus Dominus bootstrap-datetimepicker:
+    //Tempus Dominus bootstrap-datetimepicker.
+    // In the cart app in case 2 or more services are added:
     // After the datepickers are initialized, it's calling them again, looping over .each(),
     // and assigning the value to the data-attribute "data-value=''" for the selected datepicker
     $(function () {
