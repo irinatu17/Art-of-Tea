@@ -15,15 +15,17 @@ def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            subject = request.POST['full_name']
-            user_email = request.POST['email']
-            message = request.POST['message']
+            full_name = contact_form.cleaned_data['full_name']
+            user_email = contact_form.cleaned_data['email']
+            message = contact_form.cleaned_data['message']
             try:
                 send_mail(
-                    subject,
+                    # to capture the user email it's displayd in subject field and can be responded to
+                    f"Message from {full_name}, <{user_email}>", 
                     message,
                     user_email,
-                    [settings.DEFAULT_FROM_EMAIL]
+                    [settings.DEFAULT_FROM_EMAIL],
+                    fail_silently=False
                 )
                 return redirect('contact_thankyou')
             except BadHeaderError:
