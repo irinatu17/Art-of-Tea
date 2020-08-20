@@ -27,13 +27,13 @@
         </div>
         <div class="row my-4">
             <div class="col-sm-12 col-md-6 col-lg-4">
-                    {% if '/static/' in product.image.name %}
+                    {% if  'img/' in product.image.name %}
                     <a href="{{ product.image_url }}" target="_blank" rel="noopener">
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
-                            src="{{ product.image }}" 
+                            src="{{ STATIC_URL }}{{product.image}}"
                             alt="{{ product.name }}">
                     </a>
-                    {% elif product.image %}
+                     {% elif product.image %}
                     <a {% if  product.image_url %} href="{{ product.image_url }}" {%endif%}
                     
                     target="_blank" rel="noopener">
@@ -41,7 +41,7 @@
                             src="{{ MEDIA_URL }}{{ product.image }}" 
                             alt="{{ product.name }}">
                     </a>
-                    {% else %}
+                   {% else %}
                         <img class="card-img-top img-fluid rounded-lg shadow-sm" 
                             src="{{ STATIC_URL }}img/no-image.jpg" 
                             alt="{{ product.name }}">

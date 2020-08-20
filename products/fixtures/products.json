@@ -11,7 +11,7 @@
       "rating": 4.9,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/ceylon_op_nuwara_eliya.jpg",
+      "image": "img/products/ceylon_op_nuwara_eliya.jpg",
       "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
     }
   },
@@ -27,7 +27,7 @@
       "rating": 4.6,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/oolong_rose.jpg",
+      "image": "img/products/oolong_rose.jpg",
       "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg"
     }
   },
@@ -43,7 +43,7 @@
       "rating": 4.9,
       "has_weight": "False",
       "is_a_service": "False",
-      "image": "/static/img/products/home_matcha_kit.jpg",
+      "image": "img/products/home_matcha_kit.jpg",
       "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg"
     }
   },
@@ -59,7 +59,7 @@
       "rating": 4.1,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/white_peach.jpg",
+      "image": "img/products/white_peach.jpg",
       "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg"
     }
   },
@@ -75,7 +75,7 @@
       "rating": 5.0,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/naked_pu-erh_tea.jpg",
+      "image": "img/products/naked_pu-erh_tea.jpg",
       "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg"
     }
   },
@@ -91,7 +91,7 @@
       "rating": 4.8,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/fresh_green_tea.jpg",
+      "image": "img/products/fresh_green_tea.jpg",
       "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg"
     }
   },
@@ -107,7 +107,7 @@
       "rating": 4.5,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/sleep_tea.jpg",
+      "image": "img/products/sleep_tea.jpg",
       "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg"
     }
   },
@@ -123,7 +123,7 @@
       "rating": 4.5,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/classic_rooibos_tea.jpg",
+      "image": "img/products/classic_rooibos_tea.jpg",
       "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg"
     }
   },
@@ -139,7 +139,7 @@
       "rating": 4.2,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/matcha.jpg",
+      "image": "img/products/matcha.jpg",
       "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg"
     }   
   },
@@ -155,7 +155,7 @@
       "rating": 4.8,
       "has_weight": "True",
       "is_a_service": "False",
-      "image": "/static/img/products/chamomile.jpg",
+      "image": "img/products/chamomile.jpg",
       "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg"
     }   
   },
@@ -171,7 +171,7 @@
       "rating": 4.8,
       "has_weight": "False",
       "is_a_service": "False",
-      "image": "/static/img/products/iron_tea_pot.jpg",
+      "image": "img/products/iron_tea_pot.jpg",
       "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
     }   
   },
@@ -185,7 +185,7 @@
       "rating": 5.0,
       "is_a_service": "True",
       "duration": "1",
-      "image": "/static/img/services/tea-ceremony-japaneese.jpg",
+      "image": "img/services/tea-ceremony-japaneese.jpg",
       "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg"
     }   
   },
@@ -199,7 +199,7 @@
       "rating": 4.9,
       "is_a_service": "True",
       "duration": "1",
-      "image": "/static/img/services/chinese-tea-ceremony.jpg",
+      "image": "img/services/chinese-tea-ceremony.jpg",
       "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg"
     }   
   },
@@ -213,7 +213,7 @@
       "rating": 5.0,
       "is_a_service": "True",
       "duration": "2",
-      "image": "/static/img/services/incense_ceremony.jpg",
+      "image": "img/services/incense_ceremony.jpg",
       "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg"
     }   
   },
@@ -227,7 +227,7 @@
       "rating": 5.0,
       "is_a_service": "True",
       "duration": "2",
-      "image": "/static/img/services/exclusive_traditional_tea_ceremony.jpg",
+      "image": "img/services/exclusive_traditional_tea_ceremony.jpg",
       "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg"
     }   
   }
