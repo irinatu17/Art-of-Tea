@@ -279,11 +279,13 @@ The defensive design is implemented to restrict other than admin users to manual
 #### Django-allauth features
 ##### Sign Up
 The sign up page allows a user to create a new account. The user is asked to fill the fields "email", "username", "password" and "password (again)". When adding a username, the code compares it against existing email to ensure that it is unique. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted, a **verification email** is sent to the user's email to verify the email and finish registration process.   
-There is also a link to the login page for existing users at the bottom of the form.
+There is also a link to the login page for existing users at the bottom of the form.    
+ Registration page is only available to anonymous users.
 ##### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the login was successfull, a user is redirected to the home page and the toast success message appears informing that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input.   
 There is also a link to the sign up page for new users at the bottom of the form.
 As well as that, there's a link to the **forgot password** functionality, using which a user can reset their password.
+Login page is only available to anonymous users.
 ##### Forgot password
 A user can reset their password to be able to login by entering the email. Then the link for reseting password will be sent to the email provided. The user can create a new password and then login with a new password.
 ##### Logout
@@ -530,6 +532,7 @@ Forgot password, verification email, login - all work as expected.
 - Entering incorrect emails, incorrect password and case sensitivity works as expected.
 - Trying to register with an already registered email works as expected.
 - Entering two different passwords and trying to enter old password when re-setting password works as expected.
+- Registration and login pages are only available to anonymous users.
 
 ### Validators
 #### HTML
@@ -554,6 +557,24 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 - [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
 - I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
+
+### Bugs
+#### Save info
+During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False).     
+To fix that few additional line od code was added to 
+-  **stripe.js** file:    
+`var saveInfo = document.getElementById('save_info').value;`
+- **webhook_handler.py** file:     
+`save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None`  
+
+- **checkout/views.py** file:
+```bash 
+if request.POST['save_info'] == "true":
+                request.session['save_info'] = True
+            else:
+                request.session['save_info'] = False
+```
+
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
