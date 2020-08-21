@@ -19,7 +19,7 @@ class TestEventsModels(TestCase):
 
 
     
-    def test_category_method_returns_str_method(self):
+    def test__str_method_returns_weekday(self):
 
         event = Event.objects.create(weekday = 'Monday',time = "14:00", description = "Tea testing")
 
