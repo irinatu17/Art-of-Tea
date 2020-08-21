@@ -1,4 +1,9 @@
 # Testing
+ 1. [**Manual Testing**](#manual-testing)
+ 2. [**Automated Testing**](#automated-testing)
+ 3. [**Validators**](#validators)
+ 4. [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
+ 5. [**Bugs**](#bugs)
 ## Manual Testing
 Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers. Some results and the actions that took place during the manual testing phase are displayed below:
 ### Navbar, Search and Footer
