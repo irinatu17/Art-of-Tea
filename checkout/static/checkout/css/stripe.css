@@ -7,10 +7,10 @@
 box-sizing: border-box;
 height: 40px;
 padding: 10px 12px;
-border: 1px solid transparent;
+border: 1px solid #ced4da;
 border-radius: 4px;
 background-color: white;
-box-shadow: 0 1px 3px 0 #e6ebf1;
+box-shadow: 0 1px 3px 0 #ced4da;
 -webkit-transition: box-shadow 150ms ease;
 transition: box-shadow 150ms ease;
 }
@@ -19,7 +19,7 @@ transition: box-shadow 150ms ease;
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-box-shadow: 0 1px 3px 0 #cfd7df;
+box-shadow: 0 1px 3px 0 #ced4da;
 }
 .StripeElement--invalid {
 border-color: #fa755a;
