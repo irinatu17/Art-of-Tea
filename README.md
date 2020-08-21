@@ -559,22 +559,27 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 - I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
 
 ### Bugs
-#### Save info
+#### Save info field
 During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False).     
 To fix that few additional line od code was added to 
 -  **stripe.js** file:    
 `var saveInfo = document.getElementById('save_info').value;`
-- **webhook_handler.py** file:     
-`save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None`  
-
 - **checkout/views.py** file:
 ```bash 
 if request.POST['save_info'] == "true":
                 request.session['save_info'] = True
             else:
                 request.session['save_info'] = False
-```
+```   
 
+Now first I get the value of "save_info" field, if it's equal to "true" I assign it as True, if "false" - to False. The issue was successfully solved.
+ - As well as that, I had an issue with non-logged in user. The save info field is visible only for authenticated users, so if it's a guest it's should be set to None.
+Therefore the following line was added to the **webhook_handler.py** file:    
+`save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None`  
+
+#### Comment field
+Similar to the save_info field, I got an issue with optional comment field when the form was handled via webhooks. If the comment field was empty, that throw an error and didn't save the order properly in the database. The problem was that if the field was empty, it wasn't set as None, so adding the following line successfully solved the issue:    
+`comment = intent.metadata.comment if hasattr(intent.metadata, 'comment') else None`
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
 </div>
