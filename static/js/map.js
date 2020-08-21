@@ -1,7 +1,7 @@
 /**
-   * Initilizes the map
-   * from Google Maps API
-   */
+ * Initilizes the map
+ * from Google Maps API
+ */
 function initMap() {
   const mapRef = document.getElementById('map');
   const contentRef = document.getElementById('info-window-content');
