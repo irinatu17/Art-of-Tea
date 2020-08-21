@@ -1,30 +1,30 @@
-$(document).ready(function() {
-
-    //Hiding search field on mobile when the page loads
-    $('#search-form-container').hide();
-
-    //Sliding down and up the search form, when the search icon is clicked(tablet and mobile screens)
-    $("#search-button").click(function(){
-        $("#search-form-container").slideToggle("slow");
+$(document).ready(function () {
+  $('#search-form-container').hide();
+  /**
+   *  Toggles the searchbar on smaller screens
+   */
+  $('#search-button').click(function () {
+    $('#search-form-container').slideToggle('slow');
+  });
+  /**
+   * Initilizes the Date Time Picker
+   * From Tempus Dominus Bootstrap 4 Datetime Picker
+   * https://tempusdominus.github.io/bootstrap-4/
+   */
+  const dateTimePickerInit = () => {
+    $('#datetime, div[id^=datetime_cart-]').datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+      minDate: new Date(),
+      enabledHours: [12, 13, 14, 15, 16, 17, 18, 19, 20],
+      stepping: 30,
     });
-
-    //Tempus Dominus bootstrap-datetimepicker.
-    // In the cart app in case 2 or more services are added:
-    // After the datepickers are initialized, it's calling them again, looping over .each(),
-    // and assigning the value to the data-attribute "data-value=''" for the selected datepicker
-    $(function () {
-        $("#datetime, div[id^=datetime_cart-]").datetimepicker({
-            format: 'DD/MM/YYYY HH:mm',
-            minDate: new Date(),
-            enabledHours: [12, 13, 14, 15, 16, 17, 18, 19, 20],
-            stepping: 30,
-        });
-        $("div[id^=datetime_cart-]").each(function() {
-            $(this).children("input.datetimepicker-input").val($(this).data("value"));
-        });
+    $('div[id^=datetime_cart-]').each(function () {
+      $(this).children('input.datetimepicker-input').val($(this).data('value'));
     });
-
-    // Initialize Bootstrap toasts
-    $('.toast').toast('show');
-
+  };
+  dateTimePickerInit();
+  /**
+   *  Initializes Bootstrap toasts
+   */
+  $('.toast').toast('show');
 });
