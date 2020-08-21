@@ -39,11 +39,6 @@ Explore the misterious and amazing world of tea with us!
     - [**Databases**](#databases)
 
 5. [**Testing**](#testing)
-    - [**Manual Testing**](#manual-testing)
-    - [**Automated Testing**](#automated-testing)
-    - [**Validators**](#validators)
-    - [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
-
 6. [**Deployment**](#deployment)
     - [**Local Deployment**](#local-deployment)
     - [**Heroku Deployment**](#heroku-deployment)
