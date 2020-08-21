@@ -431,6 +431,9 @@ Description | description | CharField | max_length=254
 - [Stripe](https://stripe.com/ie) - to handle financial transactions.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to style Django forms.
 - [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) - to see the percentage of the automated testsing.
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)- to render the map in Contact page.
+
+
 
 
 
