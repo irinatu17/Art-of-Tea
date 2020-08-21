@@ -8,8 +8,8 @@
 {% include 'products/includes_services/breadcrumbs_service_details.html' %} 
 
 <!--Main content-->
-<div class="container mt-4">
-    <div class="row ">
+<div class="container my-5">
+    <div class="row mt-2">
         <div class="col-12">
             <h1 class="uppercase main-heading text-center">{{ service.name }}</h1>
             {% if request.user.is_superuser %}
@@ -20,18 +20,18 @@
                     </p>
             {% endif %}
             <hr class="divider-green w-25 my-4">
-            <div class="col-12 col-md-10 offset-md-1">
+            <div class="col-12 col-md-10 offset-md-1 my-4">
                 {% if  'img/' in service.image.name %}
                     <a {% if  service.image_url %} href="{{ service.image_url }}" {%endif%}
                     target="_blank" rel="noopener">
-                        <img class="img-fluid w-100 rounded-lg" 
+                        <img class="img-fluid w-100 service-details-image" 
                              src="{{ STATIC_URL }}{{ service.image }}" 
                              alt="{{ service.name }}">
                     </a>
                 {% elif service.image %}
                     <a {% if  service.image_url %} href="{{ service.image_url }}" {%endif%}
                     target="_blank" rel="noopener">
-                        <img class="img-fluid w-100 rounded-lg" 
+                        <img class="img-fluid w-100 service-details-image" 
                              src="{{ MEDIA_URL }}{{ service.image }}" 
                              alt="{{ service.name }}">
                     </a>
@@ -41,13 +41,13 @@
                             alt="{{ service.name }}">
                 {% endif %}
                 <div class="row mt-4 mb-2">
-                    <div class="col-12 col-md-6 ">
+                    <div class="col-12 col-md-6 mt-3">
                         <!--Description-->
                         <p class="landing-paragraph">{{ service.description }}</p>
                         <!--Itinerary-->
                             {% include 'products/includes_services/itinerary.html' %}
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mt-3">
                         <div class="d-flex justify-content-between">
                             <div>
                                 <!--Duration-->

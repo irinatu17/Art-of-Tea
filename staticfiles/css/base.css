@@ -161,7 +161,6 @@ background: linear-gradient(var(--darkgreen), var(--darkgreen));
 color: var(--white) !important; 
 }
 .btn-next:hover{
-color: var(--black) !important; 
 background-color: var(--lightgreen) !important;
 }
 
@@ -441,6 +440,12 @@ background-color: var(--lavander);
 line-height: 5px;
 }
 
+.service-details-image{
+max-height: 36rem;
+object-fit: contain;
+border-radius: 1rem;
+}
+
 /*Contact page*/
 
 #map{
@@ -481,7 +486,6 @@ z-index: -1;
 
 /*Checkout*/
 .order-summary-items{
-
 max-height: 15.6rem;
 overflow-y: auto;
 }
@@ -491,9 +495,10 @@ font-size: 0.6rem;
 }
 
 .service-image{
-object-fit: contain;
+object-fit: cover;
 height: 100%;
 }
+
 .service-no-img{
 max-height: 18.75rem;
 object-fit: cover;
@@ -518,6 +523,7 @@ color:rgb(73, 80, 87) !important;
 .form-control{
 color:rgb(73, 80, 87);
 }
+
 .form-control:focus {
 border-color: var(--lightgreen);
 box-shadow: 0 0 0 0.2rem rgba(30, 255, 0, 0.206);
