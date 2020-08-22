@@ -63,7 +63,7 @@ def update_cart(request, item_id):
             if not cart[item_id]['items_by_datetime']:
                 cart.pop(item_id)
             messages.info(request,
-                             (f'Removed {product.name} from your cart'))
+                          (f'Removed {product.name} from your cart'))
     else:
         if quantity > 0:
             cart[item_id] = quantity
