@@ -79,6 +79,7 @@ class StripeWH_Handler:
             else:
                 profile = None
         order_exists = False
+        print(profile)
         # creates a delay of 5 seconds to avoid the order being added twice
         attempt = 1
         while attempt <= 5:
@@ -135,6 +136,15 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
+                    else:
+                        for datetime, quantity in item_data['items_by_datetime'].items():
+                            order_line_item = OrderItemDetails(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                datetime=datetime,
+                            )
+                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()

@@ -9,24 +9,26 @@
     </thead>
     <tbody>
         {% for order in orders %}
-        <tr class="border-bottom py-3">
-            <td>
-                <a href="{% url 'order_details' order.order_number %}">
-                {{ order.order_number|truncatechars:7 }}
-                </a>
-            </td>
-            <td class="small">{{ order.purchase_date }}</td>
-            <td>
-                <ul class="list-unstyled">
-                    {% for item in order.orderitems.all %}
-                        <li class="small">
-                            {{ item.product.name }} x {{ item.quantity }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </td>
-            <td class="small">€{{ order.grand_total }}</td>
-        </tr>
+            {%  if order.grand_total > 0 %}
+            <tr class="border-bottom py-3">
+                <td>
+                    <a href="{% url 'order_details' order.order_number %}">
+                    {{ order.order_number|truncatechars:7 }}
+                    </a>
+                </td>
+                <td class="small">{{ order.purchase_date }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for item in order.orderitems.all %}
+                            <li class="small">
+                                {{ item.product.name }} x {{ item.quantity }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td class="small">€{{ order.grand_total }}</td>
+            </tr>
+            {% endif %}
         {% empty %}
             <tr>
             <td colspan="4" class="text-center">
