@@ -12,7 +12,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/ceylon_op_nuwara_eliya.jpg",
-      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg"
+      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -28,7 +29,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/oolong_rose.jpg",
-      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg"
+      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -44,7 +46,8 @@
       "has_weight": "False",
       "is_a_service": "False",
       "image": "img/products/home_matcha_kit.jpg",
-      "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg"
+      "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -60,7 +63,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/white_peach.jpg",
-      "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg"
+      "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -76,7 +80,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/naked_pu-erh_tea.jpg",
-      "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg"
+      "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -92,7 +97,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/fresh_green_tea.jpg",
-      "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg"
+      "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -108,7 +114,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/sleep_tea.jpg",
-      "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg"
+      "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -124,7 +131,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/classic_rooibos_tea.jpg",
-      "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg"
+      "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg",
+      "discontinued": "False"
     }
   },
   {
@@ -140,7 +148,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/matcha.jpg",
-      "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg"
+      "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -156,7 +165,8 @@
       "has_weight": "True",
       "is_a_service": "False",
       "image": "img/products/chamomile.jpg",
-      "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg"
+      "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -172,7 +182,8 @@
       "has_weight": "False",
       "is_a_service": "False",
       "image": "img/products/iron_tea_pot.jpg",
-      "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg"
+      "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -186,7 +197,8 @@
       "is_a_service": "True",
       "duration": "1",
       "image": "img/services/tea-ceremony-japaneese.jpg",
-      "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg"
+      "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -200,7 +212,8 @@
       "is_a_service": "True",
       "duration": "1",
       "image": "img/services/chinese-tea-ceremony.jpg",
-      "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg"
+      "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -214,7 +227,8 @@
       "is_a_service": "True",
       "duration": "2",
       "image": "img/services/incense_ceremony.jpg",
-      "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg"
+      "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg",
+      "discontinued": "False"
     }   
   },
   {
@@ -228,7 +242,8 @@
       "is_a_service": "True",
       "duration": "2",
       "image": "img/services/exclusive_traditional_tea_ceremony.jpg",
-      "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg"
+      "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg",
+      "discontinued": "False"
     }   
   }
 ]

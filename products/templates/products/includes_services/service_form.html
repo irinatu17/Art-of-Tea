@@ -1,3 +1,4 @@
+{% if not service.discontinued %}
 <p class="text-muted mt-3">Please fill out the form below to book the ceremony</p>
 <form class="form" action="{% url 'add_to_cart' service.id %}" method="POST">
     {% csrf_token %}
@@ -20,8 +21,22 @@
      and we will get back to you soon to discuss further details.</p>
     <!--buttons-->
     <div class="mt-4 mb-4 text-center text-md-left">
-        <a href="{% url 'services' %}" class="btn btn-service uppercase button-black-outline px-3 mr-0 mr-lg-3"><i class="fas fa-angle-left"></i> Go back</a>
-        <input type="submit" class="btn button-green btn-service uppercase  px-3" value="Add to Cart">
+        <a href="{% url 'services' %}" class="btn btn-service uppercase products-btn button-black-outline px-3 mr-1 mr-lg-3">
+            <i class="fas fa-angle-left"></i> Services
+        </a>
+        <input type="submit" class="btn button-green btn-service uppercase products-btn px-3" value="Add to Cart">
     </div>
     <input type="hidden" name="redirect_url" value="{{ request.path }}">
 </form>
+{% else %}
+<div class="row">
+    <div class="col-12">
+        <p class="uppercase font-weight-bold text-danger">not available</p>
+    </div>
+    <div class="col-12 mt-3">
+        <a href="{% url 'products' %}" class="btn button-black-outline uppercase px-3 mr-3">
+            <i class="fas fa-angle-left"></i> all services
+        </a>
+    </div>
+</div>
+{% endif %}

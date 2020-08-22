@@ -416,6 +416,10 @@ height: 20.6rem;
 object-fit: cover;
 }
 
+.products-btn{
+font-size: 0.8rem;
+}
+
 .delivery-info{
 background-color: var(--lightgreen);
 }
@@ -591,6 +595,10 @@ font-size: 100%;
 .checkout-button{
 font-size: 0.8rem;
 }
+
+.products-btn{
+font-size: 1rem;
+}
 }
 
 /* Media query for medium devices (tablets, 768px and up)*/
@@ -673,6 +681,10 @@ box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 border-radius: .5rem;
 border-top: 0;
 }
+
+.products-btn{
+font-size: 0.8rem;
+}
 }
 
 /*Media query for large devices (desktops, 992px and up)*/
@@ -731,6 +743,10 @@ color: var(--lightgreen) !important;
 
 #contact-form-btn{
 width:50% !important;
+}
+
+.products-btn{
+font-size: 1rem;
 }
 }
 

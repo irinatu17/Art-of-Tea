@@ -18,11 +18,13 @@
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-lg-10 mt-4">
         {% for service in services %} 
-            {% if service.pk|divisibleby:2 %}
-                {% include 'products/includes_services/even_services_cards.html' %} 
-            {% else %}
-                {% include 'products/includes_services/odd_services_cards.html' %} 
-            {% endif %} 
+            {% if not service.discontinued %}
+                {% if service.pk|divisibleby:2 %}
+                    {% include 'products/includes_services/even_services_cards.html' %} 
+                {% else %}
+                    {% include 'products/includes_services/odd_services_cards.html' %} 
+                {% endif %} 
+            {% endif %}
         {% endfor %}
             <div class="text-center mt-5 mb-5" >
                 <hr class="divider-green w-25 my-4">

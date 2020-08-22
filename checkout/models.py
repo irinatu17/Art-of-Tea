@@ -76,7 +76,7 @@ class OrderItemDetails(models.Model):
                               on_delete=models.CASCADE,
                               related_name='orderitems')
     product = models.ForeignKey(Product, null=False,
-                                blank=False, on_delete=models.CASCADE)
+                                blank=False, on_delete=models.PROTECT)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     item_total = models.DecimalField(max_digits=6, decimal_places=2,
                                      null=False, blank=False, editable=False)

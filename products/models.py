@@ -57,6 +57,7 @@ class Product(models.Model):
                                  validators=[MinValueValidator(0),
                                              MaxValueValidator(5)])
     is_a_service = models.BooleanField(default=False)
+    discontinued = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     # Fields related to only teas and teaware

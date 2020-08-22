@@ -79,7 +79,6 @@ class StripeWH_Handler:
             else:
                 profile = None
         order_exists = False
-        print(profile)
         # creates a delay of 5 seconds to avoid the order being added twice
         attempt = 1
         while attempt <= 5:

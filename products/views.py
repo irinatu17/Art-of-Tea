@@ -119,6 +119,7 @@ def add_product(request):
             if product_form.is_valid():
                 product = product_form.save(commit=False)
                 product.has_weight = request.POST.get('has_weight_value')
+                product.discontinued = False
                 product.save()
                 messages.success(request, 'Successfully added product!')
                 return redirect(reverse('product_details', args=[product.id]))
@@ -132,6 +133,7 @@ def add_product(request):
             if service_form.is_valid():
                 service = service_form.save(commit=False)
                 service.is_a_service = True
+                service.discontinued = False
                 service.save()
                 itinerary = Itinerary.objects.create(service=service,
                                                      name=service.name)
@@ -193,7 +195,8 @@ def delete_product(request, product_id):
              Only store owners can delete products.')
         return redirect(reverse('landing'))
     product = get_object_or_404(Product, pk=product_id)
-    product.delete()
+    product.discontinued = True
+    product.save()
     messages.info(request, f'{product.name} was successfully deleted.')
     return redirect(reverse('products'))
 
@@ -237,7 +240,8 @@ def delete_service(request, service_id):
              Only store owners can delete services.')
         return redirect(reverse('landing'))
     service = get_object_or_404(Product, pk=service_id)
-    service.delete()
+    service.discontinued = True
+    service.save()
     messages.info(request, f'{service.name} was successfully deleted.')
     return redirect(reverse('services'))
 

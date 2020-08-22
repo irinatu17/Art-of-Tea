@@ -12,6 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
         'has_weight',
         'image',
         'image_url',
+        'discontinued',
     )
 
     ordering = ('sku',)

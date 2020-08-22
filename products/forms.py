@@ -12,6 +12,7 @@ class ProductForm(forms.ModelForm):
                   'has_weight',
                   'image_url',
                   'image',
+                  'discontinued',
                   )
     image = forms.ImageField(label='Image', required=False)
 
@@ -27,6 +28,7 @@ class ProductForm(forms.ModelForm):
             'has_weight': 'Product Type *',
             'image_url': 'Image URL',
             'image': 'Image',
+            'discontinued': 'Discontinued',
         }
 
         categories = Category.objects.all()
@@ -48,7 +50,7 @@ class ServiceForm(forms.ModelForm):
         model = Product
         fields = ('name', 'description', 'price',
                   'rating', 'duration', 'image_url',
-                  'image',
+                  'image', 'discontinued',
                   )
     image = forms.ImageField(label='Image', required=False)
 
@@ -62,7 +64,7 @@ class ServiceForm(forms.ModelForm):
             'duration': 'Duration (in hrs) *',
             'image_url': 'Image URL',
             'image': 'Image',
-
+            'discontinued': 'Discontinued',
         }
 
         for field in self.fields:
