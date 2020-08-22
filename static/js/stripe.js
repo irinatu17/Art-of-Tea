@@ -24,7 +24,7 @@ const style = {
     }
 };
 // Create an instance of the card Element
-let card = elements.create('card', {style: style});
+let card = elements.create('card', {hidePostalCode: true, style: style});
 card.mount('#card-element');
 
 // Handle real-time validation errors from the card Element.
@@ -107,7 +107,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                   form.submit();
+                //    form.submit();
                 }
             }
         });
