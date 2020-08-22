@@ -52,7 +52,7 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         cart = intent.metadata.cart
-        save_info = intent.metadata.save_info if hasattr(intent.metadata,'save_info') else None
+        save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None
         comment = intent.metadata.comment if hasattr(intent.metadata, 'comment') else None
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
