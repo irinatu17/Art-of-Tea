@@ -133,12 +133,10 @@ WSGI_APPLICATION = 'art_of_tea.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    print("using Postgres DB")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
-    print("using SQLite3 DB")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
