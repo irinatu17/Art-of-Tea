@@ -13,11 +13,19 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_superuser %}
-                        <a href="{% url 'add_product' %}" class="dropdown-item">Admin Management</a>
+                        <a href="{% url 'add_product' %}" class="dropdown-item">
+                            <i class="fas fa-edit"></i> Product Management
+                        </a>
                         {% endif %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
-                        <a class="dropdown-item" href="{% url 'order_history' %}">Order History</a>
-                        <a class="dropdown-item border-top" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}"> 
+                            <i class="fas fa-user"></i> My profile
+                        </a>
+                        <a class="dropdown-item" href="{% url 'order_history' %}">
+                            <i class="fas fa-history"></i> Order History
+                        </a>
+                        <a class="dropdown-item border-top" href="{% url 'account_logout' %}">
+                           <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
                     </div>
            </li>
             {% else %}

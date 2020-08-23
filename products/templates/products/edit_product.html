@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center mt-5">
-            <h1 class="uppercase main-heading">Admin Management</h1>
+            <h1 class="uppercase main-heading">Product Management</h1>
             <hr class="divider-green w-25 mt-3">
          </div>
     </div>
@@ -61,9 +61,13 @@
                     </p>
                 </div>
                 <input type="hidden" id="is_a_service" name="is_a_service" value="False">
-                <div class="text-right mt-4">
-                    <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-info" type="submit">Edit Product</button>
+                <div class="text-right my-4">
+                    <a class="btn button-black-outline mr-2" href="{% url 'products' %}">
+                        <i class="fas fa-angle-left"></i> Products
+                    </a>
+                    <button class="btn btn-info" type="submit"> 
+                        <i class="fas fa-edit mr-1 d-none d-md-inline"></i> Edit Product
+                    </button>
                 </div>
             </form>
         </div>            
