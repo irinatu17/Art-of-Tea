@@ -605,6 +605,29 @@ font-size: 1rem;
 }
 }
 
+/* Specific Media query for small devices from 501px to 768px width*/
+@media (min-width: 501px) and (max-width: 768px){
+.landing-button{
+margin-top: 0 !important;
+}
+}
+
+/* Specific Media query for small devices from 530px to 768px width*/
+@media (min-width: 530px) and (max-width: 768px){
+.landing-text{
+left: 5%;
+top: 65%;
+}
+}
+
+/* Specific Media query for small devices from 991px to 1016px width*/
+@media (min-width: 991px) and (max-width: 1016px){
+.landing-main-heading {
+font-size: 4rem !important;
+}
+
+}
+
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
 
@@ -614,6 +637,10 @@ font-size: 2.5rem;
 
 h2 {
 font-size: 2rem;
+}
+
+.landing-button{
+margin-top: 0 !important;
 }
 
 .main-nav-sticky {
@@ -699,6 +726,10 @@ font-size: 0.8rem;
 @media (min-width: 992px) {
 h2 {
 font-size: 2.3rem;
+}
+
+.container{
+max-width: 74rem !important;
 }
 
 .logo-navbar{
