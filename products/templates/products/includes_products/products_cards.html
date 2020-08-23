@@ -49,7 +49,7 @@
             {% csrf_token %}
             <input name="quantity" type="hidden" value="1">
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            <input type="submit" class="btn button-green products-btn px-3" value="Add to Cart">
+            <input type="submit" class="btn button-green px-3" value="Add to Cart">
         </form>
         <a href="{% url 'product_details' product.id %}" 
             class="btn button-black px-3">

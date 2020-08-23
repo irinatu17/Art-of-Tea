@@ -12,7 +12,7 @@
 
     <div class="row mb-5 mt-5">
         <!--Add Product form-->
-        <div class="col-12 col-md-8 offset-md-2 mb-3">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 mb-3 px-2">
             <div class="accordion" id="accordionForm">
                 <div class="card">
                     <div class="card-header" id="headingProduct">
@@ -27,11 +27,9 @@
                     <div id="collapseProduct" class="collapse" aria-labelledby="headingProduct"
                          data-parent="#accordionForm">
                         <div class="card-body">
-                            <form method="POST"  action="{% url 'add_product' %}" 
-                                class="form p-4 shadow rounded-lg" 
+                            <form method="POST"  action="{% url 'add_product' %}"  class="form" 
                                 id="product_form" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <!-- <h5 class="font-weight-bold mb-4">Step 1. Product Details</h5> -->
                             {{ product_form.name | as_crispy_field }}
                             {{ product_form.description | as_crispy_field }}
                             {{ product_form.category | as_crispy_field }}
@@ -59,8 +57,12 @@
                                     and paste direct link here.</p>
                             </div>
                             <div class="text-right mt-4">
-                                <a class="btn button-black-outline mr-2" href="{% url 'products' %}">Cancel</a>
-                                <button class="btn button-green" name="product"  type="submit">Add Product</button>
+                                <a class="btn button-black-outline mr-2" href="{% url 'products' %}">
+                                    <i class="fas fa-angle-left"></i> Products
+                                </a>
+                                <button class="btn button-green" name="product"  type="submit">
+                                    <i class="fas fa-plus mr-1 d-none d-md-inline"></i> Add Product
+                                </button>
                             </div>
                             </form>
                         </div>
@@ -76,9 +78,10 @@
                         </button>
                     </h2>
                     </div>
-                    <div id="collapseService" class="collapse" aria-labelledby="headingService" data-parent="#accordionForm">
+                    <div id="collapseService" class="collapse" aria-labelledby="headingService"
+                         data-parent="#accordionForm">
                     <div class="card-body">
-                        <form method="POST" action="{% url 'add_product' %}" class="form p-4 shadow rounded-lg" 
+                        <form method="POST" action="{% url 'add_product' %}" class="form" 
                             enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ service_form.name | as_crispy_field }}
@@ -96,8 +99,12 @@
                             </div>
                             <input type="hidden" name="discontinued" value="False">
                             <div class="text-right mt-4">
-                                <a class="btn button-black-outline mr-2" href="{% url 'services' %}">Cancel</a>
-                                <button class="btn button-green" name="service" type="submit">Add Service</button>
+                                <a class="btn button-black-outline mr-2" href="{% url 'services' %}">
+                                    <i class="fas fa-angle-left"></i> Services
+                                </a>
+                                <button class="btn button-green" name="service" type="submit">
+                                    <i class="fas fa-plus mr-1 d-none d-md-inline"></i> Add Service
+                                </button>
                             </div>
                         </form>
                     </div>

@@ -10,8 +10,8 @@ from .forms import ProductForm, ServiceForm, ItineraryForm
 def all_products(request):
     """ A view to display all of the products with search queries"""
 
-    products = Product.objects.filter(is_a_service=False)
-
+    all_products = Product.objects.filter(is_a_service=False)
+    active_products = all_products.filter(discontinued=False)
     # empty query and categories when tha page is loaded
     query = None
     categories = None
@@ -23,7 +23,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             # the __in syntax allow to search for the name field
             # in categories model
-            products = products.filter(category__name__in=categories)
+            active_products = active_products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'serach_term_input' in request.GET:
@@ -38,10 +38,10 @@ def all_products(request):
             search_queries = Q(name__icontains=query) | \
                 Q(description__icontains=query)
             # pass quieries to the filter method to actually filter products
-            products = products.filter(search_queries)
+            active_products = active_products.filter(search_queries)
 
     context = {
-        'products': products,
+        'products': active_products,
         'selected_categories': categories,
         'search_word': query,
     }
