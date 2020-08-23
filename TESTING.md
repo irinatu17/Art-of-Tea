@@ -5,12 +5,64 @@
  4. [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
  5. [**Bugs**](#bugs)
 ## Manual Testing
-Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers. Some results and the actions that took place during the manual testing phase are displayed below:
-### Navbar, Search and Footer
-- All links in the navbar and the footer were tested to ensure that they are pointing to the correct destination.
-- On the smaller devices the **search** button collapses the search input box and redirects to the products page with correct results displayed. I've tried to submit an empty search query, the error appeared informing that no search word was entered. Also, I've tried to enter key that doesn't exist in the database to check if I get the paragraph telling that no results were found for the entered query.
-- The hover effect on the nav-items was checked as well as the active page was highlighted correctly depending on which page I am currently on.
-- In footer all the social media links lead to the corresponding pages and open in the new tabs.
+Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers.  
+### Responsiveness
+- **User story being tested**:       
+*As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.*
+- **Test implementation**
+    - check each page of the website from multiple devices and multiple browsers
+    - open the website in the Google Dev Tooles and click on "Responsive" to check all pages for all resolutions from 320px and above
+    - more detailed information about responsiveness testing can be found in [Compatibility and Responsiveness](#compatibility-and-responsiveness) section
+- **Results**: Some minor responsiveness issues were found (e.g. in the landing and events pages) and fixed by adding media queries, adjusting some box model components, adding some Bootstrap utilities for layout.   
+- **Verdict**: The issues were fixed, the test passed.
+
+### Navbar
+- **User story being tested**:      
+*As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
+- **Test implementation**
+    - click on all the links in the navbar, to check if they work properly pointing to the correct destination
+    - check all links on the different devices (navbar looks different for mobile, tablet and desktop screens)
+    - on mobile devices make sure that navbar is collapsed and the side bar shows up when the hamburger menu is clicked 
+    - scroll down the page to see if the navbar is visible for a user all the time
+    - on the large devices hover over the links to see if the highlighted effect (change colour to green and expand) works properly
+    - check if the active page was highlighted correctly(active link's colour changes to green) depending on which page a user is currently on
+    - on the smaller devices the search button collapses the search input box and redirects to the products page
+    - test the navbar being non-logged in, logged in and admin user and to see if the user's status is reflected in the navbar links (login|register - for guests users, my profile, order history, logout - for all logged in users, for admin additional link - product management)
+    - check when an item is added to the cart, a cart icon's colour changes to yellow and a badge with cart total appears, the total updates each time new item is added or deleted from the cart
+- **Results and Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
+### Footer
+- **User stories being tested**:     
+*As a user, I want to easily access social media links of the company, so that I can read more information about it.*     
+*As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
+- **Test implementation**
+    -  click on the social media icons to check if they lead to the corresponding pages and open in the new tabs 
+    -  check if GitHub and LinkedIn icons open my profiles, while Instagram and Facebook icons open the main pages (as it's an educational project and there are no real pages exist)
+    - check different devices to test if the footer id displayed correctly (with additional top section on large resolutions)
+    - on large resolution, click on all the links in the footer (Quick links section, logo), to check if they work properly pointing to the correct destination
+    - hover over the links and social media icons to test if the hover effect is working properly
+- **Results and Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
+### Search bar
+- **User story being tested**:     
+*As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.*
+- **Test implementation**
+    - enter any search word into the search box to see if it redirects to the products page with correct results displayed
+    - submit an empty search query without entering anything
+    - enter some search words that expected to be found in the website (e.g. "matcha", "green", "teapot")
+    - enter some search words that not expected to be found in the website, from totally different areas (e.g. "coding", "microbiology") or just random letters/numbers
+    - make search queries from different pages to make sure it works accross all the website
+ - **Results**:       
+    - when an empty form is submitted without any queries, the error message appeares informing that no search word was entered
+    - if the search query exists in the database, the products page renders, displaying the search word, number of the results found and all products that satisfy the query
+    - if the search query does not exists in the database, the products page renders, displaying the search word, numer of results equal to 0 and a paragraph telling that no results were found for the entered query
+    - search box works accross all the app, no matter which page a user is currently on
+ - **Bugs found and fixed**: After refactoring the delete products admin functionality and adding *Discontinued* field (described more detailed in the corresponding section), the search number of results showed the total number of all products including the out of stock, discountinued products. To fix that, an if statement was added to the `def all_products`:     
+ `active_products = all_products.filter(discontinued=False)`     
+So after that the query functionality is being applied only to the active products, that are in stock. The bug was successfully fixed. 
+ - **Verdict**: The bug is fixed. Test passed.
+ 
+ 
 ### Landing page 
 - The animation on scroll works as expected
 - All the links lead to the correct pages
@@ -75,11 +127,13 @@ Forgot password, verification email, login - all work as expected.
 - Registration and login pages are only available to anonymous users.
 
 ## Automated Testing
-Automated testing is implemented to support manual testing during the development process as required.   
+Automated testing is implemented to support manual testing during the development process.   
 Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
 *Note:* The tests should be added in local database, as The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. To run the test and check the output, the database (Postgres) code configuration in `settings.py` should be temporarily removed or commented out.     
-**Command used to tun the tests**:    
-`python3 manage.py test`
+- **Command used to run the tests**:    
+`python3 manage.py test`   
+- To run the tests within a specific app only:
+`python manage.py test <app name here>`
 ### Travis
 [Travis](https://travis-ci.org/) was also used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
 ## Validators
