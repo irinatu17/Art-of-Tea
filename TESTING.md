@@ -9,7 +9,7 @@ Manual testing was conducted with each feature and user story on different scree
 ### Responsiveness
 - **User story being tested**:       
 *As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.*
-- **Test implementation**
+- **Test implementation**:
     - check each page of the website from multiple devices and multiple browsers
     - open the website in the Google Dev Tooles and click on "Responsive" to check all pages for all resolutions from 320px and above
     - more detailed information about responsiveness testing can be found in [Compatibility and Responsiveness](#compatibility-and-responsiveness) section
@@ -19,7 +19,7 @@ Manual testing was conducted with each feature and user story on different scree
 ### Navbar
 - **User story being tested**:      
 *As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
-- **Test implementation**
+- **Test implementation**:
     - click on all the links in the navbar, to check if they work properly pointing to the correct destination
     - check all links on the different devices (navbar looks different for mobile, tablet and desktop screens)
     - on mobile devices make sure that navbar is collapsed and the side bar shows up when the hamburger menu is clicked 
@@ -35,7 +35,7 @@ Manual testing was conducted with each feature and user story on different scree
 - **User stories being tested**:     
 *As a user, I want to easily access social media links of the company, so that I can read more information about it.*     
 *As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
-- **Test implementation**
+- **Test implementation**:
     -  click on the social media icons to check if they lead to the corresponding pages and open in the new tabs 
     -  check if GitHub and LinkedIn icons open my profiles, while Instagram and Facebook icons open the main pages (as it's an educational project and there are no real pages exist)
     - check different devices to test if the footer id displayed correctly (with additional top section on large resolutions)
@@ -62,13 +62,38 @@ Manual testing was conducted with each feature and user story on different scree
 So after that the query functionality is being applied only to the active products, that are in stock. The bug was successfully fixed. 
  - **Verdict**: The bug is fixed. Test passed.
  
- 
 ### Landing page 
-- The animation on scroll works as expected
-- All the links lead to the correct pages
-- All the image-carousels work properly
+- **User story being tested**:     
+*As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.*
+- **Test implementation**:
+    - click all the buttons accross the page
+    - scroll down the page to check the animation on scroll (AOS)
+    - ckeck all the image-carousels and reviews-carousel by clicking on chevrons
+    - verify that the expected text, icons and  images are displayed 
+ - **Results**:
+    - all the buttons redirect to the corresponding pages (About, Services, Products, Events and Contact)
+    - the hover effect on buttons works as expected(expanding, checnging background colour)
+    - animation on scroll works as expected on all sections and across all devices
+    - image and review carousels display correctly when chevrons are clicked
+    - all the text sections, icons and all the images display correctly, changing the position, size when viewed on different screens
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
 ### About page
-- Information is displayed correctly, animation on scroll and image gallery work as expected
+- **User story being tested**:     
+*As a user, I want to find an information about the company, to know what they do, what their main principles and ideas*
+- **Test implementation**:
+    - verify that the expected text is displayed correctly
+    - check that the correct images are displayed for each of the sections 
+    - scroll down the page to check the animation on scroll (AOS)
+    - ckeck the image-carousel in the "Our mission" section by clicking on chevrons
+- **Results**:
+    - all the text sections are displaied correctly on different screens
+    - all images are are displaied correctly, the position, layout changes on different screens as expected
+    - animation on scroll works as expected on all sections and across all devices
+    - an image carousel works correctly when chevrons are clicked
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
+
 ### Events page 
 - The data from the Events model is displayed correctly in the events table- Facebook link opens in the new tab leading to the main Facebook page (since there is no real page exists for the website)
 ### Contact
