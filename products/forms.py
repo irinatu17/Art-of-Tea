@@ -53,6 +53,7 @@ class ServiceForm(forms.ModelForm):
                   'image', 'discontinued',
                   )
     image = forms.ImageField(label='Image', required=False)
+    duration = forms.IntegerField(required=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -66,7 +67,6 @@ class ServiceForm(forms.ModelForm):
             'image': 'Image',
             'discontinued': 'Discontinued',
         }
-
         for field in self.fields:
             self.fields[field].label = labels[field]
 

@@ -64,7 +64,7 @@ class Product(models.Model):
     has_weight = models.BooleanField(default=False, null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
     # Field related to  only services(tea ceremonies)
-    duration = models.IntegerField(null=True,
+    duration = models.IntegerField(null=True, blank=True,
                                    validators=[MinValueValidator(1),
                                                MaxValueValidator(24)])
 
