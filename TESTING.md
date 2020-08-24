@@ -198,14 +198,31 @@ So after that the query functionality is being applied only to the active produc
     - after adding an itinerary items, page reloads and a new itinerary item added and displayed as expected.
     - after removing an itinerary item by clicking the trash icon, the delete modal is toggled asking an admin to confirm the deletion. Clicking "Delete" button in the model will delete the itinerary item from the database and reload the page, the info toast message appears informing about the deletion.
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
-
     
 ### Cart page
-- All the items added to the cart are displayed correctly.
-- Clicking "Continue shopping" leads to the products page.
-- I tested update/remove functionality with different products and services to make sure that everything works as expected. Clicking remove button toggles the remove modal asking to confirm the action. Update functionality works well for both products and services, subtotal changes correspondingly to reflect the update.
-- Clicking "Checkout" button redirects to the Checkout page.
-- Toast messages are displayed as expected after update/remove actions.
+- **User stories being tested**:     
+*As a user, I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment.*     
+*As a user, I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.*
+- **Test implementation**:
+    - verify that the text and images of the added items are displayed correctly 
+    - click on the "Continue shopping" link at the top of the page
+    - try to update the item quantity/number of participants and datatime (for services) with different products and services
+    - try to manually enter invalid quantity(negative or grater that 999)
+    - click on the red trash icon(remove button)
+    - click on the "Checkout" button
+    - remove all the items and check the empty cart, click on the "Go shopping" button
+- **Results**:
+    - all the items' information is displaied correctly on different screens
+    - clicking "Continue shopping" link leads to the products page
+    - update functionality works well for both products and services (the bug during the resting was found and fixed, see **bugs** paragraph below)
+    - clicking remove button toggles the remove modal, asking to confirm the action. After clicking "Remove" button, the page reloads, the item is removed and the toast message confirms the deletion
+    - subtotal changes correspondingly to reflect the update/remove
+    - cicking "Checkout" button redirects to the Checkout page.
+    - toast messages are always displayed as expected after each update/remove action
+    - if the cart is empty, the paragraph informs a user that the cart is empty; clicking "Go shopping" button redirects to the products page
+ - **Bugs found and fixed**: 
+ - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
+
 ### Checkout and checkout success pages
 - Order summary displays the order correctly, clicking "Edit cart" redirects back to the cart.
 -I tried to submit an empty form or filled out incorrectly. The validation error messages were displayed correctly, not allowing to go to the next step before the current section is filled up with correct information.
