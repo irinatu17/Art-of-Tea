@@ -110,7 +110,8 @@ So after that the query functionality is being applied only to the active produc
 ### Contact
 - **User stories being tested**:     
 *As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events.*      
-*As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*     
+*As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*    
+**Admin**: *As a user, I want to receive emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.*
 - **Test implementation**:
     - check that a graphic image is displayed only on the large screen
     - try to submit an empty Contact form
@@ -126,6 +127,7 @@ So after that the query functionality is being applied only to the active produc
     - if the user is authenticated, the email field is always pre-populated
     - if the user is authenticated and has the full name is saved in the Profile information, the full name is pre-populated in the contact form
     - map on the contact page displays the correct location, the Info Window shows the opening hours, when the red marker is clicked. Zoom controllers also work correctly.
+    - after successfull contact form submission, admin of the store receives the message on their personal email, getting user's email and full name, so an admin can answer the query directly to the user's email
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
 ### Products and product details pages
@@ -224,15 +226,32 @@ So after that the query functionality is being applied only to the active produc
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
 
 ### Checkout and checkout success pages
-- Order summary displays the order correctly, clicking "Edit cart" redirects back to the cart.
--I tried to submit an empty form or filled out incorrectly. The validation error messages were displayed correctly, not allowing to go to the next step before the current section is filled up with correct information.
-- I created a large number of orders as logged in or non-logged in user, ticking or not the save-info checkbox. There was an issue with save-info field, that is described in the Bugs section and was successfully fixed.
-- Also, I checked if the webhooks work as expected by temporary commenting out the part of `stripe.js` code that's responsible for submission and also by closing the page straight after clicking the "Proceed to payment" button. After that I checked the Stripe Dashboard to make sure that the order was created via webhooks and was saved to the database.
-- 4242 4242 4242 4242 card number leads to the successfull payment.
-- During testing of this feature I was always checking the Stripe dashboard to see if the charge was successfull.
-- I tried to put the incorrect or incomplete card details to make sure that the error messages are displayed correctly.
-- After the valid form was submitted, I received the confirmation email with all the correct order info. As well as that, the checkout page renders showing the order summary.
-- When the order was completed by the logged-in user in the checkout success page, the "View full order history" button led to the Order history page.
+- **User stories being tested**:     
+*As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.*      
+*As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.*      
+- **Test implementation**:
+     - verify that the text and images(Order summary) are displayed correctly 
+     - click on the "Edit cart" link
+     - try to submit an empty field set (check each section- Personal details, Shipping Info and Payment)
+     - try to put an incorrect information (e.g. email without @)
+     - create a large number of orders as logged in and non-logged in user, ticking or not the save-info checkbox.
+     - in the Payment section enter **4242 4242 4242 4242** card number, any expiration date in future and any CVC, and then click on the "Proceed to payment" button (this was also checked on Stripe Dashbord to see if the order was created)
+     - try to enter different and incomplete card numbers, the expiration date in the past to check the error messages
+     - temporary comment out the code line `form.submit();` in `stripe.js` file and then try to submit the form clicking the "Proceed to payment" button. After that check the Stripe Dashboard and also Order model in Admin panel to make sure the order was created via webhooks and was saved to the database.
+- **Results**:
+    - order summary displays the order correctly
+    - clicking "Edit cart" redirects back to the cart.
+    - if an empty form was submitted or filled out incorrectly, the validation error messages were displayed correctly, when the "Next" button is clicked, not allowing to go to the next step before the current section is filled up with correct information.
+    - when an order is created by non-authenticated user, the save-info checkbox is hidden from the view, instead the links to the Create account and Login pages are displayed offering a user to login to save the information and the order to the order history. 
+    - if an authenticated user ticks the save-info checkbox, all the personal and shipping information is saved to their profile. There was an issue with the save-info field found during testing, that is described in the Bugs section and was successfully fixed
+    - 4242 4242 4242 4242 card number leads to the successfull payment, that was confirmed in the Stripe Dashboard.
+    - if the incorrect or incomplete card details were entered, the error messages are displayed as expected under the Payment field.
+    - when the order was created via webhooks (after commenting out `form.submit();` in `stripe.js`), the payment was successfully proceeded and the order was saved in the database
+    - after the valid form was submitted, the confirmation email was recieved in the email provided with all the correct order info. As well as that, the checkout page renders showing the order summary.
+    - when the order was completed by the logged in user in the checkout success page, the "View full order history" button redirects to the Order history page. "Keep shopping" button is displayed for both non-logged in and logged in users and redirects to the products page
+ - **Bugs found and fixed**: 
+ - **Verdict**: The bugs were fixed, all the functionality works as expected. Test passed. 
+
 ### Profile and Order History
 - These features were tested to check if they are available only to the logged-in users.
 - Clicking on the Order number on the order history page opens the past confirmation (checkout success) page with the corresponding toast info message.
