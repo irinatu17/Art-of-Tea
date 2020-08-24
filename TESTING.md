@@ -129,13 +129,40 @@ So after that the query functionality is being applied only to the active produc
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
 ### Products and product details pages
-- I tried to select the category, sorting results were displayed correctly, the number of the products found shown in parentheses. 
-- Logged in as an admin I could see Edit/Delete buttons, while when I tried to manually enter the `/edit/` and `/delete/` urls I got the error message displayed as expected.
-- Clicking the "View details" button or product image redirects to the products details page.
-- Breadcrumbs navigation works correctly on both products and product detailes pages.
-- On the product details page I tried to submit the form with negative number (or higher than 999), but got the validation error messages as expected.
-- Clicking on the category leads to the Products page with the filtering by the selected category.
-- If the quantity form is submitted correctly, I can see the grand total in the navbar reflects this addition. Toast success message is displayed as expected.
+- **User stories being tested**:     
+*As a user, I want to view product details (e.g. image, price, description), so that I can buy some of them.*    
+*As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.*
+- **Test implementation**:
+    - verify that the expected text and images are displayed correctly in both products and product details pages
+    - select the category, clicking on the category-links (e.g. Teaware, Black Tea) in the all products page
+    - login with superuser credentials and verify that the Edit/Delete buttons appear in both products and product details pages under the image
+    - being a guest or logging in as a regular user, try manually enter the `/edit/` and `/delete/` urls 
+    - click on the "View Details" button and on the product image on the all prodcuts page
+    - click on different Breadcrumbs links
+    - click on the "Add to Cart" button on the both products and product details pages
+    - on the products page try to enter a negative or higher than 999 number in the quality form and click on "Add to cart" button
+    - enter the quantity in the range of 1-999 and click on the "Add to cart" button
+    - on the product details page click on the "Products" button
+    - on the product details page click on the category
+    - on the product details page click on the product's image    
+- **Results**:
+    - the texts, icons and images are displaied correctly on different screens
+    - after selecting the certain category, sorting results were displayed correctly, the number of the products found shown in parentheses as well as the selected category
+    - Edit/Delete buttons are visible only to the superuser
+    - while when I tried to manually enter the `..products/edit/<prduct_id here>` and `..products/delete/<prduct_id here>` urls I got the error message displayed as expected.
+    - clicking the "View details" button or product image redirects to the products details page.
+    - clicking the "Add to cart" button on the all products page, adds the product to the cart with quantity of 1; clicking it again increases the quantity by 1 and updates the cart
+    - Breadcrumbs navigation works correctly on both products and product detailes pages.
+    - after submission the  ivalid quantity form (when a number is negative or higher than 999), the validation error messages as appeared as expected.
+    - if the quantity form is submitted correctly, the grand total in the navbar reflects this addition. Toast success message is appeared as expected.
+    - clicking on the "Products" button redirects to the all products page as expected
+    - on the product details page clicking on the category leads to the all products page with the filtering by the selected category.
+    - clicking on the image on product details page opens an image in a new tab (if an image URL was assigned, as it's an optional field) as expected
+- **Bugs found and fixed**: the bug with searching/filtering products (discontinued products were counted in the filtering results) is described in the [Search bar](#search-bar) section.
+- **Verdict**: Test passed. All the functionality works as expected, the bug was fixed.
+
+
+
 ### Services and service details pages
 - Edit/delete buttons on both pages are visible only for the admin of the store
 - Clicking "Learn more" button redirects me to the service details page
