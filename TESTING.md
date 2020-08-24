@@ -93,13 +93,41 @@ So after that the query functionality is being applied only to the active produc
     - an image carousel works correctly when chevrons are clicked
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
-
 ### Events page 
-- The data from the Events model is displayed correctly in the events table- Facebook link opens in the new tab leading to the main Facebook page (since there is no real page exists for the website)
+- **User story being tested**:     
+*As a user, I want to view events that happen in the tea club this week in Dublin, so that I can come and join any event.*
+- **Test implementation**:
+    - verify that images are displayed correctly
+    - verify that the data from the Events model is displayed correctly in the events table
+    - scroll down the page to check the animation on scroll (on the text an teapot image)
+    - click on the Facebook link 
+- **Results**:
+    - all the images and texts are displaied correctly on different screens
+    - animation on scroll works as expected on all sections and across all devices
+    - Facebook link opens in the new tab leading to the main page (since there is no real page exists for the website)
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
 ### Contact
-- I've tried to submit the empty form, or enter incorrect email address (without @), that led to the corresponding validation messages displayed. 
-- If the form was valid and "Send" button clicked, I was redirected to the "Thank you" page, informing that the message was sent. As well as that, being an admin of the website, I received the real message on my email, that was assigned in the environment variables.
-- Map on the contact page displays the correct location, the Info Window shows the opening hours, when the red marker is clicked. Zoom buttons also work correctly.
+- **User stories being tested**:     
+*As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events.*      
+*As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*     
+- **Test implementation**:
+    - check that a graphic image is displayed only on the large screen
+    - try to submit an empty Contact form
+    - try to enter incorrect email address (without @)
+    - try to submit the form with all valid information
+    - check the contact form as authenticated user to see if the full name and email fields are pre-populated
+    - check the map, clicking on the red marker, zoom controllers
+- **Results**:
+    - the image and contact information are displaied correctly on different screens
+    - after attempts to submit invalid form (empty or invalid informations) corresponding validation messages appears to prevent the submission
+    - if the form was valid and "Send" button clicked, a user is redirected to the "Thank you" page, informing that the message was sent
+    - if the form was submitted successfully, an admin of the website received the real message on the email (it is assigned in the environment variables as EMAIL_HOST_USER)
+    - if the user is authenticated, the email field is always pre-populated
+    - if the user is authenticated and has the full name is saved in the Profile information, the full name is pre-populated in the contact form
+    - map on the contact page displays the correct location, the Info Window shows the opening hours, when the red marker is clicked. Zoom controllers also work correctly.
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
 ### Products and product details pages
 - I tried to select the category, sorting results were displayed correctly, the number of the products found shown in parentheses. 
 - Logged in as an admin I could see Edit/Delete buttons, while when I tried to manually enter the `/edit/` and `/delete/` urls I got the error message displayed as expected.
