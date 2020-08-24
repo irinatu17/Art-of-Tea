@@ -79,6 +79,7 @@ Explore the misterious and amazing world of tea with us!
 - As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.
 - As a user, I want to easily access social media links of the company, so that I can read more information about it.
 - As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.
+- As a user, I want to find an information about the company, to know what they do, what their main principles and ideas
 - As a user, I want to view events that happen in the tea club this week in Dublin, so that I can come and join any event.
 - As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events. 
 - As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
@@ -114,8 +115,8 @@ There are three fonts used across the project that I find a good combination:
 - [Sawarabi Mincho](https://fonts.google.com/specimen/Sawarabi+Mincho) - clean and simple font, perfectly fit to the "Art of Tea" and "East culture" theme, used for navbar elements and some headings.
 #### Icons
 Icons are used widely, as they are good attention grabbers. They help users to find and scan content quickly and easily. Another advantage of using them is to help to break language barriers. They create more user-friendly experience for people with non-native English by giving the visual clue about the subject.   
-- I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation and others).
-- Apart from that, I used some icons, specific to the tea world and East topic, that were found in a free icon library [Flaticon](https://www.flaticon.com/). 
+- I used [FontAwesome](https://fontawesome.com/) as the main icon library across the project (e.g. for social media links, forms, cart, search and user icons in navigation).
+- Apart from that, I used some icons, specific to the tea world and East topic, that were found in a free icon library [Flaticon](https://www.flaticon.com/) - used in Landing and Events pages. 
 
 ### Wireframes
 [Balsamiq Wireframes](https://balsamiq.com/) tool was used to create all wireframes for the project.   
@@ -392,7 +393,7 @@ Comment | comment | TextField | max_length=254, null=True, blank=True
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
 Order | order | ForeignKey 'Order' | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
-Product | product | ForeignKey 'Product' | null=False, blank=False, on_delete=models.CASCADE
+Product | product | ForeignKey 'Product' | null=False, blank=False, on_delete=models.PROTECT
 Quantity | quantity | IntegerField | null=False, blank=False, default=0
 Item Total | item_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 Datetime | datetime | CharField | null=True, blank=True, max_length=20
@@ -443,8 +444,8 @@ Description | description | CharField | max_length=254
 - [GitHub](https://git-scm.com/) - for remotely storing project's code.
 - [PIP](https://pip.pypa.io/en/stable/installing/) - for installation of necessary tools.
 - [Heroku](https://heroku.com/) - to host the project.
-- [AWS S3 Bucket](https://aws.amazon.com/) -  to store user-uploaded media files.
-- [WhiteNoise](http://whitenoise.evans.io/en/stable/) - to store static files.
+- [AWS S3 Bucket](https://aws.amazon.com/) -  to store static and media files in prodcution.
+- [WhiteNoise](http://whitenoise.evans.io/en/stable/) - to store static files during develompment.
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
 - [Travis](https://travis-ci.org/) - for integration testing.
 - [TinyPng](https://tinypng.com/) - for compressing images.
@@ -516,7 +517,7 @@ Read more about how to set up the Stripe keys in the [Stripe Documentation](http
 4. In the terminal in your IDE migrate the models to crete a database using the following commands:    
 `python3 manage.py makemigrations`     
 `python3 manage.py migrate`     
-5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) in that order into the database using the following command:    
+5. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**, **events**) in that order into the database using the following command:    
 `python3 manage.py loaddata <fixture_name>`        
 6. Create a superuser to have an access to the the admin panel(you need to follow the instructions then and insert username,email and password):    
 `python3 manage.py createsuperuser`   
@@ -563,7 +564,7 @@ Note: that's just temporary set up, this URL **should not be committed and publi
 9. Migrate the database models to the Postgres database using the following commands in the terminal:    
 `python3 manage.py makemigrations`     
 `python3 manage.py migrate`     
-10. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**) into the  Postgres database using the following command:     
+10. Load the data fixtures(**categories**, **products**, **itinerary**, **itinerary_items**, **events**) into the  Postgres database using the following command:     
 `python3 manage.py loaddata <fixture_name>`      
 11. Create a **superuser** for the Postgres database by running the following command(*you need to follow the instructions and inserting username,email and password*):      
 `python3 manage.py createsuperuser`     
