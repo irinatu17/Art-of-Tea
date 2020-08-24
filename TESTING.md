@@ -149,28 +149,57 @@ So after that the query functionality is being applied only to the active produc
     - the texts, icons and images are displaied correctly on different screens
     - after selecting the certain category, sorting results were displayed correctly, the number of the products found shown in parentheses as well as the selected category
     - Edit/Delete buttons are visible only to the superuser
-    - while when I tried to manually enter the `..products/edit/<prduct_id here>` and `..products/delete/<prduct_id here>` urls I got the error message displayed as expected.
+    - after manually entering the `..products/edit/<prduct_id here>` and `..products/delete/<prduct_id here>` urls, the error messages were displayed as expected.
     - clicking the "View details" button or product image redirects to the products details page.
     - clicking the "Add to cart" button on the all products page, adds the product to the cart with quantity of 1; clicking it again increases the quantity by 1 and updates the cart
     - Breadcrumbs navigation works correctly on both products and product detailes pages.
-    - after submission the  ivalid quantity form (when a number is negative or higher than 999), the validation error messages as appeared as expected.
-    - if the quantity form is submitted correctly, the grand total in the navbar reflects this addition. Toast success message is appeared as expected.
+    - after submission the  ivalid quantity form (when a number is negative or higher than 999), the validation error messages appeared as expected.
+    - if the quantity form is submitted correctly, the grand total in the navbar reflects this addition. Toast success message appeared as expected.
     - clicking on the "Products" button redirects to the all products page as expected
     - on the product details page clicking on the category leads to the all products page with the filtering by the selected category.
     - clicking on the image on product details page opens an image in a new tab (if an image URL was assigned, as it's an optional field) as expected
 - **Bugs found and fixed**: the bug with searching/filtering products (discontinued products were counted in the filtering results) is described in the [Search bar](#search-bar) section.
 - **Verdict**: Test passed. All the functionality works as expected, the bug was fixed.
 
-
-
 ### Services and service details pages
-- Edit/delete buttons on both pages are visible only for the admin of the store
-- Clicking "Learn more" button redirects me to the service details page
-- Contact us button redirects to the contact page
-- I tried to submit empty form, leave the datetime field blank, put the incorrect number or datetime manually, after all these actions the validation errors were displayed not allowing me to submit the form with incorrect data.
-- If the quantity form is submitted correctly, I can see the grand total in the navbar reflects this addition. Toast success message is displayed as expected.
-- Bredcrumbs navigation works correctly on both services and service detailes pages.
-- I added some itinerary items, page reloaded and I could see new itinerary item added and displayed. As well as that, I could remove the itinerary item by clicking the trash icon, toggling the delete modal and confirming the deletion. I tested this functionality from different accounts to make sure that only authenticated admin has an access to that.
+- **User stories being tested**:     
+*As a user, I want to learn more about different types of tea ceremonies, so that I can choose and book one of the tea ceremonies.*     
+*As a user, I want to view service details (e.g. image, price, description), so that I can book one.*
+- **Test implementation**:
+    - verify that the expected text and images are displayed correctly in both service and service details pages
+    - scroll down the page to check the animation on scroll (AOS)
+    - login with superuser credentials and verify that the Edit/Delete buttons appear in both service and service details pages
+    - being a guest or logging in as a regular user, try manually enter the `/edit/` and `/delete/` urls 
+    - click on the "Learn more" button on the services page
+    - click on the "Contact us" button at the bottom of the services page
+    - click on different Breadcrumbs links
+    - on the services details page try to enter a negative or higher than 100 number in the Number of participants field and click on "Add to cart" button
+    - enter the Number of participants in the range of 1-100 and click on the "Add to cart" button
+    - check that datatime picker works correctly, unabling to pick only the dates in the future
+    - try to submit the form with empty Number of participants and/or Date and Time fields
+    - on the product details page click on the "Services" button
+    - on the product details page click on the product's image 
+    - login with superuser credentials and add fill out the itinerary form. Check an admin panel to see if an itinerary item was added
+    - login with superuser credentials and click on the trash icon, removing an itinerary form. Check an admin panel to see if an itinerary item was deleted
+    - test itinerary item create/delete functionality from different accounts to make sure that only authenticated admin has an access to that.
+- **Results**:
+    - the texts, icons and images are displaied correctly on different screens
+    - animation on scroll works as expected on all service cards across all devices
+    - Edit/Delete buttons are visible only to the superuser
+    - after manually entering the `../services/edit/<service_id here>` and `../services/<prduct_id here>` urls, the error messages were displayed as expected.
+    - clicking the "Learn more" button redirects to the service details page.
+    - "Contact us" button redirects to the contact page
+    - Breadcrumbs navigation works correctly on both services and service detailes pages.
+    - after submission an empty or ivalid form (when a number is negative or higher than 100), the validation error messages appeared as expected.
+    - if the form is submitted correctly, the grand total in the navbar reflects this addition. Toast success message appeared as expected.
+    - clicking on the "Services" button redirects to the servicess page as expected
+    - clicking on the image on service details page opens an image in a new tab (if an image URL was assigned)
+    - itinerary items manipulations available only to the superuser
+    - after adding an itinerary items, page reloads and a new itinerary item added and displayed as expected.
+    - after removing an itinerary item by clicking the trash icon, the delete modal is toggled asking an admin to confirm the deletion. Clicking "Delete" button in the model will delete the itinerary item from the database and reload the page, the info toast message appears informing about the deletion.
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
+    
 ### Cart page
 - All the items added to the cart are displayed correctly.
 - Clicking "Continue shopping" leads to the products page.
