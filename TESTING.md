@@ -252,6 +252,28 @@ So after that the query functionality is being applied only to the active produc
  - **Bugs found and fixed**: 
  - **Verdict**: The bugs were fixed, all the functionality works as expected. Test passed. 
 
+### Authentication pages
+These features are built-in components of Django allauth package were tested manually as well, as about 5-10 different accounts were created.     
+Forgot/reset password, verification email, login, create account - all work as expected.
+- **User stories being tested**:     
+*As a user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.*    
+*As a user, I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.*       
+*As a user, I want to reset my password if I forgot it, so that I can get access to my profile again.*     
+- **Test implementation**:
+     - try to register entering incorrect email, incorrect password and  username/email that's already exist in the database
+     - submit valid registration form
+     - entering two different passwords in registration form and trying to enter old password when re-setting password
+     - create an account and try to login with correct and incorrect details
+     - click on logout link in the navbar and then on logout button
+- **Results**:
+    - if required data is missing or incorrect, form does not submit and an error messages are displayd informing user what was wrong
+    - if the registration form is valid, user is informed that they need to verify their account and the email was sent to them with the verification link
+    - when verification link is clicked in the email, user is redirected to the confirmation page, clicking "Confirm" button, success message is displayed and user is automatically logged in
+    - on the login page, when "Forgot password" link is clicked, a user is redirected to the password reset page and asked for their email address, then an email is sent with a link to reset password. After entering new password twice, the password is reset and user can login with a new password
+    - when logout link in the navbar is clicked, the login page opens asking for confirmation to logout, when it is confirmed, the user is logged out and the session is stopped
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+
+
 ### Profile and Order History
 - These features were tested to check if they are available only to the logged-in users.
 - Clicking on the Order number on the order history page opens the past confirmation (checkout success) page with the corresponding toast info message.
@@ -263,13 +285,6 @@ So after that the query functionality is being applied only to the active produc
 - In production all images are stored in the AWS S3, so the Basket was constantly checked to make sure it works as expected.
 - Edit/Delete functionality was tested many times, all the changes straight away can be seen in the database.
 - The defensive design worked well allowing only superuser to have an access to this functionality.
-### Login/sign up/logout/forgot password
-These features are built-in components of Django allauth package were tested manually as well, as about 5-10 different accounts were created.     
-Forgot password, verification email, login - all work as expected.
-- Entering incorrect emails, incorrect password and case sensitivity works as expected.
-- Trying to register with an already registered email works as expected.
-- Entering two different passwords and trying to enter old password when re-setting password works as expected.
-- Registration and login pages are only available to anonymous users.
 
 ## Automated Testing
 Automated testing is implemented to support manual testing during the development process.   
