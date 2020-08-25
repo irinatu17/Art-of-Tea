@@ -75,7 +75,7 @@ Manual testing was conducted with each feature and each user story on different 
     - if the search query does not exists in the database, the products page renders, displaying the search word, numer of results equal to 0 and a paragraph telling that no results were found for the entered query
     - search box works accross all the app, no matter which page a user is currently on
  - **Bugs found and fixed**: After refactoring the delete products admin functionality and adding *Discontinued* field (described more detailed in the corresponding section), the search number of results showed the total number of all products including the out of stock, discountinued products. To fix that, an if statement was added to the `def all_products`:     
- `active_products = all_products.filter(discontinued=False)`     
+ `active_products = all_products.filter(discontinued=False)`    and further functionality was updated in the view with the new `active_products` variable.  
 So after that the query functionality is being applied only to the active products, that are in stock. The bug was successfully fixed. 
  - **Verdict**: The bug is fixed. Test passed.
  
@@ -239,7 +239,7 @@ So after that the query functionality is being applied only to the active produc
     - cicking "Checkout" button redirects to the Checkout page.
     - toast messages are always displayed as expected after each update/remove action
     - if the cart is empty, the paragraph informs a user that the cart is empty; clicking "Go shopping" button redirects to the products page
- - **Bugs found and fixed**: The bug with updating the quantity in the cart was found during testing procrss and it is described in details in the [Bugs](#bugs) section.
+ - **Bugs found and fixed**: The bug with updating the quantity in the cart was found during testing procrss and it is described in details in the [Bugs](#update-quantity-in-the-cart) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
 
 ### Checkout and checkout success pages
@@ -374,7 +374,33 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
 - I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
 
-## Bugs
+## Bugs 
+### Update quantity in the cart
+#### Bug
+When user manually enters invalid quantity (for products - out of range of 1-999) or invalid number of participants(for services - out of range 1-100), the item in the cart was still updated and the total was changed accordinly. The error messages didn't appear and clicking on "Checkout" button led to 500 Server Error, as the form was invalid eventually, and user wasn't informed about what was wrong there. That happened because in the cart app the quantity form was handled in a different way (by JavaScritpt), that is different from the quantity/number of participants forms on prodcut/service pages, where the validation error messages appear as expected.
+#### Fix
+The issue was fixed by adding extra piece of code to handle validation via JavaScript. The main idea here is to use `checkValidity() method` and display the hidden paragraph that contains an error message, that appears under the field if there was an attempt to enter invalid quantity.        
+The main problem was to determine the certain invalid form if there are more than one item was added to the cart.        
+The following id was added to the `<form>` element to get the loop index : `id="cart-form-{{ forloop.counter }}"`. And also  `data-number="{{ forloop.counter }}` was added to the "Update" button to determine which button was clicked in case there are few items in the cart.     
+Finally, the if statement was added to get the validation error message displayed in case an error occured:   
+```
+$('.update-cart-btn').click(function(e) {
+        let number = this.dataset.number;
+        let cartForm = document.querySelector(`#cart-form-${number}`);
+        let cartFormValid  = cartForm.checkValidity();
+        if (cartFormValid) {
+            let form = $(this).prev('.quantity-update-form');
+            form.submit();
+        }else {
+            $(this).prev().children('.error-message').removeClass("d-none");
+
+        }
+    });
+
+```
+
+#### Verdict
+The bug was successfully fixed and evetually all the test passed.
 ### Save info field
 During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False).     
 To fix that few additional line od code was added to 
