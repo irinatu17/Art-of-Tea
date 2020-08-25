@@ -57,18 +57,26 @@
 {% block extra_js %}
 {{ block.super }}
 <script type="text/javascript">
-    // Update the quantity when update-btn is clicked
+    // Update the quantity when update-btn is clicked, handles validation of the quantity form
     $('.update-cart-btn').click(function(e) {
-        var form = $(this).prev('.quantity-update-form');
-        form.submit();
-    })
+        let number = this.dataset.number;
+        let cartForm = document.querySelector(`#cart-form-${number}`);
+        let cartFormValid  = cartForm.checkValidity();
+        if (cartFormValid) {
+            let form = $(this).prev('.quantity-update-form');
+            form.submit();
+        }else {
+            $(this).prev().children('.error-message').removeClass("d-none");
+
+        }
+    });
 
     // Remove item from the cart and reload the page on click
      $('.remove-button').click(function(e) {
-        var itemId = $(this).attr('class').split('remove_')[1];
-        var url = `/cart/remove/${itemId}/`;
-        var csrfToken = "{{ csrf_token }}";
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        let itemId = $(this).attr('class').split('remove_')[1];
+        let url = `/cart/remove/${itemId}/`;
+        let csrfToken = "{{ csrf_token }}";
+        let data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {
