@@ -288,6 +288,7 @@ Forgot/reset password, verification email, login, create account - all work as e
     - when verification link is clicked in the email, user is redirected to the confirmation page, clicking "Confirm" button, success message is displayed and user is automatically logged in
     - on the login page, when "Forgot password" link is clicked, a user is redirected to the password reset page and asked for their email address, then an email is sent with a link to reset password. After entering new password twice, the password is reset and user can login with a new password
     - when logout link in the navbar is clicked, the login page opens asking for confirmation to logout, when it is confirmed, the user is logged out and the session is stopped
+    - the login and registration page are only available to anonymous users and logged-in users are redirected out automatically.
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
 ### Profile and Order History
@@ -363,25 +364,24 @@ Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms
 
 ## Validators
 ### HTML
-All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
+All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. There were also few minor errors and warning that can be safely ignored. Apart from that, no other errors were found across the html pages.   
 ### CSS
-All the CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
-As well as that, there are a few error warnings for some -webkit, -moz pseudo element selectors. Both errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.   
+All the CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (colours and fonts variables were used), there were several Parse Errors found. These errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.   
 ### JavaScript
 All the JS files were tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint.    
 ### Python
-All the Python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
+All the Python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant where possible.
 
  <div align="right">
     <b><a href="#testing">↥ Back To Top</a></b>
 </div>
 
 ## Compatibility and Responsiveness
-This website had been being tested during the development across **multiple browsers** (Chrome, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).              
+This website had been being tested during the development across **multiple browsers** (Chrome, Edge, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy S10, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI, MDPI and touch screens).              
 Also, the following tools were used to constantly test the project:
 - **Google Chrome's developer tools** to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.       
--  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices.
-Plenty of changes were made and necessary media queries added to make the website is fully responsive.        
+-  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices(used the local GitPod link as the Heroku has security restrictions).
+Plenty of changes were made and necessary media queries added to make the website fully responsive.        
 The website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on all the other browsers.
 
 <div align="right">
@@ -390,7 +390,12 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 
 ## Other Testing 
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
-- I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
+- I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after getting other peoples' feedback, such as:
+     - ZIP code was removed/hidden from the Checkout payment (adding `hidePostalCode: true` line to the `stripe.js` file), as confused users (this was mentioned by 2 people) and seemed to be unnecessary.
+     - Animation on scroll was removed from the Product cards, as that was pointed as unnecessary by 2 different people
+     - Overflow on the Events page was fixed
+     - Buttons colours were changed to achieve better CTA (Call to Action) effect
+     - Add to Cart button was added to the all products page as user expect has a quicker opportunity to add an item, without going to the Product details page
 
 <div align="right">
     <b><a href="#testing">↥ Back To Top</a></b>
