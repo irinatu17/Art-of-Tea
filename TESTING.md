@@ -1,11 +1,28 @@
 # Testing
  1. [**Manual Testing**](#manual-testing)
+     - [**Responsiveness**](#responsiveness)
+     - [**Navbar**](#navbar)
+     - [**Footer**](#footer)
+     - [**Search bar**](#search-bar)
+     - [**Landing page**](#landing-page)
+     - [**About page**](#about-page)
+     - [**Events page**](#events-page)
+     - [**Contact page**](#contact-page)
+     - [**Products and product details pages**](#products-and-product-details-pages)
+     - [**Services and service details pages**](#services-and-service-details-pages)
+     - [**Cart page**](#cart-page)
+     - [**Checkout and checkout success pages**](#checkout-and-checkout-success-pages)
+     - [**Authentication pages**](#authentication-pages)
+     - [**Profile and Order History**](#profile-and-order-history)
+     - [**Admin product management functionality (admin CRUD)**](#admin-product-management-functionality-admin-crud)
  2. [**Automated Testing**](#automated-testing)
+      - [**Travis**](#travis)
  3. [**Validators**](#validators)
  4. [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
- 5. [**Bugs**](#bugs)
+ 5. [**Other Testing**](#other-testing)
+ 6. [**Bugs**](#bugs)
 ## Manual Testing
-Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers.  
+Manual testing was conducted with each feature and each user story on different screen resolutions, devices and in different browsers to ensure the application is a good solution to user's needs.  
 ### Responsiveness
 - **User story being tested**:       
 *As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.*
@@ -107,7 +124,7 @@ So after that the query functionality is being applied only to the active produc
     - Facebook link opens in the new tab leading to the main page (since there is no real page exists for the website)
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
-### Contact
+### Contact page
 - **User stories being tested**:     
 *As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events.*      
 *As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*    
@@ -322,25 +339,28 @@ Forgot/reset password, verification email, login, create account - all work as e
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
  
 ## Automated Testing
-Automated testing is implemented to support manual testing during the development process.   
+Automated testing is implemented to support manual testing during the development process. The intent was not to achieve 100% coverage with automated testing, but more to support and complement the manual testing, paying more attention to the more fragile code pieces and testing them.    
 Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
 *Note:* The tests should be added in local database, as The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. To run the test and check the output, the database (Postgres) code configuration in `settings.py` should be temporarily removed or commented out.     
 - **Command used to run the tests**:    
 `python3 manage.py test`   
 - To run the tests within a specific app only:
-`python manage.py test <app name here>`
+`python manage.py test <app name here>`           
+[Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) was used to get the feedback during the testing and see the percentage of the unit tests implemented. 
+- to generate a coverage report run the following command: `coverage report`
+- to generate the HTML file run the following command:  `coverage html` and open index.html file in the newly created directory, run the file in the browser to see the output. 
 ### Travis
 [Travis](https://travis-ci.org/) was also used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
 ## Validators
 ### HTML
 All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
 ### CSS
-CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
+All the CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
 As well as that, there are a few error warnings for some -webkit, -moz pseudo element selectors. Both errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.   
 ### JavaScript
-JS file was tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint (it is necessary for jQuery Materialize initializing).    
+All the JS files were tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint.    
 ### Python
-All python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
+All the Python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
 
 ## Compatibility and Responsiveness
 This website had been being tested during the development across **multiple browsers** (Chrome, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).              
