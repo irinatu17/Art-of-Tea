@@ -281,12 +281,12 @@ The defensive design is implemented to restrict other than admin users to manual
 ##### Sign Up
 The sign up page allows a user to create a new account. The user is asked to fill the fields "email", "username", "password" and "password (again)". When adding a username, the code compares it against existing email to ensure that it is unique. If user's input does not meet requirements, flash messages will inform a user about the error. When the form is submitted, a **verification email** is sent to the user's email to verify the email and finish registration process.   
 There is also a link to the login page for existing users at the bottom of the form.    
- Registration page is only available to anonymous users.
+ The Registration page is only available to anonymous users and logged-in users are redirected out automatically.
 ##### Login
 The login page features the form with "username" and "password" fields, allowing registered users to log into their account. If the login was successfull, a user is redirected to the home page and the toast success message appears informing that the log in was successful. Otherwise, flash messages will be displayed about incorrect user's input.   
 There is also a link to the sign up page for new users at the bottom of the form.
 As well as that, there's a link to the **forgot password** functionality, using which a user can reset their password.
-Login page is only available to anonymous users.
+The login page is only available to anonymous users and logged-in users are redirected out automatically.
 ##### Forgot password
 A user can reset their password to be able to login by entering the email. Then the link for reseting password will be sent to the email provided. The user can create a new password and then login with a new password.
 ##### Logout
@@ -632,8 +632,8 @@ In order to send real emails from the application, you need to connect it to you
 ### Acknowledgements
 I would like to thank everyone who has helped me throughout the development of this project:      
 - My mentor [Simen Daehlin](https://github.com/Eventyret) for his support, help, patience and guidance, very useful tips and advice!         
-- Code Institute tutors for their help to debug issues, assistance and support!    
-- Many thanks to my fellow students, Slack community and also my friends and my family for the time, patience, help and support!         
+- Tim, Michael, Miklos, Stephen, Anna, Samantha, Haley and other **Code Institute tutors** for their help to debug issues, assistance and support!    
+- Many thanks to my fellow students, Slack community and, of course, my friends and my family for the time, patience, help and support!         
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
