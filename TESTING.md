@@ -222,7 +222,7 @@ So after that the query functionality is being applied only to the active produc
     - cicking "Checkout" button redirects to the Checkout page.
     - toast messages are always displayed as expected after each update/remove action
     - if the cart is empty, the paragraph informs a user that the cart is empty; clicking "Go shopping" button redirects to the products page
- - **Bugs found and fixed**: 
+ - **Bugs found and fixed**: The bug with updating the quantity in the cart was found during testing procrss and it is described in details in the [Bugs](#bugs) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
 
 ### Checkout and checkout success pages
@@ -235,7 +235,7 @@ So after that the query functionality is being applied only to the active produc
      - try to submit an empty field set (check each section- Personal details, Shipping Info and Payment)
      - try to put an incorrect information (e.g. email without @)
      - create a large number of orders as logged in and non-logged in user, ticking or not the save-info checkbox.
-     - in the Payment section enter **4242 4242 4242 4242** card number, any expiration date in future and any CVC, and then click on the "Proceed to payment" button (this was also checked on Stripe Dashbord to see if the order was created)
+     - in the Payment section enter the testing **4242 4242 4242 4242** card number, any expiration date in future and any CVC, and then click on the "Proceed to payment" button (this was also checked on Stripe Dashbord to see if the order was created)
      - try to enter different and incomplete card numbers, the expiration date in the past to check the error messages
      - temporary comment out the code line `form.submit();` in `stripe.js` file and then try to submit the form clicking the "Proceed to payment" button. After that check the Stripe Dashboard and also Order model in Admin panel to make sure the order was created via webhooks and was saved to the database.
 - **Results**:
@@ -244,12 +244,12 @@ So after that the query functionality is being applied only to the active produc
     - if an empty form was submitted or filled out incorrectly, the validation error messages were displayed correctly, when the "Next" button is clicked, not allowing to go to the next step before the current section is filled up with correct information.
     - when an order is created by non-authenticated user, the save-info checkbox is hidden from the view, instead the links to the Create account and Login pages are displayed offering a user to login to save the information and the order to the order history. 
     - if an authenticated user ticks the save-info checkbox, all the personal and shipping information is saved to their profile. There was an issue with the save-info field found during testing, that is described in the Bugs section and was successfully fixed
-    - 4242 4242 4242 4242 card number leads to the successfull payment, that was confirmed in the Stripe Dashboard.
+    - testing 4242 4242 4242 4242 card number leads to the successfull payment, that was confirmed in the Stripe Dashboard.
     - if the incorrect or incomplete card details were entered, the error messages are displayed as expected under the Payment field.
     - when the order was created via webhooks (after commenting out `form.submit();` in `stripe.js`), the payment was successfully proceeded and the order was saved in the database
     - after the valid form was submitted, the confirmation email was recieved in the email provided with all the correct order info. As well as that, the checkout page renders showing the order summary.
     - when the order was completed by the logged in user in the checkout success page, the "View full order history" button redirects to the Order history page. "Keep shopping" button is displayed for both non-logged in and logged in users and redirects to the products page
- - **Bugs found and fixed**: 
+ - **Bugs found and fixed**: The bugs with save-info and comment fields were found during testing process and they are described in details in the [Bugs](#bugs) section.
  - **Verdict**: The bugs were fixed, all the functionality works as expected. Test passed. 
 
 ### Authentication pages
@@ -298,13 +298,29 @@ Forgot/reset password, verification email, login, create account - all work as e
     - "View My Profile" and "View Order History" buttons lead to the correct destinations
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
  
-### Admin product management functionality
-- Add product/service forms work as expected: validation error messages in place, after successfull addition it redirects to the new created product/service page.
-- I added few products/services without the image to test the no-image assignment.
-- In production all images are stored in the AWS S3, so the Basket was constantly checked to make sure it works as expected.
-- Edit/Delete functionality was tested many times, all the changes straight away can be seen in the database.
-- The defensive design worked well allowing only superuser to have an access to this functionality.
-
+### Admin product management functionality (admin CRUD)
+- **User stories being tested**:     
+*As a user, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.*
+- **Test**:
+    - navigate to the Product Management page from the navbar
+    - click on the "Add a New Product" and "Add a New Service" to open the corresponding form
+    - try to submit both forms being empty or with invalid information to see if the error messages will appear
+    - submit "Add a New Product" form with all valid information multiple times creating different products (providing/not providing an image, filling all/only required fields)
+    - submit "Add a New Service" form with all valid information multiple times creating different services(providing/not providing an image, filling all/only required fields)
+    - after adding a product/service with an image, go to the AWS S3 website and check the basket to see if the image was saved there
+    - after clicking "Edit" button on the product/service pages, fill out the edit form (change something, remove some fields' values)
+    - create few testing products and services with dummy data for testing the delete functionality:     
+  click on the "Delete" button on the product/service pages, verify that delete modal appears with correct text provided, click on the "Delete" button in the modal. After check Product model in the Admin panel to see changes reflected
+    - being a guest or logged in as a regular user(not admin), manually enter the edit/delete/add URLS to reach the corresponding pages trying to access admin functionality and manipulate the database
+- **Results**:
+    - Add product/service forms work as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the new created product/service page with all correct information displayed.
+    - if image wasn't provided,no-image placeholder is assignmed and displayed. In production all images are stored in the AWS S3, so the new images were successfully saved into the Basketas expected.
+    - Edit functionality works as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the product/service page and all the changes straight away can be seen in that page and in the database(admin panel can be checked as well).
+    - Delete functionality works as expected: after clciking "Delete" button on the product/service pages, delete modal toggles. Click on the "Delete" button deactivates the product/service (setting `discontinued = False`, but not completely removing from the database). After "deleting" product/service - setting it as **Discontinued** - the product/service is hidden from the user's view and can be accessed only from the Order history, if this product/service was purchused before. "Out of stock" line is displayed on the page and "Add to cart" functionality is not avaible for the Discontinued product/service.
+    - The defensive design worked well, allowing only superuser to have an access to this functionality. If non-admin users try to access the pages, theya are redirected to the home page with corresponding error messages displayed.
+ - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#bugs) section.
+ - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
+ 
 ## Automated Testing
 Automated testing is implemented to support manual testing during the development process.   
 Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
