@@ -335,7 +335,7 @@ Forgot/reset password, verification email, login, create account - all work as e
     - Edit functionality works as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the product/service page and all the changes straight away can be seen in that page and in the database(admin panel can be checked as well).
     - Delete functionality works as expected: after clciking "Delete" button on the product/service pages, delete modal toggles. Click on the "Delete" button deactivates the product/service (setting `discontinued = False`, but not completely removing from the database). After "deleting" product/service - setting it as **Discontinued** - the product/service is hidden from the user's view and can be accessed only from the Order history, if this product/service was purchused before. "Out of stock" line is displayed on the page and "Add to cart" functionality is not avaible for the Discontinued product/service.
     - The defensive design worked well, allowing only superuser to have an access to this functionality. If non-admin users try to access the pages, theya are redirected to the home page with corresponding error messages displayed.
- - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#bugs) section.
+ - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#delete-product-service-functionality) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
  
 ## Automated Testing
@@ -440,6 +440,20 @@ When an order was created by non-logged in user, it was saved into both database
 Apparently, even if there is a single DB setup on the settings.py file and/or Config Vars (in Heroku), no matter how many webhooks there are listed, Stripe will trigger to them all, even if they are different databases. If they are both 'active' and enabled, Stripe will trigger both of them to update on all Databases that they're pointing to.
 #### Fix
 Eventually the fix was very easy. All I had to do is to **disable**/toggle-off the webhoook URL for the sqlite3 DB in the Stripe dashboard, when everything was tested and completed, and set only Postgres DB as active. After that all the orders created in production are being saved only in Postgress database as expected.
+#### Verdict
+The bug was successfully fixed and evetually all the test passed.
+
+### Delete product/service functionality
+#### Bug
+When a product/service was deleted by admin from the database, but before it was ordered and purchased by a user, the product/service was deleted from the user's order history as well. This caused the user's confusion: as that deleted product is not anymore in the past order confirmation(checkout success) page - all fields in the order summary were empty, even a grand total. Also, if there were more than one items ordered, the grand total was updated as well(subtracting that deleting product), so it was smaller that the actual amount that the paid. The reasn of this issue was that the **product** field in **Order Item Details model** contained `on_delete=models.CASCADE`, meaning that if a product/service was deleted, it was also removed from Order Item Details model and from user's order history.
+#### Fix
+To fix that, the **product** field in Order Item Details model was updated with `on_delete=models.PROTECT`, so the he product could not be deleted.     
+Then **discontinued** BooleanField was added to the Product model:     
+`discontinued = models.BooleanField(default=False)`     
+If the store is no longer selling the product/service, the value set to True. Then in the templates an if statement was added `{% if not product.discontinued %}` to display only active products/services.    
+Then **delete** and **edit** prodct/service functionality was updated accordingly. The products/services are deleted/removed from the store and from the user's view, but not removed from the database, so that they are visible in the past orders and can be accessed only from the Order History if a user purchased them.     
+Also, "OUT OF STOCK" pargraph was added to the discontinued products and "Add to Cart" button removed, so users have no availability to buy them again.     
+Not only from the Admin Panel, but also from the "Edit" page, admin can set the product/service as discontinued, that will update the page and remove it from the website's templates. The explanatory paragraphs are provided in both Delete modal and Edit page, so that the admin won't be confused with that.
 #### Verdict
 The bug was successfully fixed and evetually all the test passed.
 
