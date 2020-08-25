@@ -584,6 +584,25 @@ border-left: 0.5rem solid var(--red-salmon);
 border-left: 0.5rem solid #17a2b8;
 }
 
+/*Error pages*/
+.error-heading {
+font-size: 2.8rem;
+letter-spacing: 0.3rem;
+font-family: var(--sawarabi-mincho);
+text-shadow: 4px 4px 4px var(--lightgrey);
+color: var(--red-salmon);
+}
+
+.error-sub-heading {
+font-size: 1.7rem;
+}
+
+.error-container{
+padding-top: 5rem;
+padding-bottom: 4rem;
+background: url('/static/img/error-bg.jpg') no-repeat center center fixed;
+background-size: cover;
+}
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
