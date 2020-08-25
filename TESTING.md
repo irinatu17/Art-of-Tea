@@ -266,7 +266,7 @@ So after that the query functionality is being applied only to the active produc
     - when the order was created via webhooks (after commenting out `form.submit();` in `stripe.js`), the payment was successfully proceeded and the order was saved in the database
     - after the valid form was submitted, the confirmation email was recieved in the email provided with all the correct order info. As well as that, the checkout page renders showing the order summary.
     - when the order was completed by the logged in user in the checkout success page, the "View full order history" button redirects to the Order history page. "Keep shopping" button is displayed for both non-logged in and logged in users and redirects to the products page
- - **Bugs found and fixed**: The bugs with save-info and comment fields were found during testing process and they are described in details in the [Bugs](#bugs) section.
+ - **Bugs found and fixed**: Few bugs with save-info and comment fields were found during testing process and they are described in details in the [Bugs](#save-info-field) section.
  - **Verdict**: The bugs were fixed, all the functionality works as expected. Test passed. 
 
 ### Authentication pages
@@ -401,9 +401,12 @@ $('.update-cart-btn').click(function(e) {
 
 #### Verdict
 The bug was successfully fixed and evetually all the test passed.
+
 ### Save info field
-During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False).     
-To fix that few additional line od code was added to 
+#### Bug
+During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information anyway. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False), meaning it always returned True regardless user's actions.
+#### Fix
+To fix that few additional lines of code was added to 
 -  **stripe.js** file:    
 `var saveInfo = document.getElementById('save_info').value;`
 - **checkout/views.py** file:
@@ -413,15 +416,33 @@ if request.POST['save_info'] == "true":
             else:
                 request.session['save_info'] = False
 ```   
-
-Now first I get the value of "save_info" field, if it's equal to "true" I assign it as True, if "false" - to False. The issue was successfully solved.
- - As well as that, I had an issue with non-logged in user. The save info field is visible only for authenticated users, so if it's a guest it's should be set to None.
-Therefore the following line was added to the **webhook_handler.py** file:    
+The process of handling it is: first I get the value of "save_info" field, if it's equal to "true" it's assigned to True in the checkout view, if "false" - assigned to False.   
+So after adding those lines, if a user dosn't tick the "save-info" checkbox, the information will not be saved in their profile.     
+ - As well as that, another issue with "save-info" checkbox was found, when an order is created by non-authenticated user. The save info field is visible only for authenticated users, so if it's a guest it supposed to return **None**, but the that didn't and that caused the error to make a payment and create an order.      
+ To **fix** that, the following line was added to the **webhook_handler.py** file:    
 `save_info = intent.metadata.save_info if hasattr(intent.metadata, 'save_info') else None`  
+#### Verdict
+The bugs were successfully fixed and evetually all the test passed.
 
 ### Comment field
-Similar to the save_info field, I got an issue with optional comment field when the form was handled via webhooks. If the comment field was empty, that throw an error and didn't save the order properly in the database. The problem was that if the field was empty, it wasn't set as None, so adding the following line successfully solved the issue:    
+#### Bug
+Similar to the save_info field, there was an issue with optional Comment field, occuering when the form was handled via webhooks during the testing. If the comment field was empty, the error appeared and order was not saved properly into the database.
+#### Fix 
+The problem was that if the Comment field was empty, it wasn't set as None (as it's supposed to be as it's an optional field).   
+So adding the following line successfully solved the issue setting the value as None in case the comment field was empty:    
 `comment = intent.metadata.comment if hasattr(intent.metadata, 'comment') else None`     
+#### Verdict
+The bug was successfully fixed and evetually all the test passed.
+
+### Saving an order into both sqlite and Postgress databases when created by non-authenticated user
+#### Bug
+When an order was created by non-logged in user, it was saved into both databases - sqlite(in Gitpod) and Postgress(in Heroku). After plenty of tests and code checks, it was found out that that happened because the webhook URLs pointing on Stripe to both the Gitpod and Heroku URLs.     
+Apparently, even if there is a single DB setup on the settings.py file and/or Config Vars (in Heroku), no matter how many webhooks there are listed, Stripe will trigger to them all, even if they are different databases. If they are both 'active' and enabled, Stripe will trigger both of them to update on all Databases that they're pointing to.
+#### Fix
+Eventually the fix was very easy. All I had to do is to **disable**/toggle-off the webhoook URL for the sqlite3 DB in the Stripe dashboard, when everything was tested and completed, and set only Postgres DB as active. After that all the orders created in production are being saved only in Postgress database as expected.
+#### Verdict
+The bug was successfully fixed and evetually all the test passed.
+
 
 
 [Back to README](https://github.com/irinatu17/Art-of-Tea/blob/master/README.md#testing)
