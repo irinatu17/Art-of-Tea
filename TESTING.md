@@ -338,6 +338,10 @@ Forgot/reset password, verification email, login, create account - all work as e
  - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#delete-product-service-functionality) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
  
+ <div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
+ 
 ## Automated Testing
 Automated testing is implemented to support manual testing during the development process. The intent was not to achieve 100% coverage with automated testing, but more to support and complement the manual testing, paying more attention to the more fragile code pieces and testing them.    
 Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
@@ -351,6 +355,11 @@ Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms
 - to generate the HTML file run the following command:  `coverage html` and open index.html file in the newly created directory, run the file in the browser to see the output. 
 ### Travis
 [Travis](https://travis-ci.org/) was also used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
+
+ <div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
+
 ## Validators
 ### HTML
 All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
@@ -361,6 +370,10 @@ As well as that, there are a few error warnings for some -webkit, -moz pseudo el
 All the JS files were tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint.    
 ### Python
 All the Python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
+
+ <div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
 
 ## Compatibility and Responsiveness
 This website had been being tested during the development across **multiple browsers** (Chrome, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).              
@@ -373,6 +386,10 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 ## Other Testing 
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
 - I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
+
+<div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
 
 ## Bugs 
 ### Update quantity in the cart
@@ -457,6 +474,8 @@ Not only from the Admin Panel, but also from the "Edit" page, admin can set the 
 #### Verdict
 The bug was successfully fixed and evetually all the test passed.
 
-
+ <div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
 
 [Back to README](https://github.com/irinatu17/Art-of-Tea/blob/master/README.md#testing)
