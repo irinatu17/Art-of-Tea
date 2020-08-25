@@ -9,7 +9,7 @@ Manual testing was conducted with each feature and user story on different scree
 ### Responsiveness
 - **User story being tested**:       
 *As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.*
-- **Test implementation**:
+- **Test**:
     - check each page of the website from multiple devices and multiple browsers
     - open the website in the Google Dev Tooles and click on "Responsive" to check all pages for all resolutions from 320px and above
     - more detailed information about responsiveness testing can be found in [Compatibility and Responsiveness](#compatibility-and-responsiveness) section
@@ -19,7 +19,7 @@ Manual testing was conducted with each feature and user story on different scree
 ### Navbar
 - **User story being tested**:      
 *As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
-- **Test implementation**:
+- **Test**:
     - click on all the links in the navbar, to check if they work properly pointing to the correct destination
     - check all links on the different devices (navbar looks different for mobile, tablet and desktop screens)
     - on mobile devices make sure that navbar is collapsed and the side bar shows up when the hamburger menu is clicked 
@@ -35,7 +35,7 @@ Manual testing was conducted with each feature and user story on different scree
 - **User stories being tested**:     
 *As a user, I want to easily access social media links of the company, so that I can read more information about it.*     
 *As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.*
-- **Test implementation**:
+- **Test**:
     -  click on the social media icons to check if they lead to the corresponding pages and open in the new tabs 
     -  check if GitHub and LinkedIn icons open my profiles, while Instagram and Facebook icons open the main pages (as it's an educational project and there are no real pages exist)
     - check different devices to test if the footer id displayed correctly (with additional top section on large resolutions)
@@ -46,7 +46,7 @@ Manual testing was conducted with each feature and user story on different scree
 ### Search bar
 - **User story being tested**:     
 *As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.*
-- **Test implementation**
+- **Test**
     - enter any search word into the search box to see if it redirects to the products page with correct results displayed
     - submit an empty search query without entering anything
     - enter some search words that expected to be found in the website (e.g. "matcha", "green", "teapot")
@@ -65,7 +65,7 @@ So after that the query functionality is being applied only to the active produc
 ### Landing page 
 - **User story being tested**:     
 *As a user, I want to read a summary info about the business, its ideas and benifits, so that I can quickly decide if it satisfies my needs.*
-- **Test implementation**:
+- **Test**:
     - click all the buttons accross the page
     - scroll down the page to check the animation on scroll (AOS)
     - ckeck all the image-carousels and reviews-carousel by clicking on chevrons
@@ -81,7 +81,7 @@ So after that the query functionality is being applied only to the active produc
 ### About page
 - **User story being tested**:     
 *As a user, I want to find an information about the company, to know what they do, what their main principles and ideas*
-- **Test implementation**:
+- **Test**:
     - verify that the expected text is displayed correctly
     - check that the correct images are displayed for each of the sections 
     - scroll down the page to check the animation on scroll (AOS)
@@ -96,7 +96,7 @@ So after that the query functionality is being applied only to the active produc
 ### Events page 
 - **User story being tested**:     
 *As a user, I want to view events that happen in the tea club this week in Dublin, so that I can come and join any event.*
-- **Test implementation**:
+- **Test**:
     - verify that images are displayed correctly
     - verify that the data from the Events model is displayed correctly in the events table
     - scroll down the page to check the animation on scroll (on the text an teapot image)
@@ -112,7 +112,7 @@ So after that the query functionality is being applied only to the active produc
 *As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events.*      
 *As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*    
 **Admin**: *As a user, I want to receive emails from the users when they fill out the contact form, so that I can reply on them satisfying users queries.*
-- **Test implementation**:
+- **Test**:
     - check that a graphic image is displayed only on the large screen
     - try to submit an empty Contact form
     - try to enter incorrect email address (without @)
@@ -134,7 +134,7 @@ So after that the query functionality is being applied only to the active produc
 - **User stories being tested**:     
 *As a user, I want to view product details (e.g. image, price, description), so that I can buy some of them.*    
 *As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.*
-- **Test implementation**:
+- **Test**:
     - verify that the expected text and images are displayed correctly in both products and product details pages
     - select the category, clicking on the category-links (e.g. Teaware, Black Tea) in the all products page
     - login with superuser credentials and verify that the Edit/Delete buttons appear in both products and product details pages under the image
@@ -167,7 +167,7 @@ So after that the query functionality is being applied only to the active produc
 - **User stories being tested**:     
 *As a user, I want to learn more about different types of tea ceremonies, so that I can choose and book one of the tea ceremonies.*     
 *As a user, I want to view service details (e.g. image, price, description), so that I can book one.*
-- **Test implementation**:
+- **Test**:
     - verify that the expected text and images are displayed correctly in both service and service details pages
     - scroll down the page to check the animation on scroll (AOS)
     - login with superuser credentials and verify that the Edit/Delete buttons appear in both service and service details pages
@@ -205,7 +205,7 @@ So after that the query functionality is being applied only to the active produc
 - **User stories being tested**:     
 *As a user, I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment.*     
 *As a user, I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.*
-- **Test implementation**:
+- **Test**:
     - verify that the text and images of the added items are displayed correctly 
     - click on the "Continue shopping" link at the top of the page
     - try to update the item quantity/number of participants and datatime (for services) with different products and services
@@ -229,7 +229,7 @@ So after that the query functionality is being applied only to the active produc
 - **User stories being tested**:     
 *As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.*      
 *As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.*      
-- **Test implementation**:
+- **Test**:
      - verify that the text and images(Order summary) are displayed correctly 
      - click on the "Edit cart" link
      - try to submit an empty field set (check each section- Personal details, Shipping Info and Payment)
@@ -259,26 +259,45 @@ Forgot/reset password, verification email, login, create account - all work as e
 *As a user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.*    
 *As a user, I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.*       
 *As a user, I want to reset my password if I forgot it, so that I can get access to my profile again.*     
-- **Test implementation**:
+- **Test**:
      - try to register entering incorrect email, incorrect password and  username/email that's already exist in the database
      - submit valid registration form
      - entering two different passwords in registration form and trying to enter old password when re-setting password
      - create an account and try to login with correct and incorrect details
      - click on logout link in the navbar and then on logout button
 - **Results**:
-    - if required data is missing or incorrect, form does not submit and an error messages are displayd informing user what was wrong
+    - if required data is missing or incorrect, form does not submit and an error messages are displayed informing user what was wrong
     - if the registration form is valid, user is informed that they need to verify their account and the email was sent to them with the verification link
     - when verification link is clicked in the email, user is redirected to the confirmation page, clicking "Confirm" button, success message is displayed and user is automatically logged in
     - on the login page, when "Forgot password" link is clicked, a user is redirected to the password reset page and asked for their email address, then an email is sent with a link to reset password. After entering new password twice, the password is reset and user can login with a new password
     - when logout link in the navbar is clicked, the login page opens asking for confirmation to logout, when it is confirmed, the user is logged out and the session is stopped
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
-
 ### Profile and Order History
-- These features were tested to check if they are available only to the logged-in users.
-- Clicking on the Order number on the order history page opens the past confirmation (checkout success) page with the corresponding toast info message.
-- Profile page displayes all the personal info (email and username), clicking on the "Change password" and "Manage emails" buttons leads to the correct destinations.
-- If all the shipping information on the profile page was deleted, then on the checkout page all the fields were empty. At the same time when I saved some shipping details on the profile page, the checkout form fields were prefilled, confirming that the shipping info was saved into the Profile model.
+- **User stories being tested**:     
+*As a user, I want to create my own account, so that I can save, view and edit my profile details and view my order history*        
+*As a user, I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.*           
+*As a user, I want to  be able to change my password, so that I can create the stronger password (e.g.in case I published my old password somewhere) to protect my personal details.*    
+*As a user, I want to  be able to change my email or add the second email,so that I can having an easier access to the website's functionality and to gain more flexibility.*
+- **Test**:
+    - navigate to the My Profile and Order History pages from the Navbar link
+    - check being a logged in and non-loggeded in user, that it's only available to the authenticated users
+    - click on the Order number on the Order History page
+    - on the My Profile page fill out the shipping details form and click on the "Update information" button
+    - on the My Profile page update/delete some information in the shipping details form and click on the "Update information" button
+    - after submiting the form, make a puchase to see if the personal and shipping fileds in checkout form are pre-populated with that info
+    - click on the "Change password" button and test Change password functionality by filling out the form
+    - click on the "Manage emails" button and test Manage email functionality by adding new emails, removing them, making primary
+    - check the Order History page with a freshly created account with no orders
+    - click on the "View My Profile" and "View Order History" buttons on the Order History and My Profile pages respectively
+- **Results**:
+    - both My Profile and Order History are available only to the logged-in users
+    - clicking the Order number on the order history page opens the past confirmation (checkout success) page with the corresponding toast info message as expected.
+    - Profile page displayes all the personal info (email and username), clicking on the "Change password" and "Manage emails" buttons leads to the correct destinations (that's built-in Django functionality). Everything works as expected.
+    - if all the shipping information on the profile page was deleted, then on the checkout page all the fields were empty. At the same time if there are shipping details saved on the profile page, the checkout form fields were pre-filled, confirming that the shipping info was saved into the Profile model.
+    - "View My Profile" and "View Order History" buttons lead to the correct destinations
+- **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
+ 
 ### Admin product management functionality
 - Add product/service forms work as expected: validation error messages in place, after successfull addition it redirects to the new created product/service page.
 - I added few products/services without the image to test the no-image assignment.
