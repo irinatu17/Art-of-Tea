@@ -335,7 +335,8 @@ Forgot/reset password, verification email, login, create account - all work as e
     - Edit functionality works as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the product/service page and all the changes straight away can be seen in that page and in the database(admin panel can be checked as well).
     - Delete functionality works as expected: after clciking "Delete" button on the product/service pages, delete modal toggles. Click on the "Delete" button deactivates the product/service (setting `discontinued = False`, but not completely removing from the database). After "deleting" product/service - setting it as **Discontinued** - the product/service is hidden from the user's view and can be accessed only from the Order history, if this product/service was purchused before. "Out of stock" line is displayed on the page and "Add to cart" functionality is not avaible for the Discontinued product/service.
     - The defensive design worked well, allowing only superuser to have an access to this functionality. If non-admin users try to access the pages, theya are redirected to the home page with corresponding error messages displayed.
- - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#delete-product-service-functionality) section.
+ - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the 
+ [Bugs](#delete-product-or-service-functionality) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
  
  <div align="right">
@@ -382,6 +383,10 @@ Also, the following tools were used to constantly test the project:
 -  [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/) online tools for checking responsiveness on different devices.
 Plenty of changes were made and necessary media queries added to make the website is fully responsive.        
 The website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on all the other browsers.
+
+<div align="right">
+    <b><a href="#testing">↥ Back To Top</a></b>
+</div>
 
 ## Other Testing 
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
@@ -460,7 +465,7 @@ Eventually the fix was very easy. All I had to do is to **disable**/toggle-off t
 #### Verdict
 The bug was successfully fixed and evetually all the test passed.
 
-### Delete product/service functionality
+### Delete product or service functionality
 #### Bug
 When a product/service was deleted by admin from the database, but before it was ordered and purchased by a user, the product/service was deleted from the user's order history as well. This caused the user's confusion: as that deleted product is not anymore in the past order confirmation(checkout success) page - all fields in the order summary were empty, even a grand total. Also, if there were more than one items ordered, the grand total was updated as well(subtracting that deleting product), so it was smaller that the actual amount that the paid. The reasn of this issue was that the **product** field in **Order Item Details model** contained `on_delete=models.CASCADE`, meaning that if a product/service was deleted, it was also removed from Order Item Details model and from user's order history.
 #### Fix
