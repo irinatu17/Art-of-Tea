@@ -9,11 +9,9 @@
 --lavander: #D6D3F0;
 --red-salmon: #ff7474;
 --red: #ff4141;
---yellow: #ffc00f;
 --white: #ffffff;
 --darkwhite: #f6f6f6f3;
 --lightblack: #252525;
---darkgrey: #515151;
 
 --marko-one: 'Marko One', serif;
 --open-sans: 'Open Sans', sans-serif;
@@ -178,7 +176,6 @@ background-color: var(--red-salmon);
 color: var(--white);
 }
 
-
 .btn-service{
 font-size: 0.8rem;
 }
@@ -239,16 +236,6 @@ top:100%;
 background-color: var(--black);
 }
 
-.footer-link{
-transition: all .15s ease-in-out;
-color: var(--white);
-}
-
-.footer-link:hover{
-transform: scale(1.1);
-color: var(--lightgreen);
-}
-
 /* Landing page - hero image section*/
 .hero-image{
 height: 100vh;
@@ -282,7 +269,6 @@ width: 15rem;
 background-color: var(--darkgreen);
 color: var(--white);
 }
-
 
 .update-cart-btn,
 .remove-button {
@@ -368,7 +354,7 @@ padding: 0 10%;
 }
 
 
-/*Smooth transition on hover makes icons */
+/*Footer */
 .media-icons{
 font-size: 1.5rem;
 color: var(--white);
@@ -402,6 +388,15 @@ color: var(--lightgreen);
 font-size: 2.5rem;
 }
 
+.footer-link{
+transition: all .15s ease-in-out;
+color: var(--white);
+}
+
+.footer-link:hover{
+transform: scale(1.1);
+color: var(--lightgreen);
+}
 
 /*Products app*/
 .category-main-nav{
@@ -603,6 +598,7 @@ padding-bottom: 4rem;
 background: url('/static/img/error-bg.jpg') no-repeat center center fixed;
 background-size: cover;
 }
+
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
 .events-text-block{
@@ -781,6 +777,7 @@ transform: translate(-50%, -50%);
 .landing-main-heading{
 font-size: 5.5rem;
 }
+
 .checkout-button{
 font-size: 1rem;
 }
@@ -812,7 +809,7 @@ font-size: 1rem;
 }
 }
 
-/*  iPad Pro  and iPad landscape size Media queries */
+/* iPad Pro  and iPad landscape size Media queries */
 @media only screen and (min-width: 992px) and (max-width: 1366px)and (-webkit-min-device-pixel-ratio: 1.5){
 .landing-text {
 left: 45%;

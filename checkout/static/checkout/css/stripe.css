@@ -1,4 +1,4 @@
-/**
+/*
     CSS is taken from Stripe documentation: 
     https://stripe.com/docs/stripe-js
  */
@@ -9,7 +9,7 @@ height: 40px;
 padding: 10px 12px;
 border: 1px solid #ced4da;
 border-radius: 4px;
-background-color: white;
+background-color: 	#FFFFFF;
 box-shadow: 0 1px 3px 0 #ced4da;
 -webkit-transition: box-shadow 150ms ease;
 transition: box-shadow 150ms ease;
@@ -21,6 +21,7 @@ transition: box-shadow 150ms ease;
 .stripe-style-input:active {
 box-shadow: 0 1px 3px 0 #ced4da;
 }
+
 .StripeElement--invalid {
 border-color: #fa755a;
 }
