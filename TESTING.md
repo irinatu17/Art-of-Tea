@@ -1,11 +1,28 @@
 # Testing
  1. [**Manual Testing**](#manual-testing)
+     - [**Responsiveness**](#responsiveness)
+     - [**Navbar**](#navbar)
+     - [**Footer**](#footer)
+     - [**Search bar**](#search-bar)
+     - [**Landing page**](#landing-page)
+     - [**About page**](#about-page)
+     - [**Events page**](#events-page)
+     - [**Contact page**](#contact-page)
+     - [**Products and product details pages**](#products-and-product-details-pages)
+     - [**Services and service details pages**](#services-and-service-details-pages)
+     - [**Cart page**](#cart-page)
+     - [**Checkout and checkout success pages**](#checkout-and-checkout-success-pages)
+     - [**Authentication pages**](#authentication-pages)
+     - [**Profile and Order History**](#profile-and-order-history)
+     - [**Admin product management functionality (admin CRUD)**](#admin-product-management-functionality-admin-crud)
  2. [**Automated Testing**](#automated-testing)
+      - [**Travis**](#travis)
  3. [**Validators**](#validators)
  4. [**Compatibility and Responsiveness**](#compatibility-and-responsiveness)
- 5. [**Bugs**](#bugs)
+ 5. [**Other Testing**](#other-testing)
+ 6. [**Bugs**](#bugs)
 ## Manual Testing
-Manual testing was conducted with each feature and user story on different screen resolutions, devices and in different browsers.  
+Manual testing was conducted with each feature and each user story on different screen resolutions, devices and in different browsers to ensure the application is a good solution to user's needs.  
 ### Responsiveness
 - **User story being tested**:       
 *As a user, I expect to access the website from any device, so that I can use the website anytime and anywhere.*
@@ -58,7 +75,7 @@ Manual testing was conducted with each feature and user story on different scree
     - if the search query does not exists in the database, the products page renders, displaying the search word, numer of results equal to 0 and a paragraph telling that no results were found for the entered query
     - search box works accross all the app, no matter which page a user is currently on
  - **Bugs found and fixed**: After refactoring the delete products admin functionality and adding *Discontinued* field (described more detailed in the corresponding section), the search number of results showed the total number of all products including the out of stock, discountinued products. To fix that, an if statement was added to the `def all_products`:     
- `active_products = all_products.filter(discontinued=False)`     
+ `active_products = all_products.filter(discontinued=False)`    and further functionality was updated in the view with the new `active_products` variable.  
 So after that the query functionality is being applied only to the active products, that are in stock. The bug was successfully fixed. 
  - **Verdict**: The bug is fixed. Test passed.
  
@@ -107,7 +124,7 @@ So after that the query functionality is being applied only to the active produc
     - Facebook link opens in the new tab leading to the main page (since there is no real page exists for the website)
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
 
-### Contact
+### Contact page
 - **User stories being tested**:     
 *As a user, I want to see the location of the Tea Club on a map, so that I can find the address easily and come to the advertised events.*      
 *As a user, I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.*    
@@ -222,7 +239,7 @@ So after that the query functionality is being applied only to the active produc
     - cicking "Checkout" button redirects to the Checkout page.
     - toast messages are always displayed as expected after each update/remove action
     - if the cart is empty, the paragraph informs a user that the cart is empty; clicking "Go shopping" button redirects to the products page
- - **Bugs found and fixed**: 
+ - **Bugs found and fixed**: The bug with updating the quantity in the cart was found during testing procrss and it is described in details in the [Bugs](#update-quantity-in-the-cart) section.
  - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
 
 ### Checkout and checkout success pages
@@ -235,7 +252,7 @@ So after that the query functionality is being applied only to the active produc
      - try to submit an empty field set (check each section- Personal details, Shipping Info and Payment)
      - try to put an incorrect information (e.g. email without @)
      - create a large number of orders as logged in and non-logged in user, ticking or not the save-info checkbox.
-     - in the Payment section enter **4242 4242 4242 4242** card number, any expiration date in future and any CVC, and then click on the "Proceed to payment" button (this was also checked on Stripe Dashbord to see if the order was created)
+     - in the Payment section enter the testing **4242 4242 4242 4242** card number, any expiration date in future and any CVC, and then click on the "Proceed to payment" button (this was also checked on Stripe Dashbord to see if the order was created)
      - try to enter different and incomplete card numbers, the expiration date in the past to check the error messages
      - temporary comment out the code line `form.submit();` in `stripe.js` file and then try to submit the form clicking the "Proceed to payment" button. After that check the Stripe Dashboard and also Order model in Admin panel to make sure the order was created via webhooks and was saved to the database.
 - **Results**:
@@ -244,12 +261,12 @@ So after that the query functionality is being applied only to the active produc
     - if an empty form was submitted or filled out incorrectly, the validation error messages were displayed correctly, when the "Next" button is clicked, not allowing to go to the next step before the current section is filled up with correct information.
     - when an order is created by non-authenticated user, the save-info checkbox is hidden from the view, instead the links to the Create account and Login pages are displayed offering a user to login to save the information and the order to the order history. 
     - if an authenticated user ticks the save-info checkbox, all the personal and shipping information is saved to their profile. There was an issue with the save-info field found during testing, that is described in the Bugs section and was successfully fixed
-    - 4242 4242 4242 4242 card number leads to the successfull payment, that was confirmed in the Stripe Dashboard.
+    - testing 4242 4242 4242 4242 card number leads to the successfull payment, that was confirmed in the Stripe Dashboard.
     - if the incorrect or incomplete card details were entered, the error messages are displayed as expected under the Payment field.
     - when the order was created via webhooks (after commenting out `form.submit();` in `stripe.js`), the payment was successfully proceeded and the order was saved in the database
     - after the valid form was submitted, the confirmation email was recieved in the email provided with all the correct order info. As well as that, the checkout page renders showing the order summary.
     - when the order was completed by the logged in user in the checkout success page, the "View full order history" button redirects to the Order history page. "Keep shopping" button is displayed for both non-logged in and logged in users and redirects to the products page
- - **Bugs found and fixed**: 
+ - **Bugs found and fixed**: The bugs with save-info and comment fields were found during testing process and they are described in details in the [Bugs](#bugs) section.
  - **Verdict**: The bugs were fixed, all the functionality works as expected. Test passed. 
 
 ### Authentication pages
@@ -298,33 +315,52 @@ Forgot/reset password, verification email, login, create account - all work as e
     - "View My Profile" and "View Order History" buttons lead to the correct destinations
 - **Verdict**: Test passed. All the functionality works as expected, no bugs were found during the testing.
  
-### Admin product management functionality
-- Add product/service forms work as expected: validation error messages in place, after successfull addition it redirects to the new created product/service page.
-- I added few products/services without the image to test the no-image assignment.
-- In production all images are stored in the AWS S3, so the Basket was constantly checked to make sure it works as expected.
-- Edit/Delete functionality was tested many times, all the changes straight away can be seen in the database.
-- The defensive design worked well allowing only superuser to have an access to this functionality.
-
+### Admin product management functionality (admin CRUD)
+- **User stories being tested**:     
+*As a user, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.*
+- **Test**:
+    - navigate to the Product Management page from the navbar
+    - click on the "Add a New Product" and "Add a New Service" to open the corresponding form
+    - try to submit both forms being empty or with invalid information to see if the error messages will appear
+    - submit "Add a New Product" form with all valid information multiple times creating different products (providing/not providing an image, filling all/only required fields)
+    - submit "Add a New Service" form with all valid information multiple times creating different services(providing/not providing an image, filling all/only required fields)
+    - after adding a product/service with an image, go to the AWS S3 website and check the basket to see if the image was saved there
+    - after clicking "Edit" button on the product/service pages, fill out the edit form (change something, remove some fields' values)
+    - create few testing products and services with dummy data for testing the delete functionality:     
+  click on the "Delete" button on the product/service pages, verify that delete modal appears with correct text provided, click on the "Delete" button in the modal. After check Product model in the Admin panel to see changes reflected
+    - being a guest or logged in as a regular user(not admin), manually enter the edit/delete/add URLS to reach the corresponding pages trying to access admin functionality and manipulate the database
+- **Results**:
+    - Add product/service forms work as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the new created product/service page with all correct information displayed.
+    - if image wasn't provided,no-image placeholder is assignmed and displayed. In production all images are stored in the AWS S3, so the new images were successfully saved into the Basketas expected.
+    - Edit functionality works as expected: validation error messages appear if the form is invalid. After successfull addition it redirects to the product/service page and all the changes straight away can be seen in that page and in the database(admin panel can be checked as well).
+    - Delete functionality works as expected: after clciking "Delete" button on the product/service pages, delete modal toggles. Click on the "Delete" button deactivates the product/service (setting `discontinued = False`, but not completely removing from the database). After "deleting" product/service - setting it as **Discontinued** - the product/service is hidden from the user's view and can be accessed only from the Order history, if this product/service was purchused before. "Out of stock" line is displayed on the page and "Add to cart" functionality is not avaible for the Discontinued product/service.
+    - The defensive design worked well, allowing only superuser to have an access to this functionality. If non-admin users try to access the pages, theya are redirected to the home page with corresponding error messages displayed.
+ - **Bugs found and fixed**: The bug with **delete** product/service functionality was found during testing process and it is described in details in the [Bugs](#bugs) section.
+ - **Verdict**: The bug was fixed, all the functionality works as expected. Test passed. 
+ 
 ## Automated Testing
-Automated testing is implemented to support manual testing during the development process.   
+Automated testing is implemented to support manual testing during the development process. The intent was not to achieve 100% coverage with automated testing, but more to support and complement the manual testing, paying more attention to the more fragile code pieces and testing them.    
 Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
 *Note:* The tests should be added in local database, as The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. To run the test and check the output, the database (Postgres) code configuration in `settings.py` should be temporarily removed or commented out.     
 - **Command used to run the tests**:    
 `python3 manage.py test`   
 - To run the tests within a specific app only:
-`python manage.py test <app name here>`
+`python manage.py test <app name here>`           
+[Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) was used to get the feedback during the testing and see the percentage of the unit tests implemented. 
+- to generate a coverage report run the following command: `coverage report`
+- to generate the HTML file run the following command:  `coverage html` and open index.html file in the newly created directory, run the file in the browser to see the output. 
 ### Travis
 [Travis](https://travis-ci.org/) was also used throughout the unit testing of this project to provide continuous integration with the deployed site when pushing code to GitHub. It is configured via the `.travis.yml` file. All information about how to set it up can be found in [Travis Documentation](https://docs.travis-ci.com/).
 ## Validators
 ### HTML
 All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.   
 ### CSS
-CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
+All the CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use :root{} for colours and fonts variables), there were several Parse Errors found.
 As well as that, there are a few error warnings for some -webkit, -moz pseudo element selectors. Both errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.   
 ### JavaScript
-JS file was tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint (it is necessary for jQuery Materialize initializing).    
+All the JS files were tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid. "$" was not defined by JSHint.    
 ### Python
-All python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
+All the Python files were tested through [PEP8 Online](http://pep8online.com/) validator and further changes were made to make the code PEP8 compliant.
 
 ## Compatibility and Responsiveness
 This website had been being tested during the development across **multiple browsers** (Chrome, Safary, Opera, FireFox, Internet Explorer) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).              
@@ -338,7 +374,33 @@ The website renders poorly on Internet Explorer browser (as it is outdated). How
 - The app was constantly testing with **debugger** locally: `debug=True` throughout all the development process. Every time when there was an error (when app crashed), the debugger displayed an error message to the view, that allowed me to find the location of the error and fix it.
 - I also asked my friends, family members and fellow students in Slack to thoroughly test my website in different devices, try to break it and to give me a feedback about the design, functionality and their user experience. Some further improvement took placed to enhance UX after this testing phase.
 
-## Bugs
+## Bugs 
+### Update quantity in the cart
+#### Bug
+When user manually enters invalid quantity (for products - out of range of 1-999) or invalid number of participants(for services - out of range 1-100), the item in the cart was still updated and the total was changed accordinly. The error messages didn't appear and clicking on "Checkout" button led to 500 Server Error, as the form was invalid eventually, and user wasn't informed about what was wrong there. That happened because in the cart app the quantity form was handled in a different way (by JavaScritpt), that is different from the quantity/number of participants forms on prodcut/service pages, where the validation error messages appear as expected.
+#### Fix
+The issue was fixed by adding extra piece of code to handle validation via JavaScript. The main idea here is to use `checkValidity() method` and display the hidden paragraph that contains an error message, that appears under the field if there was an attempt to enter invalid quantity.        
+The main problem was to determine the certain invalid form if there are more than one item was added to the cart.        
+The following id was added to the `<form>` element to get the loop index : `id="cart-form-{{ forloop.counter }}"`. And also  `data-number="{{ forloop.counter }}` was added to the "Update" button to determine which button was clicked in case there are few items in the cart.     
+Finally, the if statement was added to get the validation error message displayed in case an error occured:   
+```
+$('.update-cart-btn').click(function(e) {
+        let number = this.dataset.number;
+        let cartForm = document.querySelector(`#cart-form-${number}`);
+        let cartFormValid  = cartForm.checkValidity();
+        if (cartFormValid) {
+            let form = $(this).prev('.quantity-update-form');
+            form.submit();
+        }else {
+            $(this).prev().children('.error-message').removeClass("d-none");
+
+        }
+    });
+
+```
+
+#### Verdict
+The bug was successfully fixed and evetually all the test passed.
 ### Save info field
 During the testing phase in production there was found an issue with save_info checbox: despite not being ticked(meaning that a user does not want to save the shipping information to the profile), it always saved that information. As the first two steps of the Checkout form are handling via JavaScript, its "true" and "false" values were not recognisable by Python(were not equal to True and False).     
 To fix that few additional line od code was added to 
