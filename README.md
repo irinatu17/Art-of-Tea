@@ -154,7 +154,7 @@ in the cart to catch user's attention, and remains white (as other navbar elemen
 
 On the large screens an active page is highlighted (colour changes to green) depending on which page a user is currently on.      
 The difference in navbar for logged in, non-logged in users and admin:   
- - <img src="https://i.ibb.co/RBwNxb8/navbar-non-logged-in.png" alt="navbar_for_guests" target="_blank" rel="noopener" width="850">    
+ - <img src="https://i.ibb.co/jhmctpR/navbar-for-guests.png" alt="navbar_for_guests" target="_blank" rel="noopener" width="850">    
 For **non-logged in** users or guests navbar contains the following links: Login, Register.   
  - <img src="https://i.ibb.co/zXvBMvK/navbar-loggedin-users.png" alt="navbar_for_logged_in_users" target="_blank" rel="noopener" width="850">    
 For **logged in** users it contains the **"My Account"** nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
@@ -171,7 +171,8 @@ The additional desktop only section contains
 - **contact information** that contains address, phone number and email
 
 #### Landing (home) page
-- The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book ceremony/buy products). Smooth animation on scroll is apllied to almost all sections of the page(mostly to images and icons). Tha landing page consists of 9 sections:
+ - <img src="wireframes/landing_page_gif" alt="landing_page" target="_blank" rel="noopener" width="850">
+The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book ceremony/buy products). Smooth animation on scroll is apllied to almost all sections of the page(mostly to images and icons). Tha landing page consists of 9 sections:
 - **Hero image** section contains a full-screen image, main heading with a subheading and 2 buttons "Book tea ceremony" and "Buy tea or teaware" that redirect a user to the services and products pages, correspondingly. The purpose of this section is to attract new users, to make the first impression and to call to action.
 - **Introduction about** section  contains an introduction about the company, what it does and what can be found on the website. It also contains an image and a "Learn more" button which redirects a user to the About page.
 - **Quote**  section  contains heading and Osho's quote about process of drinking tea, that gives a user an impression and understanding of some principles and ideas of the "Art of Tea" tea-club.
