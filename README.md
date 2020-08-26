@@ -171,7 +171,7 @@ The additional desktop only section contains
 - **contact information** that contains address, phone number and email
 
 #### Landing (home) page
- - <img src="wireframes/landing_page_gif" alt="landing_page" target="_blank" rel="noopener" width="850">
+ - <img src="/wireframes/landing_page_gif.gif" alt="landing_page" target="_blank" rel="noopener" width="850">
 The landing page serves to attract new users to the business, to give a clear understanding about that and to attract users to use the website's functionality (book ceremony/buy products). Smooth animation on scroll is apllied to almost all sections of the page(mostly to images and icons). Tha landing page consists of 9 sections:
 - **Hero image** section contains a full-screen image, main heading with a subheading and 2 buttons "Book tea ceremony" and "Buy tea or teaware" that redirect a user to the services and products pages, correspondingly. The purpose of this section is to attract new users, to make the first impression and to call to action.
 - **Introduction about** section  contains an introduction about the company, what it does and what can be found on the website. It also contains an image and a "Learn more" button which redirects a user to the About page.
