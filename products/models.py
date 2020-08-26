@@ -68,5 +68,8 @@ class Product(models.Model):
                                    validators=[MinValueValidator(1),
                                                MaxValueValidator(24)])
 
+    class Meta:
+        ordering = ["pk"]
+
     def __str__(self):
         return self.name
