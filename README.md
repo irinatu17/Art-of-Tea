@@ -453,6 +453,7 @@ Description | description | CharField | max_length=254
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - to style Django forms.
 - [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) - to see the percentage of the automated testsing.
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)- to render the map in Contact page.
+- [Tempus Dominus](https://tempusdominus.github.io/bootstrap-4/) - to initialize datetime picker.
 
 ### Tools
 - [GitPod](https://www.gitpod.io/) - an online IDE for developing this project.
@@ -465,7 +466,7 @@ Description | description | CharField | max_length=254
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
 - [Travis](https://travis-ci.org/) - for integration testing.
 - [TinyPng](https://tinypng.com/) - for compressing images.
-- [ImgBB](https://imgbb.com/) - to host images.
+- [ImgBB](https://imgbb.com/) - to host images used in README and also services/products images to provide URLs.
 - [GIMP2](https://www.gimp.org/) - for editing and resizing images.
 - [Balsamiq](https://balsamiq.com/) - to create wireframes.
 - [Coolors.co](https://coolors.co/) - to create colour palette used in the README.
