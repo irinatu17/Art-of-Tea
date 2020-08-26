@@ -154,10 +154,14 @@ in the cart to catch user's attention, and remains white (as other navbar elemen
 
 On the large screens an active page is highlighted (colour changes to green) depending on which page a user is currently on.      
 The difference in navbar for logged in, non-logged in users and admin:   
-- For **non-logged in** users or guests navbar contains the following links: Login, Register.   
-- For **logged in** users it contains the **"My Account"** nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
+ - <img src="https://i.ibb.co/jhmctpR/navbar-for-guests.png" alt="navbar_for_guests" target="_blank" rel="noopener" width="850">    
+For **non-logged in** users or guests navbar contains the following links: Login, Register.   
+ - <img src="https://i.ibb.co/zXvBMvK/navbar-loggedin-users.png" alt="navbar_for_logged_in_users" target="_blank" rel="noopener" width="850">    
+For **logged in** users it contains the **"My Account"** nav-item which toggles down the following links that redirect user to the corresponding pages: My Profile, Order History, Logout.   
 - For **admin** apart from all the links available for logged-in users mentioned above, there is also a link to the **Product Management page**, where admin can add new products and services. This is avaliable only for superusers. Defensive design with corresponding error messages is in place to protect this page from manual entering the url in the browser.
 #### Footer
+ - <img src="https://i.ibb.co/ZHpsqZQ/footer.png" alt="footer" target="_blank" rel="noopener" width="850">    
+ 
 Footer consists of 2 parts: main footer section and additional footer section which is displayed only on the large screens.   
 
 Main footer section is stuck to the bottom of the page and displayed across all the screens. It contains the **social media icon-links** which redirect a user to the corresponding page, opening in a new tab. GitHub and LinkedIn icons open author of the project's profile, while Instagram and Facebook icons open the main pages, as it is not the real company.   
@@ -185,12 +189,15 @@ The page provides a user information about the main focus of the website, its pu
 It contains 3 sections: **Who we are**, **Our principles** and **Our mission** followed by the images and an image-carousel in the last section.
 
 #### Events page
+ - <img src="https://i.ibb.co/bLZ1Nc0/events-mockup.png" alt="events_mockup" target="_blank" rel="noopener" width="850">
 This page represents the events that happen each week in the tea club "Art of Tea". The short paragraph explains to a user how the events are organised and about the donation system.   
 
 As well as that, the page contains **Weekly events table** (from the Events model) displaying weekdays, time and name of the event that are available in the tea club.   
 There's also a **Find us here** section, showing the address, phone number and the link to the Facebook page, that can be checked to see more details about each week's events.
 On the large screen, there is also a small teapot image under the "Find us here" section. The animation on scroll is applied to that image and to the main paragraph.
 #### Contact page
+ - <img src="https://i.ibb.co/dPbQ7VR/contact-mockup.png" alt="contact_mockup" target="_blank" rel="noopener" width="850">
+
 Contact page consists of 2 sections:
 - **Contact form** that's offered to fill out (name, email, message) if a user has any questions or queries. The real email will be sent to the admin of the website (handling by django `send_mail()` functionality). If an authenticated user opens the contact page, the full name (if provided in user's profile) and email fields are pre-populated.     
 - **Contact details** section provides company's address, phone number and email, along with a map showing the location of the tea club. By clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
@@ -234,6 +241,7 @@ Contact page consists of 2 sections:
 - **Services** button redirects a user back to the Services page.
 
 #### Cart page
+ - <img src="https://i.ibb.co/VgrcD5d/cart-mockup.png" alt="cart" target="_blank" rel="noopener" width="850">    
 - The link at the top of the page **Continue shopping"** navigates  a user back to the products page, if a user wants to add something else to the cart.
 - Cart page is available for both logged in and non-logged in users, so that it is possible to make purchase being a guest.
 - The page contains a summary of the user's order: the item's **name**, **image**, **quantitie**/ **number of participants**, **price**, **sub-total** and **sku**(for products).
@@ -243,6 +251,7 @@ Contact page consists of 2 sections:
 - There is a **Checkout button** that takes a user to the checkout page to proceed with the payment.
 
 #### Checkout page
+ - <img src="https://i.ibb.co/t4dyLgg/checkout-mockup.png" alt="checkout" target="_blank" rel="noopener" width="850">    
 Checkout page contains 2 main section: checkout 3-steps form and order summary.
 - **Order summary** includes short information about items in the order (image, name, quantity, subtotal, date-time), the link to **Edit cart** ( that redirects a user to the Cart page), delivery cost and also **Total to pay**.
 - **Checkout form** is represented as 3 tabs with the **Next** and **Go back** buttons to navigate between the tabs. The form sections are the following: **Personal Details**, **Billing/Shipping info** and **Payment**.
@@ -296,7 +305,7 @@ The login page is only available to anonymous users and logged-in users are redi
 A user can reset their password to be able to login by entering the email. Then the link for reseting password will be sent to the email provided. The user can create a new password and then login with a new password.
 ##### Logout
 Hitting "logout" button renders logout page, asking to confirm if a user wants to logout. It will end their session and redirects to the homepage with a toast success message appeared.
-##### 404 and 500 error pages
+#### 404 and 500 error pages
 Custom 404 and 500 pages contain heading, short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
 
 ### Features Left to Implement
