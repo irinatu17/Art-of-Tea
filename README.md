@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/irinatu17/Art-of-Tea.svg?branch=master)](https://travis-ci.org/irinatu17/Art-of-Tea)      
 
 The live website can be viewed [here](https://art-of-tea.herokuapp.com/)      
-<img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="800">
+<img src="https://i.ibb.co/L005Cfg/mockup.png" alt="mockup" target="_blank" rel="noopener" width="850">
 
 Tea... Is it just a drink or is there something more behind it? From an early age tea was one of the main parts of daily life in different cultures and civilizations.  
 Tea connects people, calms the mind, brings harmony and balance.    
@@ -179,6 +179,7 @@ The landing page serves to attract new users to the business, to give a clear un
 - **Contact** section contains a question and a link to the Contact page, allowing a user to post a query/question there via the form.
 
 #### About page
+ - <img src="https://i.ibb.co/n8HThfT/about-mockup.png" alt="about_mockup" target="_blank" rel="noopener" width="850">
 The page provides a user information about the main focus of the website, its purposes, ideas and principles.    
 
 It contains 3 sections: **Who we are**, **Our principles** and **Our mission** followed by the images and an image-carousel in the last section.
@@ -195,12 +196,14 @@ Contact page consists of 2 sections:
 - **Contact details** section provides company's address, phone number and email, along with a map showing the location of the tea club. By clicking at the red marker, a user can check the opening hours. Google Map API was used to accomplish that.
 
 #### Products page
+ - <img src="https://i.ibb.co/r2LkWxB/products-mockup.png" alt="products_mockup" target="_blank" rel="noopener" width="850">
 - The "All products" page displays product cards, including the following information: category, name, price. All product cards are clickable and redirect a user to the individual product page with detailed information (by clicking on the image or the "View details" button).   
 - Clicking on **Add to cart** button will add the product to the cart with quantity equal to 1, clicking again will simply updates the quantity by 1. This functionality was added to enhance user experiance, to allow users straight away add an item to the cart without viewing products details and giving more flexibility to use the website.
 - If the user is **admin**, there are also 2 buttons displayed in the cards: **Edit** and **Delete**. Clicking Edit button redirects admin to the Edit Product page. Delete button toggles the Delete modal. It asks a superuser to confirm if the product is to be deleted. If so, upon clicking "Delete" button, the product will not be removed from the database, but will set as **discontinued** and will be removed from the user's view. Then the page reloads and the toast-message will inform about the sucessfull deletion. There is also a button "Cancel" that closes the modal when it's clicked. These actions can be done only by superuser, attempts to access them by other users will end up with redirection to the landing page with toast error messages displayed.
 - User can filter the products by **category** to see the specific items. When the category is clicked, only products of the selected category are displayed, as well as the  Category Name and a number of the items satisfying the query.
 
 #### Product details page
+ - <img src="https://i.ibb.co/P1Fd8VB/product-details-mockup.png" alt="product_details_mockup" target="_blank" rel="noopener" width="850">
 - The product details page displays information about the selected product: category, name, description, rating, price and product image (or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
 - If a product is one of the tea categories, not teaware (that checked by using "has_weight" Boolean field), there's additional paragraph informing that price is displayed per 100g.
 - The item quantity can be assigned filling the quantity form, the validation is in place restricting the quantity to the range of 1-999. The validation errors will be displayed, if the user tries to input the numbers outside of that range.
@@ -210,6 +213,7 @@ Contact page consists of 2 sections:
 - **Products** button redirects user back to the All Products page.
 
 #### Services
+ - <img src="https://i.ibb.co/XZFGW5H/services-mockup.png" alt="services_mockup" target="_blank" rel="noopener" width="850">
 - Services page displays horizontal services cards including the following information: name, description, price and image. No-image placeholder is assigned if no image is provided. 
 - Button "Learn more" redirects a user to the individual service page with detailed information. 
 - Similar to products, **Edit** and **Delete** are displayed on the cards if the user is **admin** with the corresponding functionality to render Edit Service page and toggle Delete modal.
@@ -217,6 +221,7 @@ Contact page consists of 2 sections:
 - As the website initial ideas and purposes did not suppose to contain many services (there are only 4 services displayed), there is no filtering or searching options that are in place for the products pages. 
 
 #### Service details page
+ - <img src="https://i.ibb.co/SJHXLpB/service-details-mockup.png" alt="service_details_mockup" target="_blank" rel="noopener" width="850">
 - The service details page displays the following information: name, description, rating, price per person, itinerary, duration and image (or placeholder if no image was added). Clicking the image will open it in the new tab, if the image_url is assigned.
 - **Itinerary** example table contains the time and description within the stated duration. This section's purpose is to showcase a user how the ceremony is organised, what is included in it. 
 - For **admin** there is an **Itinerary form** functionality and **remove itinerary buttons** at the bottom of the page. This allows a superuser to quickly add/delete itinerary items.
@@ -615,7 +620,7 @@ In order to send real emails from the application, you need to connect it to you
 - I also constantly referred to the following documentation sources during the development: [Django](https://docs.djangoproject.com/en/3.1/), [Stripe](https://stripe.com/docs).
 - Animation on scroll was implemented using [AOS](https://github.com/michalsnik/aos)
 - The idea of implementation of Checkout 3-steps form(handling validation on click and preventing submission) in `checkout_form.js` was given in Slack by my fellow student [Johann Albert](https://github.com/wondrousWebWorks).
-- The idea of refactoring Delete products/services functionaly, and creating discontinued BooleanField to the Product model instead of completely removing products from the database was givven by my fellow student [James Gregory](https://github.com/asdfractal).
+- The idea of refactoring Delete products/services functionaly, and creating discontinued BooleanField in the Product model instead of completely removing products from the database, was given by my fellow student [James Gregory](https://github.com/asdfractal).
 ### Content and Media
 - Text on the landing and about pages is taken, translated(from Russian - the first link) and modified from the following sources: [Process Tea Club](https://process-tea.ru/), [T-lovers](https://t-lovers.com/), [House of Tea](https://www.houseoftea.ie/)
 - Services content(names, description,itineraries) is taken and modifyed from [Tea Ceremony Kyūgetsu](https://tea-ceremony-kyoto.com/)
@@ -631,9 +636,9 @@ In order to send real emails from the application, you need to connect it to you
 
 ### Acknowledgements
 I would like to thank everyone who has helped me throughout the development of this project:      
-- My mentor [Simen Daehlin](https://github.com/Eventyret) for his support, help, patience and guidance, very useful tips and advice!         
+- **My mentor** [Simen Daehlin](https://github.com/Eventyret) for his support, help, patience and guidance, very useful tips and advice!         
 - Tim, Michael, Miklos, Stephen, Anna, Samantha, Haley and other **Code Institute tutors** for their help to debug issues, assistance and support!    
-- Many thanks to my fellow students, Slack community and, of course, my friends and my family for the time, patience, help and support!         
+- Many thanks to my fellow students, **Slack community** and, of course, **my friends** and **my family** for the time, patience, help and support!         
 
 <div align="right">
     <b><a href="#table-of-contents">↥ Back To Top</a></b>
