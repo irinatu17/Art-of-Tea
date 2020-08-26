@@ -643,6 +643,7 @@ In order to send real emails from the application, you need to connect it to you
 - Loading Spinner: [icons8](https://icons8.com/preloaders/en/circular)
 - [Introduction to the Japaneese Tea Image](https://trulyexperiences.com/blog/history-of-japanese-tea/)
 - [Exclusive Traditional Tea Ceremony Image](https://www.viator.com/tours/Kyoto/Private-Tea-Ceremony-Experience-and-Japanese-Lunch-in-Kyoto/d332-19221P4)
+- Photo of me from the personal archive is used in the reviews section of Landing page.
 
 ### Acknowledgements
 I would like to thank everyone who has helped me throughout the development of this project:      
