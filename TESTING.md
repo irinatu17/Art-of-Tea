@@ -345,8 +345,8 @@ Forgot/reset password, verification email, login, create account - all work as e
 </div>
  
 ## Automated Testing
-Automated testing is implemented to support manual testing during the development process. The intent was not to achieve 100% coverage with automated testing, but more to support and complement the manual testing, paying more attention to the more fragile code pieces and testing them.    
-Unit tests can be found in the `tests_models.py`, `tests_views.py`, `tests_forms.py` files of applicable applications within the repository.     
+Automated testing is implemented to support manual testing during the development process. The intent was not to achieve 100% coverage with automated testing, but more to support and complement the manual testing, paying more attention to the more fragile code pieces and testing them.       
+Unit tests can be found in the `test_models.py`, `test_views.py`, `test_forms.py` files of applicable applications within the repository.     
 *Note:* The tests should be added in local database, as The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. To run the test and check the output, the database (Postgres) code configuration in `settings.py` should be temporarily removed or commented out.     
 - **Command used to run the tests**:    
 `python3 manage.py test`   
