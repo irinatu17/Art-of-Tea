@@ -33,9 +33,12 @@
                 <a class="nav-link py-0 text-white" href="{% url 'account_login' %}">Login</a>
             </li>
             <li class="nav-item d-none d-md-block my-auto">
-                <a class="nav-link border-left border-white py-0 text-white" href="{% url 'account_signup' %}">Register</a>
+                <a class="nav-link border-left border-white py-0 text-white" 
+                    href="{% url 'account_signup' %}">Register
+                </a>
             </li>
             {% endif %}
+    
             <li class="nav-item">
                 <a class="nav-link py-0 {% if grand_total %}text-warning {% else %}text-white{% endif %}" 
                     href="{% url 'view_cart' %}">
@@ -51,16 +54,18 @@
                     </div>
                 </a>
             </li>
-            
         </ul>
     </nav>
 </div>
+
 <!--Main navbar-->
 <div class="main-nav-sticky fixed-top">
     <nav class="navbar p-1 navbar-expand-lg  navbar-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
-            <button class="navbar-toggler px-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler px-2" type="button" 
+                    data-toggle="collapse" data-target="#navbarContent" 
+                    aria-controls="navbarToggler" 
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--Logo-->
@@ -106,25 +111,35 @@
             </form>
         </div>
         
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item nav-item-header ml-lg-5 mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/about/' %}active-nav-link{% endif %}" href="{% url 'about' %}">About</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/about/' %}active-nav-link{% endif %}" 
+                        href="{% url 'about' %}">About
+                    </a>
                 </li>
 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/services/' %}active-nav-link{% endif %}" href="{% url 'services' %}">Services</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/services/' %}active-nav-link{% endif %}" 
+                        href="{% url 'services' %}">Services
+                    </a>
                 </li>
                 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" href="{% url 'products' %}">Products</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
+                        	href="{% url 'products' %}"> Products
+                    </a>
                 </li>
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/events/' %}active-nav-link{% endif %}" href="{% url 'events' %}">Events</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/events/' %}active-nav-link{% endif %}" 
+                        href="{% url 'events' %}">Events
+                    </a>
                 </li>
 
                 <li class="nav-item nav-item-header mr-5">
-                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/contact/' %}active-nav-link{% endif %}" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link nav-link-header uppercase text-white {% if request.get_full_path == '/contact/' %}active-nav-link{% endif %}" 
+                        href="{% url 'contact' %}">Contact
+                    </a>
                 </li>
                 <div class="dropdown-divider d-md-none d-block"></div>
                 {% if request.user.is_authenticated %}
@@ -153,6 +168,7 @@
                 </li>
                  {% endif %}
             </ul>
+            <!--Search from on large screens-->
             <form  method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 d-none d-lg-block">
                 <div class="input-group">
                     <input class="form-control" type="text" name="serach_term_input" 

@@ -82,7 +82,7 @@ class OrderItemDetails(models.Model):
                                      null=False, blank=False, editable=False)
     # Because of Django DateTimeField functionality does not support
     #  the desired format (DD/MM/YYYY HH:mm) it was decided
-    #  to replace it to the CharField to achieve better UI
+    #  to replace it with the CharField to achieve better UI
     datetime = models.CharField(null=True, blank=True, max_length=20)
 
     def save(self, *args, **kwargs):

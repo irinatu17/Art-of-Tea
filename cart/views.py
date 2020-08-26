@@ -11,7 +11,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """ Add a quantity of the selected product to the cart """
+    """ Add a quantity of the selected product/service to the cart """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -44,7 +44,7 @@ def add_to_cart(request, item_id):
 
 
 def update_cart(request, item_id):
-    """Update the quantity of the selected product in the cart
+    """Update the quantity of the selected product/service in the cart
         to the specified amount"""
 
     quantity = int(request.POST.get('quantity'))

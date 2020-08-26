@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% include 'includes/head.html' %} 
-    <title>Art of Tea {% block extra_title %}{% endblock %}</title>
-</head>
+    <head>
+        {% include 'includes/head.html' %} 
+        <title>Art of Tea {% block extra_title %}{% endblock %}</title>
+    </head>
 
-<body onload="fadeSpinner()">
-{% include 'includes/spinner.html' %} 
+    <body onload="fadeSpinner()">
+    {% include 'includes/spinner.html' %} 
 
-<header>
-{% include 'includes/navbar.html' %} 
+    <header>
+    {% include 'includes/navbar.html' %} 
 
-{% block page_header %}
-{% endblock %}
-</header>
+    </header>
 
-<!--Toast notifications - messages -->
-{% include 'includes/messages.html' %} 
+    <!--Toast notifications - messages -->
+    {% include 'includes/messages.html' %} 
 
-<main>
-{% block content %}
-{% endblock %}
-</main>
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
 
- <footer>
-{% include 'includes/footer.html' %} 
- </footer>
- 
-{% block corejs %}
-    {% include 'includes/scripts.html' %}  
-{% endblock %}
+    <footer>
+    {% include 'includes/footer.html' %} 
+    </footer>
+    
+    {% block corejs %}
+        {% include 'includes/scripts.html' %}  
+    {% endblock %}
 
-{% block extra_js %}
-{% endblock %}
-</body>
+    {% block extra_js %}
+    {% endblock %}
+    </body>
 </html>

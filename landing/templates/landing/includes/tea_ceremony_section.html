@@ -1,7 +1,7 @@
 <div class="tea-ceremony-landing-container py-5">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-sm-12 col-md-6 col-lg-5 text-center text-white p-4"  >
+            <div class="col-sm-12 col-md-6 col-lg-5 text-center text-white p-4">
                 <h2 class="text-center pt-5 main-heading ">Tea Ceremony</h2>
                 <hr class="divider-green w-50 mt-4">
                 <p  class = "landing-paragraph mb-lg-4 mt-lg-5">
@@ -10,12 +10,14 @@
                 Experience tea ceremony at its best.
                 </p>
                 <div class="text-center mt-5 mb-3">
-                    <a href="{% url 'services' %}" class="btn button-green-transparent  uppercase px-3">View our services</a>
+                    <a href="{% url 'services' %}" class="btn button-green-transparent uppercase px-3">
+                        View our services
+                    </a>
                 </div>
             </div>
             <!--Image carousel-->
             <div class="col-sm-12 col-md-6 col-lg-7 text-center mb-3 mt-3 " data-aos="fade-up" data-aos-duration="1500">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="false" data-interval="false">
+                <div id="teaCeremonyCarousel" class="carousel slide" data-ride="false" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                         <img src="{{ STATIC_URL }}img/landing/clear-glass-pitcher-on-brown-wooden-table.jpg" 
@@ -33,11 +35,11 @@
                              alt="tea-ceremony-japaneese">
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#teaCeremonyCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#teaCeremonyCarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>

@@ -18,7 +18,8 @@
                     {% if not product.discontinued %}
                     <p>
                         <a class = "btn btn-outline-info" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" 
+                            data-target="#deleteModal">
                             Delete
                         </button>
                     </p>

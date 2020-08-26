@@ -5,6 +5,7 @@ from products.models import Product
 
 
 def cart_contents(request):
+    """ Makes the cart content available across the whole website """
 
     cart_items = []
     total = 0

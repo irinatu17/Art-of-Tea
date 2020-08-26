@@ -15,8 +15,9 @@
                     {% if not service.discontinued %}
                     <p class="text-center">
                         <a class = "btn btn-outline-info" href="{% url 'edit_service' service.id %}">Edit</a> | 
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" 
-                        >Delete</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" 
+                            data-target="#deleteModal" >Delete
+                        </button>
                     </p>
                     {% else %}
                     <p class="text-center">
