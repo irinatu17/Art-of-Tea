@@ -75,16 +75,16 @@
             <!--Search button-->
             <div class="d-flex">
                 <button class="btn btn-large px-1 d-block d-lg-none mr-md-3" id="search-button">
-                    <div class="text-center text-white">
-                        <div> <i class="fas fa-search"></i></div>
+                    <span class="text-center text-white">
+                         <i class="fas fa-search"></i>
                         <small>Search</small>
-                    </div>
+                    </span>
                 </button>
                 
                 <a href="{% url 'view_cart' %}" 
                 class="btn btn-large px-1 py-2 d-block d-md-none {% if grand_total %}text-warning {% else %}text-white{% endif %}">
                     <div class="text-center {% if grand_total %}text-warning {% else %}text-white{% endif %}">
-                        <div><i class="fas fa-shopping-cart"></i></div>
+                        <i class="fas fa-shopping-cart"></i>
                         <small>
                         {% if grand_total %}
                             <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
