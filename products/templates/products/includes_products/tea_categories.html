@@ -1,0 +1,47 @@
+<div class="col-12">
+    <ul class="nav justify-content-center uppercase">
+        <li class="nav-item border border-dark mr-3 dropdown category-nav-item">
+            <a class="nav-link category-main-nav dropdown-toggle" id="categories_dropdown" data-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="true" href="#"> 
+                <i class="fas fa-leaf mr-3 icon-green"></i> Tea
+            </a>
+            <ul class="dropdown-menu dropdown-tea-columns" aria-labelledby="categories_dropdown">
+                <li><a href="{% url 'products' %}?category=black_tea" class="dropdown-item">Black Tea</a></li>
+                <li><a href="{% url 'products' %}?category=green_tea" class="dropdown-item">Green Tea</a></li>
+                <li><a href="{% url 'products' %}?category=white_tea" class="dropdown-item">White Tea</a></li>
+                <li><a href="{% url 'products' %}?category=herbal_tea" class="dropdown-item">Herbal Tea</a></li>
+                <li><a href="{% url 'products' %}?category=wellness_tea" class="dropdown-item">Wellness Tea</a></li>
+                <li><a href="{% url 'products' %}?category=matcha" class="dropdown-item">Matcha</a></li>
+                <li><a href="{% url 'products' %}?category=pu_erh_tea" class="dropdown-item">Pu Erh Tea</a></li>
+                <li><a href="{% url 'products' %}?category=oolong_tea" class="dropdown-item">Oolong tea</a></li>
+                <li><a href="{% url 'products' %}?category=rooibos_tea" class="dropdown-item">Rooibos Tea</a></li>
+                <div class="dropdown-divider my-0"></div>
+                <li><a href="{% url 'products' %}" class="dropdown-item">All Products</a></li>
+            </ul>
+        </li>
+        
+        <li class="nav-item border border-dark category-nav-item">
+            <a class="nav-link category-main-nav" href="{% url 'products' %}?category=teaware"> 
+                <i class="fas fa-coffee mr-3 icon-green"></i> Teaware
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="col-12 mt-3">
+{% if selected_categories %}
+    {% for category in selected_categories %}
+        <h5 class="text-center text-salmon main-heading">{{ category.friendly_name }} ({{products|length}})</h5>
+    {% endfor %}
+{% else %}
+    {% if search_word%}
+    <p class="text-center">
+        Your search for  <span class="text-salmon main-heading">"{{ search_word }}"</span> produced 
+        <strong>{{ products|length }}</strong>
+        {% if products|length > 1 %} results
+        {% else %}
+        result
+        {% endif %}
+    </p>
+    {% endif %}
+{% endif %}
+</div>

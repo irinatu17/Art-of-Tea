@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block extra_title %}- Checkout{% endblock %}
+{% block content%}
+<!--Delivery info-->
+{% include 'includes/delivery_banner.html' %} 
+<!--Main Heading-->
+{% include 'checkout/checkout_includes/checkout_heading.html' %} 
+
+<div class="container mt-2 mb-5">
+    <div class="row">
+        <!--Checkout form-->
+        {% include 'checkout/checkout_includes/checkout_form.html' %} 
+        <!--Order summary-->
+        {% include 'checkout/checkout_includes/order_summary.html' %} 
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}    
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>  
+    <script src="{% static 'js/stripe.js' %}"></script>
+    <script src="{% static 'js/checkout_form.js' %}"></script>
+    
+{% endblock %}

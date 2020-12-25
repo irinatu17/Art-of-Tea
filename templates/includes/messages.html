@@ -1,0 +1,17 @@
+{% if messages %}
+    <div class="container-messages rounded-lg">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toast_notifications/error.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toast_notifications/success.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toast_notifications/warning.html' %}
+                {% else %}
+                    {% include 'includes/toast_notifications/info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endif %}

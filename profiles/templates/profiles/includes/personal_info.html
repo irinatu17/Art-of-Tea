@@ -1,0 +1,25 @@
+<div class="card shadow">
+    <h5 class="card-header checkout-card-header">
+        <i class="fas fa-user"></i>  Personal Info
+    </h5>
+    <div class="card-body px-1 px-sm-3">
+        <div class="px-3">
+            <p class="card-text"><strong>Username:</strong>
+                 {{ user.username }}
+            </p>
+            <p class="card-text border-bottom pb-4"><strong>Email:</strong>
+                 {{ user.email }}
+            </p>
+        </div>
+        <div class="d-flex justify-content-around justify-content-sm-start">
+            <a href="{% url 'account_change_password' %}" 
+               class="btn button-green small px-1 px-sm-3 mt-2 mr-sm-3">
+               Change password
+            </a>
+            <a href="{% url 'account_email' %}" 
+               class="btn btn-salmon text-white small px-1 px-sm-3 mt-2">
+               Manage emails
+            </a>
+        </div>
+    </div>
+</div>

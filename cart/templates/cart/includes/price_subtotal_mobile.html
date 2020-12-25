@@ -1,0 +1,60 @@
+{% load cart_tools %}
+<div class="d-flex d-md-none col-6  justify-content-between flex-column mb-3">
+    <div class="d-flex justify-content-between">
+        <div>
+            <!--Price-->
+            <h6 class="font-weight-bold mb-3">Price:</h6>
+            <p>
+                <i class="fas fa-euro-sign "></i> 
+                {{ item.product.price }}
+                {% if item.product.has_weight %}
+                    <span class="text-muted small"> / 100g</span>
+                {% endif %}
+                {% if item.product.is_a_service %}
+                <br/><span class="text-muted small text-center">per person</span>
+                {% endif %}
+            </p>
+        </div>
+        <!--Remove button-->
+        <div class="text-right">
+            <a class="remove-button" title="Remove" data-toggle="modal" 
+               data-target="#deleteModal{{ forloop.counter }}">
+                <i class="fas fa-trash-alt lead text-danger"></i>
+            </a>
+        </div>
+    </div>
+    <div>
+        <!--Subtotal-->
+        <h6 class="font-weight-bold mb-3">Subtotal:</h6>
+        <p class="lead font-weight-bolder">
+            <i class="fas fa-euro-sign"></i>
+            {{ item.product.price | calc_subtotal:item.quantity }} 
+        </p>
+    </div> 
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal{{ forloop.counter }}" tabindex="-1" role="dialog" 
+     aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Remove Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-red">
+            <i class="fas fa-exclamation-circle text-danger"></i>
+            Are you sure you want to remove <br/>
+            <span class="font-weight-bold">{{ item.product.name }}</span> from your cart?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button-black-outline" data-dismiss="modal">Close</button>
+        <a  class="btn btn-danger remove-button remove_{{ item.item_id }}">Remove</a>
+      </div>
+    </div>
+  </div>
+</div>

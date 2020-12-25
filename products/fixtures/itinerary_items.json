@@ -1,0 +1,209 @@
+[
+  {
+    "pk": 1,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 1,
+      "time": "14:00",
+      "text": "Welcome"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 1,
+      "time": "14:10",
+      "text": "Brief introduction to the tea ceremony"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 1,
+      "time": "14:20",
+      "text": "A full service of “real tea” – thick tea"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 1,
+      "time": "14:50",
+      "text": "Q&A"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 1,
+      "time": "15:00",
+      "text": "End of the service"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 2,
+      "time": "14:00",
+      "text": "Welcome"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 2,
+      "time": "14:10",
+      "text": "Introduction to the Chineese ceremony tradition"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 2,
+      "time": "14:20",
+      "text": "Tasting of 3 different types of tea"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 2,
+      "time": "14:50",
+      "text": "Q&A. Tips on the best brewing methods and the health benefits of tea"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 2,
+      "time": "15:00",
+      "text": "End of the service"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "14:00",
+      "text": "Welcome"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "14:10",
+      "text": "Introduction to the Incense Ceremony"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "14:30",
+      "text": "Traditional incense-game: preparing 2 kinds of incense woods for you to listen to and distinguish"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "15:00",
+      "text": "Service of tea ceremony with 5 different types of tea of your choice"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "15:40",
+      "text": "Conclusive meditation and Q&A"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 3,
+      "time": "16:00",
+      "text": "End of service"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "14:00",
+      "text": "Welcome"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "14:10",
+      "text": "Introduction to the traditional Japaneese tea ceremony, wearing kimono offer"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "14:30",
+      "text": "Buddhist vegetarian lunch"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "15:10",
+      "text": "Exclusive service of “real tea” – thick tea"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "15:30",
+      "text": "Final more casual service of thin tea"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "15:50",
+      "text": "Q&A"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "products.itineraryitem",
+    "fields": {
+      "itinerary": 4,
+      "time": "16:00",
+      "text": "End of service"
+    }
+  }
+]

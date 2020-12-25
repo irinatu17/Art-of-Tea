@@ -1,0 +1,89 @@
+<div class="col-sm-12 col-md-6 col-lg-4  text-center mt-5">
+        {% if  'img/' in product.image.name %}  
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                    src="{{ STATIC_URL }}{{product.image}}" 
+                    alt="{{ product.name }}">
+        </a>
+        {% elif product.image %}
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                    src="{{ MEDIA_URL }}{{ product.image }}" 
+                    alt="{{ product.name }}">
+        </a>
+        {% else %}
+        <a href="{% url 'product_details' product.id %}">
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" 
+                src="{{ STATIC_URL }}img/no-image.jpg" 
+                alt="{{ product.name }}">
+        </a>
+    {% endif %}
+    
+    <div class="text-block shadow-sm">
+        <p class="mt-2 font-weight-bold">{{ product.category.friendly_name }}</p>
+    </div>
+    <div class="mt-3 mb-3">
+        <h6 class="text-center main-heading lead">{{ product.name }}</h6>
+        {% if request.user.is_superuser %}
+            <small>
+                <a href="{% url 'edit_product' product.id %}" 
+                    class="btn btn-sm btn-outline-info px-1 py-0">Edit
+                </a> | 
+                <button type="button" class="btn btn-sm btn-outline-danger px-1 py-0" 
+                        data-toggle="modal" data-target="#deleteModal{{ forloop.counter }}">
+                        Delete
+                </button>
+            </small>
+        {% endif %}
+    </div>
+    <p class="text-center">
+        <span class=" font-weight-bold"><i class="fas fa-euro-sign"></i>
+            {{ product.price }}
+        </span>
+        {% if product.has_weight %}
+        <span> / 100g</span>
+        {% endif %}
+    </p>
+    <div class="mb-3 d-flex justify-content-around align-items-baseline">
+        <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+            {% csrf_token %}
+            <input name="quantity" type="hidden" value="1">
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            <input type="submit" class="btn button-green px-3" value="Add to Cart">
+        </form>
+        <a href="{% url 'product_details' product.id %}" 
+            class="btn button-black px-3">
+            View Details
+        </a>
+    </div>
+</div>
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal{{ forloop.counter }}" tabindex="-1" role="dialog" 
+     aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-red">
+            <i class="fas fa-exclamation-circle text-danger"></i>
+            Are you sure you want to delete <br/>
+            <span class="font-weight-bold">{{ product.name }}</span>?
+        </p>
+        <p class="small text-muted mt-2 mb-0"><span class="font-weight-bold">Note:</span>
+            It will be discontinued and removed from the user's view,
+            but will not be completely deleted from the database.
+            You can edit the product later, when it will be in stock again.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button-black-outline" data-dismiss="modal">Close</button>
+        <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

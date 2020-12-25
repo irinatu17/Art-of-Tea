@@ -1,0 +1,42 @@
+{% if not service.discontinued %}
+<p class="text-muted mt-3">Please fill out the form below to book the ceremony</p>
+<form class="form" action="{% url 'add_to_cart' service.id %}" method="POST">
+    {% csrf_token %}
+    <!--Number of participans-->
+    <h6 class="font-weight-bold mt-4">Number of participants:</h6>
+    <div class="input-group mt-3 w-100">
+        <input name="quantity" type="number" min="1" max="100" class="form-control" value="1" required>
+    </div>
+    <!--Date and time picker-->
+    <h6 class="font-weight-bold mt-4">Date and Time:</h6>
+
+    <div class="input-group date w-100" id="datetime" data-target-input="nearest">
+        <input type="text" name="datetime" class="form-control datetimepicker-input" data-target="#datetime" required/>
+        <div class="input-group-append" data-target="#datetime" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+        </div>
+    </div>
+    <p class="text-muted small mt-2">
+        The confirmation of your booking will be sent to your email
+     and we will get back to you soon to discuss further details.</p>
+    <!--buttons-->
+    <div class="mt-4 mb-4 text-center text-md-left">
+        <a href="{% url 'services' %}" class="btn btn-service uppercase products-btn button-black-outline px-3 mr-1 mr-lg-3">
+            <i class="fas fa-angle-left"></i> Services
+        </a>
+        <input type="submit" class="btn button-green btn-service uppercase products-btn px-3" value="Add to Cart">
+    </div>
+    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+</form>
+{% else %}
+<div class="row">
+    <div class="col-12">
+        <p class="uppercase font-weight-bold text-danger">not available</p>
+    </div>
+    <div class="col-12 mt-3">
+        <a href="{% url 'products' %}" class="btn button-black-outline uppercase px-3 mr-3">
+            <i class="fas fa-angle-left"></i> all services
+        </a>
+    </div>
+</div>
+{% endif %}

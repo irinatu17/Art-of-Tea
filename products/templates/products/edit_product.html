@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}- Edit product{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h1 class="uppercase main-heading">Product Management</h1>
+            <hr class="divider-green w-25 mt-3">
+         </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2  px-2">
+        <h3 class="text-salmon my-4 ml-4">Edit Product</h3>
+            <form method="POST" action="{% url 'edit_product' product.id %}" 
+            class="form p-2 p-md-4 shadow rounded-lg" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.name | as_crispy_field }}
+                {{ form.description | as_crispy_field }}
+                {{ form.category | as_crispy_field }}
+                {{ form.sku| as_crispy_field }}
+                {{ form.price | as_crispy_field }}
+                {{ form.rating | as_crispy_field }}
+                <!--Has_weight field-->
+                <p>Select a Product Type</p>
+                <div class="custom-control custom-radio custom-control-inline">
+                {% if product.has_weight %}
+                    <input type="radio" id="tea1" name="has_weight" class="custom-control-input" value="True" checked required>
+                    <label class="custom-control-label" for="tea1">Tea</label>
+                {% else %}
+                    <input type="radio" id="tea" name="has_weight" class="custom-control-input" value="True" required>
+                    <label class="custom-control-label" for="tea">Tea</label>
+                {% endif %}
+                    
+                </div>
+                 <div class="custom-control custom-radio custom-control-inline">
+                 {% if product.has_weight %}
+                    <input type="radio" id="teaware" name="has_weight" class="custom-control-input" value="False"> 
+                    <label class="custom-control-label" for="teaware">Teaware</label>
+                {% else %}
+                    <input type="radio" id="teaware1" name="has_weight" class="custom-control-input" checked value="False"> 
+                    <label class="custom-control-label" for="teaware1">Teaware</label>
+                {% endif %}
+                </div>
+    	        <div class="my-3">
+                    {{ form.image_url | as_crispy_field }}
+                     {{ form.image }}
+                    <p class="small text-muted mt-2 mb-0"><span class="font-weight-bold">Note:</span>
+                     If you don't provide an image, no-image placeholder will be assigned.</p>
+                    <p  class="small text-muted my-0"> Image URL field is optional. 
+                    You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here.</p>
+                </div>
+                <div class="my-3">
+                    {{ form.discontinued | as_crispy_field }}
+                    <p class="small text-muted my-0">
+                        <i class="fas fa-exclamation-circle font-weight-bold"></i>
+                        Please, tick if the item is out of stock. The item will be removed from the user's view,
+                         but will not be deleted from the database.
+                        You can untick, when the item is avaliable again. 
+                    </p>
+                </div>
+                <input type="hidden" id="is_a_service" name="is_a_service" value="False">
+                <div class="text-right my-4">
+                    <a class="btn button-black-outline mr-2" href="{% url 'products' %}">
+                        <i class="fas fa-angle-left"></i> Products
+                    </a>
+                    <button class="btn btn-info" type="submit"> 
+                        <i class="fas fa-edit mr-1 d-none d-md-inline"></i> Edit Product
+                    </button>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>
+{% endblock %}

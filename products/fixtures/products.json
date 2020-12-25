@@ -1,0 +1,249 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123456",
+      "name": "Ceylon Op Nuwara Eliya",
+      "description": "A high grown Orange Pekoe from Nuwara Eliya (up to 1900m high) in the centre of Sri Lanka. Brisk, highly aromatic with a hint of citrus which is characteristic for an excellent Ceylon tea. Ideal for the morning or as an afternoon tea.",
+      "price": 3.90,
+      "category": 2,
+      "rating": 4.9,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/ceylon_op_nuwara_eliya.jpg",
+      "image_url": "https://i.ibb.co/zrWYMYd/black-tea.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123457",
+      "name": "Oolong Rose Tea",
+      "description": "A light, floral oolong tea blend that has been beautifully accented with fragrant rose petals. This rose oolong tea imparts a subtle melange of sweet, floral flavors grounded by smooth, savory notes and a long finish.",
+      "price": 5.50,
+      "category": 10,
+      "rating": 4.6,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/oolong_rose.jpg",
+      "image_url": "https://i.ibb.co/TmSDXVb/oolong-rose.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123458",
+      "name": "Home Matcha Kit",
+      "description": "The Art of Tea At Home Matcha Kit is our modern take on making matcha. Our newly designed kit combines everything you need for a contemporary matcha ceremony to help you master your ultimate brewing experience. The Matcha Kit includes: Handblown double-walled glass bowl, Signature chasen bamboo matcha whisk, Bamboo matcha measuring spoon, Matte black matcha whisk holder.",
+      "price": 45.00,
+      "category": 1,
+      "rating": 4.9,
+      "has_weight": "False",
+      "is_a_service": "False",
+      "image": "img/products/home_matcha_kit.jpg",
+      "image_url": "https://i.ibb.co/8P4CN74/home-matcha-kit.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123459",
+      "name": "White Peach Tea",
+      "description": "The essence of fresh-picked peaches infuses the senses in this organic white tea infusion. Steeps a light and refreshing cup perfect for a mid-afternoon lift.",
+      "price": 4.00,
+      "category": 4,
+      "rating": 4.1,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/white_peach.jpg",
+      "image_url": "https://i.ibb.co/L9W6GGb/white-peach.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123460",
+      "name": "Naked Pu-erh Tea",
+      "description": "Naked Pu-erh stems from Yunnan, China and delivers a deep red infusion with a sweet woodsy aroma and mild earthy finish. This organic Pu-erh tea has slight floral notes and a lingering hint of honeysuckle with each sip. This Yunnan Pu-erh tea is cooked and has been aged for approximately 4-6 years.",
+      "price": 2.20,
+      "category": 7,
+      "rating": 5.0,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/naked_pu-erh_tea.jpg",
+      "image_url": "https://i.ibb.co/rKh440Z/naked-pu-erh-tea.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123461",
+      "name": "Fresh Green Tea",
+      "description": "A bright blend of premium green tea leaves and lemongrass, Fresh Green is a stunning organic tea blend. This citrus tea also has a delicate balance of grassy flavors in this loose leaf green tea blend.",
+      "price": 3.10,
+      "category": 3,
+      "rating": 4.8,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/fresh_green_tea.jpg",
+      "image_url": "https://i.ibb.co/yF00nJF/fresh-green-tea.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123462",
+      "name": "Sleep Tea",
+      "description": "A calming sleepytime tea with smooth and minty flavor notes. Steep this tea for sleep either to accentuate a midday nap or head to your evening slumber.",
+      "price": 3.10,
+      "category": 9,
+      "rating": 4.5,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/sleep_tea.jpg",
+      "image_url": "https://i.ibb.co/nzcP4Wp/sleep-tea.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123463",
+      "name": "Classic Rooibos Tea",
+      "description": "Pure high quality 'long cut' Rooibos from West South Africa. Mild-earthy, soft-fruity character.No caffeine which makes it suitable for children, expecting mothers and/or as an evening/night drink.",
+      "price": 2.00,
+      "category": 8,
+      "rating": 4.5,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/classic_rooibos_tea.jpg",
+      "image_url": "https://i.ibb.co/HXG7qW2/classic-rooibos-tea.jpg",
+      "discontinued": "False"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123464",
+      "name": "Matcha Tea",
+      "description": "Organic grade A matcha that provides a rich, complex taste and a boost of calm energy for the day. This Chinese matcha is made from fresh leaves and stone-ground into a powder for a frothy, creamy, and smooth finish when prepared. Delicious any time of day!",
+      "price": 3.90,
+      "category": 6,
+      "rating": 4.2,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/matcha.jpg",
+      "image_url": "https://i.ibb.co/HCbC3Cm/matcha.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123465",
+      "name": "Chamomile Tea",
+      "description": "Our Chamomile elicits sweet, calming flavor notes. This tisane is round and soothing with each and every sip, perfect for any time of day.",
+      "price": 2.90,
+      "category": 5,
+      "rating": 4.8,
+      "has_weight": "True",
+      "is_a_service": "False",
+      "image": "img/products/chamomile.jpg",
+      "image_url": "https://i.ibb.co/r6gJQ5m/chamomile.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "AT123466",
+      "name": "Iron Tea Pot",
+      "description": "This hand-carved original cast iron teapot in the Northern Japan-style combines timeless craftsmanship with modern technology to ensure a long-lasting quality teapot. A beautiful insignia on the lower part of the teapot distinguishes the teapot's authenticity and superior quality.",
+      "price": 25.00,
+      "category": 1,
+      "rating": 4.8,
+      "has_weight": "False",
+      "is_a_service": "False",
+      "image": "img/products/iron_tea_pot.jpg",
+      "image_url": "https://i.ibb.co/92mdW06/iron-tea-pot.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "name": "Introduction to Japanese Tea",
+      "description": "Discover all aspects of Japanese tea culture during a brief, yet thorough outline of the various aspects of tea culture in Japan. What is matcha and how is it made? What is the tea ceremony and how is it done? And, is Japanese tea only green tea? These questions will be addressed during this one-hour session.",
+      "price": 70.00,
+      "rating": 5.0,
+      "is_a_service": "True",
+      "duration": "1",
+      "image": "img/services/tea-ceremony-japaneese.jpg",
+      "image_url": "https://i.ibb.co/r2RJQn6/tea-ceremony-japaneese.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "name": "Traditional Chineese Tea Ceremony",
+      "description": "Chinese Tea Ceremony is not as elaborate and formal as the Japanese one. Instead, it more focused on the quality of the tea and the teaware. It takes about one hour.  We will give you an insight in the beauty and value this ritual has to offer.",
+      "price": 75.00,
+      "rating": 4.9,
+      "is_a_service": "True",
+      "duration": "1",
+      "image": "img/services/chinese-tea-ceremony.jpg",
+      "image_url": "https://i.ibb.co/4NtRRGV/chinese-tea-ceremony.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "name": "Incense Tea Ceremony",
+      "description": "Our tea-masters will guide you through a traditional kodo incense ceremony. Savour and competitively distinguish the fragrances of different incense woods. In the format of a traditional incense-game, we will prepare 2 kinds of incense woods for you to listen to and distinguish. The incense ritual will be followed by a conclusive service of tea ceremony.",
+      "price": 80.00,
+      "rating": 5.0,
+      "is_a_service": "True",
+      "duration": "2",
+      "image": "img/services/incense_ceremony.jpg",
+      "image_url": "https://i.ibb.co/Qf53j3W/incense-ceremony.jpg",
+      "discontinued": "False"
+    }   
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "name": "Exclusive Traditional Tea Ceremony",
+      "description": "To get immersed into a real atmosphere of a full traditional Japanese Ceremony, you will be offered to wear kimono.  You will enjoy a Buddhist vegetarian lunch before the main event: a service of thick tea. We will round off the event with a final more casual service, of thin tea. During this stage you may also try your hand at making a bowl of thin tea yourself.",
+      "price": 100.00,
+      "rating": 5.0,
+      "is_a_service": "True",
+      "duration": "2",
+      "image": "img/services/exclusive_traditional_tea_ceremony.jpg",
+      "image_url": "https://i.ibb.co/gtH2rfb/exclusive-traditional-tea-ceremony.jpg",
+      "discontinued": "False"
+    }   
+  }
+]

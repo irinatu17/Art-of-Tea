@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}- Events{% endblock %}
+{% block content %}
+
+<div class="container-fluid events-container">
+    <div class="row">
+        <!--Events main paragraph-->
+        {% include 'events/includes/main_paragraph.html' %}
+    </div>
+</div>
+<div class="container mt-4 mb-3">
+    <div class="row">
+        <!--Weekly Events Table-->
+        {% include 'events/includes/events_table.html' %}
+        
+        <!--Contact details-->
+        {% include 'events/includes/contact_details.html' %} 
+        
+    </div>
+</div>
+{% endblock %}

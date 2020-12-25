@@ -1,0 +1,35 @@
+[
+  {
+    "pk": 1,
+    "model": "products.itinerary",
+    "fields": {
+      "name": "Introduction to Japanese Tea",
+      "service": 12
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.itinerary",
+    "fields": {
+      "name": "Traditional Chineese Tea Ceremony",
+      "service": 13
+    }
+  },
+  
+  {
+    "pk": 3,
+    "model": "products.itinerary",
+    "fields": {
+      "name": "Incense Tea Ceremony",
+      "service": 14
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.itinerary",
+    "fields": {
+      "name": "Exclusive Traditional Tea Ceremony",
+      "service": 15
+    }
+  }
+]

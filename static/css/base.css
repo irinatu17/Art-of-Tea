@@ -1,0 +1,840 @@
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&family=Open+Sans&family=Sawarabi+Mincho&display=swap');
+
+/* Colour and Font Variables */
+:root {
+--darkgreen: #0A5C15;
+--lightgreen: #3E9D47;
+--black: #070605;
+--lightgrey: #E4E3E2;
+--lavander: #D6D3F0;
+--red-salmon: #ff7474;
+--red: #ff4141;
+--white: #ffffff;
+--darkwhite: #f6f6f6f3;
+--lightblack: #252525;
+
+--marko-one: 'Marko One', serif;
+--open-sans: 'Open Sans', sans-serif;
+--sawarabi-mincho: 'Sawarabi Mincho', sans-serif;
+}
+
+/* Global style settings*/
+
+body, html {
+height: 100%;
+width:100vw;
+font-family: var(--open-sans);
+}
+
+body{
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+color: var(--black);
+}
+
+main{
+flex: 1 0 auto;
+margin-top:4.6rem;
+}
+
+h1 {
+font-size: 1.9rem;
+}
+
+h2 {
+font-size: 1.7rem;
+}
+
+footer{
+background-color: var(--black);
+color: var(--white);
+}
+
+.footer-top{
+background:linear-gradient(to bottom, var(--black), var(--lightblack))
+}
+
+.main-footer{
+background: linear-gradient(to top, var(--black), var(--lightblack));
+}
+
+.uppercase{
+text-transform: uppercase;
+}
+
+.text-white{
+color: var(--white);
+}
+
+.text-black{
+color: var(--black);
+}
+
+.text-salmon{
+color: var(--red-salmon);
+}
+
+.text-green{
+color: var(--darkgreen);
+}
+
+.divider-green{
+background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
+height: 4px;
+border-radius: 100%;
+}
+
+.asteriskField {
+display: none;
+}
+
+.price-sign{
+font-weight: 900;
+font-size: 1.7rem;
+}
+
+.active-nav-link{
+color: var(--lightgreen) !important;
+}
+
+.w-30{
+width: 30%;
+}
+
+/*Headings*/
+.main-heading{
+font-family: var(--marko-one);
+}
+
+.products-heading{
+font-size: 2rem;
+}
+
+.sub-heading{
+font-size: 1rem;
+}
+
+/*Buttons*/
+.btn{
+transition: all .15s ease-in-out;
+}
+
+.btn:hover{
+transform: scale(1.05);
+}
+
+.button-black{
+background:linear-gradient(var(--black), var(--lightblack));
+color: var(--white);
+border: 1px solid var(--black);
+font-family: var(--sawarabi-mincho);
+}
+
+.button-black:hover{
+background: var(--white);
+color: var(--black);
+}
+
+.button-black-outline{
+background-color: var(--white);
+color: var(--black);
+border: 1px solid var(--black);
+font-family: var(--sawarabi-mincho);
+}
+
+.button-black-outline:hover{
+background-color: var(--black);
+color: var(--white);
+}
+
+.button-green{
+background: linear-gradient(var(--darkgreen), var(--lightgreen));
+color: var(--white);
+font-family: var(--sawarabi-mincho);
+}
+
+.button-green:hover{
+color: var(--white);
+background: linear-gradient(var(--darkgreen), var(--darkgreen));
+}
+
+.btn-next{
+color: var(--white) !important; 
+}
+.btn-next:hover{
+background-color: var(--lightgreen) !important;
+}
+
+.btn-prev:hover{
+color: var(--white) !important; 
+}
+
+.btn-salmon{
+border: 1px solid var(--black);
+background-color: var(--red-salmon);
+color: var(--white);
+}
+
+.btn-service{
+font-size: 0.8rem;
+}
+
+.button-green-transparent{
+background-color: transparent;
+color: var(--white);
+border: 1px solid var(--darkgreen);
+font-family: var(--sawarabi-mincho);
+font-weight:500;
+}
+
+.button-green-transparent:hover{
+color: var(--white); 
+background-color: var(--darkgreen);
+}
+
+.update-cart-btn{
+color: var(--white) !important;
+}
+
+.update-cart-btn:hover{
+color: var(--black) !important;
+}
+
+/* Navbar */
+.navbar{
+font-family: var(--sawarabi-mincho);
+background: var(--black);
+padding-bottom: 3px;
+z-index:1;
+}
+
+.navbar-brand{
+margin-right: 0;
+}
+
+.main-nav-sticky {
+letter-spacing: 0.1rem;
+}
+
+.logo{
+height: 2.8rem;
+}
+
+.navbar-toggler {
+font-size: 1rem;
+}
+
+.nav-top{
+z-index: 1070;
+}
+
+#search-form-container{
+left: 0;
+width: 100vw;
+top:100%;
+background-color: var(--black);
+}
+
+/* Landing page - hero image section*/
+.hero-image{
+height: 100vh;
+background: url('/static/img/landing/landing-background.jpg') no-repeat center top fixed;
+background-size: cover;
+}
+
+.landing-text{
+text-align: center;
+position: absolute;
+top: 70%;
+transform: translateY(-50%);
+font-family: var(--marko-one);
+}
+
+.landing-main-heading{
+text-shadow: 3px 3px 3px black;
+font-size: 3rem;
+}
+
+.landing-button{
+background-color: transparent;
+color: var(--white);
+border: 1px solid var(--white);
+font-family: var(--sawarabi-mincho);
+height: 3.5rem;
+width: 15rem;
+}
+
+.landing-button:hover{
+background-color: var(--darkgreen);
+color: var(--white);
+}
+
+.update-cart-btn,
+.remove-button {
+cursor: pointer;
+}
+
+/* Landing page - main about section*/
+.landing-paragraph{
+font-family: var(--open-sans);
+font-size: 1.2rem;
+}
+
+
+/* Landing page - quote section*/
+.quote-section{
+min-height:60vh;
+background: url('/static/img/landing/quote-bg-landing.jpg') no-repeat center center fixed;
+background-size: cover;
+position: relative;
+opacity: 0.9;
+}
+
+.blockquote{
+font-size: 1rem;
+}
+
+/* Landing page - benifits section*/
+.span-benifits{
+letter-spacing: 0.3rem;
+background: var(--white);
+font-family: var(--sawarabi-mincho);
+border: 2px solid var(--black);
+}
+
+.span-benifits-container{
+margin-top: -2rem;
+}
+
+.benifits-section{
+overflow-x: hidden;
+overflow-y: hidden;   
+
+}
+
+/*Landing page - Tea ceremony section*/
+.tea-ceremony-landing-container{
+background-color: var(--black);
+}
+
+
+/*Landing page - Tea and teaware section*/
+.tea-and-teaware-landing-container{
+background-color: var(--white);
+}
+
+/*Landing page - Events section*/
+.events-container-landing{
+overflow-x: hidden; 
+overflow-y: hidden;
+}
+
+/*Landing page - reviews section*/
+.review-user-avatar{
+vertical-align: middle;
+width: 6.25rem;
+height: 6.25rem;
+}
+
+#reviews-carousel ol.carousel-indicators li{
+background-color: var(--lightgreen);
+}
+
+.chevron-black{
+color: var(--black);
+}
+
+.chevron-black:hover{
+color: var(--lightblack);
+}
+
+.carousel-item-review{
+padding: 0 10%;
+}
+
+
+/*Footer */
+.media-icons{
+font-size: 1.5rem;
+color: var(--white);
+margin-bottom: 5px;
+padding: 3px;
+transition-duration: 0.5s;
+-webkit-transition-duration: 0.5s;
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+}
+
+.media-icons:hover {
+transform: scale(1.3);
+-webkit-transform: scale(1.3);
+-moz-transform: scale(1.3);
+-o-transform: scale(1.3);
+}
+
+.icon-footer-container,
+.icon-footer-container:hover{
+color: var(--white);
+text-decoration: none;
+}
+
+.icon-green{
+color: var(--lightgreen);
+}
+
+.icon-large{
+font-size: 2.5rem;
+}
+
+.footer-link{
+transition: all .15s ease-in-out;
+color: var(--white);
+}
+
+.footer-link:hover{
+transform: scale(1.1);
+color: var(--lightgreen);
+}
+
+/*Products app*/
+.category-main-nav{
+color: var(--brown-grey);
+font-weight: 500;
+}
+
+.category-main-nav:hover,
+.category-main-nav:active,
+.category-main-nav:focus{
+color: var(--black);
+}
+
+.product-img{
+height: 20.6rem;
+object-fit: cover;
+}
+
+.products-btn{
+font-size: 0.8rem;
+}
+
+.delivery-info{
+background-color: var(--lightgreen);
+}
+
+.breadcrumbs-text{
+color: var(--lightblack);
+}
+
+.breadcrumbs-text:hover,
+.breadcrumbs-text:active{
+color: var(--black);
+}
+
+.text-block{
+position: absolute;
+top: 0.9rem;
+right: 1.25rem;
+padding: 0 5px;
+opacity: 0.9;
+border-radius: 3px;
+background-color: var(--lavander);
+line-height: 5px;
+}
+
+.service-details-image{
+max-height: 36rem;
+object-fit: contain;
+border-radius: 1rem;
+}
+
+/*Contact page*/
+
+#map{
+min-height:18.75rem;
+height: 30vh;
+}
+
+
+/*Events page*/
+.events-container{
+background: url('/static/img/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
+background-size: cover;
+height: 80vh;
+opacity: 0.9;
+}
+
+.heading-events{
+font-size: 1.8rem;
+}
+
+.events-paragraph{
+font-size: 1rem;
+}
+
+.events-text-block{
+background-color: var(--lightgrey);
+border-radius: 0.5rem;
+box-shadow: 1px 1px 3px;
+
+}
+
+.events-teapot-image{
+left: -3.125rem;
+top: -3.75rem;
+position: relative;
+z-index: -1;
+}
+
+/*Checkout*/
+.order-summary-items{
+max-height: 15.6rem;
+overflow-y: auto;
+}
+
+.checkout-button{
+font-size: 0.6rem;
+}
+
+.service-image{
+object-fit: cover;
+height: 100%;
+}
+
+.service-no-img{
+max-height: 18.75rem;
+object-fit: cover;
+}
+
+.checkout-form-paragraph{
+font-size: 80%;
+}
+
+.checkout-card-header{
+background-color: var(--darkwhite);
+color: var(--red);
+font-weight: 500;
+font-family: var(--sawarabi-mincho);
+}
+
+select:invalid, 
+select option[value=""]{
+color:rgb(73, 80, 87) !important;
+}
+
+.form-control{
+color:rgb(73, 80, 87);
+}
+
+.form-control:focus {
+border-color: var(--lightgreen);
+box-shadow: 0 0 0 0.2rem rgba(30, 255, 0, 0.206);
+}
+
+/*Spinner*/
+.spinner-overlay-wrapper{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 99999999;
+}
+
+#spinner{
+background-image: url("/static/img/spinner.gif");
+background-repeat: no-repeat;
+background-position: center;
+height:100%;
+}
+
+/*Toasts - messages*/
+.container-messages {
+position: fixed;
+top: 4.56rem;
+right: 0.1rem;
+z-index: 99999;
+background-color: #ffffff;
+}
+
+.toast-header{
+font-family: var(--sawarabi-mincho);
+font-size:1rem;
+}
+
+.toast-success{
+border-left: 0.5rem solid var(--darkgreen);
+}
+
+.toast-warning{
+border-left: 0.5rem solid #fdc211;
+}
+
+.toast-error{
+border-left: 0.5rem solid var(--red-salmon);
+}
+
+.toast-info{
+border-left: 0.5rem solid #17a2b8;
+}
+
+/*Error pages*/
+.error-heading {
+font-size: 2.8rem;
+letter-spacing: 0.3rem;
+font-family: var(--sawarabi-mincho);
+text-shadow: 4px 4px 4px var(--lightgrey);
+color: var(--red-salmon);
+}
+
+.error-sub-heading {
+font-size: 1.7rem;
+}
+
+.error-container{
+padding-top: 5rem;
+padding-bottom: 4rem;
+background: url('/static/img/error-bg.jpg') no-repeat center center fixed;
+background-size: cover;
+}
+
+/*Media query for small devices (360px and up)*/
+@media (min-width: 360px) {
+.events-text-block{
+background-color: transparent;
+border-radius: 0;
+box-shadow: none;
+}
+
+.checkout-form-paragraph{
+font-size: 100%;
+}
+
+.checkout-button{
+font-size: 0.8rem;
+}
+
+.products-btn{
+font-size: 1rem;
+}
+}
+
+/* Specific Media query for small devices from 501px to 768px width*/
+@media (min-width: 501px) and (max-width: 768px){
+.landing-button{
+margin-top: 0 !important;
+}
+}
+
+/* Specific Media query for small devices from 530px to 768px width*/
+@media (min-width: 530px) and (max-width: 768px){
+.landing-text{
+left: 5%;
+top: 65%;
+}
+}
+
+/* Specific Media query for small devices from 991px to 1016px width*/
+@media (min-width: 991px) and (max-width: 1016px){
+.landing-main-heading {
+font-size: 4rem !important;
+}
+
+}
+
+/* Media query for medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+h1 {
+font-size: 2.5rem;
+}
+
+h2 {
+font-size: 2rem;
+}
+
+.landing-button{
+margin-top: 0 !important;
+}
+
+.main-nav-sticky {
+padding-top: 3.5rem;
+}
+
+.landing-text{
+left: 15%;
+top: 65%;
+}
+
+.landing-main-heading{
+font-size: 4rem;
+}
+
+.products-heading{
+font-size: 2.5rem;
+}
+
+.sub-heading{
+font-size: 1.25rem;
+}
+
+.blockquote{
+position: absolute;
+bottom: 0.5rem;
+right: 1rem;
+font-size: 1.25rem;
+}
+
+.span-benifits-container{
+margin-top: -1rem;
+}
+
+.events-container-landing{
+min-height:50vh;
+background: url('/static/img/landing/events-background-landing.jpg') no-repeat right center fixed;
+background-size: cover;
+}
+
+.dropdown-tea-columns{
+column-count: 2;
+}
+
+main{
+margin-top:7.87rem;
+}
+
+.events-paragraph{
+font-size: 1.2rem;
+line-height: 1.7rem;
+}
+
+.heading-events{
+font-size: 2.3rem;
+}
+
+.checkout-button{
+font-size: 0.8rem;
+}
+
+.container-messages {
+top: 7.75rem;
+right: 0.2rem;
+}
+
+.toast-header{
+font-size: 1.2rem;
+}
+
+.tab-content{
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+border-radius: .5rem;
+border-top: 0;
+}
+
+.products-btn{
+font-size: 0.8rem;
+}
+}
+
+/*Media query for large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+h2 {
+font-size: 2.3rem;
+}
+
+.container{
+max-width: 74rem !important;
+}
+
+.logo-navbar{
+height: 3.1rem;
+}
+
+.checkout-button{
+font-size: 0.9rem;
+}
+
+.btn-service{
+font-size: 1rem;
+}
+
+.navbar-brand{
+margin-right: 1rem;
+}
+
+main{
+margin-top:7.437rem;
+}
+
+.landing-text{
+text-align: left;
+left: 25%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+.landing-main-heading{
+font-size: 5.5rem;
+}
+
+.checkout-button{
+font-size: 1rem;
+}
+
+.container-messages {
+top: 7.375rem;
+right: 0.6rem;
+}
+
+#card-element{
+width: 70%;
+}
+
+.nav-link-header{
+transition: all .15s ease-in-out;
+}
+
+.nav-link-header:hover{
+transform: scale(1.1);
+color: var(--lightgreen) !important;
+}
+
+#contact-form-btn{
+width:50% !important;
+}
+
+.products-btn{
+font-size: 1rem;
+}
+}
+
+/* iPad Pro  and iPad landscape size Media queries */
+@media only screen and (min-width: 992px) and (max-width: 1366px)and (-webkit-min-device-pixel-ratio: 1.5){
+.landing-text {
+left: 45%;
+top: 60%;
+}
+
+.blockquote {
+bottom: 2rem;
+right: 2rem;
+}
+
+.nav-item-header{
+margin-right: 1rem !important;
+}
+
+.nav-link-header{
+font-size: 0.8rem;
+}
+
+.events-container {
+background-position: bottom left;
+height: 60vh;
+}
+
+.events-text-block {
+margin-top:3.5rem !important;
+}
+}

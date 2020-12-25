@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}- Services{% endblock %}
+
+{% block content %}
+<!--Breadcrumbs-->   
+{% include 'products/includes_services/breadcrumbs_services.html' %} 
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="uppercase main-heading">Services</h1>
+            <hr class="divider-green w-25 mt-3">
+        </div>
+    </div>
+<!--Main content, services cards-->
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-10 mt-4">
+        {% for service in services %} 
+            {% if not service.discontinued %}
+                {% if service.pk|divisibleby:2 %}
+                    {% include 'products/includes_services/even_services_cards.html' %} 
+                {% else %}
+                    {% include 'products/includes_services/odd_services_cards.html' %} 
+                {% endif %} 
+            {% endif %}
+        {% endfor %}
+            <div class="text-center mt-5 mb-5" >
+                <hr class="divider-green w-25 my-4">
+                <p>We can also organise a custom tea ceremony based on your preferences.</p>        
+                <p><a href="{% url 'contact' %}" class="btn button-green btn-sm mr-1">
+                    Contact us</a> to discuss details.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

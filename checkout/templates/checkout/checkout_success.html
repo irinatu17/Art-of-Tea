@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- Checkout success{% endblock %}
+{% block content%}
+
+<div class="container my-5 ">
+    <div class="row">
+        <div class="col-12 text-center mb-3">
+            <h2 class="mb-3"><i class="far fa-check-circle text-green"></i> Thank you for your purchase!</h2>
+            <p>The order confirmation email with details of your order has been sent to <strong>{{order.email}}</strong>.</p>
+            <p>See the order details below.</p>
+        </div>
+    </div>
+
+    <!--Order details-->
+    <div class="row mb-4">
+        <div class="col-12 col-lg-6">
+            <!--Order info-->
+            {% include 'checkout/checkout_success_includes/order_info.html' %} 
+            
+            <div class="card mt-3">
+            <!--Shipping details-->
+            {% include 'checkout/checkout_success_includes/shipping_details.html' %}  
+            </div>
+        </div>
+       
+        <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+            <div class="card">
+             <!--Order summary-->
+             {% include 'checkout/checkout_success_includes/order_summary.html' %}
+                
+            </div>
+            <!--Buttons Continue shopping and View Order hostory-->
+            {% include 'checkout/checkout_success_includes/buttons.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- Contact{% endblock %}
+{% block content %}
+
+<div class="container container-contact-thankyou h-100 ">
+    <div class="row d-flex align-items-center justify-content-center h-100 ">
+        <div class="col-12 text-center mt-5 mb-5">
+            <h1 class="uppercase main-heading">Thank you!</h1>
+            <div class="text-center mt-3 mb-3"><i class="fab fa-pagelines icon-green icon-large "></i></div>
+            <p class="landing-paragraph">Your message has been sent successfully.</p>
+                     <p class="landing-paragraph">We will get back to you soon!</p>
+            <a href="{% url 'landing' %}" class="btn button-green  uppercase px-3">Back home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

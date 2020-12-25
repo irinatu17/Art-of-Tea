@@ -1,0 +1,65 @@
+[
+  {
+    "pk": 1,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Monday",
+      "time": "19.00",
+      "description": "Meditation"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Tuesday",
+      "time": "19.00",
+      "description": "Lecture by our best tea masters"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Wednesday",
+      "time": "07.00",
+      "description": "Morning yoga class (advanced level)"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Thursday",
+      "time": "17.00",
+      "description": "Music night"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Friday",
+      "time": "20.00",
+      "description": "Tea tasting"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Saturday",
+      "time": "08.00",
+      "description": "Morning yoga class (all levels)"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "events.event",
+    "fields": {
+      "weekday": "Sunday",
+      "time": "21.00",
+      "description": "Movie night"
+    }
+  }
+]

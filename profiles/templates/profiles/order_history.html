@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- Order History{% endblock %}
+
+{% block content%}
+
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-12 text-center  pb-4">
+            <h1 class="uppercase main-heading">{{ user.username }}'s Order History</h1>
+            <hr class="divider-green w-25 mt-3">
+        </div>
+        <div class="col-12 d-flex justify-content-end mb-3 mr-2">
+            <a href="{% url 'profile' %}" class="button-black btn btn-sm"> 
+                View My Profile 
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+        <div class="col-12 px-1 px-sm-3">
+            <div class="card shadow">
+                <h5 class="card-header checkout-card-header"><i class="fas fa-clipboard-list"></i>  Order History</h5>
+                <div class="card-body"> 
+                    <!--Order history table--> 
+                    {% include 'profiles/includes/orders_table.html' %} 
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+{% endblock %}

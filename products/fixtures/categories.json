@@ -1,0 +1,82 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "teaware",
+      "friendly_name": "Teaware"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "black_tea",
+      "friendly_name": "Black Tea"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "green_tea",
+      "friendly_name": "Green Tea"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "white_tea",
+      "friendly_name": "White Tea"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+      "name": "herbal_tea",
+      "friendly_name": "Herbal Tea"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+      "name": "matcha",
+      "friendly_name": "Matcha"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": {
+      "name": "pu_erh_tea",
+      "friendly_name": "Pu Erh Tea"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+      "name": "rooibos_tea",
+      "friendly_name": "Rooibos Tea"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": {
+      "name": "wellness_tea",
+      "friendly_name": "Wellness Tea"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.category",
+    "fields": {
+      "name": "oolong_tea",
+      "friendly_name": "Oolong Tea"
+    }
+  }
+]

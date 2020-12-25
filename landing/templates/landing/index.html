@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- Home{% endblock %}
+{% block content%}
+<!--Hero image and buttons-->
+{% include 'landing/includes/hero_img_and_buttons.html' %}
+
+
+<!--About section-->
+{% include 'landing/includes/landing_about.html' %}
+
+<!--Quote section-->
+{% include 'landing/includes/quote_section.html' %}
+
+<!--Benifits section-->
+{% include 'landing/includes/benifits_section.html' %}
+
+<!--Tea ceremony section-->
+{% include 'landing/includes/tea_ceremony_section.html' %}
+
+
+<!--Tea shop and tea ware section-->
+{% include 'landing/includes/tea_shop_section.html' %}
+
+
+<!--Events section-->
+{% include 'landing/includes/landing_events.html' %}
+
+
+<!--Review section-->
+{% include 'landing/includes/landing_reviews.html' %}
+
+<!--Contact section-->
+{% include 'landing/includes/landing_contact.html' %}
+
+{% endblock %}

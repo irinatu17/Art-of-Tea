@@ -1,0 +1,46 @@
+{% if not product.discontinued %}
+<form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+{% csrf_token %}
+    <!--Quantity-->
+    <div class="row d-flex justify-content-between">
+            <div class="col-7 col-md-6">
+                <div class="input-group d-flex align-items-center">
+                    <span class="font-weight-bold mr-2">Quantity:</span>
+                    <div class="w-30">
+                    <input name="quantity" type="number" min="1" max="999" 
+                                class="form-control" value="1" required>
+                    </div>
+                </div>
+                <!--Weight-->
+                {% if product.has_weight %}
+                <small class="text-muted">Each pack is 100g</small>
+                {% endif %}
+            </div>
+        <div class="col-5 col-md-6  text-center">
+            <!--Price-->
+            <p class="price-sign mb-0"><i class="fas fa-euro-sign mr-1"></i>{{ product.price }}</p>
+        </div>
+
+    </div>
+    <!--buttons-->
+    <div class="mt-4 mb-1 text-center text-md-left">
+        <a href="{% url 'products' %}" class="btn button-black-outline products-btn uppercase px-3 mr-3">
+            <i class="fas fa-angle-left"></i> products
+        </a>
+        <input type="submit" class="btn button-green products-btn uppercase px-3" value="Add to Cart">
+    </div>
+    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+</form>
+{% else %}
+<div class="row">
+    <div class="col-12">
+        <p class="price-sign mb-0"><i class="fas fa-euro-sign mr-1"></i>{{ product.price }}</p>
+            <p class="uppercase font-weight-bold text-danger">Out of stock </p>
+    </div>
+    <div class="col-12 mt-3">
+        <a href="{% url 'products' %}" class="btn button-black-outline uppercase px-3 mr-3">
+            <i class="fas fa-angle-left"></i> all products
+        </a>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,32 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- My Profile{% endblock %}
+
+{% block content%}
+
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-12 text-center pb-3">
+            <h1 class="uppercase main-heading">{{ user.username }}'s Profile</h1>
+            <i class="fab fa-pagelines icon-green icon-large"></i>
+        </div>
+        <div class="col-12 d-flex justify-content-end">
+            <a href="{% url 'order_history' %}" class="btn button-black btn-sm"> 
+                View Order History
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+        <div class="col-12 col-md-5 mt-3">
+            <!--Personal info-->
+            {% include 'profiles/includes/personal_info.html' %} 
+                  
+        </div>
+        <div class="col-12 col-md-7 mt-3"> 
+            <!--Shipping details-->
+            {% include 'profiles/includes/shipping_details_form.html' %} 
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,77 @@
+{% load mathfilters %}
+<h5 class="card-header checkout-card-header">
+    <i class="fas fa-clipboard-list text-salmon"></i> 
+    Order Summary
+</h5>
+<div class="card-body pb-0">
+    <div class="order-summary-items">
+        {% for item in order.orderitems.all %}
+        <div class="row mx-0 border-bottom py-2">
+            <div class="col-3 mb-1 mb-md-3">
+            {% if item.product.is_a_service %}
+                <a href="{% url 'service_details' item.product.id %}">
+                    {% if 'img/' in item.product.image.name  %}
+                        <img class="img-fluid" src="{{ STATIC_URL }}{{ item.product.image }}" 
+                            alt="{{ product.name }}">
+                    {% elif item.product.image %}
+                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ item.product.image }}" 
+                            alt="{{ product.name }}">
+                    {% else %}
+                        <img class="img-fluid" src="{{ STATIC_URL }}img/no-image.jpg"   
+                                alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+            {% else %}
+                <a href="{% url 'product_details' item.product.id %}">
+                    {% if 'img/' in item.product.image.name  %}
+                        <img class="img-fluid" src="{{ STATIC_URL }}{{ item.product.image }}" 
+                            alt="{{ product.name }}">
+                    {% elif item.product.image %}
+                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ item.product.image }}" 
+                            alt="{{ product.name }}">
+                    {% else %}
+                        <img class="img-fluid" src="{{ STATIC_URL }}img/no-image.jpg"   
+                                alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+            {% endif %}
+            </div>
+            <div class="col-9">
+                <p class="font-weight-bold mb-2">{{ item.product.name }}</p>
+                <p class="small my-1">
+                {% if item.product.is_a_service %}
+                    {% if item.quantity > 1 %}
+                        {{ item.quantity }} participants
+                    {% else %}
+                        {{ item.quantity }} participant
+                    {% endif %}
+                {% endif %}
+                 </p>
+                <p class="small my-1 ">Price: €{{ item.product.price}}</p>
+                {% if item.product.is_a_service %}
+                
+                <p class="small my-1">Date and Time:</p> 
+                <p class="small my-1">{{ item.datetime }}</p>
+                
+                {% else %}
+                <p class="small my-1">Qty: {{ item.quantity }}</p>
+                {% endif %}
+                <p class="small my-1">Subtotal: €{{ item.product.price|mul:item.quantity}}</p>
+            </div> 
+        </div>
+        {% endfor %}
+    </div>
+    <div class="border-top pt-1 pt-md-2">
+        {% if order.comment %}
+            <p class="small font-weight-bold my-1">Your aditional comment/query:</p> 
+            <p class="small mt-1 ">{{ order.comment }}</p>
+        {% endif %}
+        <p class="small mt-1 mb-0">Order Total: €{{ order.order_total }}</p>
+            {% if order.delivery_cost > 0 %}
+                <p class="small  mb-1">Delivery Cost: €{{ order.delivery_cost }}</p>
+            {% else %}
+                <p class="small  mb-1">Delivery: Free</p>
+            {% endif %}
+        <p class="lead">Grand Total: <span class="font-weight-bold">€{{ order.grand_total }}</span></p>
+    </div>
+</div>

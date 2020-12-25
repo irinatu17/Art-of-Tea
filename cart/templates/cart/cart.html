@@ -1,0 +1,87 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- Cart{% endblock %}
+{% block content%}
+
+<!--Delivery info-->
+{% include 'includes/delivery_banner.html' %} 
+
+<!--Main Heading-->
+{% include 'cart/includes/cart_heading.html' %} 
+
+{% if cart_items %}
+
+<!--Continue shopping link-->
+{% include 'cart/includes/continue_shopping_link.html' %} 
+
+<!--cart content-->
+<div class="container border border-dark rounded mt-3 mb-5 shadow ">    
+    {% for item in cart_items %}
+    <div class="row p-3 border-bottom border-dark">
+        <!--Image-->
+        {% include 'cart/includes/cart_image.html' %} 
+        
+        <!--price and subtotal for mobile-->
+        {% include 'cart/includes/price_subtotal_mobile.html' %} 
+        <!--Name-->
+        <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+            <h4 class="font-weight-bold">  {{ item.product.name }}</h4>
+            {% if item.product.is_a_service == False %}
+                {% if item.product.sku %}
+                <p class="my-0 small text-muted uppercase">SKU: {{ item.product.sku }}</p>
+                {% endif %}
+            {% endif %}
+
+            <!--Quantity/nubmer of participants-->
+            {% include 'cart/includes/cart_update_form.html' %} 
+        </div>
+
+        <!--Price and subtotal for tablet and desktop-->
+        {% include 'cart/includes/price_subtotal_tablet_desktop.html' %} 
+        
+    </div>
+    {% endfor %}
+
+    <!--Cart Grand Total-->
+    {% include 'cart/includes/cart_total.html' %} 
+</div>
+
+{% else %}
+<!--when cart is empty-->
+{% include 'cart/includes/empty_cart.html' %} 
+
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript">
+    // Update the quantity when update-btn is clicked, handles validation of the quantity form
+    $('.update-cart-btn').click(function(e) {
+        let number = this.dataset.number;
+        let cartForm = document.querySelector(`#cart-form-${number}`);
+        let cartFormValid  = cartForm.checkValidity();
+        if (cartFormValid) {
+            let form = $(this).prev('.quantity-update-form');
+            form.submit();
+        }else {
+            $(this).prev().children('.error-message').removeClass("d-none");
+
+        }
+    });
+
+    // Remove item from the cart and reload the page on click
+     $('.remove-button').click(function(e) {
+        let itemId = $(this).attr('class').split('remove_')[1];
+        let url = `/cart/remove/${itemId}/`;
+        let csrfToken = "{{ csrf_token }}";
+        let data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+{% endblock %}

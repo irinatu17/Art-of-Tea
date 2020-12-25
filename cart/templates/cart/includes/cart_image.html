@@ -1,0 +1,16 @@
+<div class="col-6 col-md-2 mb-3">
+    
+    {% if  'img/' in item.product.image.name %}
+    <img class="img-fluid rounded-lg shadow-sm" 
+        src="{{ STATIC_URL }}{{ item.product.image }}"
+        alt="{{ item.product.name }}">
+    {% elif item.product.image %}
+    <img class="img-fluid rounded-lg shadow-sm" 
+        src="{{ MEDIA_URL }}{{ item.product.image }}"
+        alt="{{ item.product.name }}">
+    {% else %}
+    <img class="img-fluid rounded-lg shadow-sm" 
+         src="{{ STATIC_URL }}img/no-image.jpg"  
+         alt="{{ item.product.name }}">
+    {% endif %}
+</div>

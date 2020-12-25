@@ -1,0 +1,13 @@
+<div class="container-fluid breadcrumbs-container  border-bottom py-3">
+    <div class="row">
+        <div class="col-12">
+            <a href="{% url 'landing' %}" class="breadcrumbs-text pl-2">Home</a>  &gt;
+            <a href="{% url 'products' %}" class="breadcrumbs-text">Products</a> 
+            {% for category in selected_categories %}
+                &gt; <a href="{% url 'products' %}?category={{ category.name }}" 
+                    class="breadcrumbs-text">{{ category.friendly_name }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12 col-md-11 d-flex align-items-end flex-column my-3">
+        <h6 class="font-weight-bold">Cart Subtotal: €{{ total|floatformat:2 }}</h6>
+        <small>Delivery Cost: €{{ delivery|floatformat:2 }}</small>
+        <h4 class="lead font-weight-bolder mt-2">Grand Total:
+            <span class="price-sign"> €{{ grand_total|floatformat:2 }}
+            </span>
+        </h4>
+        <small class="text-muted">*Tax included </small>    
+
+        {% if free_delivery_delta > 0 %}
+            <small class="text-salmon text-right">
+                Free delivery is available by spending <strong>€{{ free_delivery_delta }}</strong> more!
+            </small>
+        {% endif %}
+
+        <a href="{% url 'checkout' %}" class="btn button-green uppercase shadow my-4 btn-lg">
+            <i class="fas fa-lock mr-3"></i>  Checkout 
+        </a>
+    </div> 
+</div>  

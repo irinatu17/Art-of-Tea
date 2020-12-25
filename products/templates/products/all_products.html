@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}- Products{% endblock %}
+
+{% block content %}
+    <!--Delivery info-->
+    {% include 'includes/delivery_banner.html' %} 
+    <!--Breadcrumbs-->    
+    {% include 'products/includes_products/breadcrumbs_all_products.html' %} 
+
+    <!--Main content-->
+    <div class="container mt-4 mb-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="uppercase main-heading">Products</h1>
+                <hr class="divider-green w-25 mt-3">
+            </div>
+            <!--Tea Categories-->    
+            {% include 'products/includes_products/tea_categories.html' %} 
+        </div>
+        <div class="row">
+        {% if not products %}
+        <div class="col-12 text-center mt-2 mb-4" >
+            <h5>Sorry, no products were found matching your search query.</h5>
+        </div>
+        {% else %}
+            {% for product in products %}
+                {% if not product.discontinued %}
+                    <!--Products Cards-->    
+                    {% include 'products/includes_products/products_cards.html' %} 
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

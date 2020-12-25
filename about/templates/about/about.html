@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extra_title %}- About{% endblock %}
+{% block content%}
+
+<div class="container-xl my-3 my-md-5">
+    <!--About Heading-->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="uppercase main-heading">About us</h1>
+            <hr class="divider-green w-25 mt-3">
+        </div>
+    </div>
+    <!--About- Main sections-->
+    <div class="row text-center mt-3 mt-md-5 d-flex align-items-center">
+        {% include 'about/includes/who_we_are.html' %} 
+        {% include 'about/includes/our_principles.html' %}    
+    </div>
+    {% include 'about/includes/our_mission.html' %}
+</div>
+{% endblock %}

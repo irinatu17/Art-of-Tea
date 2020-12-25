@@ -1,0 +1,43 @@
+<form  class="quantity-update-form" method="POST" id="cart-form-{{ forloop.counter }}" 
+    action="{% url 'update_cart' item.item_id %}">
+    {% csrf_token %}
+
+    {% if item.product.is_a_service %}
+    <p class="small font-weight-bold">Date and Time:</p>
+    <!--Datetime picker-->
+    <div class="input-group date w-100 datetime_cart" id="datetime_cart-{{ forloop.counter }}" 
+            data-value="{{ item.datetime }}" data-target-input="nearest">
+        <input type="text" name="datetime" class="form-control datetimepicker-input"
+             value="{{ item.datetime }}" data-target="#datetime_cart-{{ forloop.counter }}" required/>
+        <div class="input-group-append" data-target="#datetime_cart-{{ forloop.counter }}" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+        </div>
+    </div> 
+    <p class="mt-3 small font-weight-bold">Number of participants:</p>
+    <div class="input-group w-100">
+        <input name="quantity" type="number" min="1" max="100" class="form-control"
+             value="{{ item.quantity }}"  required>
+    </div>
+    <div class="d-none error-message">
+        <p class= "mt-2 text-danger font-weight-bold small">
+           <i class="fas fa-exclamation-circle"></i> Invalid field. Value must be in a range of 1 to 100. <br/> Please, check your input and try again.
+        </p>
+    </div>
+    {% else %}
+    <p class="mt-3 small font-weight-bold">Quantity:</p>
+    
+    <div class="input-group w-100">
+        <input name="quantity" type="number" min="1" max="999" class="form-control"
+             value="{{ item.quantity }}"  required>
+    </div>
+    <div class="d-none error-message">
+        <p class= "mt-2 text-danger font-weight-bold small">
+            <i class="fas fa-exclamation-circle"></i> Invalid field. Value must be in a range of 1 to 999.<br/> Please, check your input and try again.
+        </p>
+    </div>
+    {% endif %}
+</form>
+<!--Update button-->
+<a class="update-cart-btn btn btn-sm rounded-lg button-black mt-2 float-right" 
+    data-number="{{ forloop.counter }}">Update
+</a> 
