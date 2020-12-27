@@ -31,11 +31,12 @@ body {
     display: flex;
     flex-direction: column;
     color: var(--black);
+    font-size: .9rem;
 }
 
 main {
     flex: 1 0 auto;
-    margin-top:4.6rem;
+    margin-top: 3.1rem;
 }
 
 h1 {
@@ -121,7 +122,7 @@ footer {
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .button-black {
@@ -238,7 +239,11 @@ footer {
 }
 
 .logo {
-    height: 2.8rem;
+    max-height: 2.5rem;
+}
+
+.small-text-navbar {
+    font-size: 70%;
 }
 
 .navbar-toggler {
@@ -666,7 +671,7 @@ select option[value=""]{
 @media (min-width: 768px) {
 
     main{
-        margin-top: 7.87rem;
+        margin-top: 6.2rem;
     }
         
     h1 {
@@ -682,7 +687,7 @@ select option[value=""]{
     }
 
     .main-nav-sticky {
-        padding-top: 3.5rem;
+        padding-top: 3.1rem;
     }
 
     .landing-text {
@@ -759,10 +764,6 @@ select option[value=""]{
 /*Media query for large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
 
-    main{
-        margin-top:7.437rem;
-    }
-
     h2 {
         font-size: 2.3rem;
     }
@@ -820,6 +821,10 @@ select option[value=""]{
         color: var(--lightgreen) !important;
     }
 
+    .main-nav-sticky {
+        padding-top: 3.3rem;
+    }
+
     #contact-form-btn {
         width:50% !important;
     }
@@ -856,5 +861,9 @@ select option[value=""]{
 
     .events-text-block {
         margin-top:3.5rem !important;
+    }
+
+    .main-nav-sticky {
+        padding-top: 3.3rem;
     }
 }

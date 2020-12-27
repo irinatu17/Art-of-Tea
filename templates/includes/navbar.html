@@ -1,6 +1,6 @@
 <!--Top navbar-->
 <div class="d-none d-md-block">
-    <nav class="navbar fixed-top d-flex justify-content-end pb-0 w-100 nav-top">
+    <nav class="navbar fixed-top d-flex justify-content-end w-100 nav-top">
         <ul class="nav">
             {% if request.user.is_authenticated %}
             <li class="nav-item mr-5 d-none d-md-block dropdown">
@@ -60,7 +60,7 @@
 
 <!--Main navbar-->
 <div class="main-nav-sticky fixed-top">
-    <nav class="navbar p-1 navbar-expand-lg  navbar-dark d-block d-lg-flex">
+    <nav class="navbar px-1 py-0 navbar-expand-lg  navbar-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
             <button class="navbar-toggler px-2" type="button" 
                     data-toggle="collapse" data-target="#navbarContent" 
@@ -69,27 +69,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--Logo-->
-            <a class="navbar-brand ml-3" href="{% url 'landing' %}">
+            <a class="navbar-brand px-2" href="{% url 'landing' %}">
                 <img src="{{ STATIC_URL }}img/logo.png" alt="logo" class="logo">
             </a> 
             <!--Search button-->
             <div class="d-flex">
-                <button class="btn btn-large px-1 d-block d-lg-none mr-md-3" id="search-button">
-                    <span class="text-center text-white">
+                <button class="btn px-1 d-block d-lg-none mr-md-3" id="search-button">
+                    <div class="text-center text-white d-flex flex-column justify-content-between">
                          <i class="fas fa-search"></i>
-                        <small>Search</small>
-                    </span>
+                        <small class="mt-1 small-text-navbar">Search</small>
+                    </div>
                 </button>
                 
                 <a href="{% url 'view_cart' %}" 
-                class="btn btn-large px-1 py-2 d-block d-md-none {% if grand_total %}text-warning {% else %}text-white{% endif %}">
-                    <div class="text-center {% if grand_total %}text-warning {% else %}text-white{% endif %}">
+                class="btn px-1 d-block d-md-none {% if grand_total %}text-warning {% else %}text-white{% endif %}">
+                    <div class="text-center d-flex flex-column justify-content-between {% if grand_total %}text-warning {% else %}text-white{% endif %}">
                         <i class="fas fa-shopping-cart"></i>
-                        <small>
+                        <small  class="mt-1 small-text-navbar">
                         {% if grand_total %}
                             <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
                         {% else %}
-                            €0.00
+                            € 0.00
                         {% endif %}
                         </small>
                     </div>
