@@ -201,6 +201,26 @@ footer {
     color: var(--black) !important;
 }
 
+.btt-button {
+    position: fixed;
+    height: 2.6rem;
+    width: 2.6rem;
+    bottom: 0.6rem;
+    right: 0.6rem;
+    border-radius: .3rem;
+    background-color: var(--white);
+    display: none;
+    z-index: 1000;
+}
+
+.btt-button:hover {
+    background-color: var(--darkwhite);
+}
+
+.btt-link{
+    cursor: pointer;
+}
+
 /* Navbar */
 .navbar {
     font-family: var(--sawarabi-mincho);
