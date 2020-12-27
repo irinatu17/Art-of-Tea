@@ -669,7 +669,9 @@ select option[value=""]{
 
 /* Media query for medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-
+    body {
+        font-size: 1rem;
+    }
     main{
         margin-top: 6.2rem;
     }
@@ -865,5 +867,13 @@ select option[value=""]{
 
     .main-nav-sticky {
         padding-top: 3.3rem;
+    }
+}
+
+/*Media query for largest devices (desktops, 1800px and up)*/
+@media (min-width: 1800px) {
+    .container {
+        max-width: 90rem !important;
+        font-size: 1.1rem;
     }
 }
