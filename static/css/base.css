@@ -40,8 +40,9 @@ main {
     padding-top: 58px;
 }
 
-header {
-    background-color: var(--black);
+header,
+.header {
+    background-color: var(--black) !important;
 }
 
 h1 {
