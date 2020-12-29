@@ -1,6 +1,6 @@
 <!--Top navbar-->
 <div class="d-none d-md-block">
-    <nav class="navbar fixed-top d-flex justify-content-end w-100 nav-top">
+    <nav class="navbar d-flex justify-content-end w-100 nav-top">
         <ul class="nav">
             {% if request.user.is_authenticated %}
             <li class="nav-item mr-5 d-none d-md-block dropdown">
@@ -59,7 +59,7 @@
 </div>
 
 <!--Main navbar-->
-<div class="main-nav-sticky fixed-top">
+<div class="main-nav-sticky py-1">
     <nav class="navbar px-1 py-0 navbar-expand-lg  navbar-dark d-block d-lg-flex">
         <div class="d-flex justify-content-between">
             <button class="navbar-toggler px-2" type="button" 
