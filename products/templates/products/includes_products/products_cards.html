@@ -37,9 +37,7 @@
         {% endif %}
     </div>
     <p class="text-center">
-        <span class=" font-weight-bold"><i class="fas fa-euro-sign"></i>
-            {{ product.price }}
-        </span>
+        <span class=" font-weight-bold"><i class="fas fa-euro-sign"></i>&nbsp;{{ product.price }}</span>
         {% if product.has_weight %}
         <span> / 100g</span>
         {% endif %}
@@ -53,7 +51,7 @@
         </form>
         <a href="{% url 'product_details' product.id %}" 
             class="btn button-black px-3">
-            View Details
+            View&nbsp;Details
         </a>
     </div>
 </div>
@@ -63,7 +61,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content text-center">
       <div class="modal-header">
-        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Product</h5>
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete&nbsp;Product</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -31,9 +31,9 @@
                 <p class="card-text">{{ service.description }}</p>
                 <div class="d-flex justify-content-between">
                     <p class="card-text font-weight-bold">
-                        <i class="fas fa-euro-sign mr-1"></i>{{ service.price}}
+                        <i class="fas fa-euro-sign mr-1"></i>&nbsp;{{ service.price}}
                     </p>
-                    <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn More</a>
+                    <a href="{% url 'service_details' service.id %}" class="btn button-green">Learn&nbsp;More</a>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content text-center">
       <div class="modal-header">
-        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete Service</h5>
+        <h5 class="modal-title text-danger font-weight-bold" id="deleteModalLabel">Delete&nbsp;Service</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
