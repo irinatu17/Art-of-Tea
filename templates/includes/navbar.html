@@ -8,20 +8,20 @@
                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         <div class="text-center">
                                <div><i class="fas fa-user"></i></div>
-                                <small class="my-0">My Account</small>
+                                <small class="my-0">My&nbsp;Account</small>
                         </div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="accountDropdown">
                         {% if request.user.is_superuser %}
                         <a href="{% url 'add_product' %}" class="dropdown-item">
-                            <i class="fas fa-edit"></i> Product Management
+                            <i class="fas fa-edit"></i> Product&nbsp;Management
                         </a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}"> 
-                            <i class="fas fa-user"></i> My profile
+                            <i class="fas fa-user"></i> My&nbsp;profile
                         </a>
                         <a class="dropdown-item" href="{% url 'order_history' %}">
-                            <i class="fas fa-history"></i> Order History
+                            <i class="fas fa-history"></i> Order&nbsp;History
                         </a>
                         <a class="dropdown-item border-top" href="{% url 'account_logout' %}">
                            <i class="fas fa-sign-out-alt"></i> Logout
@@ -46,9 +46,9 @@
                         <div><i class="fas fa-shopping-cart"></i></div>
                         <small>
                         {% if grand_total %}
-                           <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
+                           <span class="font-weight-bold">€&nbsp;{{ grand_total|floatformat:2 }}</span>
                         {% else %}
-                           € 0.00
+                           €&nbsp;0.00
                         {% endif %}
                         </small>
                     </div>
@@ -87,9 +87,9 @@
                         <i class="fas fa-shopping-cart"></i>
                         <small  class="mt-1 small-text-navbar">
                         {% if grand_total %}
-                            <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
+                            <span class="font-weight-bold"> €&nbsp;{{ grand_total|floatformat:2 }} </span>
                         {% else %}
-                            € 0.00
+                            €&nbsp;0.00
                         {% endif %}
                         </small>
                     </div>
@@ -145,14 +145,14 @@
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="nav-item d-md-none d-block">
-                        <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Admin Management</a>
+                        <a class="nav-link uppercase text-white" href="{% url 'add_product' %}">Admin&nbsp;Management</a>
                     </li>
                     {% endif %}
                 <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'profile' %}">My profile</a>
+                    <a class="nav-link uppercase text-white" href="{% url 'profile' %}">My&nbsp;profile</a>
                 </li>
                 <li class="nav-item d-md-none d-block">
-                    <a class="nav-link uppercase text-white" href="{% url 'order_history' %}">Order History</a>
+                    <a class="nav-link uppercase text-white" href="{% url 'order_history' %}">Order&nbsp;History</a>
                 </li>
                 <li class="nav-item d-md-none d-block">
                     <a class="nav-link uppercase text-white" href="{% url 'account_logout' %}">Logout</a>
