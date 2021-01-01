@@ -519,7 +519,7 @@ footer {
 }
 
 .checkout-button {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
 }
 
 .service-image {
@@ -555,6 +555,19 @@ select option[value=""]{
 .form-control:focus {
     border-color: var(--lightgreen);
     box-shadow: 0 0 0 0.2rem rgba(30, 255, 0, 0.206);
+}
+
+.form-number-circle {
+    font-size: .9rem;
+    height: 1.85rem;
+    width: 1.85rem;
+    border-radius: 50%;
+    margin-right: .7rem;
+    background: linear-gradient(var(--darkgreen), var(--lightgreen));
+    color:var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Spinner*/
@@ -650,6 +663,10 @@ select option[value=""]{
     .landing-button {
         margin-top: 0 !important;
     }
+
+    .checkout-button {
+        font-size: 0.9rem;
+    }
 }
 
 /* Specific Media query for small devices from 530px to 768px width*/
@@ -741,7 +758,7 @@ select option[value=""]{
     }
 
     .checkout-button {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .container-messages {
@@ -783,10 +800,6 @@ select option[value=""]{
         letter-spacing: 0.1rem;
     }
 
-    .checkout-button {
-        font-size: 0.9rem;
-    }
-
     .btn-service {
         font-size: 1rem;
     }
@@ -804,10 +817,6 @@ select option[value=""]{
 
     .landing-main-heading {
         font-size: 5.5rem;
-    }
-
-    .checkout-button {
-        font-size: 1rem;
     }
 
     .container-messages {
@@ -838,6 +847,10 @@ select option[value=""]{
 
     .products-btn {
         font-size: 1rem;
+    }
+
+    .form-number-circle {
+        font-size: 1.1rem;
     }
 }
 

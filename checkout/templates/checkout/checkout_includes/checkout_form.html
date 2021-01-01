@@ -1,4 +1,4 @@
-<div class="col-12 col-md-7 col-lg-8 order-2 order-md-1">
+<div class="col-12 col-md-8 order-2 order-md-1">
     <div class="mb-4 mt-3">
         <p class="text-muted checkout-form-paragraph text-center text-md-left">
             Please fill out the form to complete the order
@@ -9,13 +9,13 @@
         <li class="nav-item checkout-nav-item">
             <a class="nav-link text-dark active shadow-sm" id="personal-details-tab" data-toggle="tab"
                 href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">
-                Personal Details
+                Personal&nbsp;Details
             </a>
         </li>
         <li class="nav-item disabled checkout-nav-item"> 
             <a class="nav-link text-dark shadow-sm" id="shipping-info-tab" data-toggle=""
                 href="#shipping-info" role="tab" aria-controls="shipping-info" aria-selected="false">
-                Shipping Info
+                Shipping&nbsp;Info
             </a>
         </li>
         <li class="nav-item disabled checkout-nav-item">
@@ -32,7 +32,7 @@
         <div class="tab-pane fade show active p-1 p-md-4" id="personal-details" 
             role="tabpanel" aria-labelledby="personal-details-tab">
             <form action="#" method="POST" id="personal-details-form" onsubmit="return false">
-            <h4 class="font-weight-bold mb-4">1. Personal Details</h4>
+            <h4 class="font-weight-bold mb-4 d-flex"><span class="form-number-circle">1</span> Personal Details</h4>
 
             {{ order_form.full_name | as_crispy_field }}
             {{ order_form.email | as_crispy_field }}
@@ -42,7 +42,7 @@
             <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
                 <button type="submit"  id="personal-details-btn" 
                     class="btn button-green btn-next uppercase checkout-button btnNext">
-                    Next <i class="fas fa-angle-right"></i>
+                    Next&nbsp;<i class="fas fa-angle-right"></i>
                 </button>
             </div>
             </form>
@@ -51,7 +51,7 @@
         <!--Billing/Shipping Info Info-->
         <div class="tab-pane fade p-1 p-md-4" id="shipping-info" role="tabpanel" aria-labelledby="shipping-info-tab">
             <form action="#" method="POST" id="shipping-info-form" onsubmit="return false">
-                <h4 class="font-weight-bold mb-4">2. Billing/Shipping Info</h4>
+                <h4 class="font-weight-bold mb-4  d-flex"><span class="form-number-circle">2</span> Billing/Shipping Info</h4>
                 {{ order_form.address_line1 | as_crispy_field }}
                 {{ order_form.address_line2 | as_crispy_field }}
                 {{ order_form.town_or_city | as_crispy_field }}
@@ -80,11 +80,11 @@
                 <!--Buttons Next/Go back-->
                 <div class="input-group mb-3 group-end text-right d-flex justify-content-end">
                     <a class="btn button-black-outline btn-prev checkout-button uppercase btnGoBack mr-3">
-                        <i class="fas fa-chevron-left"></i> Go Back
+                        <i class="fas fa-chevron-left"></i>&nbsp;Go&nbsp;Back
                     </a>
                     <button type="submit" id="shipping-info-btn" 
                         class="btn button-green btn-next uppercase checkout-button btnNext">
-                        Next <i class="fas fa-angle-right"></i>
+                        Next&nbsp;<i class="fas fa-angle-right"></i>
                     </button>
                 </div>
             </form>
@@ -94,7 +94,7 @@
         <div class="tab-pane fade p-1 p-md-4" id="payment-details" role="tabpanel" aria-labelledby="payment-details-tab">
             <!--Form summary-->
 
-            <h4 class="font-weight-bold mb-4">3. Summary and Payment</h4>
+            <h4 class="font-weight-bold mb-4  d-flex"><span class="form-number-circle">3</span> Summary and Payment</h4>
             <p class="text-muted small">
                 Please review your order details before proceeding to payment
             </p>
@@ -137,13 +137,13 @@
                     <div>
                         <a class="btn button-black-outline btn-prev checkout-button
                                     uppercase btnGoBack mr-auto mr-lg-3">
-                            <i class="fas fa-chevron-left"></i> Go Back
+                            <i class="fas fa-chevron-left"></i>&nbsp;Go&nbsp;Back
                         </a>
                     </div>
                     <div class="text-right">
                         <button button id="submit-button" type="submit" 
                             class="btn button-green checkout-button uppercase">
-                            Proceed to payment <i class="fas fa-lock"></i>
+                            Proceed&nbsp;to&nbsp;payment&nbsp;<i class="fas fa-lock"></i>
                         </button>
                         
                     </div>
