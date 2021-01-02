@@ -852,6 +852,14 @@ select option[value=""]{
     .form-number-circle {
         font-size: 1.1rem;
     }
+
+    .container-xl {
+        max-width: 1500px;
+    }
+
+    .allauth-form-content {
+        width: 40%;
+    }
 }
 
 /* iPad Pro  and iPad landscape size Media queries */

@@ -26,15 +26,15 @@
                         {% endfor %}
                     </ul>
                 </td>
-                <td class="small">€{{ order.grand_total }}</td>
+                <td class="small">€&nbsp;{{ order.grand_total }}</td>
             </tr>
             {% endif %}
         {% empty %}
             <tr>
             <td colspan="4" class="text-center">
                 <p class="mt-3 lead">Your order history is empty yet. <br/>
-                Check out our <a href="{% url 'products' %}">products</a> and
-                    <a href="{% url 'services' %}">services</a>!</p>
+                Check out our <a href="{% url 'products' %}" class="text-dark font-weight-bold">products</a> and
+                    <a href="{% url 'services' %}" class="text-dark font-weight-bold">services</a>!</p>
                     <i class="fab fa-pagelines icon-green icon-large"></i>
             </td>
         </tr>
