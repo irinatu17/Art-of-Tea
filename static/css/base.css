@@ -3,7 +3,7 @@
 /* Colour and Font Variables */
 :root {
 --darkgreen: #0A5C15;
---lightgreen: #3E9D47;
+--lightgreen: #3e9d47;
 --black: #070605;
 --lightgrey: #E4E3E2;
 --lavander: #D6D3F0;
@@ -487,10 +487,13 @@ footer {
 
 /*Events page*/
 .events-container {
-    background: url('/static/img/about/teapot-with-two-white-tea-cups1.jpg') no-repeat center center fixed;
+    background: linear-gradient(to left bottom, rgba(246, 246, 246, 0.9), rgba(252, 220, 220, 0.1)),
+    url('/static/img/about/teapot-with-two-white-tea-cups1.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
-    opacity: 0.9;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 80vh;
 }
 
 .heading-events {
@@ -502,9 +505,9 @@ footer {
 }
 
 .events-text-block {
-    background-color: var(--lightgrey);
-    border-radius: 0.5rem;
-    box-shadow: 1px 1px 3px;
+   background-color: rgba(255, 255, 255, 0.6);
+   padding: 0 1.5rem;
+   border-radius: 2rem;
 
 }
 
@@ -642,11 +645,11 @@ select option[value=""]{
 
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
-    .events-text-block {
+    /* .events-text-block {
         background-color: transparent;
         border-radius: 0;
         box-shadow: none;
-    }
+    } */
 
     .checkout-form-paragraph {
         font-size: 100%;
@@ -757,7 +760,7 @@ select option[value=""]{
 
     .events-paragraph {
         font-size: 1.2rem;
-        line-height: 1.7rem;
+        padding-bottom: .8rem;
     }
 
     .heading-events {
@@ -917,5 +920,10 @@ select option[value=""]{
     .container {
         max-width: 90rem !important;
         font-size: 1.1rem;
+    }
+
+    .events-text-block {
+        background-color: transparent;
+        padding: 0 10rem;
     }
 }
