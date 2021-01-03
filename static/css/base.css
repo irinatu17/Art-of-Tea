@@ -303,13 +303,13 @@ footer {
 /* Landing page - main about section*/
 .landing-paragraph {
     font-family: var(--open-sans);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 
 /* Landing page - quote section*/
 .quote-section {
-    min-height:60vh;
+    min-height: 60vh;
     background: url('/static/img/landing/quote-bg-landing.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
@@ -329,13 +329,16 @@ footer {
 }
 
 .span-benifits-container {
-    margin-top: -2rem;
+    margin-top: -1rem;
 }
 
 .benifits-section {
     overflow-x: hidden;
     overflow-y: hidden;   
+}
 
+.benifits-paragraph {
+    font-size: 1.1rem;
 }
 
 /*Landing page - Tea ceremony section*/
@@ -727,11 +730,15 @@ select option[value=""]{
         font-size: 1.25rem;
     }
 
+    .quote-heading {
+        font-size: 2.3rem;
+    }
+
     .blockquote {
         position: absolute;
-        bottom: 0.5rem;
-        right: 1rem;
-        font-size: 1.25rem;
+        bottom: 0.2rem;
+        right: 1.7rem;
+        font-size: 1.35rem;
     }
 
     .span-benifits-container {
@@ -819,6 +826,10 @@ select option[value=""]{
         font-size: 5.5rem;
     }
 
+    .benifits-paragraph {
+        font-size: 1.2rem;
+    }
+
     .container-messages {
         top: 7.375rem;
         right: 0.6rem;
@@ -860,6 +871,11 @@ select option[value=""]{
     .allauth-form-content {
         width: 40%;
     }
+
+    .quote-section {
+        height: 75vh;
+    }
+
 }
 
 /* iPad Pro  and iPad landscape size Media queries */
