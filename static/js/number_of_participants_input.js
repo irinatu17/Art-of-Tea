@@ -1,14 +1,16 @@
-// Disable +/- buttons outside 1-99 range
+// Disable +/- buttons outside 1-100 range
 function handleEnableDisable(itemId) {
     var currentValue = parseInt($(`#id_qty_${itemId}`).val());
     var minusDisabled = currentValue < 2;
-    var plusDisabled = currentValue > 998;
+    var plusDisabled = currentValue > 99;
     $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
     $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
 }
 
+
 // Ensure proper enabling/disabling of all inputs on page load
 var allQtyInputs = $('.qty_input');
+console.log(allQtyInputs)
 for(var i = 0; i < allQtyInputs.length; i++){
     var itemId = $(allQtyInputs[i]).data('item_id');
     handleEnableDisable(itemId);
@@ -19,7 +21,7 @@ $('.qty_input').change(function() {
     var itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
 });
-
+console.log(allQtyInputs)
 // Increment quantity
 $('.increment-qty').click(function(e) {
    e.preventDefault();

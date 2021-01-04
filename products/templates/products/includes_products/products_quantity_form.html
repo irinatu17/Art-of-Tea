@@ -6,7 +6,6 @@
         <div class="col-7 col-md-6">
             <p class="font-weight-bold mr-2">Quantity:</p>
             <div class="input-group d-flex align-items-center">
-                
                 <div class="d-flex">
                     <div class="input-group-prepend">
                         <button class="decrement-qty btn button-quantity rounded-0" 
@@ -16,7 +15,7 @@
                             </span>
                         </button>
                     </div>
-                    <input name="quantity" type="number" min="1" max="99" 
+                    <input name="quantity" type="number" min="1" max="999" 
                             class="form-control qty_input" value="1"
                             data-item_id="{{ product.id }}"
                             id="id_qty_{{ product.id }}" required>

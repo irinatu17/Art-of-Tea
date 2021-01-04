@@ -487,6 +487,10 @@ footer {
     border-radius: 1rem;
 }
 
+.number-of-participants-container {
+    width: 50%;
+}
+
 /*Contact page*/
 
 #map {

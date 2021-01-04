@@ -56,6 +56,11 @@
 
 {% block extra_js %}
 {{ block.super }}
+
+
+<script src="{% static 'js/quantity_input.js' %}"></script> 
+<!-- <script src="{% static 'js/number_of_participants_input.js' %}"></script>  -->
+
 <script type="text/javascript">
     // Update the quantity when update-btn is clicked, handles validation of the quantity form
     $('.update-cart-btn').click(function(e) {

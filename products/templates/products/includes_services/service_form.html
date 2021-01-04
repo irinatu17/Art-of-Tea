@@ -4,8 +4,28 @@
     {% csrf_token %}
     <!--Number of participans-->
     <h6 class="font-weight-bold mt-4">Number of participants:</h6>
-    <div class="input-group mt-3 w-100">
-        <input name="quantity" type="number" min="1" max="100" class="form-control" value="1" required>
+    <div class="input-group mt-3">
+        <div class="d-flex number-of-participants-container">
+            <div class="input-group-prepend">
+                <button class="decrement-qty btn button-quantity rounded-0" 
+                    data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                    <span class="icon">
+                        <i class="fas fa-minus"></i>
+                    </span>
+                </button>
+            </div>
+            <input name="quantity" type="number" min="1" max="100" class="form-control qty_input" value="1"
+                    data-item_id="{{ service.id }}"
+                    id="id_qty_{{ service.id }}" required>
+            <div class="input-group-append">
+                <button class="increment-qty btn button-quantity rounded-0"
+                    data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                    <span class="icon">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
     </div>
     <!--Date and time picker-->
     <h6 class="font-weight-bold mt-4">Date and Time:</h6>
