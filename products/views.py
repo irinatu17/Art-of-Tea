@@ -2,22 +2,39 @@ from django.shortcuts import render, redirect, reverse, \
     get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category, ItineraryItem, Itinerary
 from .forms import ProductForm, ServiceForm, ItineraryForm
 
 
 def all_products(request):
-    """ A view to display all of the products with search queries"""
+    """ A view to display all of the products with search queries, including sorting"""
 
     all_products = Product.objects.filter(is_a_service=False)
     active_products = all_products.filter(discontinued=False)
     # empty query and categories when tha page is loaded
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if request.GET:
-        # allow to show thr specific categories of products
+        # sorting products
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                active_products = active_products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            active_products = active_products.order_by(sortkey)
+        # allow to show the specific categories of products
         if 'category' in request.GET:
             # to split categories into list ar the commas
             categories = request.GET['category'].split(',')
@@ -40,10 +57,13 @@ def all_products(request):
             # pass quieries to the filter method to actually filter products
             active_products = active_products.filter(search_queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'products': active_products,
         'selected_categories': categories,
         'search_word': query,
+        'current_sorting': current_sorting,
     }
     return render(request, 'products/all_products.html', context)
 

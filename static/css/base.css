@@ -491,6 +491,9 @@ footer {
     width: 50%;
 }
 
+.sort-container {
+    justify-self: end;
+}
 /*Contact page*/
 
 #map {
