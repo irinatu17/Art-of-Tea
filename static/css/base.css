@@ -867,10 +867,6 @@ select option[value=""]{
         font-size: 1.1rem;
     }
 
-    .container-xl {
-        max-width: 1500px;
-    }
-
     .allauth-form-content {
         width: 40%;
     }
@@ -920,6 +916,10 @@ select option[value=""]{
     .container {
         max-width: 90rem !important;
         font-size: 1.1rem;
+    }
+
+    .container-about {
+        max-width: 1500px;
     }
 
     .events-text-block {
