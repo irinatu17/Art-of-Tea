@@ -131,6 +131,11 @@ footer {
     transform: scale(1.03);
 }
 
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .button-black {
     background:linear-gradient(var(--black), var(--lightblack));
     color: var(--white);
@@ -141,6 +146,12 @@ footer {
 .button-black:hover {
     background: var(--white);
     color: var(--black);
+}
+
+.button-quantity,
+.button-quantity:hover {
+    background:linear-gradient(var(--black), var(--lightblack));
+    color: var(--white);
 }
 
 .button-black-outline {
@@ -178,7 +189,6 @@ footer {
 }
 
 .btn-salmon {
-    border: 1px solid var(--black);
     background-color: var(--red-salmon);
     color: var(--white);
 }

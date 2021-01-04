@@ -108,3 +108,8 @@
   </div>
 </div>
 {% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'js/quantity_input.js' %}"></script> 
+{% endblock %}
