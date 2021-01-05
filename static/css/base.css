@@ -512,6 +512,12 @@ footer {
     height: 30vh;
 }
 
+.email-link:link,
+.email-link:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /*Events page*/
 .events-container {
