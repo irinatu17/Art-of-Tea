@@ -74,12 +74,12 @@
             </a> 
             <!--Search button-->
             <div class="d-flex">
-                <button class="btn px-1 d-block d-lg-none mr-md-3" id="search-button">
-                    <p class="text-center text-white d-flex flex-column justify-content-between">
+                <div class="btn px-1 d-block d-lg-none mr-md-3" id="search-button">
+                    <div class="text-center text-white d-flex flex-column justify-content-between">
                          <i class="fas fa-search"></i>
                         <small class="mt-1 small-text-navbar">Search</small>
-                    </p>
-                </button>
+                    </div>
+                </div>
                 
                 <a href="{% url 'view_cart' %}" 
                 class="btn px-1 d-block d-md-none {% if grand_total %}text-warning {% else %}text-white{% endif %}">
@@ -97,7 +97,7 @@
             </div>
         </div>
         <!--Search form for mobile and tablet-->
-        <div class="px-3 py-1" id="search-form-container">
+        <div class="px-1py-1" id="search-form-container">
             <form  method="GET" action="{% url 'products' %}">
                 <div class="input-group">
                     <input class="form-control" type="text" name="serach_term_input" 

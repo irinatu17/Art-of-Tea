@@ -266,7 +266,6 @@ footer {
 
 #search-form-container {
     left: 0;
-    width: 100vw;
     top:100%;
     background-color: var(--black);
 }
