@@ -64,7 +64,7 @@
         <div class="d-flex justify-content-between">
             <button class="navbar-toggler px-2" type="button" 
                     data-toggle="collapse" data-target="#navbarContent" 
-                    aria-controls="navbarToggler" 
+                    aria-controls="navbarContent" 
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,10 +75,10 @@
             <!--Search button-->
             <div class="d-flex">
                 <button class="btn px-1 d-block d-lg-none mr-md-3" id="search-button">
-                    <div class="text-center text-white d-flex flex-column justify-content-between">
+                    <p class="text-center text-white d-flex flex-column justify-content-between">
                          <i class="fas fa-search"></i>
                         <small class="mt-1 small-text-navbar">Search</small>
-                    </div>
+                    </p>
                 </button>
                 
                 <a href="{% url 'view_cart' %}" 
@@ -141,7 +141,7 @@
                         href="{% url 'contact' %}">Contact
                     </a>
                 </li>
-                <div class="dropdown-divider d-md-none d-block"></div>
+                <li class="dropdown-divider d-md-none d-block"></li>
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <li class="nav-item d-md-none d-block">

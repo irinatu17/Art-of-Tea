@@ -59,7 +59,7 @@ footer {
 }
 
 .footer-top {
-    background:linear-gradient(to bottom, var(--black), var(--lightblack))
+    background: linear-gradient(to bottom, var(--black), var(--lightblack));
 }
 
 .main-footer {
@@ -87,7 +87,7 @@ footer {
 }
 
 .divider-green {
-    background-image: radial-gradient(var(--lightgreen), var(--darkgreen));
+    background: radial-gradient(var(--lightgreen), var(--darkgreen));
     height: 4px;
     border-radius: 100%;
 }
@@ -137,7 +137,7 @@ footer {
 }
 
 .button-black {
-    background:linear-gradient(var(--black), var(--lightblack));
+    background: linear-gradient(var(--black), var(--lightblack));
     color: var(--white);
     border: 1px solid var(--black);
     font-family: var(--sawarabi-mincho);
