@@ -435,6 +435,17 @@ footer {
     color: var(--lightgreen);
 }
 
+.author-link:link,
+.author-link:visited {
+    color: var(--white);
+    transition: all .2s;
+}
+
+.author-link:hover {
+    color: var(--lightgreen);
+    text-decoration: none;
+}
+
 /*Products app*/
 .category-main-nav {
     color: var(--brown-grey);
@@ -678,11 +689,6 @@ select option[value=""]{
 
 /*Media query for small devices (360px and up)*/
 @media (min-width: 360px) {
-    /* .events-text-block {
-        background-color: transparent;
-        border-radius: 0;
-        box-shadow: none;
-    } */
 
     .checkout-form-paragraph {
         font-size: 100%;
