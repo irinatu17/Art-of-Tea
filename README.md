@@ -308,6 +308,10 @@ A user can reset their password to be able to login by entering the email. Then 
 Hitting "logout" button renders logout page, asking to confirm if a user wants to logout. It will end their session and redirects to the homepage with a toast success message appeared.
 #### 404 and 500 error pages
 Custom 404 and 500 pages contain heading, short information about the error and a button "Back Home". As well as that, they display navbar that allows users to come back easily to any page if they got lost.
+#### Back to Top button
+Back to Top button allows a user to scroll up to the top of the page, that makes a navigation easier.
+#### Sorting products by price/name/rating
+Users can sort products by price(high to low and low to high), rating(high to low and low to high) and name(A-Z and Z-A).
 
 ### Features Left to Implement
 There are some features that I considered were of secondary importance and I have not implemented them yet due to time constraints, but intend to do so in future when I will be able to dedicate more time to them. Most of these features are displayed in my [original wireframes](https://github.com/irinatu17/Art-of-Tea/tree/master/wireframes).
@@ -321,7 +325,7 @@ This feature allows users to login using social networks accounts, Google and Fa
 As can be viewed in the original wireframes, I initially planned to assign up to 3 for products and 5 for service images. An attempt at this was made by creating **ImageGallery** Model in the Products app. However, this feature would require much more time to search for the suitable images, resize them and implement further functionality. So due to mentioned above time constraints the ImageGallery model was removed from the database, image and image_url fields were moved to the Product model. In the future, I would like to implement this feature and add more images to the products and services for enchancing User Experience.
 
 
-Other small features are also considered to be implemented in feature, such as **Back to Top button** or/and **Pagination** in products, **Scroll down button** on the landing page, **Sorting products** by price/name, **Discout system**.     
+Other small features are also considered to be implemented in feature, such as **Pagination** in products page, **Scroll down button** on the landing page, **Discout system**.    
 I would also like to add **more products** to the store.
 
 <div align="right">
